@@ -9,7 +9,7 @@ import WhyChooseSoftNova from "./Whychoose";
 import AgricultureHero from "./Academy";
 import Features from "./Features";
 import FeaturesCard from "./Card";
-
+import Footer from "./Footer";
 
 const Hero = () => {
   const [shape] = useState("wave");
@@ -17,7 +17,6 @@ const Hero = () => {
   return (
     <>
       <section className={styles.container}>
-       
         <Canvas className={styles.canvas}>
           <PerspectiveCamera makeDefault position={[0, 0, 15]} />
           <ambientLight intensity={0.5} />
@@ -29,7 +28,6 @@ const Hero = () => {
           />
         </Canvas>
 
-    
         <div className={styles.overlay}>
           <h1 className={styles.title}>STERLING IT SERVICE</h1>
           <h6 className={styles.subtitle}>To drive your success</h6>
@@ -41,11 +39,11 @@ const Hero = () => {
       </section>
       <CompanySection />
       <OurBestServices />
-      <WhyChooseSoftNova/>
-      <AgricultureHero/>
-      <Features/>
-      <FeaturesCard/>
-      <Footer/>
+      <WhyChooseSoftNova />
+      <AgricultureHero />
+      <Features />
+      <FeaturesCard />
+      <Footer />
     </>
   );
 };
