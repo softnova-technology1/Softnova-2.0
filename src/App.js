@@ -1,11 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import Hero from "./Components/Hero";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Start Our New Project <i> "SOFTNOVA-2.0"</i></h1>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Hero/>} />
+        {/* <Route path="/about" element={<About />} /> */}
+        {/* <Route path="/products" element={<Products />} /> */}
+        {/* <Route path="/services/service-1" element={<Service1 />} /> */}
+        {/* <Route path="/services/service-2" element={<Service2 />} /> */}
+        {/* <Route path="/academy" element={<Academy />} /> */}
+        {/* <Route path="/foundation" element={<Foundation />} /> */}
+        {/* <Route path="/career" element={<Career />} /> */}
+        {/* <Route path="/gallery" element={<Gallery />} /> */}
+        {/* <Route path="/contact" element={<Contact />} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 

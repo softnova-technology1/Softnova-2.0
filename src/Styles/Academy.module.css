@@ -1,0 +1,113 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  padding: 4rem 6rem;
+  background: #000;
+  overflow: hidden;
+}
+
+/* ===== Content ===== */
+.content {
+  max-width: 520px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ffffff, #fe851e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 10px rgba(254, 133, 30, 0.35),
+    0 0 25px rgba(254, 133, 30, 0.15);
+  margin-bottom: 1.2rem;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #cfcfce;
+  line-height: 1.6;
+  margin-bottom: 1.8rem;
+}
+
+/* ===== Icons ===== */
+.iconRow {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.html { background: #e44d26; }
+.css { background: #1572b6; }
+.java { background: #5382a1; }
+.react { background: #03a5b7; }
+.mongo { background: #4caf50; }
+
+/* ===== Buttons ===== */
+.buttonRow {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.register {
+  background: #1c1c1c;
+  color: #fff;
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.quote {
+  background: transparent;
+  color: #fff;
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+/* ===== Image ===== */
+.imageWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 320px;
+  max-width: 100%;
+  border-top-right-radius: 30%;
+  border-bottom-left-radius: 30%;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .content {
+    margin-bottom: 3rem;
+  }
+
+  .iconRow,
+  .buttonRow {
+    justify-content: center;
+  }
+}
