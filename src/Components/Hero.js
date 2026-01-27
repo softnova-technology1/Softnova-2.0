@@ -6,7 +6,6 @@ import styles from "../Styles/Hero.module.css";
 import OurBestServices from "./Ourservices";
 import CompanySection from "./Compnay";
 import WhyChooseSoftNova from "./Whychoose";
-import AcademyHero from "./Academy";
 import AgricultureHero from "./Academy";
 import Features from "./Features";
 import FeaturesCard from "./Card";
