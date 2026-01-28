@@ -1,0 +1,142 @@
+.footer {
+  background: #050505;
+  color: #cbd5e1;
+  padding: 60px 80px 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ---------- TOP ---------- */
+.top {
+  display: flex;
+  align-items: stretch; /* 🔥 full height divider */
+  gap: 40px;
+}
+
+.about {
+  flex: 1;
+}
+
+.logoImg {
+  width: 180px;
+  margin-bottom: 16px;
+}
+
+.about p {
+  line-height: 1.6;
+  max-width: 420px;
+}
+
+/* ---------- CONTACT ---------- */
+.contact {
+  flex: 1;
+}
+
+.contact h3 {
+  margin-bottom: 20px;
+  color: #f8fafc;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.contactItem svg {
+  font-size: 22px;
+  min-width: 22px;
+  color: #facc15;
+  margin-top: 3px;
+}
+
+/* ---------- DIVIDERS ---------- */
+.verticalDivider {
+  width: 1px;
+  background-color: #3c3b3b;
+}
+
+.horizontalDivider {
+  height: 1px;
+  width: 100%;
+  background-color: #3c3b3b;
+  margin: 20px 0;
+}
+
+/* ---------- LINKS ---------- */
+.links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.links h4 {
+  color: #f8fafc;
+  margin-bottom: 16px;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.links li:hover {
+  color: #facc15;
+}
+
+/* ---------- SOCIAL ---------- */
+.social {
+  display: flex;
+  gap: 16px;
+  font-size: 18px;
+}
+
+.social svg {
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social svg:hover {
+  color: #facc15;
+  transform: scale(1.15);
+}
+
+/* ---------- BOTTOM ---------- */
+.bottom {
+  text-align: center;
+  /* margin-top: 40px; */
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .top {
+    flex-direction: column;
+  }
+
+  .verticalDivider {
+    display: none;
+  }
+
+  .links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .links {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding: 40px 20px 20px;
+  }
+}

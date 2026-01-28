@@ -1,0 +1,150 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* full width */
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 28px;
+
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+/* Scrolled navbar style */
+.navbar.scrolled {
+  background: #ffa600 /* Lighter yellow end */
+  ;
+  backdrop-filter: blur(14px);
+  transition: background 0.3s ease;
+}
+
+
+/* Menus */
+.menuLeft,
+.menuRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Buttons */
+.button {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+
+  padding: 6px 10px;
+  border-radius: 6px;
+
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  color: #fe851e;
+  text-shadow: 0 0 10px rgba(254, 133, 30, 0.6);
+}
+
+/* Active link */
+.button.active {
+  color: #fa8620;
+  text-shadow: 0 0 12px rgba(254, 133, 30, 0.8);
+}
+
+/* Logo */
+.logo img {
+  height: 42px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(254, 133, 30, 0.4));
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdownContent {
+  position: absolute;
+  top: 140%;
+  left: 0;
+
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(12px);
+
+  border-radius: 10px;
+  border: 1px solid rgba(254, 133, 30, 0.2);
+
+  min-width: 180px;
+  padding: 10px 0;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.dropdownContent a {
+  display: block;
+  padding: 10px 18px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: white;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.dropdownContent a:hover {
+  color: #fe851e;
+  background: rgba(254, 133, 30, 0.08);
+}
+.dropdown {
+  position: relative;
+}
+
+.dropdownContent {
+  position: absolute;
+  top: 140%;
+  left: 0;
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  border: 1px solid rgba(254, 133, 30, 0.2);
+  min-width: 180px;
+  padding: 10px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownContent a {
+  padding: 10px 18px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.dropdownContent a:hover {
+  color: #fe851e;
+  background: rgba(254, 133, 30, 0.08);
+}

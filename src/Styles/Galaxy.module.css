@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: radial-gradient(circle, #050010, #000);
+}
+
+.galaxy-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Stars */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 1px;
+  animation: twinkle 2s infinite alternate;
+}
+@keyframes twinkle {
+  from { opacity: 0.2; }
+  to { opacity: 1; transform: scale(1.5); }
+}
+
+/* Center logo */
+.galaxy-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 25px gold);
+  animation: pulse 3s infinite alternate;
+  z-index: 5;
+}
+@keyframes pulse {
+  from { transform: translate(-50%, -50%) scale(1); }
+  to { transform: translate(-50%, -50%) scale(1.08); }
+}
+
+/* Orbits */
+.orbit-line {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(0,255,255,0.25);
+  pointer-events: none;
+}
+
+/* Planets */
+.planet {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.planet:hover {
+  transform: scale(1.6);
+  z-index: 10;
+}
+.planet i {
+  color: white;
+  font-size: 22px;
+}
+.trail {
+  position: absolute;
+  inset: 0;
+  filter: blur(12px);
+  background: inherit;
+  opacity: 0.5;
+}
