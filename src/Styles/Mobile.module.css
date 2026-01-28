@@ -1,0 +1,147 @@
+.mobileAppSection {
+  background: #0b0b0b;
+  color: #f1f1f1;
+  padding: 60px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.heroText {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.heroText h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #ff6f00;
+}
+
+.heroText p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.heroText button {
+  padding: 12px 28px;
+  background-color: #ff6f00;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px #ff6f00aa;
+  transition: background-color 0.3s ease;
+}
+
+.heroText button:hover {
+  background-color: #e65c00;
+}
+
+.heroImage {
+  flex: 1 1 300px;
+  max-width: 320px;
+  text-align: center;
+}
+
+.heroImage img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px #ff6f0055;
+  transform-style: preserve-3d;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotateY(10deg);
+  }
+  50% {
+    transform: translateY(-15px) rotateY(-10deg);
+  }
+}
+
+.projectsSection {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.projectsSection h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #ff6f00;
+  text-align: center;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.projectCard {
+  background: #2a2a40;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 6px 18px #ff6f0044;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.projectCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px #ff6f0088;
+}
+
+.projectCard img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.projectCard h4 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #ffb347;
+}
+
+.projectCard p {
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+/* Animation active state */
+.active {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroImage {
+    margin-top: 30px;
+  }
+}

@@ -4,6 +4,17 @@ import styles from "../../Styles/Navbar.module.css";
 import logo from "../../images/softnovaLogo.png";
 
 const Navbar = () => {
+  const services = [
+    { name: "Web Development", path: "/services/WebDevelopment" },
+    { name: "Mobile App Development", path: "/services/MobileAppSection" },
+    { name: "E-Commerce", path: "/services/ProjectsFlip" },
+    { name: "Software Development", path: "/services/Software" },
+    { name: "Graphics Design", path: "/services/cloud" },
+    { name: "Digital Marketing", path: "/services/ai" },
+    { name: "Cloud and IT", path: "/services/support" },
+      { name: "other Services", path: "/services/support" },
+  ];
+
   const [serviceOpen, setServiceOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -52,21 +63,21 @@ const Navbar = () => {
           <NavLink className={styles.button} to="/services">
             Our Services ▼
           </NavLink>
-
           {serviceOpen && (
             <div className={styles.dropdownContent}>
-              {[...Array(7)].map((_, i) => (
+              {services.map((service, i) => (
                 <NavLink
                   key={i}
-                  to={`/services/service-${i + 1}`}
+                  to={service.path}
                   className={getLinkClass}
-                  onClick={() => setServiceOpen(false)} // ✅ Close dropdown on click
+                  onClick={() => setServiceOpen(false)}
                 >
-                  Service {i + 1}
+                  {service.name}
                 </NavLink>
               ))}
             </div>
           )}
+
         </div>
 
         <NavLink to="/products" className={getLinkClass}>
