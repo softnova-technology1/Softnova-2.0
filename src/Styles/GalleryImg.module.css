@@ -2,6 +2,33 @@
   padding: 60px 5%;
   background: #000000;
 }
+.hero {
+  position: relative;
+  /* height: 100vh; */
+  overflow: hidden;
+  background: #020205;
+}
+
+/* Canvas container */
+.sphereBg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  padding-top: 50px;
+}
+
+/* Overlay text */
+.overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
 
 /* Tabs */
 .tabs {
@@ -110,7 +137,7 @@
 
 .hero {
   height: 520px;
-  background-image: url("../images/gallery1.jpg");
+  /* background-image: url("../images/gallery1.jpg"); */
   background-size: cover;
   background-position: center;
   position: relative;
