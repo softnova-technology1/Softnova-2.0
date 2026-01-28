@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../Styles/Ourservice.module.css";
+import Slide from "../../Components/Slide";
 
 const services = [
   {
@@ -36,33 +37,37 @@ const services = [
 
 const Ourservice = () => {
   return (
-    <section className={styles.wrapper}>
-      {/* ✅ CONTAINER */}
-      <div className={styles.container}>
-        <h2 className={styles.heading}>OUR BEST SERVICES</h2>
+    <>
+      <section className={styles.wrapper}>
+        {/* ✅ CONTAINER */}
+        <div className={styles.container}>
+          <h2 className={styles.heading}>OUR BEST SERVICES</h2>
 
-        <div className={styles.timeline}>
-          {services.map((item) => (
-            <div key={item.id} className={styles.service}>
-              {/* ICON */}
-              <div className={styles.iconCircle}>
-                <span>{item.icon}</span>
+          <div className={styles.timeline}>
+            {services.map((item) => (
+              <div key={item.id} className={styles.service}>
+
+                <div className={styles.iconCircle}>
+                  <span>{item.icon}</span>
+                </div>
+
+
+                <span className={styles.number}>{item.id}</span>
+                <span className={styles.line}></span>
+
+
+                <div className={styles.box}>
+                  <h4>{item.title}</h4>
+                  <p>{item.text}</p>
+                </div>
               </div>
-
-              {/* NUMBER */}
-              <span className={styles.number}>{item.id}</span>
-              <span className={styles.line}></span>
-
-              {/* CONTENT */}
-              <div className={styles.box}>
-                <h4>{item.title}</h4>
-                <p>{item.text}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <Slide />
+
+    </>
   );
 };
 

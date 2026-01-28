@@ -4,6 +4,7 @@ import Navbar from "./Components/Home/Navbar";
 import Footer from "./Components/Footer";
 import Achievements from "./Components/Gallery/GalleryImg";
 import AboutCarousel from "./Components/Screenslide";
+import Products from "./Components/Our-Product/Product";
 import Services from "./Components/OurServices/Main";
 import WebDevelopment from "./Components/OurServices/Web";
 import MobileAppSection from "./Components/OurServices/Mobile";
@@ -16,6 +17,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/about" element={<AboutCarousel />} />
+        <Route path="/products" element={<Products />} />
+        {/* <Route path="/services/service-1" element={<Service1 />} /> */}
+        {/* <Route path="/services/service-2" element={<Service2 />} /> */}
         {/* <Route path="/products" element={<Products />} /> */}
         <Route path="/services" element={<Services />} />
         <Route path="/services/WebDevelopment" element={<WebDevelopment />} />
