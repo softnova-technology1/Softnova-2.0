@@ -9,6 +9,7 @@ import WhyChooseSoftNova from "./Whychoose";
 import AgricultureHero from "./Academy";
 import Features from "./Features";
 import FeaturesCard from "./Card";
+import Workflow from "./WorkFlow";
 
 const Hero = () => {
   const [shape] = useState("wave");
@@ -41,6 +42,7 @@ const Hero = () => {
        <CompanySection />
       <WhyChooseSoftNova />
       <AgricultureHero />
+      <Workflow/>
       <Features />
       <FeaturesCard />
     </>

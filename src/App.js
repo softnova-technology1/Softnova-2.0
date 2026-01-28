@@ -10,9 +10,12 @@ import WebDevelopment from "./Components/OurServices/Web";
 import MobileAppSection from "./Components/OurServices/Mobile";
 import ProjectsFlip from "./Components/OurServices/E-Commerce";
 import Software from "./Components/OurServices/Software";
+import Cursor from "./Cursor";
+import Contact from "./Components/Contact/Contact";
 function App() {
   return (
     <BrowserRouter>
+    <Cursor/>
       <Navbar />
       <Routes>
         <Route path="/" element={<Hero />} />
@@ -30,7 +33,7 @@ function App() {
         {/* <Route path="/foundation" element={<Foundation />} /> */}
         {/* <Route path="/career" element={<Career />} /> */}
         <Route path="/gallery" element={<Achievements />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
+        <Route path="/contact" element={<Contact />} />       
       </Routes>
       <Footer />
     </BrowserRouter>

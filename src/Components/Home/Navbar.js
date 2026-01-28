@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "../../Styles/Navbar.module.css";
 import logo from "../../images/softnovaLogo.png";
@@ -12,11 +12,13 @@ const Navbar = () => {
     { name: "Graphics Design", path: "/services/cloud" },
     { name: "Digital Marketing", path: "/services/ai" },
     { name: "Cloud and IT", path: "/services/support" },
-      { name: "other Services", path: "/services/support" },
+    { name: "Other Services", path: "/services/support" },
   ];
 
   const [serviceOpen, setServiceOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const dropdownRef = useRef(null);
 
   // Scroll effect
   useEffect(() => {
@@ -28,15 +30,19 @@ const Navbar = () => {
   const getLinkClass = ({ isActive }) =>
     isActive ? `${styles.button} ${styles.active}` : styles.button;
 
-  // Close dropdown when click outside
+  // Close dropdown when clicking outside
   useEffect(() => {
-    const closeDropdown = (e) => {
-      if (!e.target.closest(`.${styles.dropdown}`)) {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setServiceOpen(false);
       }
     };
-    window.addEventListener("click", closeDropdown);
-    return () => window.removeEventListener("click", closeDropdown);
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   return (
@@ -56,13 +62,15 @@ const Navbar = () => {
 
         {/* Services Dropdown */}
         <div
+          ref={dropdownRef}
           className={styles.dropdown}
           onMouseEnter={() => setServiceOpen(true)}
           onMouseLeave={() => setServiceOpen(false)}
         >
-          <NavLink className={styles.button} to="/services">
+          <NavLink to="/services" className={styles.button}>
             Our Services ▼
           </NavLink>
+
           {serviceOpen && (
             <div className={styles.dropdownContent}>
               {services.map((service, i) => (
@@ -77,12 +85,12 @@ const Navbar = () => {
               ))}
             </div>
           )}
-
         </div>
 
         <NavLink to="/products" className={getLinkClass}>
           Our Product
         </NavLink>
+
         <NavLink to="/about" className={getLinkClass}>
           About Us
         </NavLink>
@@ -93,15 +101,19 @@ const Navbar = () => {
         <NavLink to="/academy" className={getLinkClass}>
           Academy
         </NavLink>
+
         <NavLink to="/foundation" className={getLinkClass}>
           Foundation
         </NavLink>
+
         <NavLink to="/career" className={getLinkClass}>
           Career
         </NavLink>
+
         <NavLink to="/gallery" className={getLinkClass}>
           Gallery
         </NavLink>
+
         <NavLink to="/contact" className={getLinkClass}>
           Contact Us
         </NavLink>
@@ -111,3 +123,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+  
