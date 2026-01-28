@@ -22,8 +22,8 @@
 /* TIMELINE */
 .timeline {
   display: flex;
-  justify-content: space-between;
-  gap: 30px;
+  justify-content: space-evenly;
+  
 }
 
 /* SERVICE ITEM */

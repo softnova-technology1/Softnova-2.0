@@ -37,6 +37,7 @@ import intern9 from "../../images/intern9.jpg";
 
 import re1 from "../../images/re1.jpg";
 import re2 from "../../images/re2.png";
+import SphereBackground from "./Sphere";
 
 const tabsData = {
   achievements: {
@@ -100,6 +101,9 @@ export default function Achievements() {
   return (
     <>
       <section className={styles.hero}>
+        <div className={styles.sphereBg}>
+          <SphereBackground />
+        </div>
         <div className={styles.overlay}>
           <span className={styles.heroBadge}>• Gallery</span>
           <h1>Our Gallery</h1>
