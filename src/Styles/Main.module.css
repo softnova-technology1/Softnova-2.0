@@ -1,0 +1,279 @@
+.wrapper {
+  background: #0b0b0b;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+}
+
+/* HERO */
+.hero {
+  padding: 6rem 1.5rem;
+  text-align: center;
+  background: radial-gradient(circle at top, rgba(254,133,30,0.15), transparent 60%);
+
+
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero span {
+  color: #fe851e;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 1rem auto 0;
+  color: #bfbfbf;
+  line-height: 1.6;
+}
+
+/* SERVICES */
+.services {
+  max-width: 1200px;
+  margin: auto;
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.subtitle {
+  color: #fe851e;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+}
+
+.line {
+  width: 60px;
+  height: 4px;
+  background: #fe851e;
+  margin: 1rem auto 3rem;
+  border-radius: 4px;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #fe851e;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(254,133,30,0.2);
+  color: #fe851e;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 1rem;
+}
+
+.link {
+  color: #fe851e;
+  font-weight: 500;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+/* CTA */
+.cta {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #ff8c00, #ff6a00);
+  border-radius: 22px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.cta button {
+  background: #0b0b0b;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* WORKFLOW */
+.workflow {
+  padding: 140px 100px;
+  background: #000;
+  color: #fff;
+}
+
+.workflow h2 {
+  font-size: 48px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.eyebrow {
+  text-align: center;
+  display: block;
+  color: #ff8c00;
+  letter-spacing: 3px;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+/* ===== TIMELINE ===== */
+
+.timeline {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ITEM */
+.timelineItem {
+  position: relative;
+  width: 50%;
+  padding: 40px 50px;
+  box-sizing: border-box;
+}
+
+/* LEFT */
+.left {
+  text-align: right;
+  padding-right: 80px;
+}
+
+/* RIGHT */
+.right {
+  margin-left: 50%;
+  padding-left: 80px;
+}
+
+/* MARKER (emoji only) */
+.marker {
+  position: absolute;
+  top: 40px;
+  right: -23px;
+}
+
+.right .marker {
+  left: -23px;
+  right: auto;
+}
+
+.emoji {
+  width: 46px;
+  height: 46px;
+  background: #000;
+  border: 2px solid #ff8c00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+/* CONTENT */
+.content {
+  max-width: 360px;
+}
+
+.step {
+  color: #ff8c00;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.timelineItem h3 {
+  font-size: 26px;
+  margin: 10px 0;
+}
+
+.timelineItem p {
+  color: #bbb;
+  line-height: 1.6;
+}
+
+/* SOFTWARE */
+.software {
+  padding: 120px 100px;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+.software h2 {
+  font-size: 46px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.softwareIntro {
+  max-width: 650px;
+  margin: 0 auto 80px;
+  text-align: center;
+  color: #bbb;
+  line-height: 1.7;
+}
+
+/* LIST */
+.softwareList {
+  max-width: 900px;
+  margin: auto;
+}
+
+.softwareRow {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  padding: 36px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.softwareRow:last-child {
+  border-bottom: none;
+}
+
+.softwareRow h3 {
+  font-size: 28px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.softwareRow p {
+  color: #bbb;
+  line-height: 1.6;
+}
+
+/* HOVER EFFECT */
+.softwareRow:hover h3 {
+  color: #fe851e;
+}
+
+/* CTA BUTTON */
+.connectBtn {
+  display: block;
+  margin: 80px auto 0;
+  background: #fe851e;
+  color: #000;
+  border: none;
+  padding: 0.9rem 2.6rem;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.connectBtn:hover {
+  transform: translateY(-3px);
+}
