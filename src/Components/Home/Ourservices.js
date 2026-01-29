@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../Styles/Ourservice.module.css";
+import Slide from "../../Components/Slide";
 
 const services = [
   {
@@ -13,7 +14,6 @@ const services = [
     title: "SEO",
     text: "Optimize your website to rank higher and attract organic traffic.",
     icon: "📈",
-    category: "SEO",
   },
   {
     id: "03",
@@ -37,30 +37,37 @@ const services = [
 
 const Ourservice = () => {
   return (
-    <section className={styles.wrapper}>
-      <h2 className={styles.heading}>OUR SERVICES</h2>
+    <>
+      <section className={styles.wrapper}>
+        {/* ✅ CONTAINER */}
+        <div className={styles.container}>
+          <h2 className={styles.heading}>OUR BEST SERVICES</h2>
 
-      <div className={styles.timeline}>
-        {services.map((item) => (
-          <div key={item.id} className={styles.service}>
-            {/* ICON */}
-            <div className={styles.iconCircle}>
-              <span>{item.icon}</span>
-            </div>
+          <div className={styles.timeline}>
+            {services.map((item) => (
+              <div key={item.id} className={styles.service}>
 
-            {/* NUMBER */}
-            <span className={styles.number}>{item.id}</span>
-            <span className={styles.line}></span>
+                <div className={styles.iconCircle}>
+                  <span>{item.icon}</span>
+                </div>
 
-            {/* CONTENT */}
-            <div className={styles.box}>
-              <h4>{item.title}</h4>
-              <p>{item.text}</p>
-            </div>
+
+                <span className={styles.number}>{item.id}</span>
+                <span className={styles.line}></span>
+
+
+                <div className={styles.box}>
+                  <h4>{item.title}</h4>
+                  <p>{item.text}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </section>
+        </div>
+      </section>
+      <Slide />
+
+    </>
   );
 };
 

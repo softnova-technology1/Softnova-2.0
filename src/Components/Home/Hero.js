@@ -9,6 +9,7 @@ import WhyChooseSoftNova from "./Whychoose";
 import AgricultureHero from "./Academy";
 import Features from "./Features";
 import FeaturesCard from "./Card";
+import Workflow from "./WorkFlow";
 
 const Hero = () => {
   const [shape] = useState("wave");
@@ -17,7 +18,7 @@ const Hero = () => {
     <>
       <section className={styles.container}>
         <Canvas className={styles.canvas}>
-          <PerspectiveCamera makeDefault position={[0, 0, 15]} />
+          <PerspectiveCamera makeDefault position={[0, 0, 10]} />
           <ambientLight intensity={0.5} />
           <ParticleSystem
             currentShape={shape}
@@ -36,10 +37,12 @@ const Hero = () => {
           </p>
         </div>
       </section>
-      <CompanySection />
+     
       <OurBestServices />
+       <CompanySection />
       <WhyChooseSoftNova />
       <AgricultureHero />
+      <Workflow/>
       <Features />
       <FeaturesCard />
     </>

@@ -104,7 +104,7 @@ const ParticleSystem = ({
         <bufferAttribute
           attach="attributes-position"
           count={count}
-          array={new Float32Array(count * 3)}
+          array={currentPositions}
           itemSize={3}
         />
       </bufferGeometry>
@@ -116,7 +116,7 @@ const ParticleSystem = ({
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}
-        opacity={0.5}
+        opacity={2}
       />
     </points>
   );
