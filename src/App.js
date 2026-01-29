@@ -9,6 +9,10 @@ import WebDevelopment from "./Components/OurServices/Web";
 import MobileAppSection from "./Components/OurServices/Mobile";
 import ProjectsFlip from "./Components/OurServices/E-Commerce";
 import Software from "./Components/OurServices/Software";
+import GraphicDesign from "./Components/OurServices/Graphic";
+import DigitalMarketing from "./Components/OurServices/Digital";
+import OtherServices from "./Components/OurServices/Other";
+import CloudIT from "./Components/OurServices/Cloud";
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +26,10 @@ function App() {
          <Route path="/services/MobileAppSection" element={<MobileAppSection />} />
          <Route path="/services/ProjectsFlip" element={<ProjectsFlip />} />
              <Route path="/services/Software" element={<Software />} />
+             <Route path="/services/GraphicDesign" element={<GraphicDesign />} />
+             <Route path="/services/DigitalMarketing" element={<DigitalMarketing />} />
+             <Route path="/services/ OtherServices" element={< OtherServices />} />
+              <Route path="/services/CloudIT" element={<CloudIT />} />
         {/* <Route path="/academy" element={<Academy />} /> */}
         {/* <Route path="/foundation" element={<Foundation />} /> */}
         {/* <Route path="/career" element={<Career />} /> */}
