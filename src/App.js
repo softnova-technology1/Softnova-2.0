@@ -10,6 +10,7 @@ import WebDevelopment from "./Components/OurServices/Web";
 import MobileAppSection from "./Components/OurServices/Mobile";
 import ProjectsFlip from "./Components/OurServices/E-Commerce";
 import Software from "./Components/OurServices/Software";
+import CareerForm from "./Components/Career/Careers";
 import GraphicDesign from "./Components/OurServices/Graphic";
 import DigitalMarketing from "./Components/OurServices/Digital";
 import OtherServices from "./Components/OurServices/Other";
@@ -39,7 +40,7 @@ function App() {
               <Route path="/services/CloudIT" element={<CloudIT />} />
         {/* <Route path="/academy" element={<Academy />} /> */}
         {/* <Route path="/foundation" element={<Foundation />} /> */}
-        {/* <Route path="/career" element={<Career />} /> */}
+        <Route path="/career" element={<CareerForm />} />
         <Route path="/gallery" element={<Achievements />} />
         <Route path="/contact" element={<Contact />} />       
       </Routes>

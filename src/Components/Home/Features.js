@@ -4,7 +4,7 @@ import { FaBook, FaBriefcase, FaComments } from "react-icons/fa";
 export default function Features() {
   return (
     <section className={styles.container}>
-      {/* Features Row */}
+     
       <div className={styles.features}>
         <div className={styles.item1}>
           <div className={styles.circle}>
@@ -28,7 +28,7 @@ export default function Features() {
         </div>
       </div>
 
-      {/* Foundation Section */}
+ 
       <section className={styles.foundation}>
         <h2>APPLY FOR FOUNDATION</h2>
         <p>

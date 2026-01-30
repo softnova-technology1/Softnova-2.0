@@ -3,9 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { PointMaterial } from "@react-three/drei";
 import * as THREE from "three";
 
-/* ===============================
-   SHAPE GENERATOR
-================================ */
+
 const generatePoints = (shape, count) => {
   const positions = new Float32Array(count * 3);
 
@@ -16,7 +14,7 @@ const generatePoints = (shape, count) => {
       z = 0;
 
     switch (shape) {
-      default: // wave
+      default:
         x = (Math.random() - 0.5) * 20;
         z = (Math.random() - 0.5) * 20;
         y = Math.sin(x * 0.4) * Math.cos(z * 0.4) * 2.5;
@@ -30,9 +28,8 @@ const generatePoints = (shape, count) => {
   return positions;
 };
 
-/* ===============================
-   PARTICLE SYSTEM
-================================ */
+
+
 const ParticleSystem = ({
   currentShape,
   color = "#ff6600",

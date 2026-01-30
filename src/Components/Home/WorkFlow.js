@@ -76,7 +76,7 @@ const Workflow = () => {
       <div className={styles.grid}>
         {phases.map((p) => (
           <div key={p.id} className={styles.cardBox} onMouseEnter={() => setActiveProgress(p.progress)}>
-            {/* GRADIENT COUNT TEXT */}
+         
             <h2 className={styles.gradientNumber}>{p.id}</h2>
 
             <div className={styles.card}>

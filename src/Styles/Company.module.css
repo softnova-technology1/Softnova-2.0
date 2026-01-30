@@ -3,14 +3,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 5rem 8rem; /* increase padding top-bottom and left-right */
-  gap: 2rem;           /* increase spacing between sections */
+  gap: 2rem; /* increase spacing between sections */
   flex-wrap: wrap;
   background-color: #000;
   color: #fff;
-  max-width: 1400px;   /* limit max width on very large screens */
-  margin: 0 auto;      /* center container */
+  max-width: 1400px; /* limit max width on very large screens */
+  margin: 0 auto; /* center container */
 }
-
 
 /* About section */
 .about {
@@ -19,8 +18,19 @@
 }
 
 .about h2 {
-  font-size: 3rem;
-  color: orange;
+  
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  background: linear-gradient(90deg, #ffffff, #fe851e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 10px rgba(254, 133, 30, 0.35),
+    0 0 25px rgba(254, 133, 30, 0.15);
   margin-bottom: 1rem;
 }
 
@@ -69,17 +79,52 @@
 }
 
 /* Position icons like clock */
-.i1 { top: -30px; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
-.i2 { top: 20%; right: -10px; transform: translateY(-50%); animation-delay: 0.2s; }
-.i3 { bottom: 20%; right: -10px; transform: translateY(50%); animation-delay: 0.4s; }
-.i4 { bottom: -30px; left: 50%; transform: translateX(-50%); animation-delay: 0.6s; }
-.i5 { bottom: 20%; left: -10px; transform: translateY(50%); animation-delay: 0.8s; }
-.i6 { top: 20%; left: -10px; transform: translateY(-50%); animation-delay: 1s; }
+.i1 {
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 0s;
+}
+.i2 {
+  top: 20%;
+  right: -10px;
+  transform: translateY(-50%);
+  animation-delay: 0.2s;
+}
+.i3 {
+  bottom: 20%;
+  right: -10px;
+  transform: translateY(50%);
+  animation-delay: 0.4s;
+}
+.i4 {
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 0.6s;
+}
+.i5 {
+  bottom: 20%;
+  left: -10px;
+  transform: translateY(50%);
+  animation-delay: 0.8s;
+}
+.i6 {
+  top: 20%;
+  left: -10px;
+  transform: translateY(-50%);
+  animation-delay: 1s;
+}
 
 /* Bounce Keyframes */
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); } /* bounce height */
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  } /* bounce height */
 }
 
 /* Optional: hover effect */
