@@ -52,8 +52,7 @@
 // export default Hero;
 
 
-
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import ParticleSystem from "../Home/particalSystem";
@@ -66,16 +65,23 @@ import AgricultureHero from "./Academy";
 import Features from "./Features";
 import FeaturesCard from "./Card";
 import Workflow from "./WorkFlow";
-import videoSrc from "../../images/video.mp4"; // Renamed variable to avoid confusion
+import videoSrc from "../../images/Video1.mp4"; 
 
 const Hero = () => {
   const [shape] = useState("wave");
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5;
+    }
+  }, []);
 
   return (
     <>
       <section className={styles.container}>
-        {/* 🎥 Background Video */}
         <video
+          ref={videoRef}
           className={styles.video}
           autoPlay
           loop
@@ -85,10 +91,8 @@ const Hero = () => {
           <source src={videoSrc} type="video/mp4" />
         </video>
 
-        {/* 🌑 Dark Overlay */}
         <div className={styles.darkLayer}></div>
 
-        {/* 🌌 Particle Canvas */}
         <div className={styles.canvas}>
           <Canvas>
             <PerspectiveCamera makeDefault position={[0, 0, 10]} />
@@ -102,7 +106,6 @@ const Hero = () => {
           </Canvas>
         </div>
 
-        {/* 📝 Content Overlay */}
         <div className={styles.overlay}>
           <h1 className={styles.title}>STERLING IT SERVICE</h1>
           <h6 className={styles.subtitle}>To drive your success</h6>
