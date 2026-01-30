@@ -5,6 +5,8 @@ import { FaFacebookF, FaWhatsapp, FaMapMarkerAlt, FaPhoneAlt } from "react-icons
 import { MdEmail } from "react-icons/md";
 import { Maximize2 } from 'lucide-react';
 import { Col, Container, Row } from "react-bootstrap";
+import emailjs from "@emailjs/browser";
+
 export default function Contact() {
     const canvasRef = useRef(null);
     useEffect(() => {
@@ -42,6 +44,33 @@ export default function Contact() {
         animate();
         return () => window.removeEventListener("resize", resize);
     }, []);
+
+const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_4lkn34d",
+        "template_yfhst2s",
+        form.current,
+        "YLR_KloHoA2ojMGC2"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Email sent successfully!");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Something went wrong.");
+        }
+      );
+
+    e.target.reset();
+  };
+
     return (
         <div>
             <div className={styles.heros}>
@@ -104,6 +133,8 @@ export default function Contact() {
                             </Col>
                         </Row>
                         <Col>
+                        <form action="" ref={form} onSubmit={sendEmail}>
+                            
                             <div className={styles.formcard}>
                                 {/* <h3>
                             <span className={styles.dot}>•</span> Initialize Sequence
@@ -116,7 +147,7 @@ export default function Contact() {
                                     </div>
                                     <div className={styles.field}>
                                         <label>FIRST NAME</label>
-                                        <input />
+                                        <input  name="user_name" placeholder="Your Name" required/>
                                     </div>
                                     <div className={styles.field}>
                                         <label>LAST NAME</label>
@@ -126,8 +157,8 @@ export default function Contact() {
 
                                 <div className="row">
                                     <div className={styles.field}>
-                                        <label>EMAIL </label>
-                                        <input />
+                                        <label >EMAIL </label>
+                                        <input type="email" name="user_email" placeholder="Your Email" required />
                                     </div>
                                     <div className={styles.field}>
                                         <label>PHONE NUMBER</label>
@@ -137,11 +168,12 @@ export default function Contact() {
 
                                 <div className={styles.field}>
                                     <label> MESSAGE</label>
-                                    <textarea></textarea>
+                                    <textarea name="message" placeholder="Message" required></textarea>
                                 </div>
 
-                                <button>SEND MESSAGE →</button>
+                                <button  type="submit">SEND MESSAGE →</button>
                             </div>
+                        </form>
                         </Col>
                     </section>
                 </Container>

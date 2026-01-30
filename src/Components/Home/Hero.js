@@ -37,7 +37,7 @@
 //           </p>
 //         </div>
 //       </section>
-     
+
 //       <OurBestServices />
 //        <CompanySection />
 //       <WhyChooseSoftNova />
@@ -50,7 +50,6 @@
 // };
 
 // export default Hero;
-
 
 import React, { useState, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
@@ -65,7 +64,8 @@ import AgricultureHero from "./Academy";
 import Features from "./Features";
 import FeaturesCard from "./Card";
 import Workflow from "./WorkFlow";
-import videoSrc from "../../images/Video1.mp4"; 
+import videoSrc from "../../images/Video1.mp4";
+import GetStarted from "./Getstarted";
 
 const Hero = () => {
   const [shape] = useState("wave");
@@ -120,9 +120,10 @@ const Hero = () => {
       <CompanySection />
       <WhyChooseSoftNova />
       <AgricultureHero />
-      <Workflow />
       <Features />
       <FeaturesCard />
+      <Workflow />
+      <GetStarted />
     </>
   );
 };

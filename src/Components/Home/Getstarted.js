@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "../../Styles/Getstarted.module.css";
+import emailjs from "@emailjs/browser";
 
 export default function GetStarted() {
+  const form = useRef();
+  
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs
+        .sendForm(
+          "service_4lkn34d",
+          "template_yfhst2s",
+          form.current,
+          "YLR_KloHoA2ojMGC2"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            alert("Email sent successfully!");
+          },
+          (error) => {
+            console.log(error.text);
+            alert("Something went wrong.");
+          }
+        );
+  
+      e.target.reset();
+    };
   return (
     <section className={styles.container}>
     
@@ -19,16 +45,20 @@ export default function GetStarted() {
 
  
       <div className={styles.right}>
-        <form className={styles.form}>
+        <form className={styles.form} ref={form}  onSubmit={sendEmail}>
           <div className={styles.row}>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
+            <input type="text" placeholder="First Name"  name="user_name"/>
+            <input type="text" placeholder="Last Name" required/>
+          </div>
+          <div className={styles.row}>
+            <input type="email" placeholder="Email" name="user_email" required />
+            <input type="number" placeholder="Phone No." required/>
           </div>
 
-          <input type="text" placeholder="Subject" />
-          <textarea placeholder="Leave a message here" rows="5"></textarea>
+          {/* <input type="text" placeholder="Subject" /> */}
+          <textarea placeholder="Leave a message here" rows="5" name="message" required></textarea>
 
-          <button type="submit">Send</button>
+          <button type="submit">Send Message</button>
         </form>
       </div>
     </section>
