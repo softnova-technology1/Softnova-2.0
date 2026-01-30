@@ -66,6 +66,8 @@
 
 import styles from "../Styles/Screenslide.module.css";
 import { useState } from "react";
+import AboutPage from "./Aboutcard";
+import Stats from "./AboutApproach";
 
 const slides = [
   {
@@ -98,6 +100,7 @@ export default function AboutCarousel() {
   const prev = () => setIndex((i) => (i - 1 + total) % total);
 
   return (
+     <>
     <section
       className={styles.carousel}
       style={{
@@ -130,5 +133,8 @@ export default function AboutCarousel() {
         <button onClick={next}>Next ›</button>
       </div>
     </section>
+    <AboutPage/>
+    <Stats/>
+   </>
   );
 }

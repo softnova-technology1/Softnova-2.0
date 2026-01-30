@@ -10,6 +10,7 @@ import WebDevelopment from "./Components/OurServices/Web";
 import MobileAppSection from "./Components/OurServices/Mobile";
 import ProjectsFlip from "./Components/OurServices/E-Commerce";
 import Software from "./Components/OurServices/Software";
+import CareerForm from "./Components/Career/Careers";
 function App() {
   return (
     <BrowserRouter>
@@ -28,7 +29,7 @@ function App() {
              <Route path="/services/Software" element={<Software />} />
         {/* <Route path="/academy" element={<Academy />} /> */}
         {/* <Route path="/foundation" element={<Foundation />} /> */}
-        {/* <Route path="/career" element={<Career />} /> */}
+        <Route path="/career" element={<CareerForm />} />
         <Route path="/gallery" element={<Achievements />} />
         {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
