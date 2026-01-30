@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&family=Playfair+Display:ital@1&display=swap');
+
+.wrapper {
+  background-color: #000;
+  color: white;
+  min-height: 100vh;
+  padding: 80px 20px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.tagline {
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.heroTitle span {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  background: linear-gradient(60deg, #e98008, #f1f0ef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 500;
+}
+
+.subtitle {
+  color: #bdbaba;
+  font-size: 14px;
+  max-width: 500px;
+  margin: 0 auto 50px;
+}
+
+/* REFINED PROGRESS BAR */
+.progressSection {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.track {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff5e00, #ffffff);
+  transition: width 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.trackLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.labelTitle {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #b9b4b4;
+  font-weight: 800;
+}
+
+.percentText {
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* CARD GRID & GRADIENT COUNT */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cardBox {
+  position: relative;
+  padding-top: 40px;
+  margin-top: 40px;
+}
+
+/* THE ORANGE-WHITE GRADIENT COUNT */
+.gradientNumber {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  font-size: 100px;
+  font-weight: 800;
+  line-height: 1;
+  z-index: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.cardBox:hover .gradientNumber {
+  background: linear-gradient(180deg, #ec6e25 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  transform: translateY(-30px);
+  filter: drop-shadow(0 0 15px rgba(255, 94, 0, 0.3));
+}
+
+.card {
+  width: 230px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+  transition: border-color 0.4s ease;
+}
+
+.cardBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  transition: all 0.6s ease;
+}
+
+.cardBox:hover .cardBg {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+.cardBox:hover .card {
+  border-color: rgba(255, 94, 0, 0.5);
+}
+
+.glassLayer {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.phaseBadge {
+  font-size: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 10px;
+  border-radius: 100px;
+  letter-spacing: 1px;
+}
+
+.iconCircle {
+  width: 40px;
+  height: 40px;
+  background: rgba(33, 30, 30, 0.54);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fe851e;
+  /* Icons are now Orange */
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.accentLine {
+  height: 2px;
+  width: 0;
+  background: #fe851e;
+  transition: width 0.5s ease;
+}
+
+.cardBox:hover .accentLine {
+  width: 100%;
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: #d2d2d2;
+  line-height: 1.5;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+
+  max-width: 90%;
+}
+
+/* Reveal description on hover */
+.cardBox:hover .cardDesc {
+  opacity: 1;
+  transform: translateY(0);
+}

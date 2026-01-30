@@ -1,73 +1,8 @@
-// import styles from "./../Styles/Screenslide.module.css";
-
-// import { useState } from "react";
-
-// const slides = [
-//   {
-//     title: "Introduction",
-//     subtitle: "Masked Text",
-//     desc: "Scene 1 content driven by React state",
-//   },
-//   {
-//     title: "Navigation",
-//     subtitle: "Smooth Motion",
-//     desc: "Scene 2 with next / previous logic",
-//   },
-//   {
-//     title: "Animation",
-//     subtitle: "CSS Variables",
-//     desc: "Scene 3 animated using CSS",
-//   },
-//   {
-//     title: "Experience",
-//     subtitle: "Modern UI",
-//     desc: "Scene 4 production ready",
-//   },
-// ];
-
-// export default function AboutCarousel() {
-//   const [index, setIndex] = useState(0);
-//   const total = slides.length;
-
-//   const next = () => setIndex((index + 1) % total);
-//   const prev = () => setIndex((index - 1 + total) % total);
-
-//   return (
-//     <section
-//       className={styles.carousel}
-//       style={{
-//         "--scene": index + 1,
-//         "--total": total,
-//         "--percentage": (index + 1) / total,
-//       }}
-//     >
-//       <div className={styles.bg} />
-
-//       <h1 className={styles.maskedText}>SOFTNOVA</h1>
-
-//       <div className={styles.content}>
-//         <span className={styles.subtitle}>{slides[index].subtitle}</span>
-//         <h2 className={styles.title}>{slides[index].title}</h2>
-//         <p className={styles.desc}>{slides[index].desc}</p>
-//       </div>
-
-//       <div className={styles.counter}>
-//         <span>0{index + 1}</span>
-//         <small>/0{total}</small>
-//       </div>
-
-//       <div className={styles.nav}>
-//         <button onClick={prev}>‹ Prev</button>
-//         <button onClick={next}>Next ›</button>
-//       </div>
-//     </section>
-//   );
-// }
-
 import styles from "../Styles/Screenslide.module.css";
 import { useState } from "react";
 import AboutPage from "./Aboutcard";
 import Stats from "./AboutApproach";
+import { useState, useEffect, useRef } from "react";
 
 const slides = [
   {
@@ -95,18 +30,42 @@ const slides = [
 export default function AboutCarousel() {
   const [index, setIndex] = useState(0);
   const total = slides.length;
+  const dragStartX = useRef(0);
 
   const next = () => setIndex((i) => (i + 1) % total);
   const prev = () => setIndex((i) => (i - 1 + total) % total);
+
+  // Automatic Movement (Every 5 seconds)
+  useEffect(() => {
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, [index]);
+
+  // Mouse Drag Handlers
+  const handleMouseDown = (e) => {
+    dragStartX.current = e.clientX;
+  };
+
+  const handleMouseUp = (e) => {
+    const dragEndX = e.clientX;
+    const difference = dragStartX.current - dragEndX;
+
+    if (difference > 50) next(); // Swiped Left
+    if (difference < -50) prev(); // Swiped Right
+  };
 
   return (
      <>
     <section
       className={styles.carousel}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
       style={{
         "--scene": index + 1,
         "--total": total,
         "--percentage": (index + 1) / total,
+        cursor: "grab",
+        userSelect: "none" // Content drag pannum pothu text select aagama iruka
       }}
     >
       <div className={styles.bg} />
@@ -127,8 +86,8 @@ export default function AboutCarousel() {
         <small>/0{total}</small>
       </div>
 
-      {/* NAV */}
-      <div className={styles.nav}>
+      {/* NAV (Hidden but logic remains) */}
+      <div className={styles.nav} style={{ display: 'none' }}>
         <button onClick={prev}>‹ Prev</button>
         <button onClick={next}>Next ›</button>
       </div>

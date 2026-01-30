@@ -8,57 +8,85 @@ import {
   FiShield,
 } from "react-icons/fi";
 import { motion } from "framer-motion";
+import Worldgalaxy from "./Animee";
+
+// Animation Settings: 'once: false' is the key here
+const scrollConfig = {
+  initial: "hidden",
+  whileInView: "visible",
+  viewport: { once: false, amount: 0.2 }, // amount 0.2 means 20% visible aana trigger aagum
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
+};
+
+const ServiceCard = ({ icon, title }) => (
+  <motion.div
+    className={styles.card}
+    variants={fadeUp}
+    {...scrollConfig}
+  >
+    <div className={styles.icon}>{icon}</div>
+    <h3>{title}</h3>
+    <p>Scalable, secure and future-ready solutions tailored for your business.</p>
+  </motion.div>
+);
+
 const steps = [
   { step: "01", emoji: "🔍", title: "Discovery", desc: "Understanding goals, users and challenges." },
   { step: "02", emoji: "💡", title: "Strategy", desc: "Planning the right approach with clarity." },
   { step: "03", emoji: "🚀", title: "Execution", desc: "Designing, developing and launching." },
   { step: "04", emoji: "⚙️", title: "Optimization", desc: "Improving performance and scaling." },
 ];
+
 const servicesData = [
-  {
-    title: "Website Development",
-    desc: "Custom, responsive and performance-focused websites crafted for your brand.",
-  },
-  {
-    title: "Digital Marketing",
-    desc: "SEO, social media, PPC and content strategies that drive real growth.",
-  },
-  {
-    title: "Mobile Applications",
-    desc: "User-friendly Android & iOS apps built for scalability and engagement.",
-  },
-  {
-    title: "Graphic Design",
-    desc: "Creative designs that strengthen brand identity and visual impact.",
-  },
-  {
-    title: "E-Commerce Solutions",
-    desc: "Secure, scalable and conversion-optimized online stores.",
-  },
-  {
-    title: "Software Development",
-    desc: "ERP & custom software to automate and streamline business operations.",
-  },
+  { title: "Website Development", desc: "Custom, responsive and performance-focused websites." },
+  { title: "Digital Marketing", desc: "SEO, social media, and content strategies." },
+  { title: "Mobile Applications", desc: "User-friendly Android & iOS apps." },
+  { title: "Graphic Design", desc: "Creative designs for brand identity." },
+  { title: "E-Commerce Solutions", desc: "Conversion-optimized online stores." },
+  { title: "Software Development", desc: "ERP & custom software." },
 ];
 
 export default function Services() {
   return (
     <div className={styles.wrapper}>
+      <div className={styles.galaxyLayer}>
+        <Worldgalaxy />
+      </div>
+
       {/* HERO */}
       <section className={styles.hero}>
-        <h1>
+        <motion.h1 variants={fadeUp} {...scrollConfig}>
           Empowering Your <span>Digital Future</span>
-        </h1>
-        <p>
-          Softnova builds powerful digital products that help businesses scale,
-          secure, and succeed in the modern world.
-        </p>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          viewport={{ once: false }}
+        >
+          Softnova builds powerful digital products that help businesses scale.
+        </motion.p>
       </section>
 
-      {/* CORE SERVICES */}
+      {/* SERVICES */}
       <section className={styles.services}>
-        <span className={styles.subtitle}>WHAT WE OFFER</span>
-        <h2>Our Core Services</h2>
+        <motion.span className={styles.subtitle} variants={fadeUp} {...scrollConfig}>
+          WHAT WE OFFER
+        </motion.span>
+
+        <motion.h2 variants={fadeUp} {...scrollConfig}>
+          Our Core Services
+        </motion.h2>
+
         <div className={styles.line} />
 
         <div className={styles.serviceGrid}>
@@ -68,98 +96,81 @@ export default function Services() {
           <ServiceCard icon={<FiTrendingUp />} title="IT Consulting" />
           <ServiceCard icon={<FiShield />} title="Cybersecurity" />
 
-          <div className={styles.cta}>
+          <motion.div className={styles.cta} variants={fadeUp} {...scrollConfig}>
             <h3>Have a Project in Mind?</h3>
-            <p>Let’s turn your idea into a powerful digital solution.</p>
-            <a href="Web">Get Started</a>
-          </div>
+            <p>Let’s turn your idea into reality.</p>
+            <a href="/web">Get Started</a>
+          </motion.div>
         </div>
       </section>
 
       {/* WORKFLOW */}
-<section className={styles.workflow}>
-  <span className={styles.eyebrow}>HOW WE WORK</span>
+      <section className={styles.workflow}>
+        <motion.span className={styles.eyebrow} variants={fadeUp} {...scrollConfig}>
+          OUR STRATEGY
+        </motion.span>
 
-  <h2>
-    Our Strategic <span>Workflow</span>
-  </h2>
+        <motion.h2 variants={fadeUp} {...scrollConfig}>
+          Our Strategic <span>Workflow</span>
+        </motion.h2>
 
-  <div className={styles.timeline}>
-    {steps.map((item, i) => (
-      <motion.div
-        key={i}
-        className={`${styles.timelineItem} ${
-          i % 2 === 0 ? styles.left : styles.right
-        }`}
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        <div className={styles.marker}>
-          <span className={styles.emoji}>{item.emoji}</span>
+        <div className={styles.timeline}>
+          <div className={styles.centerLine} />
+          {steps.map((item, i) => (
+            <motion.div
+              key={i}
+              className={`${styles.timelineItem} ${i % 2 === 0 ? styles.left : styles.right}`}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
+              <div className={styles.marker}>
+                <span className={styles.emoji}>{item.emoji}</span>
+              </div>
+              <div className={styles.content}>
+                <span className={styles.step}>{item.step}</span>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
+      </section>
 
-        <div className={styles.content}>
-          <span className={styles.step}>{item.step}</span>
-          <h3>{item.title}</h3>
-          <p>{item.desc}</p>
-        </div>
-      </motion.div>
-    ))}
-  </div>
-</section>
-
-
-
-      {/* SOFTWARE SERVICES */}
+      {/* SOFTWARE LIST */}
       <section className={styles.software}>
-  <span className={styles.eyebrow}>OUR SOFTWARE SERVICES</span>
+        <motion.h2 variants={fadeUp} {...scrollConfig}>
+          End-to-End IT Solutions
+        </motion.h2>
 
-  <h2>End-to-End IT Solutions</h2>
+        <div className={styles.softwareList}>
+          {servicesData.map((item, i) => (
+            <motion.div
+              key={i}
+              className={styles.softwareRow}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: false }}
+            >
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
 
-  <p className={styles.softwareIntro}>
-    We follow Agile and DevOps methodologies to deliver scalable,
-    high-quality software with speed and reliability.
-  </p>
-
-  <div className={styles.softwareList}>
-    {servicesData.map((item, i) => (
-      <motion.div
-        key={i}
-        className={styles.softwareRow}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: i * 0.05 }}
-        viewport={{ once: true }}
-      >
-        <h3>{item.title}</h3>
-        <p>{item.desc}</p>
-      </motion.div>
-    ))}
-  </div>
-
-  <button className={styles.connectBtn}>Connect With Us</button>
-</section>
-
+        <motion.button
+          className={styles.connectBtn}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: false }}
+        >
+          Connect With Us
+        </motion.button>
+      </section>
     </div>
   );
 }
-
-const ServiceCard = ({ icon, title }) => (
-  <div className={styles.card}>
-    <div className={styles.icon}>{icon}</div>
-    <h3>{title}</h3>
-    <p>Scalable, secure and future-ready solutions tailored for your business.</p>
-    <span className={styles.link}>Learn More →</span>
-  </div>
-);
-
-const WorkflowCard = ({ emoji, title, step }) => (
-  <div className={styles.workflowCard}>
-    <div className={styles.workflowIcon}>{emoji}</div>
-    <h3>{title}</h3>
-    <p>Focused approach designed for measurable results.</p>
-    <span className={styles.step}>STEP {step}</span>
-  </div>
-);
