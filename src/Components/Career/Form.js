@@ -1,79 +1,137 @@
-import React, { useState } from "react";
+import React, { useRef,useState } from "react";
 import styles from "../../Styles/Form.module.css";
+import emailjs from "@emailjs/browser";
 
 const CareerForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    totalExp: "",
-    relevantExp: "",
-    currentCTC: "",
-    expectedCTC: "",
-    careerGap: "",
-    noticePeriod: "",
-    currentLocation: "",
-    preferredLocation: "",
-    reasonChange: "",
-    jobProfile: "",
-    whyHire: "",
-    resume: null,
-  });
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   totalExp: "",
+  //   relevantExp: "",
+  //   currentCTC: "",
+  //   expectedCTC: "",
+  //   careerGap: "",
+  //   noticePeriod: "",
+  //   currentLocation: "",
+  //   preferredLocation: "",
+  //   reasonChange: "",
+  //   jobProfile: "",
+  //   whyHire: "",
+  //   resume: null,
+  // });
 
-  const [fileName, setFileName] = useState("No file chosen");
+  // const [fileName, setFileName] = useState("No file chosen");
 
-  const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    setFormData({
-      ...formData,
-      [name]: files ? files[0] : value,
-    });
-    if (name === "resume" && files.length > 0) {
-      setFileName(files[0].name);
-    }
-  };
+  // const handleChange = (e) => {
+  //   const { name, value, files } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: files ? files[0] : value,
+  //   });
+  //   if (name === "resume" && files.length > 0) {
+  //     setFileName(files[0].name);
+  //   }
+  // };
 
-  const removeFile = () => {
-    setFormData({ ...formData, resume: null });
-    setFileName("No file chosen");
-    document.querySelector(`input[name="resume"]`).value = "";
-  };
+  // const removeFile = () => {
+  //   setFormData({ ...formData, resume: null });
+  //   setFileName("No file chosen");
+  //   document.querySelector(`input[name="resume"]`).value = "";
+  // };
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("Submitted Data:", formData);
+  //   alert("Form Submitted Successfully 🚀");
+  // };
+const form = useRef();
+  const sendEmail = (e) => {
     e.preventDefault();
-    console.log("Submitted Data:", formData);
-    alert("Form Submitted Successfully 🚀");
+
+    if (!form.current) {
+      alert("Form reference is null");
+      return;
+    }
+
+    // Collect form data
+    const formData = new FormData(form.current);
+    const emailParams = {
+      user_name: formData.get("user_name"),
+      user_email: formData.get("user_email"),
+      user_number: formData.get("user_number"),
+      user_resume: base64Resume, // Attach Base64-encoded file
+    };
+
+    emailjs
+      .send(
+        "service_n9biyvg",
+        "template_gt6gftv",
+        emailParams,
+        "_hV06UfPLcbKQaLam"
+      )
+      .then(
+        () => {
+          alert("Message sent successfully!");
+          form.current.reset();
+          setBase64Resume(""); // Clear resume data
+        },
+        (error) => {
+          console.error("FAILED...", error);
+          alert("FAILED...", error.text);
+        }
+      );
+  };
+
+  const [base64Resume, setBase64Resume] = useState("");
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        setBase64Resume(reader.result.split(",")[1]); // Extract Base64 content only
+      };
+      reader.onerror = (error) => {
+        console.error("File reading error:", error);
+      };
+    }
   };
 
   return (
     <div className={styles.page}>
       <div className={styles.galaxy}></div>
-
-     
       <div className={styles.careerHeader}>
         <h1 className={styles.mainTitle}>Come Work With Us</h1>
         <p className={styles.subtitle}>
-          Don’t hesitate to reach out! Send us a message, and our team will get back to you as soon as possible.
+          Don’t hesitate to reach out! Send us a message, and our team will get
+          back to you as soon as possible.
         </p>
       </div>
-
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        encType="multipart/form-data"
+        className={styles.form} method="post"
+      >
         <h2 className={styles.title}>Career Application</h2>
         <div className={styles.grid}>
-          <input name="name" placeholder="Name *" required onChange={handleChange} />
-          <input name="email" placeholder="Email *" required onChange={handleChange} />
-          <input name="phone" placeholder="Phone No *" required onChange={handleChange} />
-          <input name="relevantExp" placeholder="Relevant Experience" onChange={handleChange} />
-          <input name="totalExp" placeholder="Total Experience" onChange={handleChange} />
-          <input name="currentCTC" placeholder="Current CTC" onChange={handleChange} />
-          <input name="expectedCTC" placeholder="Expected CTC" onChange={handleChange} />
-          <input name="careerGap" placeholder="Career Gap (Reason)" onChange={handleChange} />
-          <input name="noticePeriod" placeholder="Notice Period (LWD)" onChange={handleChange} />
-          <input name="currentLocation" placeholder="Current Location" onChange={handleChange} />
-          <input name="preferredLocation" placeholder="Preferred Location" onChange={handleChange} />
-          <input name="reasonChange" placeholder="Reason for Job Change" onChange={handleChange} />
+          <input placeholder="Name *" name="user_name" required type="text"/>
+          <input placeholder="Email *" name="user_email" required type="email"/>
+          <input placeholder="Phone No *" name="user_number" required type="number"/>
+          <input placeholder="Relevant Experience" />
+          <input placeholder="Total Experience" />
+          <input placeholder="Current CTC" />
+          <input placeholder="Expected CTC" />
+          <input placeholder="Career Gap (Reason)" />
+          <input placeholder="Notice Period (LWD)" />
+          <input placeholder="Current Location" />
+          <input placeholder="Preferred Location" />
+          <input  placeholder="Reason for Job Change" />
 
-          <select name="jobProfile" required onChange={handleChange}>
+          <select  required>
             <option value="">Select Job Profile *</option>
             <option>Frontend Developer</option>
             <option>Backend Developer</option>
@@ -82,48 +140,46 @@ const CareerForm = () => {
             <option>Intern</option>
           </select>
 
-      
           <div className={styles.fileInputWrapper}>
             <label className={styles.fileLabel}>
               Choose File
               <input
-                type="file"
-                name="resume"
-                required
-                onChange={handleChange}
+               type="file"
+                  required
+                  name="user_resume"
+                  onChange={handleFileChange}
               />
             </label>
-            <span className={styles.fileName}>
-              {fileName}
-              {formData.resume && (
-                <button
-                  type="button"
-                  className={styles.removeFileBtn}
-                  onClick={removeFile}
-                >
-                  ×
-                </button>
-              )}
-            </span>
+            <span className={styles.fileName}></span>
           </div>
         </div>
 
         <textarea
-          name="whyHire"
           placeholder="Why should we hire you?"
           rows="4"
-          onChange={handleChange}
         ></textarea>
 
         <button className={styles.starButton}>
-                          Submit
-                          <div className={styles.star1}><StarSvg /></div>
-                          <div className={styles.star2}><StarSvg /></div>
-                          <div className={styles.star3}><StarSvg /></div>
-                          <div className={styles.star4}><StarSvg /></div>
-                          <div className={styles.star5}><StarSvg /></div>
-                          <div className={styles.star6}><StarSvg /></div>
-                        </button>
+          Submit
+          <div className={styles.star1}>
+            <StarSvg />
+          </div>
+          <div className={styles.star2}>
+            <StarSvg />
+          </div>
+          <div className={styles.star3}>
+            <StarSvg />
+          </div>
+          <div className={styles.star4}>
+            <StarSvg />
+          </div>
+          <div className={styles.star5}>
+            <StarSvg />
+          </div>
+          <div className={styles.star6}>
+            <StarSvg />
+          </div>
+        </button>
       </form>
     </div>
   );

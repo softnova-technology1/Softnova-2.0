@@ -1,8 +1,10 @@
+import { Container } from "react-bootstrap";
 import styles from "../../Styles/Academy.module.css";
 import academy from "../../images/academygirl.jpg";
 
 export default function AcademyHero() {
   return (
+    <Container>
     <section className={styles.hero}>
       <div className={styles.imageWrap}>
         <img src={academy} alt="Academy" className={styles.image} />
@@ -45,6 +47,8 @@ export default function AcademyHero() {
         </div>
       </div>
     </section>
+
+    </Container>
   );
 }
 const StarSvg = () => (
