@@ -87,7 +87,7 @@ const Stats = () => {
                 className={styles.wrapper}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }} // trigger every scroll
+                viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.8 }}
             >
                 <h1 className={styles.mainTitle}>
@@ -96,6 +96,7 @@ const Stats = () => {
                 </h1>
 
                 <div className={styles.networkContainer}>
+                    {/* SVG Lines - Connecting core to nodes */}
                     <svg className={styles.svgLines}>
                         <line x1="50%" y1="50%" x2="20%" y2="20%" className={styles.line} />
                         <line x1="50%" y1="50%" x2="80%" y2="20%" className={styles.line} />
@@ -105,6 +106,7 @@ const Stats = () => {
                         <line x1="50%" y1="50%" x2="15%" y2="50%" className={styles.line} />
                     </svg>
 
+                    {/* Center Node */}
                     <div className={styles.coreNode}>
                         <div className={styles.coreInner}>
                             <span className={styles.brand}>SOFTNOVA</span>
@@ -112,6 +114,7 @@ const Stats = () => {
                         </div>
                     </div>
 
+                    {/* Peripheral Nodes */}
                     {steps.map((step, i) => (
                         <motion.div
                             key={step.id}
@@ -119,7 +122,7 @@ const Stats = () => {
                             initial={{ opacity: 0, scale: 0.5 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: false, amount: 0.3 }}
-                            transition={{ delay: i * 0.2 }}
+                            transition={{ delay: i * 0.1 }}
                         >
                             <div className={styles.nodeCard}>
                                 <div className={styles.nodeDot}></div>

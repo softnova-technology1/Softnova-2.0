@@ -61,7 +61,7 @@ export default function Contact() {
 
             </div>
             <div className={styles.Contactbg}>
-                {/* BACKGROUND */}
+
                 <canvas ref={canvasRef} className={styles.particles}></canvas>
                 <Container>
                     <section className={styles.contactwrapper}>
@@ -105,9 +105,7 @@ export default function Contact() {
                         </Row>
                         <Col>
                             <div className={styles.formcard}>
-                                {/* <h3>
-                            <span className={styles.dot}>•</span> Initialize Sequence
-                        </h3> */}
+
 
                                 <div className="row">
 
@@ -140,7 +138,15 @@ export default function Contact() {
                                     <textarea></textarea>
                                 </div>
 
-                                <button>SEND MESSAGE →</button>
+                                <button className={styles.starButton}>
+                                    SEND MESSAGE →
+                                    <div className={styles.star1}><StarSvg /></div>
+                                    <div className={styles.star2}><StarSvg /></div>
+                                    <div className={styles.star3}><StarSvg /></div>
+                                    <div className={styles.star4}><StarSvg /></div>
+                                    <div className={styles.star5}><StarSvg /></div>
+                                    <div className={styles.star6}><StarSvg /></div>
+                                </button>
                             </div>
                         </Col>
                     </section>
@@ -166,7 +172,7 @@ export default function Contact() {
                             className={styles.mapIframe}
                         ></iframe>
 
-                        {/* Decorative Corner Accents (Set to ignore mouse events) */}
+
                         <div className={styles.decorLayer}>
                             <div className={styles.cornerTopLeft}></div>
                             <div className={styles.cornerTopRight}></div>
@@ -190,3 +196,19 @@ export default function Contact() {
         </div>
     );
 }
+const StarSvg = () => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 784.11 815.53"
+        className={styles.svg}
+    >
+        <path
+            className={styles.fil0}
+            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78
+         207.96,29.37 371.12,197.68 392.05,407.74
+         20.93,-210.06 184.09,-378.37 392.05,-407.74
+         -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+        />
+    </svg>
+);
+
