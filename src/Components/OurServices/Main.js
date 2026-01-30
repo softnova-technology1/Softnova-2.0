@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../Styles/Main.module.css";
+import { Link } from "react-router-dom";
 import {
   FiCode,
   FiCloud,
@@ -10,11 +11,11 @@ import {
 import { motion } from "framer-motion";
 import Worldgalaxy from "./Animee";
 
-// Animation Settings: 'once: false' is the key here
+
 const scrollConfig = {
   initial: "hidden",
   whileInView: "visible",
-  viewport: { once: false, amount: 0.2 }, // amount 0.2 means 20% visible aana trigger aagum
+  viewport: { once: false, amount: 0.2 },
 };
 
 const fadeUp = {
@@ -46,14 +47,37 @@ const steps = [
 ];
 
 const servicesData = [
-  { title: "Website Development", desc: "Custom, responsive and performance-focused websites." },
-  { title: "Digital Marketing", desc: "SEO, social media, and content strategies." },
-  { title: "Mobile Applications", desc: "User-friendly Android & iOS apps." },
-  { title: "Graphic Design", desc: "Creative designs for brand identity." },
-  { title: "E-Commerce Solutions", desc: "Conversion-optimized online stores." },
-  { title: "Software Development", desc: "ERP & custom software." },
+  {
+    title: "Website Development",
+    desc: "Custom, responsive and performance-focused websites.",
+    path: "/services/WebDevelopment" // Corrected: Added /services/
+  },
+  {
+    title: "Digital Marketing",
+    desc: "SEO, social media, and content strategies.",
+    path: "/services/DigitalMarketing" // Corrected: Added /services/ and removed space
+  },
+  {
+    title: "Mobile Applications",
+    desc: "User-friendly Android & iOS apps.",
+    path: "/services/MobileAppSection" // Corrected: Added /services/
+  },
+  {
+    title: "Graphic Design",
+    desc: "Creative designs for brand identity.",
+    path: "/services/GraphicDesign" // Corrected: Added /services/
+  },
+  {
+    title: "E-Commerce Solutions",
+    desc: "Conversion-optimized online stores.",
+    path: "/services/ProjectsFlip" // Corrected: Added /services/
+  },
+  {
+    title: "Software Development",
+    desc: "ERP & custom software.",
+    path: "/services/Software" // Corrected: Added /services/ (In your code it was pointing to ProjectsFlip)
+  },
 ];
-
 export default function Services() {
   return (
     <div className={styles.wrapper}>
@@ -61,7 +85,7 @@ export default function Services() {
         <Worldgalaxy />
       </div>
 
-      {/* HERO */}
+
       <section className={styles.hero}>
         <motion.h1 variants={fadeUp} {...scrollConfig}>
           Empowering Your <span>Digital Future</span>
@@ -77,7 +101,7 @@ export default function Services() {
         </motion.p>
       </section>
 
-      {/* SERVICES */}
+
       <section className={styles.services}>
         <motion.span className={styles.subtitle} variants={fadeUp} {...scrollConfig}>
           WHAT WE OFFER
@@ -104,7 +128,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* WORKFLOW */}
+
       <section className={styles.workflow}>
         <motion.span className={styles.eyebrow} variants={fadeUp} {...scrollConfig}>
           OUR STRATEGY
@@ -138,7 +162,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* SOFTWARE LIST */}
+
       <section className={styles.software}>
         <motion.h2 variants={fadeUp} {...scrollConfig}>
           End-to-End IT Solutions
@@ -146,17 +170,19 @@ export default function Services() {
 
         <div className={styles.softwareList}>
           {servicesData.map((item, i) => (
-            <motion.div
-              key={i}
-              className={styles.softwareRow}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: false }}
-            >
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
-            </motion.div>
+            <Link key={i} to={item.path} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <motion.div
+                className={styles.softwareRow}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                whileHover={{ x: 10, backgroundColor: "rgba(255,255,255,0.05)" }} // Hover effect added
+                transition={{ duration: 0.5 }}
+                viewport={{ once: false }}
+              >
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </motion.div>
+            </Link>
           ))}
         </div>
 
@@ -168,8 +194,11 @@ export default function Services() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: false }}
         >
-          Connect With Us
+          <Link to="/career" style={{ color: 'inherit', textDecoration: 'none' }}>
+            Connect With Us
+          </Link>
         </motion.button>
+
       </section>
     </div>
   );

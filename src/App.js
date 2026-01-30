@@ -70,6 +70,7 @@ import CloudIT from "./Components/OurServices/Cloud";
 import Cursor from "./Cursor";
 import Contact from "./Components/Contact/Contact";
 import RocketMenu from "./Components/Rocket";
+import ImageCardSection from "./Components/Our-Product/Product";
 
 function AppContent() {
   const location = useLocation();
@@ -84,6 +85,7 @@ function AppContent() {
 
       <Routes>
         <Route path="/" element={<Hero />} />
+        <Route path ="/ImageCardSection" element = {< ImageCardSection/>} />
         <Route path="/about" element={<AboutCarousel />} />
         <Route path="/products" element={<Products />} />
         <Route path="/services" element={<Services />} />

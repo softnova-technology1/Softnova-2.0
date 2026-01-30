@@ -132,3 +132,13 @@
   transform: scale(1.5);
   color: #ffb347; /* lighter orange on hover */
 }
+@media (max-width:480px){
+  .about p {
+ display: none;
+}
+.about h2{
+  
+
+ 
+}
+}

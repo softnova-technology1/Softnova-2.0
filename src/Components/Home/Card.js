@@ -36,6 +36,7 @@ export default function FeaturesCard() {
               our team members, providing ongoing learning and career
               advancement opportunities.
             </p>
+           
             <button className={styles.starButton}>
               Read More
               <span className={styles.star1}>
@@ -57,6 +58,7 @@ export default function FeaturesCard() {
                 <StarSvg />
               </span>
             </button>
+           
           </div>
           <div className={styles.goCorner}>
             <div className={styles.goArrow}>→</div>
@@ -91,6 +93,27 @@ export default function FeaturesCard() {
               <span className={styles.star6}>
                 <StarSvg />
               </span>
+            </button>
+          </div>
+          <div className={styles.goCorner}>
+            <div className={styles.goArrow}>→</div>
+          </div>
+        </div>
+         <div className={styles.card}>
+          <div className={styles.cardContent}>
+            <p className={styles.cardTitle}>How to Get Started</p>
+            <p className={styles.smallDesc}>
+              Send your updated resume along with a cover letter to the
+              specified application link or email address.
+            </p>
+            <button className={styles.starButton}>
+             Read More
+              <span className={styles.star1}><StarSvg /></span>
+              <span className={styles.star2}><StarSvg /></span>
+              <span className={styles.star3}><StarSvg /></span>
+              <span className={styles.star4}><StarSvg /></span>
+              <span className={styles.star5}><StarSvg /></span>
+              <span className={styles.star6}><StarSvg /></span>
             </button>
           </div>
           <div className={styles.goCorner}>

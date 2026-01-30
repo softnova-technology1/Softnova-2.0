@@ -161,3 +161,13 @@
 .fil0 {
   fill: #fffdef;
 }
+@media (max-width:480px){
+  .active {
+  transform: translate(-50%, -50%) scale(1.15);
+  z-index: 3;
+  background: linear-gradient(#0d0d0d, #0d0d0d) padding-box,
+              linear-gradient(135deg, #fe851e, #fe851e) border-box;
+              
+}
+
+}
