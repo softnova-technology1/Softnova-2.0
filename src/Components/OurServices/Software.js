@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion"; // Framer Motion library
+import { motion } from "framer-motion";
 import styles from "../../Styles/Software.module.css";
 import p1 from "../../images/Product-images/Ai.jpg";
 import { ArrowRight, Code, Cpu, ShieldCheck } from "lucide-react";
@@ -14,7 +14,7 @@ const projects = [
   { title: "Fintech App", image: p1, category: "Finance" },
 ];
 
-// Animation Variants
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
   visible: { 
@@ -35,7 +35,7 @@ const staggerContainer = {
 const Software = () => {
   return (
     <div className={styles.pageWrapper}>
-      {/* HERO SECTION */}
+      
       <section className={styles.hero}>
         <div className={styles.container}>
           <motion.div 
@@ -78,7 +78,6 @@ const Software = () => {
         </div>
       </section>
 
-      {/* PROJECTS SECTION */}
       <section className={styles.wrapper}>
         <motion.div 
           className={styles.sectionHeader}

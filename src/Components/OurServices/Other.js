@@ -34,7 +34,7 @@ const OtherServices = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        {/* HERO AREA */}
+       
         <motion.div 
           className={styles.header}
           initial={{ opacity: 0, y: 30 }}
@@ -48,7 +48,7 @@ const OtherServices = () => {
           </h1>
         </motion.div>
 
-        {/* INTERACTIVE LIST AREA */}
+  
         <div className={styles.listWrapper}>
           {services.map((service, index) => (
             <motion.div 
@@ -75,7 +75,7 @@ const OtherServices = () => {
                 Learn More <ArrowRight size={20} />
               </motion.button>
               
-              {/* Subtle hover background line */}
+            
               <div className={styles.hoverBg}></div>
             </motion.div>
           ))}

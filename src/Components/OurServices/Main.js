@@ -10,11 +10,11 @@ import {
 import { motion } from "framer-motion";
 import Worldgalaxy from "./Animee";
 
-// Animation Settings: 'once: false' is the key here
+
 const scrollConfig = {
   initial: "hidden",
   whileInView: "visible",
-  viewport: { once: false, amount: 0.2 }, // amount 0.2 means 20% visible aana trigger aagum
+  viewport: { once: false, amount: 0.2 }, 
 };
 
 const fadeUp = {
@@ -61,7 +61,7 @@ export default function Services() {
         <Worldgalaxy />
       </div>
 
-      {/* HERO */}
+      
       <section className={styles.hero}>
         <motion.h1 variants={fadeUp} {...scrollConfig}>
           Empowering Your <span>Digital Future</span>
@@ -77,7 +77,7 @@ export default function Services() {
         </motion.p>
       </section>
 
-      {/* SERVICES */}
+      
       <section className={styles.services}>
         <motion.span className={styles.subtitle} variants={fadeUp} {...scrollConfig}>
           WHAT WE OFFER
@@ -104,7 +104,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* WORKFLOW */}
+    
       <section className={styles.workflow}>
         <motion.span className={styles.eyebrow} variants={fadeUp} {...scrollConfig}>
           OUR STRATEGY
@@ -138,7 +138,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* SOFTWARE LIST */}
+      
       <section className={styles.software}>
         <motion.h2 variants={fadeUp} {...scrollConfig}>
           End-to-End IT Solutions

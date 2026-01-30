@@ -14,7 +14,7 @@ const services = [
 const DigitalMarketing = () => {
   return (
     <div className={styles.pageContainer}>
-      {/* HERO SECTION */}
+      
       <section className={styles.wrapper}>
         <div className={styles.content}>
           <motion.div 
@@ -60,7 +60,7 @@ const DigitalMarketing = () => {
         </div>
       </section>
 
-      {/* MARQUEE / SERVICES SECTION */}
+     
       <section className={styles.marqueeSection}>
         <motion.div 
           initial={{ opacity: 0, y: 50 }}

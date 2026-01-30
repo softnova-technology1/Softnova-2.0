@@ -34,7 +34,7 @@ export default function AboutCarousel() {
 
   // Automatic Movement (Every 5 seconds)
   useEffect(() => {
-    const timer = setInterval(next, 5000);
+    const timer = setInterval(next, 2000);
     return () => clearInterval(timer);
   }, [index]);
 

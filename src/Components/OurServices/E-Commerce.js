@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion"; // Library for smooth scroll animations
+import { motion } from "framer-motion"; 
 import styles from "../../Styles/E-Commerce.module.css";
 import p1 from "../../images/Product-images/Ai.jpg";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
@@ -12,7 +12,7 @@ const projects = [
   { title: "Custom Dashboard", image: p1, category: "Analytics" },
 ];
 
-// Animation Settings
+
 const cardVariants = {
   hidden: { opacity: 0, y: 100, rotateX: -20, scale: 0.9 },
   visible: { 
@@ -27,7 +27,7 @@ const cardVariants = {
 const ProjectsFlip = () => {
   return (
     <div className={styles.mainPage}>
-      {/* HERO SECTION */}
+     
       <section className={styles.hero}>
         <div className={styles.container}>
           <motion.div 
@@ -72,7 +72,7 @@ const ProjectsFlip = () => {
         </div>
       </section>
 
-      {/* PROJECTS SECTION */}
+      
       <section className={styles.wrapper}>
         <div className={styles.sectionHeader}>
           <motion.h2 

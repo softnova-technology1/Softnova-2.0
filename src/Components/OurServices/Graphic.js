@@ -18,7 +18,7 @@ const services = [
   { title: "Product Strategy", img:img6 }
 ];
 
-// Animation Settings
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
@@ -26,7 +26,7 @@ const fadeInUp = {
     y: 0, 
     transition: { 
       duration: 0.5, 
-      ease: "easeOut" // Browser-ku easy-ah irukum
+      ease: "easeOut" 
     } 
   }
 };

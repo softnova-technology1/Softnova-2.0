@@ -8,21 +8,34 @@
   position: relative;
 }
 
-/* ================= HERO ================= */
-
 .hero {
   padding: 6rem 1.5rem;
   text-align: center;
-  background: radial-gradient(circle at top, rgba(254,133,30,0.15), transparent 60%);
+  background: radial-gradient(circle at top, rgba(254, 133, 30, 0.15), transparent 60%);
 }
 
 .hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
+   font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  background: linear-gradient(90deg, #fffefe, #f87c0f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 
+    0 0 10px rgba(254, 133, 30, 0.35),
+    0 0 25px rgba(254, 133, 30, 0.15);
+
+  margin-bottom: 1rem;
+  
 }
 
 .hero span {
   color: #fe851e;
+  
 }
 
 .hero p {
@@ -30,8 +43,6 @@
   margin: 1rem auto 0;
   color: #bfbfbf;
 }
-
-/* ================= SERVICES ================= */
 
 .services {
   max-width: 1200px;
@@ -55,7 +66,6 @@
   margin: 18px auto 60px;
 }
 
-/* GRID FIX */
 .serviceGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -63,13 +73,12 @@
   align-items: stretch;
 }
 
-/* CARD */
 .card {
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
   border-radius: 20px;
   padding: 2.2rem;
   text-align: left;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.35s ease;
   height: 100%;
 }
@@ -82,7 +91,7 @@
 .icon {
   width: 52px;
   height: 52px;
-  background: rgba(254,133,30,0.2);
+  background: rgba(254, 133, 30, 0.2);
   color: #fe851e;
   border-radius: 14px;
   display: flex;
@@ -92,7 +101,7 @@
   margin-bottom: 1.2rem;
 }
 
-/* CTA FIX */
+
 .cta {
   grid-column: 1 / -1;
   background: linear-gradient(135deg, #fa9b48, #fe851e);
@@ -101,8 +110,6 @@
   color: #000;
   text-align: center;
 }
-
-/* ================= WORKFLOW ================= */
 
 .workflow {
   padding: 80px;
@@ -202,7 +209,7 @@
   color: #bbb;
 }
 
-/* ================= SOFTWARE ================= */
+
 
 .software {
   padding: 80px 100px;
@@ -230,7 +237,7 @@
   grid-template-columns: 1fr 1.2fr;
   gap: 40px;
   padding: 36px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .softwareRow:hover h3 {
@@ -249,9 +256,10 @@
   cursor: pointer;
 }
 
-/* ================= RESPONSIVE ================= */
+
 
 @media (max-width: 1024px) {
+
   .services,
   .software {
     padding: 70px 40px;
@@ -263,6 +271,7 @@
 }
 
 @media (max-width: 640px) {
+
   .services,
   .software {
     padding: 50px 20px;
@@ -279,18 +288,20 @@
   .cta {
     padding: 2.5rem 1.8rem;
   }
-}.wrapper {
+}
+
+.wrapper {
   background: #0b0b0b;
   color: #fff;
   font-family: "Inter", sans-serif;
-  overflow-x: hidden; /* Prevent horizontal scroll from galaxy */
+  overflow-x: hidden;
   position: relative;
 }
 
 .galaxyLayer {
   position: absolute;
   inset: 0;
-  height: 100vh; /* Keeps it strictly in the hero view */
+  height: 100vh;
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
@@ -299,10 +310,10 @@
 
 .hero {
   position: relative;
-  z-index: 1; /* Makes sure text is above galaxy */
+  z-index: 1;
   padding: 10rem 1.5rem;
   text-align: center;
-  background: radial-gradient(circle at top, rgba(254,133,30,0.1), transparent 70%);
+  background: radial-gradient(circle at top, rgba(254, 133, 30, 0.1), transparent 70%);
   min-height: 80vh;
   display: flex;
   flex-direction: column;
@@ -312,13 +323,13 @@
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 8vw, 4rem); /* Fluid typography */
+  font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 20px;
 }
 
-/* Fixes the Workflow Timeline Alignment */
+
 .timeline {
   position: relative;
   max-width: 1000px;
@@ -327,15 +338,18 @@
 
 @media (max-width: 768px) {
   .centerLine {
-    left: 20px; /* Moves line to the left on mobile */
+    left: 20px;
   }
+
   .timelineItem {
     width: 100%;
     text-align: left !important;
     padding-left: 60px !important;
     padding-right: 20px !important;
   }
-  .left .marker, .right .marker {
+
+  .left .marker,
+  .right .marker {
     left: -3px;
   }
 }
