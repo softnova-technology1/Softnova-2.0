@@ -120,13 +120,14 @@ export default function ImageCardSection() {
 
   return (
     <section className={styles.wrapper}>
+        <div>
       <h1 className={styles.heading}>
         We build cutting-edge digital products.
       </h1>
-
       <p className={styles.sub}>
         Responsibility, user-first thinking & strategic business gains.
       </p>
+      </div>
 
       <div className={styles.grid}>
         {items.map((item, i) => (

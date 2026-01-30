@@ -2,15 +2,18 @@
   background: #0b0b0b;
   color: #fff;
   font-family: "Inter", sans-serif;
+  background: #0b0b0b;
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero {
   padding: 6rem 1.5rem;
   text-align: center;
   background: radial-gradient(circle at top, rgba(254,133,30,0.15), transparent 60%);
-
-
 }
 
 .hero h1 {
@@ -26,144 +29,142 @@
   max-width: 700px;
   margin: 1rem auto 0;
   color: #bfbfbf;
-  line-height: 1.6;
 }
 
-/* SERVICES */
+/* ================= SERVICES ================= */
+
 .services {
   max-width: 1200px;
   margin: auto;
-  padding: 5rem 1.5rem;
+  padding: 80px 100px;
   text-align: center;
+  margin-top: 5%;
 }
 
 .subtitle {
   color: #fe851e;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  font-size: 12px;
+  letter-spacing: 3px;
+  display: inline-block;
 }
 
 .line {
   width: 60px;
   height: 4px;
   background: #fe851e;
-  margin: 1rem auto 3rem;
-  border-radius: 4px;
+  margin: 18px auto 60px;
 }
 
+/* GRID FIX */
 .serviceGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+  align-items: stretch;
 }
 
+/* CARD */
 .card {
   background: rgba(255,255,255,0.04);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
-  padding: 2rem;
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: all 0.3s ease;
+  border-radius: 20px;
+  padding: 2.2rem;
   text-align: left;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.35s ease;
+  height: 100%;
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
   border-color: #fe851e;
 }
 
 .icon {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   background: rgba(254,133,30,0.2);
   color: #fe851e;
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
-  margin-bottom: 1rem;
+  font-size: 24px;
+  margin-bottom: 1.2rem;
 }
 
-.link {
-  color: #fe851e;
-  font-weight: 500;
-  margin-top: 1rem;
-  display: inline-block;
-}
-
-/* CTA */
+/* CTA FIX */
 .cta {
-  grid-column: span 2;
-  background: linear-gradient(135deg, #ff8c00, #ff6a00);
-  border-radius: 22px;
-  padding: 3rem;
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #fa9b48, #fe851e);
+  border-radius: 26px;
+  padding: 3.5rem;
+  color: #000;
   text-align: center;
 }
 
-.cta button {
-  background: #0b0b0b;
-  color: white;
-  border: none;
-  padding: 0.8rem 2rem;
-  border-radius: 30px;
-  cursor: pointer;
-}
+/* ================= WORKFLOW ================= */
 
-/* WORKFLOW */
 .workflow {
-  padding: 140px 100px;
+  padding: 80px;
   background: #000;
-  color: #fff;
-}
-
-.workflow h2 {
-  font-size: 48px;
-  margin-bottom: 100px;
-  text-align: center;
 }
 
 .eyebrow {
   text-align: center;
-  display: block;
-  color: #ff8c00;
+  color: #fe851e;
   letter-spacing: 3px;
   font-size: 12px;
   margin-bottom: 16px;
+  display: block;
 }
 
-/* ===== TIMELINE ===== */
+.workflow h2 {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 100px;
+}
+
+.workflow h2 span {
+  color: #fe851e;
+}
 
 .timeline {
+  position: relative;
   max-width: 1000px;
   margin: auto;
 }
 
-/* ITEM */
+.centerLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #fe851e, transparent);
+  transform: translateX(-50%);
+}
+
 .timelineItem {
   position: relative;
   width: 50%;
   padding: 40px 50px;
-  box-sizing: border-box;
 }
 
-/* LEFT */
 .left {
   text-align: right;
   padding-right: 80px;
 }
 
-/* RIGHT */
 .right {
   margin-left: 50%;
   padding-left: 80px;
 }
 
-/* MARKER (emoji only) */
 .marker {
   position: absolute;
   top: 40px;
   right: -23px;
+  z-index: 2;
 }
 
 .right .marker {
@@ -175,7 +176,7 @@
   width: 46px;
   height: 46px;
   background: #000;
-  border: 2px solid #ff8c00;
+  border: 2px solid #fe851e;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -183,38 +184,33 @@
   font-size: 22px;
 }
 
-/* CONTENT */
 .content {
   max-width: 360px;
 }
 
 .step {
-  color: #ff8c00;
+  color: #fe851e;
   font-size: 12px;
   letter-spacing: 3px;
 }
 
 .timelineItem h3 {
   font-size: 26px;
-  margin: 10px 0;
 }
 
 .timelineItem p {
   color: #bbb;
-  line-height: 1.6;
 }
 
-/* SOFTWARE */
+/* ================= SOFTWARE ================= */
+
 .software {
-  padding: 120px 100px;
-  background: #0b0b0b;
-  color: #fff;
+  padding: 80px 100px;
 }
 
 .software h2 {
-  font-size: 46px;
   text-align: center;
-  margin-bottom: 20px;
+  font-size: 46px;
 }
 
 .softwareIntro {
@@ -222,10 +218,8 @@
   margin: 0 auto 80px;
   text-align: center;
   color: #bbb;
-  line-height: 1.7;
 }
 
-/* LIST */
 .softwareList {
   max-width: 900px;
   margin: auto;
@@ -236,44 +230,112 @@
   grid-template-columns: 1fr 1.2fr;
   gap: 40px;
   padding: 36px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.softwareRow:last-child {
-  border-bottom: none;
-}
-
-.softwareRow h3 {
-  font-size: 28px;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.softwareRow p {
-  color: #bbb;
-  line-height: 1.6;
-}
-
-/* HOVER EFFECT */
 .softwareRow:hover h3 {
   color: #fe851e;
 }
 
-/* CTA BUTTON */
 .connectBtn {
-  display: block;
   margin: 80px auto 0;
+  display: block;
   background: #fe851e;
   color: #000;
   border: none;
-  padding: 0.9rem 2.6rem;
+  padding: 14px 40px;
   border-radius: 30px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
-.connectBtn:hover {
-  transform: translateY(-3px);
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .services,
+  .software {
+    padding: 70px 40px;
+  }
+
+  .serviceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .services,
+  .software {
+    padding: 50px 20px;
+  }
+
+  .serviceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow h2 {
+    font-size: 34px;
+  }
+
+  .cta {
+    padding: 2.5rem 1.8rem;
+  }
+}.wrapper {
+  background: #0b0b0b;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll from galaxy */
+  position: relative;
+}
+
+.galaxyLayer {
+  position: absolute;
+  inset: 0;
+  height: 100vh; /* Keeps it strictly in the hero view */
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  margin-top: 5%;
+}
+
+.hero {
+  position: relative;
+  z-index: 1; /* Makes sure text is above galaxy */
+  padding: 10rem 1.5rem;
+  text-align: center;
+  background: radial-gradient(circle at top, rgba(254,133,30,0.1), transparent 70%);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20%;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 8vw, 4rem); /* Fluid typography */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+/* Fixes the Workflow Timeline Alignment */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 60px auto;
+}
+
+@media (max-width: 768px) {
+  .centerLine {
+    left: 20px; /* Moves line to the left on mobile */
+  }
+  .timelineItem {
+    width: 100%;
+    text-align: left !important;
+    padding-left: 60px !important;
+    padding-right: 20px !important;
+  }
+  .left .marker, .right .marker {
+    left: -3px;
+  }
 }

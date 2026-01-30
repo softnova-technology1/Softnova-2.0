@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "../../Styles/Navbar.module.css";
 import logo from "../../images/softnovaLogo.png";
+import { motion, AnimatePresence } from "framer-motion"; 
 
 const Navbar = () => {
   const services = [
@@ -9,118 +10,95 @@ const Navbar = () => {
     { name: "Mobile App Development", path: "/services/MobileAppSection" },
     { name: "E-Commerce", path: "/services/ProjectsFlip" },
     { name: "Software Development", path: "/services/Software" },
-    { name: "Graphics Design", path: "/services/cloud" },
-    { name: "Digital Marketing", path: "/services/ai" },
-    { name: "Cloud and IT", path: "/services/support" },
-    { name: "Other Services", path: "/services/support" },
+    { name: "Graphics Design", path: "/services/GraphicDesign" },
+    { name: "Digital Marketing", path: "/services/DigitalMarketing" },
+    { name: "Cloud and IT", path: "/services/CloudIT" },
+    { name: "Other Services", path: "/services/OtherServices" },
   ];
 
   const [serviceOpen, setServiceOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
   const dropdownRef = useRef(null);
+  const timeoutRef = useRef(null); 
 
-  // Scroll effect
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setServiceOpen(true);
+  };
+
+  
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setServiceOpen(false);
+    }, 200);
+  };
+
   const getLinkClass = ({ isActive }) =>
     isActive ? `${styles.button} ${styles.active}` : styles.button;
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setServiceOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
-      {/* Logo */}
       <div className={styles.logo}>
-        <NavLink to="/">
-          <img src={logo} alt="Softnova Logo" />
-        </NavLink>
+        <NavLink to="/"><img src={logo} alt="Softnova Logo" /></NavLink>
       </div>
 
-      {/* Left menu */}
       <div className={styles.menuLeft}>
-        <NavLink to="/" className={getLinkClass}>
-          Home
-        </NavLink>
+        <NavLink to="/" className={getLinkClass}>Home</NavLink>
 
-        {/* Services Dropdown */}
         <div
           ref={dropdownRef}
           className={styles.dropdown}
-          onMouseEnter={() => setServiceOpen(true)}
-          onMouseLeave={() => setServiceOpen(false)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           <NavLink to="/services" className={styles.button}>
             Our Services ▼
           </NavLink>
 
-          {serviceOpen && (
-            <div className={styles.dropdownContent}>
-              {services.map((service, i) => (
-                <NavLink
-                  key={i}
-                  to={service.path}
-                  className={getLinkClass}
-                  onClick={() => setServiceOpen(false)}
-                >
-                  {service.name}
-                </NavLink>
-              ))}
-            </div>
-          )}
+          <AnimatePresence>
+            {serviceOpen && (
+              <motion.div 
+                className={styles.dropdownContent}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.2 }}
+              >
+                {services.map((service, i) => (
+                  <NavLink
+                    key={i}
+                    to={service.path}
+                    className={getLinkClass}
+                    onClick={() => setServiceOpen(false)}
+                  >
+                    {service.name}
+                  </NavLink>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
-        <NavLink to="/products" className={getLinkClass}>
-          Our Product
-        </NavLink>
-
-        <NavLink to="/about" className={getLinkClass}>
-          About Us
-        </NavLink>
+        <NavLink to="/products" className={getLinkClass}>Our Product</NavLink>
+        <NavLink to="/about" className={getLinkClass}>About Us</NavLink>
       </div>
 
-      {/* Right menu */}
       <div className={styles.menuRight}>
-        <NavLink to="/academy" className={getLinkClass}>
-          Academy
-        </NavLink>
-
-        <NavLink to="/foundation" className={getLinkClass}>
-          Foundation
-        </NavLink>
-
-        <NavLink to="/career" className={getLinkClass}>
-          Career
-        </NavLink>
-
-        <NavLink to="/gallery" className={getLinkClass}>
-          Gallery
-        </NavLink>
-
-        <NavLink to="/contact" className={getLinkClass}>
-          Contact Us
-        </NavLink>
+        <NavLink to="/academy" className={getLinkClass}>Academy</NavLink>
+        <NavLink to="/foundation" className={getLinkClass}>Foundation</NavLink>
+        <NavLink to="/career" className={getLinkClass}>Career</NavLink>
+        <NavLink to="/gallery" className={getLinkClass}>Gallery</NavLink>
+        <NavLink to="/contact" className={getLinkClass}>Contact Us</NavLink>
       </div>
     </nav>
   );
 };
 
 export default Navbar;
-  

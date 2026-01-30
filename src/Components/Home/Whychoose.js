@@ -30,7 +30,7 @@ export default function WhyChooseSoftNova() {
       <div className={styles.container}>
         <h2 className={styles.heading}>Why Choose SoftNova?</h2>
 
-        {/* Text Content */}
+       
         <div className={styles.description}>
           <p>
             At SoftNova, we understand that every business is unique. That’s why we
@@ -48,7 +48,7 @@ export default function WhyChooseSoftNova() {
           </p>
         </div>
 
-        {/* Cards + Image */}
+     
         <div className={styles.content}>
           <div className={styles.cards}>
             {features.map((item, index) => (
