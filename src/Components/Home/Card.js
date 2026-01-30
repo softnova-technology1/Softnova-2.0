@@ -3,7 +3,6 @@ import styles from "../../Styles/Card.module.css";
 
 export default function FeaturesCard() {
 
-
   const StarSvg = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -38,8 +37,33 @@ export default function FeaturesCard() {
               our team members, providing ongoing learning and career
               advancement opportunities.
             </p>
+           
             <button className={styles.starButton}>
               Read More
+              <span className={styles.star1}><StarSvg /></span>
+              <span className={styles.star2}><StarSvg /></span>
+              <span className={styles.star3}><StarSvg /></span>
+              <span className={styles.star4}><StarSvg /></span>
+              <span className={styles.star5}><StarSvg /></span>
+              <span className={styles.star6}><StarSvg /></span>
+            </button>
+           
+          </div>
+          <div className={styles.goCorner}>
+            <div className={styles.goArrow}>→</div>
+          </div>
+        </div>
+
+        {/* Card 2 */}
+        <div className={styles.card}>
+          <div className={styles.cardContent}>
+            <p className={styles.cardTitle}>How to Get Started</p>
+            <p className={styles.smallDesc}>
+              Send your updated resume along with a cover letter to the
+              specified application link or email address.
+            </p>
+            <button className={styles.starButton}>
+             Read More
               <span className={styles.star1}><StarSvg /></span>
               <span className={styles.star2}><StarSvg /></span>
               <span className={styles.star3}><StarSvg /></span>
@@ -52,9 +76,7 @@ export default function FeaturesCard() {
             <div className={styles.goArrow}>→</div>
           </div>
         </div>
-
-        {/* Card 2 */}
-        <div className={styles.card}>
+         <div className={styles.card}>
           <div className={styles.cardContent}>
             <p className={styles.cardTitle}>How to Get Started</p>
             <p className={styles.smallDesc}>

@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "../../Styles/Career.module.css";
 
@@ -25,7 +25,7 @@ import { BsGraphUpArrow, BsFillPeopleFill } from "react-icons/bs";
 import { RiDatabase2Fill } from "react-icons/ri";
 import CareerForm from "./Form";
 
-
+/* ⭐ STAR SVG — UNCHANGED */
 const StarSvg = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ const StarSvg = () => (
   </svg>
 );
 
-
+/* 🔹 ROLE DATA — UNCHANGED */
 const roleData = {
   Internship: [
     { title: "UI/UX Intern", icon: <MdDesignServices /> },
@@ -53,7 +53,6 @@ const roleData = {
     { title: "FullStack Intern", icon: <FaProjectDiagram /> },
     { title: "Mobile App Intern", icon: <FaMobileAlt /> },
   ],
-
   Developer: [
     { title: "Frontend Developer", icon: <FaReact /> },
     { title: "Backend Developer", icon: <RiDatabase2Fill /> },
@@ -62,7 +61,6 @@ const roleData = {
     { title: "MERN Stack Developer", icon: <FaServer /> },
     { title: "Mobile App Developer", icon: <FaMobileAlt /> },
   ],
-
   Management: [
     { title: "Recruiter HR", icon: <BsFillPeopleFill /> },
     { title: "Payroll HR", icon: <FaUsersCog /> },
@@ -70,7 +68,6 @@ const roleData = {
     { title: "System Admin", icon: <HiOutlineDesktopComputer /> },
     { title: "Product Manager", icon: <FaProjectDiagram /> },
   ],
-
   Designing: [
     { title: "UI Designer", icon: <MdDesignServices /> },
     { title: "Motion Designer", icon: <MdOutlineMotionPhotosAuto /> },
@@ -78,7 +75,7 @@ const roleData = {
   ],
 };
 
-
+/* 🔹 FRAMER ANIMATIONS — UNCHANGED */
 const container = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.15 } },
@@ -92,19 +89,28 @@ const item = {
 const Careers = () => {
   const [activeTab, setActiveTab] = useState("Internship");
 
+  /* ✅ ONLY NEW ADDITION */
+  const scrollToForm = () => {
+    const el = document.getElementById("careerForm");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <>
-    
       <section className={styles.careerSection}>
         <div className={styles.lines}></div>
         <div className={styles.content}>
           <span className={styles.smallTitle}>JOIN OUR TEAM</span>
           <h1>CAREERS</h1>
           <p>
-            Not just a job. <br />A place to grow, learn, and belong.
+            Not just a job. <br />
+            A place to grow, learn, and belong.
           </p>
         </div>
       </section>
+
       <section className={styles.introSection}>
         <motion.h2
           className={styles.title}
@@ -127,31 +133,24 @@ const Careers = () => {
           remarkable team, while also prioritizing the creation of an outstanding
           work environment for our employees.”
         </motion.p>
-
-        <motion.div
-          className={styles.openingWrapper}
-          initial={{ width: 0 }}
-          whileInView={{ width: "220px" }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <h3 className={styles.openingTitle}>Opening Positions</h3>
-          <span className={styles.line}></span>
-        </motion.div>
       </section>
-      
+
       <section className={styles.rolesSection}>
         <div className={styles.tabs}>
           {Object.keys(roleData).map((tab) => (
             <button
               key={tab}
-              className={`${styles.tabBtn} ${activeTab === tab ? styles.active : ""
-                }`}
+              className={`${styles.tabBtn} ${
+                activeTab === tab ? styles.active : ""
+              }`}
               onClick={() => setActiveTab(tab)}
             >
               {tab}
               {activeTab === tab && (
-                <motion.span layoutId="underline" className={styles.underline} />
+                <motion.span
+                  layoutId="underline"
+                  className={styles.underline}
+                />
               )}
             </button>
           ))}
@@ -178,8 +177,11 @@ const Careers = () => {
                   <h3>{role.title}</h3>
                 </div>
 
-               
-                <button className={styles.starButton}>
+                {/* ✅ ONLY CHANGE HERE */}
+                <button
+                  className={styles.starButton}
+                  onClick={scrollToForm}
+                >
                   APPLY NOW
                   <span className={styles.star1}><StarSvg /></span>
                   <span className={styles.star2}><StarSvg /></span>
@@ -193,10 +195,13 @@ const Careers = () => {
           </motion.div>
         </AnimatePresence>
       </section>
-      <CareerForm/>
+
+      {/* ✅ ONLY ID WRAPPER */}
+      <div id="careerForm">
+        <CareerForm />
+      </div>
     </>
   );
 };
-
 
 export default Careers;

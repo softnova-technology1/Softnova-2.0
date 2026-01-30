@@ -137,7 +137,7 @@ const SphereParticles = () => {
 export default function SphereBackground() {
   return (
     <Canvas dpr={[1, 2]}>
-      <color attach="background" args={["#020205"]} />
+      <color attach="background" args={["#000000"]} />
       <ambientLight intensity={0.35} />
       <SphereParticles />
       <OrbitControls enableZoom={false} enablePan={false} />

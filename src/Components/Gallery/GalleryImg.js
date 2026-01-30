@@ -39,7 +39,20 @@ import re1 from "../../images/re1.jpg";
 import re2 from "../../images/re2.png";
 import SphereBackground from "./Sphere";
 
+
 const tabsData = {
+  all: {
+    title: "All Gallery",
+    desc: "A complete glimpse into our achievements, celebrations, skills and journey",
+    images: [
+      award, award2,
+      pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11, pic12, pic13, pic16, pic18,
+      skill1, skill2, skill3, skill4, skill5,
+      re1, re2,
+      intern1, intern2, intern3, intern4, intern5, intern6, intern7, intern8, intern9,
+    ],
+  },
+
   achievements: {
     title: "Our Achievements",
     desc: "Celebrating milestones and recognition that define our journey to excellence",
@@ -49,21 +62,8 @@ const tabsData = {
     title: "Our Celebrations",
     desc: "Moments of joy, success, and togetherness",
     images: [
-      pic1,
-      pic2,
-      pic3,
-      pic4,
-      pic5,
-      pic6,
-      pic7,
-      pic8,
-      pic9,
-      pic10,
-      pic11,
-      pic12,
-      pic13,
-      pic16,
-      pic18,
+      pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9,
+      pic10, pic11, pic12, pic13, pic16, pic18,
     ],
   },
   skills: {
@@ -80,21 +80,15 @@ const tabsData = {
     title: "Internship",
     desc: "Nurturing young talents through learning",
     images: [
-      intern1,
-      intern2,
-      intern3,
-      intern4,
-      intern5,
-      intern6,
-      intern7,
-      intern8,
-      intern9,
+      intern1, intern2, intern3, intern4, intern5,
+      intern6, intern7, intern8, intern9,
     ],
   },
 };
 
 export default function Achievements() {
-  const [activeTab, setActiveTab] = useState("achievements");
+  
+  const [activeTab, setActiveTab] = useState("all");
 
   const current = tabsData[activeTab];
 
@@ -112,9 +106,18 @@ export default function Achievements() {
           </p>
         </div>
       </section>
+
       <section className={styles.wrapper}>
-        {/* Tabs */}
+        
         <div className={styles.tabs}>
+         
+          <button
+            className={activeTab === "all" ? styles.active : ""}
+            onClick={() => setActiveTab("all")}
+          >
+            🌟 All
+          </button>
+
           <button
             className={activeTab === "achievements" ? styles.active : ""}
             onClick={() => setActiveTab("achievements")}
@@ -151,14 +154,14 @@ export default function Achievements() {
           </button>
         </div>
 
-        {/* Header */}
+        
         <div className={styles.header}>
           <span className={styles.badge}>• Gallery</span>
           <h2>{current.title}</h2>
           <p>{current.desc}</p>
         </div>
 
-        {/* Gallery */}
+      
         <div className={styles.grid}>
           {current.images.map((img, index) => (
             <div key={index} className={styles.card}>
