@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "../../Styles/Navbar.module.css";
 import logo from "../../images/softnovaLogo.png";
-import { motion, AnimatePresence } from "framer-motion"; // Animation add pannirukom
+import { motion, AnimatePresence } from "framer-motion"; 
 
 const Navbar = () => {
   const services = [
@@ -19,7 +19,7 @@ const Navbar = () => {
   const [serviceOpen, setServiceOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef(null);
-  const timeoutRef = useRef(null); // Mouse out aagum pothu delay kudukka
+  const timeoutRef = useRef(null); 
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -27,17 +27,17 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Mouse mela varum pothu
+
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setServiceOpen(true);
   };
 
-  // Mouse veliya pogum pothu chinna delay (Ithuthaan main fix)
+  
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setServiceOpen(false);
-    }, 200); // 200ms delay - ithu dropdown-ah nirkavaikum
+    }, 200);
   };
 
   const getLinkClass = ({ isActive }) =>

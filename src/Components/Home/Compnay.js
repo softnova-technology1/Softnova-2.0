@@ -12,7 +12,6 @@ import aboutimg from "../../images/aboutimg.png";
 const CompanySection = () => {
   return (
     <div className={styles.container}>
-      {/* About Company */}
       <div className={styles.about}>
         <h2>About Our Company</h2>
         <p>
@@ -28,16 +27,15 @@ const CompanySection = () => {
         </p>
       </div>
 
-      {/* Circular Image with Icons */}
       <div className={styles.imageContainer}>
         <div className={styles.borderCircle}>
           <img
-            src={aboutimg} // your uploaded image
+            src={aboutimg} 
             alt="Company"
             className={styles.companyImage}
           />
 
-          {/* Icons around circle */}
+        
           <FaReact className={`${styles.icon} ${styles.i1}`} />
           <FaNodeJs className={`${styles.icon} ${styles.i2}`} />
           <FaFigma className={`${styles.icon} ${styles.i3}`} />

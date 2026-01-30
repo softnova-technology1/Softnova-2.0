@@ -4,7 +4,7 @@ import styles from "../../Styles/Getstarted.module.css";
 export default function GetStarted() {
   return (
     <section className={styles.container}>
-      {/* Left Content */}
+    
       <div className={styles.left}>
         <span className={styles.tag}>--- Get Started</span>
         <h1>
@@ -17,7 +17,7 @@ export default function GetStarted() {
         </p>
       </div>
 
-      {/* Right Form */}
+ 
       <div className={styles.right}>
         <form className={styles.form}>
           <div className={styles.row}>
