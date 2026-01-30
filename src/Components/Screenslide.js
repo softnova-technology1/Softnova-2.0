@@ -2,7 +2,7 @@ import styles from "../Styles/Screenslide.module.css";
 import { useState } from "react";
 import AboutPage from "./Aboutcard";
 import Stats from "./AboutApproach";
-import { useState, useEffect, useRef } from "react";
+import {  useEffect, useRef } from "react";
 
 const slides = [
   {
