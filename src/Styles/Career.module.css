@@ -1,0 +1,438 @@
+.careerSection {
+  min-height: 50vh;
+  background: radial-gradient(circle at top, #1a0c00, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+
+.lines {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 121, 4, 0.12) 1px, transparent 1px);
+  background-size: 80px 100%;
+  animation: moveLines 8s linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes moveLines {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 300px 0;
+  }
+}
+
+.content {
+  text-align: center;
+  z-index: 2;
+  margin-top: 30px;
+}
+
+.smallTitle {
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+  color: #fe851e;
+  padding:10px 90px !important;
+}
+
+.content h1 {
+  font-size: 5rem;
+  margin: 1rem 0;
+  letter-spacing: 6px;
+  background: linear-gradient(90deg, #fe851e, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+
+
+
+
+.rolesSection {
+  padding: 5rem 2rem;
+  background: #000;
+  color: #fff;
+}
+
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.tabBtn {
+  padding: 12px 32px;
+  border-radius: 40px;
+  border: 2px solid #fe851e;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tabBtn:hover {
+  background: #fe851e;
+  color: #000;
+}
+
+.active {
+  background: #fe851e;
+  color: #000;
+}
+
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #000;
+  color: #fff;
+  transition: 0.4s;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 0 1px #fe851e, 0 20px 40px rgba(254, 133, 30, 0.3);
+}
+
+.cardContent {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.card h3 {
+  color: #fff;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.25),
+      transparent);
+  transform: skewX(-20deg);
+}
+
+
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fe851e;
+}
+
+
+.underline {
+  margin: 1rem auto 0;
+  width: 60px;
+  height: 3px;
+  background: #fe851e;
+  border-radius: 10px;
+}
+
+
+.applyBtn {
+  width: 100%;
+  padding: 1.2rem;
+  background: #fff;
+  color: #000;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.applyBtn:hover {
+  background: #fe851e;
+  color: #000;
+}
+
+
+.applyBtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(254, 133, 30, 0.45),
+      transparent);
+  transform: skewX(-20deg);
+}
+
+.card:hover::before {
+  animation: shineMove 0.9s ease forwards;
+}
+
+@keyframes shineMove {
+  from {
+    left: -75%;
+  }
+
+  to {
+    left: 125%;
+  }
+}
+
+
+.card:hover .applyBtn::after {
+  left: 100%;
+}
+
+.starButton {
+  position: relative;
+  padding: 6px 35px;
+  background: #f77d03;
+  font-size: 15px;
+  font-weight: 500;
+  color: #181818;
+  border-radius: 8px;
+  box-shadow: 0 0 0 #fec1958c;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  bottom: 10px;
+  border: none;
+}
+
+.star1,
+.star2,
+.star3,
+.star4,
+.star5,
+.star6 {
+  position: absolute;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+}
+
+.star1 {
+  top: 20%;
+  left: 20%;
+  width: 25px;
+  transition: 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star2 {
+  top: 45%;
+  left: 45%;
+  width: 15px;
+  transition: 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star3 {
+  top: 40%;
+  left: 40%;
+  width: 5px;
+}
+
+.star4 {
+  top: 20%;
+  left: 40%;
+  width: 8px;
+}
+
+.star5 {
+  top: 25%;
+  left: 45%;
+  width: 15px;
+}
+
+.star6 {
+  top: 5%;
+  left: 50%;
+  width: 5px;
+}
+
+.starButton:hover {
+  background: transparent;
+  color: #fec195;
+  box-shadow: 0 0 25px #fec1958c;
+  border: 1px solid #fe851e;
+}
+
+.starButton:hover .star1 {
+  top: -80%;
+  left: -30%;
+  z-index: 2;
+}
+
+.starButton:hover .star2 {
+  top: -25%;
+  left: 10%;
+  z-index: 2;
+}
+
+.starButton:hover .star3 {
+  top: 55%;
+  left: 25%;
+  z-index: 2;
+}
+
+.starButton:hover .star4 {
+  top: 30%;
+  left: 80%;
+  z-index: 2;
+}
+
+.starButton:hover .star5 {
+  top: 25%;
+  left: 115%;
+  z-index: 2;
+}
+
+.starButton:hover .star6 {
+  top: 5%;
+  left: 60%;
+  z-index: 2;
+}
+
+.svg {
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+  image-rendering: optimizeQuality;
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+
+.fil0 {
+  fill: #fffdef;
+}
+
+.introSection {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.quote {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #ccc;
+}
+
+
+.openingWrapper {
+  margin: auto;
+}
+
+.openingWrapper h3 {
+  font-size: 32px;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.openingWrapper h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background: linear-gradient(90deg,
+      transparent,
+      #fe851e,
+      transparent);
+  animation: underlineGlow 2.5s ease-in-out infinite;
+}
+
+
+@keyframes underlineGlow {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(254, 133, 30, 0.6);
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.openingTitle {
+  font-size: 32px;
+  font-weight: 600;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  animation: slideFromLeft 1.2s ease-out forwards;
+}
+.openingTitle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 150%;
+  height: 1.5px;
+  background: linear-gradient(90deg,
+      transparent,
+      #fe851e,
+      transparent);
+}
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

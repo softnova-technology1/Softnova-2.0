@@ -1,5 +1,8 @@
 import styles from "../Styles/Screenslide.module.css";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
+import AboutPage from "./Aboutcard";
+import Stats from "./AboutApproach";
+import {  useEffect, useRef } from "react";
 
 const slides = [
   {
@@ -52,6 +55,7 @@ export default function AboutCarousel() {
   };
 
   return (
+     <>
     <section
       className={styles.carousel}
       onMouseDown={handleMouseDown}
@@ -88,5 +92,8 @@ export default function AboutCarousel() {
         <button onClick={next}>Next ›</button>
       </div>
     </section>
+    <AboutPage/>
+    <Stats/>
+   </>
   );
 }
