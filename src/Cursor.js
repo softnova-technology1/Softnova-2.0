@@ -17,75 +17,92 @@ export default function Cursor() {
 
     window.addEventListener("resize", resize);
 
-    let mouse = { x: w / 1, y: h / 1 };
+    let mouse = { x: w / 2, y: h / 2 };
     let smooth = { x: mouse.x, y: mouse.y };
 
-    const ease = 0.9; // lower = more delay
+    const ease = 0.08;
 
     window.addEventListener("mousemove", (e) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
     });
 
-    // detect magnetic targets
-    const getMagnetic = () =>
-      document.querySelectorAll("button, a, .magnetic");
-
     const particles = [];
 
+    const drawStar = (x, y, spikes, innerRadius, outerRadius, color, opacity) => {
+      ctx.save(); // Style settings-a save panrom
+
+      let rot = (Math.PI / 2) * 3;
+      let step = Math.PI / spikes;
+
+      // Glow logic
+      ctx.shadowBlur = 10;
+      // ctx.shadowColor = `rgb(247, 3, 174, ${opacity})`; // Orange Glow
+      ctx.beginPath();
+      ctx.moveTo(x, y - outerRadius);
+
+      for (let i = 0; i < spikes; i++) {
+        ctx.lineTo(x + Math.cos(rot) * outerRadius, y + Math.sin(rot) * outerRadius);
+        rot += step;
+        ctx.lineTo(x + Math.cos(rot) * innerRadius, y + Math.sin(rot) * innerRadius);
+        rot += step;
+      }
+
+      ctx.lineTo(x, y - outerRadius);
+      ctx.closePath();
+      ctx.fillStyle = color;
+      ctx.fill();
+
+      ctx.restore(); // Next particle draw aagum pothu effect mix aagama iruka restore
+    };
+
     const spawn = () => {
-      particles.push({
-        x: smooth.x,
-        y: smooth.y,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        life: 30,
-        size: Math.random() * 2 + 1,
-        alpha: 1,
-      });
+      if (Math.abs(mouse.x - smooth.x) > 0.1 || Math.abs(mouse.y - smooth.y) > 0.1) {
+        particles.push({
+          x: smooth.x,
+          y: smooth.y,
+          vx: (Math.random() - 0.5) * 1.5,
+          vy: (Math.random() - 0.5) * 1.5,
+          life: 50 + Math.random() * 20,
+          maxLife: 60,
+          size: Math.random() * 3.5 + 1.5,
+          // Orange HSL range
+          hue: Math.random() * 15 + 15, // 15 to 30 range (Deep Orange to Bright Orange)
+        });
+      }
     };
 
     const animate = () => {
       ctx.clearRect(0, 0, w, h);
 
-      // magnetic logic
-      getMagnetic().forEach((el) => {
-        const rect = el.getBoundingClientRect();
-
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-
-        const dx = mouse.x - cx;
-        const dy = mouse.y - cy;
-
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 120) {
-          mouse.x = cx + dx * 0.4;
-          mouse.y = cy + dy * 0.4;
-        }
-      });
-
-      // buttery follow
       smooth.x += (mouse.x - smooth.x) * ease;
       smooth.y += (mouse.y - smooth.y) * ease;
 
       spawn();
 
-      particles.forEach((p, i) => {
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
         p.x += p.vx;
         p.y += p.vy;
+        p.vy += 0.01; 
         p.life--;
-        p.size *= 0.99;
-        p.alpha *= 0.99;
 
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,140,40,${p.alpha})`;
-        ctx.fill();
+        const opacity = p.life / p.maxLife;
+        const color = `hsla(${p.hue + 2}, 100%, 70%, ${opacity})`;
+        drawStar(
+          p.x,
+          p.y,
+          5,
+          p.size / 3.2,
+          p.size,
+          color,
+          opacity
+        );
 
-        if (p.life <= 0) particles.splice(i, 1);
-      });
+        if (p.life <= 0) {
+          particles.splice(i, 1);
+        }
+      }
 
       requestAnimationFrame(animate);
     };
@@ -105,6 +122,7 @@ export default function Cursor() {
         inset: 0,
         pointerEvents: "none",
         zIndex: 99999,
+        mixBlendMode: "screen",
       }}
     />
   );

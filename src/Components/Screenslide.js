@@ -37,7 +37,7 @@ export default function AboutCarousel() {
 
   // Automatic Movement (Every 5 seconds)
   useEffect(() => {
-    const timer = setInterval(next, 5000);
+    const timer = setInterval(next, 2000);
     return () => clearInterval(timer);
   }, [index]);
 
@@ -92,6 +92,18 @@ export default function AboutCarousel() {
         <button onClick={next}>Next ›</button>
       </div>
     </section>
+    {/* DOTS NAVIGATION */}
+{/* DOTS NAVIGATION */}
+<div className={styles.dotsContainer}>
+  {slides.map((_, i) => (
+    <button
+      key={i}
+      className={`${styles.dot} ${index === i ? styles.activeDot : ""}`}
+      onClick={() => setIndex(i)} // Indha line dhaan slide-a change pannum
+      aria-label={`Go to slide ${i + 1}`}
+    />
+  ))}
+</div>
     <AboutPage/>
     <Stats/>
    </>

@@ -1,0 +1,51 @@
+.container {
+  position: relative;
+  height: auto; 
+  padding: 8rem 0;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+.particlesWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.contentLayer {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+  /* Orange gradient based on your preference */
+  background: linear-gradient(to right, #fe851e, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  filter: drop-shadow(0px 0px 10px rgba(254, 133, 30, 0.3));
+  letter-spacing: 2px;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: white;
+  margin-top: 20px;
+  max-width: 800px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-weight: 300;
+  opacity: 0.9;
+}

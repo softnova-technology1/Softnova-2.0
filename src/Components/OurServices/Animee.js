@@ -31,13 +31,13 @@ const Worldgalaxy = () => {
     return () => window.removeEventListener("wheel", handleScroll);
   }, []);
 
-  // Use a relative radius for better responsiveness
+  
   const radius = 220; 
 
   return (
     <div className={styles.metaContainer}>
       <div className={`${styles.metaContent} ${warp ? styles.metaWarp : ""}`}>
-        {/* AI CORE - Centered via CSS */}
+       
         <div className={styles.aiCore} onClick={() => setWarp(!warp)}>
           <div className={styles.aiInner}></div>
           <div className={styles.aiRing}></div>
@@ -46,7 +46,7 @@ const Worldgalaxy = () => {
 
         <div className={styles.portal}></div>
 
-        {/* Nodes - Calculated from center (50%) */}
+        
         {nodes.map((n, i) => {
           const a = angle + (i * (Math.PI * 2)) / nodes.length;
           const x = Math.cos(a) * radius;

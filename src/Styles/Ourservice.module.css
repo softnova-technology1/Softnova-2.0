@@ -8,7 +8,7 @@
 .heading {
   font-size: 34px;
   letter-spacing: 3px;
-  color: #ff8c1a;
+  color: #fe851e;
   margin-bottom: 80px;
   background: linear-gradient(120deg, #ffffff, #fe851e);
   -webkit-background-clip: text;
@@ -19,19 +19,19 @@
     0 0 25px rgba(254, 133, 30, 0.15);
 }
 
-/* TIMELINE */
+
 .timeline {
   display: flex;
   justify-content: space-evenly;
 }
 
-/* SERVICE ITEM */
+
 .service {
   position: relative;
   width: 200px;
 }
 
-/* ICON */
+
 .iconCircle {
   width: 90px;
   height: 90px;
@@ -45,29 +45,28 @@
   box-shadow: 0 0 25px rgba(255, 140, 26, 0.3);
 }
 
-/* NUMBER */
 .number {
   display: inline-block;
   margin: 12px 0;
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 2px solid #ff8c1a;
-  color: #ff8c1a;
+  border: 2px solid #fe851e;
+  color: #fe851e;
   line-height: 34px;
   font-weight: 600;
 }
 
-/* LINE */
+
 .line {
   display: block;
   width: 2px;
   height: 30px;
-  background: #ff8c1a;
+  background: #fe851e;
   margin: 0 auto;
 }
 
-/* CONTENT BOX */
+
 .box {
   background: #0f0f0f;
   border: 1px solid rgba(255, 140, 26, 0.3);
@@ -77,11 +76,6 @@
 }
 
 .box h4 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-
   background: linear-gradient(90deg, #868686, #f5a55f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -98,7 +92,7 @@
   line-height: 1.5;
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 900px) {
   .timeline {
     flex-wrap: wrap;

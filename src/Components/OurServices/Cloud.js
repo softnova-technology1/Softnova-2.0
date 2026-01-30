@@ -4,7 +4,7 @@ import shieldImg from "../../images/Product-images/web3.png";
 import img1 from "../../images/Product-images/web2.png";
 import img2 from "../../images/Product-images/web1.png";
 
-/* STAR SVG */
+
 const StarSvg = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
