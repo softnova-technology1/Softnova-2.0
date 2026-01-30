@@ -99,3 +99,63 @@
   opacity: 0.9;
   color: #ffffff;
 }
+/* ... (existing styles) ... */
+
+/* 📱 MOBILE VIEW (Up to 768px) */
+@media (max-width: 768px) {
+  .container {
+    height: 80vh; /* Mobile-la full height short-ah iruntha nalla irukum */
+  }
+
+  .video {
+    /* Mobile-la video portrait-ah theriya */
+    object-position: center; 
+    max-width: 400%;
+  
+  }
+
+  .title {
+    font-size: 1.8rem; /* Font size-ah kuraichuruken */
+    letter-spacing: 0.05em;
+    padding: 0 10px;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    max-width: 90%;
+    line-height: 1.4;
+  }
+}
+
+/* 🖥️ 4K & LARGE DISPLAYS (Above 2560px) */
+@media (min-width: 2560px) {
+  .title {
+    font-size: 6rem; /* Periya screen-kku periya title */
+  }
+
+  .subtitle {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1.8rem;
+    max-width: 1200px;
+    line-height: 2;
+  }
+
+  .overlay {
+    padding: 0 100px;
+  }
+}
+
+/* ↕️ TALL SCREENS FIX (Optional) */
+@media (min-height: 1200px) and (min-width: 1024px) {
+  .container {
+    height: 60vh; /* iPad Pro maari tall screens-la content center-la iruka */
+  }
+}

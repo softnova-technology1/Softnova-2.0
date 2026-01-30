@@ -92,6 +92,7 @@ export default function Slide() {
 
              
               <div className={styles.showBtn}>
+                <a href="/ImageCardSection">
                 <button className={styles.starButton}>
                   Show More
                   <span className={styles.star1}><StarSvg /></span>
@@ -100,7 +101,7 @@ export default function Slide() {
                   <span className={styles.star4}><StarSvg /></span>
                   <span className={styles.star5}><StarSvg /></span>
                   <span className={styles.star6}><StarSvg /></span>
-                </button>
+                </button> </a>
               </div>
             </div>
           );

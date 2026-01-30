@@ -17,6 +17,8 @@ import OtherServices from "./Components/OurServices/Other";
 import CloudIT from "./Components/OurServices/Cloud";
 import Cursor from "./Cursor";
 import Contact from "./Components/Contact/Contact";
+import ImageCardSection from "./Components/Our-Product/Product";
+import Careers from "./Components/Career/Careers";
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +26,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Hero />} />
+        <Route path ="/ImageCardSection" element = {< ImageCardSection/>} />
         <Route path="/about" element={<AboutCarousel />} />
         <Route path="/products" element={<Products />} />
         {/* <Route path="/services/service-1" element={<Service1 />} /> */}
