@@ -236,10 +236,7 @@
   background: rgba(254, 133, 30, 0.1);
   color: #fe851e;
 }
-/* .getLinkClass{
-  position: relative;
-  bottom: 2px;
-} */
+
 
 @media (max-width: 480px) {
   .hamburger {
