@@ -2,6 +2,10 @@
   background: #0b0b0b;
   color: #fff;
   font-family: "Inter", sans-serif;
+  background: #0b0b0b;
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* ================= HERO ================= */
@@ -34,6 +38,7 @@
   margin: auto;
   padding: 80px 100px;
   text-align: center;
+  margin-top: 5%;
 }
 
 .subtitle {
@@ -90,7 +95,7 @@
 /* CTA FIX */
 .cta {
   grid-column: 1 / -1;
-  background: linear-gradient(135deg, #ff8c00, #ff6a00);
+  background: linear-gradient(135deg, #fa9b48, #fe851e);
   border-radius: 26px;
   padding: 3.5rem;
   color: #000;
@@ -273,5 +278,64 @@
 
   .cta {
     padding: 2.5rem 1.8rem;
+  }
+}.wrapper {
+  background: #0b0b0b;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll from galaxy */
+  position: relative;
+}
+
+.galaxyLayer {
+  position: absolute;
+  inset: 0;
+  height: 100vh; /* Keeps it strictly in the hero view */
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  margin-top: 5%;
+}
+
+.hero {
+  position: relative;
+  z-index: 1; /* Makes sure text is above galaxy */
+  padding: 10rem 1.5rem;
+  text-align: center;
+  background: radial-gradient(circle at top, rgba(254,133,30,0.1), transparent 70%);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20%;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 8vw, 4rem); /* Fluid typography */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+/* Fixes the Workflow Timeline Alignment */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 60px auto;
+}
+
+@media (max-width: 768px) {
+  .centerLine {
+    left: 20px; /* Moves line to the left on mobile */
+  }
+  .timelineItem {
+    width: 100%;
+    text-align: left !important;
+    padding-left: 60px !important;
+    padding-right: 20px !important;
+  }
+  .left .marker, .right .marker {
+    left: -3px;
   }
 }

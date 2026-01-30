@@ -1,28 +1,49 @@
-
+/* 🌌 HERO CONTAINER */
 .container {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: radial-gradient(circle at top, #0d0d0d, #000);
+  background: #000; /* Solid fallback */
 }
 
-
-
-/* ✨ PARTICLE CANVAS */
-.canvas {
+/* 🎥 BACKGROUND VIDEO */
+.video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
   z-index: 1;
+  filter: grayscale(100%) contrast(120%) brightness(0.8);
+}
+
+/* 🌑 DARK OVERLAY */
+.darkLayer {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* Slightly darker for better text contrast */
+  z-index: 2;
+}
+
+/* ✨ PARTICLE CANVAS */
+.canvas {
+  position: absolute !important; /* Force absolute */
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
   pointer-events: none;
 }
 
+/* 📝 TEXT OVERLAY */
 .overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
+  position: absolute; /* Changed from relative to absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10; /* Higher z-index to stay on top */
 
   display: flex;
   flex-direction: column;
@@ -31,32 +52,33 @@
 
   text-align: center;
   padding: 0 20px;
-  color: white;
-
-  /* 🚀 PERFORMANCE FIX */
-  pointer-events: none;
-  transform: translate3d(0,0,0);
+  color: #ffffff;
+  
+  /* Remove pointer-events: none; if you want to add buttons later */
+  pointer-events: none; 
+  
+  /* 🚀 PERFORMANCE */
+  transform: translateZ(0); 
   will-change: transform;
-  contain: layout paint;
-  backface-visibility: hidden;
 }
 
+/* 🔥 MAIN TITLE */
 .title {
   font-family: "Playfair Display", serif;
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  margin-bottom: 1rem;
 
+  /* Gradient Text Fix */
   background: linear-gradient(90deg, #ffffff, #fe851e);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: #ffffff; /* Fallback */
 
-  text-shadow: 
-    0 0 10px rgba(254, 133, 30, 0.35),
-    0 0 25px rgba(254, 133, 30, 0.15);
-
-  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(254, 133, 30, 0.2);
 }
 
 .subtitle {
@@ -66,6 +88,7 @@
   color: #fe851e;
   letter-spacing: 0.08em;
   margin-bottom: 1rem;
+  z-index: 11;
 }
 
 .description {
@@ -73,5 +96,6 @@
   font-size: 1rem;
   max-width: 700px;
   line-height: 1.6;
-  opacity: 0.85;
+  opacity: 0.9;
+  color: #ffffff;
 }

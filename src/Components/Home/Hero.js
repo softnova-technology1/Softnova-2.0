@@ -1,8 +1,64 @@
+// import React, { useState } from "react";
+// import { Canvas } from "@react-three/fiber";
+// import { PerspectiveCamera } from "@react-three/drei";
+// import ParticleSystem from "../Home/particalSystem";
+// import styles from "../../Styles/Hero.module.css";
+// import OurBestServices from "./Ourservices";
+// import CompanySection from "./Compnay";
+// import WhyChooseSoftNova from "./Whychoose";
+// import AgricultureHero from "./Academy";
+// import Features from "./Features";
+// import FeaturesCard from "./Card";
+// import Workflow from "./WorkFlow";
+
+// const Hero = () => {
+//   const [shape] = useState("wave");
+
+//   return (
+//     <>
+//       <section className={styles.container}>
+//         <Canvas className={styles.canvas}>
+//           <PerspectiveCamera makeDefault position={[0, 0, 10]} />
+//           <ambientLight intensity={0.5} />
+//           <ParticleSystem
+//             currentShape={shape}
+//             color="#fe851e"
+//             speed={1.2}
+//             size={0.02}
+//           />
+//         </Canvas>
+
+//         <div className={styles.overlay}>
+//           <h1 className={styles.title}>STERLING IT SERVICE</h1>
+//           <h6 className={styles.subtitle}>To drive your success</h6>
+//           <p className={styles.description}>
+//             We build dynamic websites, powerful e-commerce platforms, and lead
+//             generation systems tailored to drive your business success.
+//           </p>
+//         </div>
+//       </section>
+     
+//       <OurBestServices />
+//        <CompanySection />
+//       <WhyChooseSoftNova />
+//       <AgricultureHero />
+//       <Workflow/>
+//       <Features />
+//       <FeaturesCard />
+//     </>
+//   );
+// };
+
+// export default Hero;
+
+
+
 import React, { useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import ParticleSystem from "../Home/particalSystem";
 import styles from "../../Styles/Hero.module.css";
+
 import OurBestServices from "./Ourservices";
 import CompanySection from "./Compnay";
 import WhyChooseSoftNova from "./Whychoose";
@@ -10,6 +66,7 @@ import AgricultureHero from "./Academy";
 import Features from "./Features";
 import FeaturesCard from "./Card";
 import Workflow from "./WorkFlow";
+import videoSrc from "../../images/video.mp4"; // Renamed variable to avoid confusion
 
 const Hero = () => {
   const [shape] = useState("wave");
@@ -17,17 +74,35 @@ const Hero = () => {
   return (
     <>
       <section className={styles.container}>
-        <Canvas className={styles.canvas}>
-          <PerspectiveCamera makeDefault position={[0, 0, 10]} />
-          <ambientLight intensity={0.5} />
-          <ParticleSystem
-            currentShape={shape}
-            color="#fe851e"
-            speed={1.2}
-            size={0.05}
-          />
-        </Canvas>
+        {/* 🎥 Background Video */}
+        <video
+          className={styles.video}
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
 
+        {/* 🌑 Dark Overlay */}
+        <div className={styles.darkLayer}></div>
+
+        {/* 🌌 Particle Canvas */}
+        <div className={styles.canvas}>
+          <Canvas>
+            <PerspectiveCamera makeDefault position={[0, 0, 10]} />
+            <ambientLight intensity={0.5} />
+            <ParticleSystem
+              currentShape={shape}
+              color="#fe851e"
+              speed={1.2}
+              size={0.02}
+            />
+          </Canvas>
+        </div>
+
+        {/* 📝 Content Overlay */}
         <div className={styles.overlay}>
           <h1 className={styles.title}>STERLING IT SERVICE</h1>
           <h6 className={styles.subtitle}>To drive your success</h6>
@@ -37,12 +112,12 @@ const Hero = () => {
           </p>
         </div>
       </section>
-     
+
       <OurBestServices />
-       <CompanySection />
+      <CompanySection />
       <WhyChooseSoftNova />
       <AgricultureHero />
-      <Workflow/>
+      <Workflow />
       <Features />
       <FeaturesCard />
     </>

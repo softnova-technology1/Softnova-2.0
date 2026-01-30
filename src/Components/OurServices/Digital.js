@@ -1,91 +1,106 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 import styles from "../../Styles/Digital.module.css";
 import img1 from "../../images/Product-images/Ai.jpg";
 
+const services = [
+  { img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f", title: "SEO Optimization" },
+  { img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7", title: "Social Media Marketing" },
+  { img: "https://images.unsplash.com/photo-1556155092-8707de31f9c4", title: "Pay Per Click" },
+  { img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d", title: "Content Marketing" },
+  { img: "https://images.unsplash.com/photo-1521791136064-7986c2920216", title: "Email Marketing" },
+];
+
 const DigitalMarketing = () => {
-  const [index, setIndex] = useState(0);
-
-  const services = [
-    { img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f", title: "SEO Optimization" },
-    { img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7", title: "Social Media Marketing" },
-    { img: "https://images.unsplash.com/photo-1556155092-8707de31f9c4", title: "Pay Per Click" },
-    { img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d", title: "Content Marketing" },
-    { img: "https://images.unsplash.com/photo-1521791136064-7986c2920216", title: "Email Marketing" },
-  ];
-
-  useEffect(() => {
-    const auto = setInterval(() => {
-      setIndex((prev) => (prev + 1) % services.length);
-    }, 3800);
-    return () => clearInterval(auto);
-  }, [services.length]);
-
   return (
-    <>
-
+    <div className={styles.pageContainer}>
+      {/* HERO SECTION */}
       <section className={styles.wrapper}>
         <div className={styles.content}>
-          <div className={styles.textBox}>
+          <motion.div 
+            className={styles.textBox}
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <span className={styles.tag}>
               Digital <span>Marketing</span>
             </span>
             <h1 className={styles.title}>
-              Driving growth through smart <span>digital strategies.</span> <br />
+              Driving growth through smart <span>digital strategies.</span>
             </h1>
             <p>
               Smart digital strategies that boost brand visibility,
               engagement, and ROI through data-driven execution.
             </p>
 
-
-            <button className={styles.starButton}>
+            <motion.button 
+              className={styles.starButton}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Connect with us
-              <div className={styles.star1}><StarSvg /></div>
-              <div className={styles.star2}><StarSvg /></div>
-              <div className={styles.star3}><StarSvg /></div>
-              <div className={styles.star4}><StarSvg /></div>
-              <div className={styles.star5}><StarSvg /></div>
-              <div className={styles.star6}><StarSvg /></div>
-            </button>
-          </div>
+              {[...Array(6)].map((_, i) => (
+                <div key={i} className={styles[`star${i + 1}`]}><StarSvg /></div>
+              ))}
+            </motion.button>
+          </motion.div>
 
-          <div className={styles.imageWrapper}>
+          <motion.div 
+            className={styles.imageWrapper}
+            initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1, type: "spring", bounce: 0.4 }}
+          >
             <img src={img1} alt="Digital" className={styles.rotateImg} />
-          </div>
+            <div className={styles.glow}></div>
+          </motion.div>
         </div>
       </section>
 
+      {/* MARQUEE / SERVICES SECTION */}
       <section className={styles.marqueeSection}>
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6 }}
+          className={styles.marqueeHeading}
+        >
+          <h2>Our Core Services</h2>
+        </motion.div>
+
         <div className={styles.marquee}>
-          <div className={styles.marqueeTrack}>
+          <motion.div 
+            className={styles.marqueeTrack}
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ 
+              repeat: Infinity, 
+              duration: 20, 
+              ease: "linear" 
+            }}
+          >
             {services.concat(services).map((item, index) => (
               <div key={index} className={styles.marqueeCard}>
-                <img src={item.img} alt={item.title} />
+                <div className={styles.cardImage}>
+                   <img src={item.img} alt={item.title} loading="lazy" />
+                </div>
                 <h3>{item.title}</h3>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
-export default DigitalMarketing;
-
-
 const StarSvg = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 784.11 815.53"
-    className={styles.svg}
-  >
-    <path
-      className={styles.fil0}
-      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78
-         207.96,29.37 371.12,197.68 392.05,407.74
-         20.93,-210.06 184.09,-378.37 392.05,-407.74
-         -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-    />
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53" className={styles.svg}>
+    <path className={styles.fil0} d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" />
   </svg>
 );
+
+export default DigitalMarketing;

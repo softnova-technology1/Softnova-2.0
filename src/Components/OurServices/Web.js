@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import { motion } from "framer-motion"; // Framer motion import
 import styles from "../../Styles/Web.module.css";
 import img1 from "../../images/Product-images/web1.png";
 import img2 from "../../images/Product-images/web2.png";
@@ -10,6 +11,22 @@ import img7 from "../../images/Product-images/web7.png";
 import img8 from "../../images/Product-images/web8.png";
 import img9 from "../../images/Product-images/web9.png";
 import high from "../../images/Product-images/img.png";
+
+// Animation Variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
+
+const slideInLeft = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+};
+
+const slideInRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+};
 
 const steps = [
   { id: 1, title: "Consultation", desc: "Understanding your needs and goals." },
@@ -33,87 +50,84 @@ const projects = [
 ];
 
 const WebDevelopment = () => {
-  const refs = useRef([]);
-  const [visibleItems, setVisibleItems] = useState({});
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          const index = entry.target.dataset.index;
-
-          if (entry.isIntersecting) {
-            setVisibleItems(prev => ({ ...prev, [index]: true }));
-          } else {
-            setVisibleItems(prev => ({ ...prev, [index]: false }));
-          }
-        });
-      },
-      {
-        threshold: 0.2
-      }
-    );
-
-    refs.current.forEach(el => el && observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section className={styles.page}>
 
-      {/* HERO */}
+      {/* HERO SECTION */}
       <div className={styles.hero}>
         <div className={styles.heroContainer}>
-          <div className={styles.textSection}>
+          <motion.div 
+            className={styles.textSection}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={fadeInUp}
+          >
             <span className={styles.tag}>Web Development</span>
             <h1 className={styles.title}>
-                                      Smart <span>Web-Development</span> <br />
-                                      for a digital first world
-                                   </h1>
+              Smart <span>Web-Development</span> <br />
+              for a digital first world
+            </h1>
             <p>
               Softnova Technology specializes in developing advanced management
               software tailored for businesses, schools, and enterprises.
             </p>
-            <button className={styles.ctaButton}>Connect with Us</button>
-          </div>
+            <motion.button 
+              whileHover={{ scale: 1.1 }} 
+              whileTap={{ scale: 0.9 }} 
+              className={styles.ctaButton}
+            >
+              Connect with Us
+            </motion.button>
+          </motion.div>
 
-          <div className={styles.visualSection}>
+          <motion.div 
+            className={styles.visualSection}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8 }}
+          >
             <img src={high} alt="Web Development" />
-          </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* TIMELINE */}
+      {/* TIMELINE SECTION */}
       <div className={styles.timeline}>
         {steps.map((step, i) => (
-          <div key={step.id} className={styles.step}>
+          <motion.div 
+            key={step.id} 
+            className={styles.step}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+            variants={fadeInUp}
+            transition={{ delay: i * 0.1 }}
+          >
             <div className={styles.stepNumber}>{i + 1}</div>
             <h3>{step.title}</h3>
             <p>{step.desc}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
 
-      {/* PROJECTS */}
+      {/* PROJECTS GRID SECTION */}
       <div className={styles.gridContainer}>
         {projects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
-            ref={el => (refs.current[index] = el)}
-            data-index={index}
-            className={`${styles.projectItem}
-              ${
-                visibleItems[index]
-                  ? styles.visible
-                  : index % 2 === 0
-                  ? styles.leftSlide
-                  : styles.rightSlide
-              }`}
+            className={styles.projectItem}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }} // 20% visible aana trigger aagum
+            variants={index % 2 === 0 ? slideInLeft : slideInRight}
           >
-            <img src={project.img} alt={project.title} />
+            <div className={styles.imgWrapper}>
+               <img src={project.img} alt={project.title} />
+            </div>
             <h3>{project.title}</h3>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

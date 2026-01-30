@@ -1,79 +1,128 @@
 import React from "react";
+import { motion } from "framer-motion"; // Library for smooth scroll animations
 import styles from "../../Styles/E-Commerce.module.css";
 import p1 from "../../images/Product-images/Ai.jpg";
-import p2 from "../../images/Product-images/Ai.jpg";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import shan from "../../images/Product-images/online.jpg";
+
 const projects = [
-    {
-        title: "E-Commerce Website",
-        image: p1,
-    },
-    {
-        title: "Mobile Shopping App",
-        image: p2,
-    },
+  { title: "E-Commerce Website", image: p1, category: "Web Solution" },
+  { title: "Mobile Shopping App", image: p1, category: "Mobile App" },
+  { title: "B2B Marketplace", image: p1, category: "Enterprise" },
+  { title: "Custom Dashboard", image: p1, category: "Analytics" },
 ];
 
+// Animation Settings
+const cardVariants = {
+  hidden: { opacity: 0, y: 100, rotateX: -20, scale: 0.9 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    rotateX: 0, 
+    scale: 1,
+    transition: { duration: 0.8, ease: "easeOut" } 
+  }
+};
+
 const ProjectsFlip = () => {
-    return (
-        <>
-            <section className={styles.hero}>
-                <div className={styles.overlay}></div>
+  return (
+    <div className={styles.mainPage}>
+      {/* HERO SECTION */}
+      <section className={styles.hero}>
+        <div className={styles.container}>
+          <motion.div 
+            className={styles.content}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className={styles.tag}>E-Commerce Solutions</span>
+            <h1 className={styles.title}>
+              Powerful <span>E-Commerce</span> <br />
+              Portal for Your Business
+            </h1>
+            <p className={styles.description}>
+              We design and develop secure, scalable, and feature-rich portals
+              with seamless payment integration.
+            </p>
+            <div className={styles.actions}>
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={styles.primaryBtn}
+              >
+                Connect with Us <ArrowRight size={18} />
+              </motion.button>
+            </div>
+          </motion.div>
 
-                <div className={styles.container}>
-                    {/* LEFT CONTENT */}
-                    <div className={styles.content}>
-                        <span className={styles.tag}>E-Commerce Solutions</span>
+          <motion.div 
+            className={styles.cardContainer}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
+          >
+            <div className={styles.imageWrapper}>
+              <img src={shan} alt="Ecommerce" className={styles.heroImage} />
+              <div className={styles.glowEffect}></div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
-                        <h1 className={styles.title}>
-                            Powerful <span>E-Commerce</span> <br />
-                            Portal for Your Business
-                        </h1>
-
-                        <p className={styles.description}>
-                            We design and develop secure, scalable, and feature-rich e-commerce
-                            portals with seamless payment integration, product management,
-                            and smart analytics to grow your online business.
-                        </p>
-
-                        <div className={styles.actions}>
-                            <button className={styles.primaryBtn}>
-                                Connect with Us <ArrowRight size={18} />
-                            </button>
-
-                            <button className={styles.secondaryBtn}>
-                                View Features
-                            </button>
-                        </div>
+      {/* PROJECTS SECTION */}
+      <section className={styles.wrapper}>
+        <div className={styles.sectionHeader}>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            className={styles.heading}
+          >
+            Case Studies
+          </motion.h2>
+        </div>
+        
+        <div className={styles.projectsGrid}>
+          {projects.map((item, index) => (
+            <motion.div 
+              key={index} 
+              className={styles.projectMinimal}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }} // Trigger when 20% visible
+            >
+              <div className={styles.imageBox}>
+                <img src={item.image} alt={item.title} />
+                
+                <motion.div 
+                  className={styles.projectOverlay}
+                  whileHover={{ opacity: 1 }}
+                >
+                    <div className={styles.topInfo}>
+                      <span className={styles.catName}>{item.category}</span>
+                      <h3>{item.title}</h3>
                     </div>
-
-                    {/* RIGHT CARD */}
-                    <div className={styles.card}>
-                        <img
-                            src={shan}
-                            alt="Ecommerce"
-                        />
-                    </div>
-                </div>
-            </section>
-            <section className={styles.wrapper}>
-
-
-               <div className={styles.projects}>
-  {projects.map((item, index) => (
-    <div key={index} className={styles.projectMinimal}>
-      <img src={item.image} alt={item.title} />
-      <div className={styles.text}>
-        <h3>{item.title}</h3>
-      </div>
+                    
+                    <motion.div 
+                      className={styles.roundBtn}
+                      whileHover={{ scale: 1.2, rotate: 45 }}
+                    >
+                      <ArrowUpRight size={24} className={styles.arrowIcon} />
+                    </motion.div>
+                    
+                    <div className={styles.accentLine}></div>
+                </motion.div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
     </div>
-  ))}
-</div>
-
-            </section>
-        </>
-    );
+  );
 };
 
 export default ProjectsFlip;
