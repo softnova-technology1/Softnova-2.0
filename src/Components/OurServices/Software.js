@@ -78,25 +78,18 @@ const Software = () => {
     <section className={styles.wrapper}>
      
       <div className={styles.projects}>
-        {projects.map((item, index) => (
-          <div key={index} className={styles.flipCard}>
-            <div className={styles.flipInner}>
-              
-              {/* FRONT */}
-              <div className={styles.front}>
-                <img src={item.image} alt={item.title} />
-              </div>
+  {projects.map((item, index) => (
+    <div key={index} className={styles.projectBox}>
+      <img src={item.image} alt={item.title} />
 
-              {/* BACK */}
-              <div className={styles.back}>
-                <h3>{item.title}</h3>
-                <span>View Project</span>
-              </div>
-
-            </div>
-          </div>
-        ))}
+      <div className={styles.overlay}>
+        <h3>{item.title}</h3>
+       
       </div>
+    </div>
+  ))}
+</div>
+
     </section>
     </>
   );

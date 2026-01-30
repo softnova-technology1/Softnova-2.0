@@ -22,13 +22,14 @@ const steps = [
 const projects = [
   { title: "Agency Website", img: img1 },
   { title: "Branding Website", img: img2 },
-  { title: "E-commerce Platform", img: img3 },
-  { title: "Portfolio Website", img: img4 },
-  { title: "Blog Website", img: img5 },
-  { title: "Landing Page", img: img6 },
-  { title: "Landing Page", img: img7 },
-  { title: "Landing Page", img: img8 },
-  { title: "Landing Page", img: img9 }
+  { title: "Business Website", img: img3 },
+  { title: "Landing page Website", img: img4 },
+  { title: "Consulting Website", img: img5 },
+  { title: "Corporate Website ", img: img6 },
+  { title: "Banking Website", img: img7 },
+  { title: "Educational Website", img: img8 },
+  { title: "Event Website", img: img9 },
+  { title: "StartUp Website", img: img9 }
 ];
 
 const WebDevelopment = () => {
@@ -36,30 +37,43 @@ const WebDevelopment = () => {
   const [visibleItems, setVisibleItems] = useState({});
 
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
           const index = entry.target.dataset.index;
-          setVisibleItems(prev => ({ ...prev, [index]: true }));
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
 
-    refs.current.forEach(ref => ref && observer.observe(ref));
+          if (entry.isIntersecting) {
+            setVisibleItems(prev => ({ ...prev, [index]: true }));
+          } else {
+            setVisibleItems(prev => ({ ...prev, [index]: false }));
+          }
+        });
+      },
+      {
+        threshold: 0.2
+      }
+    );
+
+    refs.current.forEach(el => el && observer.observe(el));
+
     return () => observer.disconnect();
   }, []);
 
   return (
     <section className={styles.page}>
-      
+
       {/* HERO */}
       <div className={styles.hero}>
         <div className={styles.heroContainer}>
           <div className={styles.textSection}>
-            <h1>Web Development</h1>
+            <span className={styles.tag}>Web Development</span>
+            <h1 className={styles.title}>
+                                      Smart <span>Web-Development</span> <br />
+                                      for a digital first world
+                                   </h1>
             <p>
-              Softnova Technology specializes in developing advanced management software tailored for businesses, schools, and enterprises, ensuring efficiency, automation, and data-driven decision-making. Our solutions are designed to streamline operations, reduce manual work, and boost productivity, allowing organizations to focus on growth.
+              Softnova Technology specializes in developing advanced management
+              software tailored for businesses, schools, and enterprises.
             </p>
             <button className={styles.ctaButton}>Connect with Us</button>
           </div>
@@ -88,20 +102,20 @@ const WebDevelopment = () => {
             key={index}
             ref={el => (refs.current[index] = el)}
             data-index={index}
-            className={`${styles.projectItem} ${
-              visibleItems[index]
-                ? styles.visible
-                : index % 2 === 0
-                ? styles.leftSlide
-                : styles.rightSlide
-            }`}
+            className={`${styles.projectItem}
+              ${
+                visibleItems[index]
+                  ? styles.visible
+                  : index % 2 === 0
+                  ? styles.leftSlide
+                  : styles.rightSlide
+              }`}
           >
             <img src={project.img} alt={project.title} />
             <h3>{project.title}</h3>
           </div>
         ))}
       </div>
-
     </section>
   );
 };

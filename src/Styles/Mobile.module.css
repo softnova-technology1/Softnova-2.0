@@ -3,92 +3,79 @@
   color: #f1f1f1;
   padding: 60px 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
 }
 
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* TAG */
+.tag {
+  display: inline-block;
+  background: rgba(255, 123, 0, 0.15);
+  color: #fe851e;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+/* HERO */
 .hero {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 60px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+  gap: 40px;
+  margin-bottom: 80px;
 }
 
 .heroText {
-  flex: 1 1 400px;
   max-width: 600px;
 }
 
-.heroText h2 {
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-  font-weight: 700;
-  color: #ff6f00;
-}
-
 .heroText p {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  margin-bottom: 30px;
   color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 
 .heroText button {
-  padding: 12px 28px;
-  background-color: #ff6f00;
-  border: none;
+  padding: 12px 30px;
   border-radius: 30px;
+  background: #ff6f00;
+  border: none;
   color: #fff;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 15px #ff6f00aa;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .heroText button:hover {
-  background-color: #e65c00;
+  transform: translateY(-2px);
 }
 
+/* IMAGE */
 .heroImage {
-  flex: 1 1 300px;
   max-width: 320px;
   text-align: center;
+  overflow: hidden;
 }
 
-.heroImage img {
-  width: 100%;
-  max-width: 280px;
+.parallaxImage {
+  width: 280px;
   border-radius: 20px;
-  box-shadow: 0 15px 30px #ff6f0055;
-  transform-style: preserve-3d;
-  animation: float 4s ease-in-out infinite;
+  transition: transform 0.1s linear;
+  will-change: transform;
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotateY(10deg);
-  }
-  50% {
-    transform: translateY(-15px) rotateY(-10deg);
-  }
-}
-
-.projectsSection {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
+/* PROJECTS */
 .projectsSection h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #ff6f00;
   text-align: center;
+  color: #ff6f00;
+  margin-bottom: 40px;
+  font-size: 2rem;
 }
 
 .projectsGrid {
@@ -99,16 +86,14 @@
 
 .projectCard {
   background: #2a2a40;
-  border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 6px 18px #ff6f0044;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
 }
 
 .projectCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px #ff6f0088;
+  border: 1px solid #fe851e;
 }
 
 .projectCard img {
@@ -118,23 +103,30 @@
 }
 
 .projectCard h4 {
-  margin-bottom: 10px;
-  font-weight: 600;
   color: #ffb347;
+  margin-bottom: 8px;
 }
 
 .projectCard p {
-  font-size: 0.95rem;
   color: #ddd;
+  font-size: 0.95rem;
 }
 
-/* Animation active state */
+/* 🔥 FADE-IN BASE */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .active {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
@@ -144,4 +136,31 @@
   .heroImage {
     margin-top: 30px;
   }
+}
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.parallaxImage {
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+.title {
+  font-size: 52px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.title span {
+  color: #ff7b00;
 }
