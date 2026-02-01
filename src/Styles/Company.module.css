@@ -2,13 +2,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5rem 8rem; /* increase padding top-bottom and left-right */
-  gap: 2rem; /* increase spacing between sections */
+  padding: 5rem 8rem;
+  gap: 2rem;
   flex-wrap: wrap;
   background-color: #000;
   color: #fff;
-  max-width: 1400px; /* limit max width on very large screens */
-  margin: 0 auto; /* center container */
+  max-width: 1400px;
+  margin: 0 auto;
+ 
+}
+
+@media(max-width:428px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 8rem;    
+    gap: 2rem;   
+    flex-wrap: wrap;
+    background-color: #000;
+    color: #fff;
+    max-width: 1400px;
+    
+  }
 }
 
 /* About section */
@@ -55,7 +71,8 @@
   position: relative;
   width: 300px;
   height: 300px;
-  border: 1px solid orange; /* orange border */
+  border: 1px solid orange;
+  /* orange border */
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -75,7 +92,8 @@
   position: absolute;
   color: orange;
   font-size: 1.8rem;
-  animation: bounce 5s infinite ease-in-out; /* bounce animation */
+  animation: bounce 5s infinite ease-in-out;
+  /* bounce animation */
 }
 
 /* Position icons like clock */
@@ -85,30 +103,35 @@
   transform: translateX(-50%);
   animation-delay: 0s;
 }
+
 .i2 {
   top: 20%;
   right: -10px;
   transform: translateY(-50%);
   animation-delay: 0.2s;
 }
+
 .i3 {
   bottom: 20%;
   right: -10px;
   transform: translateY(50%);
   animation-delay: 0.4s;
 }
+
 .i4 {
   bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
   animation-delay: 0.6s;
 }
+
 .i5 {
   bottom: 20%;
   left: -10px;
   transform: translateY(50%);
   animation-delay: 0.8s;
 }
+
 .i6 {
   top: 20%;
   left: -10px;
@@ -116,18 +139,21 @@
   animation-delay: 1s;
 }
 
-/* Bounce Keyframes */
 @keyframes bounce {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-15px);
-  } /* bounce height */
+  }
+
+
 }
 
-/* Optional: hover effect */
+
 .icon:hover {
   transform: scale(1.5);
   color: #ffb347; /* lighter orange on hover */

@@ -1,6 +1,5 @@
 .careerSection {
-  min-height: 500px;
-  background: radial-gradient(circle at top, #1a0c00, #000);
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,19 +8,6 @@
   color: #fff;
 }
 
-.lines {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(254, 133, 30, 0.45) 1.5px,
-    transparent 1.5px
-  );
-  background-size: 80px 100%;
-  animation: moveLines 10s linear infinite;
-  opacity: 0.85;
-  filter: drop-shadow(0 0 6px rgba(254, 133, 30, 0.6));
-}
 
 @keyframes moveLines {
   from {
@@ -39,12 +25,6 @@
   margin-top: 70px;
 }
 
-.smallTitle {
-  letter-spacing: 4px;
-  font-size: 0.75rem;
-  color: #fe851e;
-  padding: 10px 90px !important;
-}
 
 .content h1 {
   font-size: 5rem;

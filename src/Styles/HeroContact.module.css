@@ -49,3 +49,9 @@
   font-weight: 300;
   opacity: 0.9;
 }
+.smallTitle {
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+  color: #fe851e;
+  padding:10px 90px !important;
+}

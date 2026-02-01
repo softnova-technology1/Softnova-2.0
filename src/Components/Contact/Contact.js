@@ -446,7 +446,7 @@ export default function Contact() {
                     </div>
 
                     <a
-                        href="https://maps.app.goo.gl/YourPeravuraniLocationLink" // Full screen view-ku Peravurani direct link
+                        href="https://maps.app.goo.gl/YourPeravuraniLocationLink" 
                         target="_blank"
                         rel="noreferrer"
                         className={styles.floatBtn}

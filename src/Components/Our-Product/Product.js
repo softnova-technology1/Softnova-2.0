@@ -9,6 +9,8 @@ import chart3 from '../../images/Product-images/productchart3.jpg';
 import chart4 from '../../images/Product-images/productchart4.jpg';
 import chart5 from '../../images/Product-images/productchart5.jpg';
 import chart6 from '../../images/Product-images/productchart6.jpg';
+import ProductHero from "./Productpart";
+
 
 const items = [
   {
@@ -120,13 +122,8 @@ export default function ImageCardSection() {
 
   return (
     <section className={styles.wrapper}>
+      <ProductHero/>
         <div>
-      <h1 className={styles.heading}>
-        We build cutting-edge digital products.
-      </h1>
-      <p className={styles.sub}>
-        Responsibility, user-first thinking & strategic business gains.
-      </p>
       </div>
 
       <div className={styles.grid}>
