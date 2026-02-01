@@ -29,7 +29,6 @@
   gap: 3rem;
 }
 
-
 .textBox h1 {
   font-size: 3.2rem;
   color: #fff;
@@ -59,7 +58,6 @@
   margin-bottom: 35px;
 }
 
-
 .btn {
   margin-top: 2rem;
   padding: 0.9rem 2.4rem;
@@ -77,12 +75,10 @@
   box-shadow: 0 15px 35px rgba(254, 133, 30, 0.45);
 }
 
-
 .visualBox {
   position: relative;
   perspective: 1400px;
 }
-
 
 .desktop {
   width: 80%;
@@ -101,26 +97,6 @@
   margin-bottom: 15px;
 }
 
-@media (max-width: 900px) {
-  .content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .textBox p {
-    margin: auto;
-  }
-
-  .visualBox {
-    margin-top: 3rem;
-  }
-
-  .desktop {
-    margin: auto;
-    transform: none;
-  }
-}
-
 .starButton {
   position: relative;
   padding: 12px 36px;
@@ -133,7 +109,6 @@
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 0 #fec1958c;
 }
-
 
 .star1,
 .star2,
@@ -227,7 +202,6 @@
   z-index: 2;
 }
 
-
 .svg {
   fill-rule: evenodd;
   clip-rule: evenodd;
@@ -248,7 +222,6 @@
   gap: 3rem;
 }
 
-
 .serviceCard {
   background: #000000;
   border-radius: 26px;
@@ -258,7 +231,6 @@
   transition: transform 0.5s ease;
   overflow: hidden;
 }
-
 
 .serviceCard::before {
   content: "";
@@ -286,7 +258,6 @@
 .serviceCard:hover {
   transform: translateY(-10px);
 }
-
 
 .serviceImage {
   border-radius: 18px;
@@ -318,7 +289,6 @@
   transform: scale(1.1);
 }
 
-
 .serviceTitle {
   text-align: center;
   margin-top: 1.4rem;
@@ -330,4 +300,33 @@
 
 .serviceCard:hover .serviceTitle {
   color: #fe851e;
+}
+
+/* --- MOBILE MEDIA QUERY --- */
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .textBox p {
+    margin: auto;
+  }
+.textBox h1{
+  font-size: 30px;
+}
+  .visualBox {
+    margin-top: 3rem;
+  }
+
+  .desktop {
+    margin: auto;
+    transform: none;
+  }
+
+  /* Hide header image on mobile */
+  .desktop {
+    display: none;
+  }
 }

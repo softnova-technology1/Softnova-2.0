@@ -15,10 +15,8 @@
   justify-content: space-between;
 }
 
-
 .textBox {
   max-width: 620px;
-
 }
 
 .textBox h1 {
@@ -29,7 +27,7 @@
 }
 
 .textBox h1 span {
-   font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
   text-transform: uppercase;
 
   background: linear-gradient(90deg, #ffffff, #fe851e);
@@ -48,9 +46,7 @@
   color: #cfcfcf;
   max-width: 520px;
   margin-bottom: 35px;
-
 }
-
 
 .btn {
   padding: 14px 36px;
@@ -67,7 +63,6 @@
   background: #fff;
   transform: translateY(-3px);
 }
-
 
 .imageWrapper {
   width: 620px;
@@ -98,7 +93,6 @@
   background: #000;
   overflow: hidden;
   text-align: center;
-
 }
 
 .marqueeHeading {
@@ -123,7 +117,6 @@
   animation-play-state: paused;
 }
 
-
 .marqueeCard {
   width: 350px;
   height: 220px;
@@ -136,7 +129,6 @@
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
 }
 
-
 .marqueeCard img {
   width: 100%;
   height: 100%;
@@ -145,7 +137,6 @@
   transition: transform 0.5s ease, opacity 0.5s ease;
   opacity: 0.8;
 }
-
 
 .marqueeCard h3 {
   position: absolute;
@@ -162,7 +153,6 @@
   padding: 0 0.5rem;
 }
 
-
 .marqueeCard:hover {
   transform: scale(1.15) translateY(-12px);
   border: 2px solid #FE851E;
@@ -172,7 +162,6 @@
   transform: scale(1.25);
   opacity: 0.9;
 }
-
 
 @keyframes marqueeMove {
   from {
@@ -196,7 +185,6 @@
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 0 #fec1958c;
 }
-
 
 .star1,
 .star2,
@@ -297,4 +285,101 @@
 
 .fil0 {
   fill: #fffdef;
+}
+
+/* ------------------ MOBILE MEDIA QUERY ------------------- */
+@media screen and (max-width: 600px) {
+  .wrapper {
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .textBox {
+    max-width: 100%;
+    text-align: center;
+   
+  }
+
+  .textBox h1 {
+     font-size: 25px;
+    line-height: 1.2;
+    padding-top: 10px;
+  }
+
+  .textBox p {
+    font-size: 10px;
+    max-width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .btn {
+    padding: 12px 28px;
+    font-size: 14px;
+    border-radius: 30px;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .rotateImg {
+    display: none;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 5px 12px;
+    margin-top: 10px;
+  }
+
+  .marqueeCard {
+    width: 260px;
+    height: 160px;
+  }
+
+  .marqueeCard h3 {
+    font-size: 1.1rem;
+    padding: 0 0.25rem;
+  }
+
+  .starButton {
+    padding: 10px 24px;
+    font-size: 14px;
+    border-radius: 24px;
+  }
+
+  /* Adjust star sizes and positions if necessary */
+  .star1 {
+    width: 18px;
+  }
+
+  .star2 {
+    width: 10px;
+  }
+
+  .star3 {
+    width: 4px;
+  }
+
+  .star4 {
+    width: 6px;
+  }
+
+  .star5 {
+    width: 10px;
+  }
+
+  .star6 {
+    width: 4px;
+  }
 }

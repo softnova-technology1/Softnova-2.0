@@ -3,7 +3,7 @@ import styles from "../../Styles/Cloud.module.css";
 import shieldImg from "../../images/Product-images/web3.png";
 import img1 from "../../images/Product-images/web2.png";
 import img2 from "../../images/Product-images/web1.png";
-
+import { Link } from "react-router-dom";
 
 const StarSvg = () => (
   <svg
@@ -63,7 +63,9 @@ const CloudIT = () => {
           </p>
 
           <button className={styles.starButton}>
-            Connect with us
+           <Link to="/career" style={{ color: 'inherit', textDecoration: 'none' }}>
+            Connect With Us
+          </Link>
             <span className={styles.star1}><StarSvg /></span>
             <span className={styles.star2}><StarSvg /></span>
             <span className={styles.star3}><StarSvg /></span>

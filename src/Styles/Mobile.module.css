@@ -1,9 +1,11 @@
+/* =========================
+   SECTION BASE
+========================= */
 .mobileAppSection {
   background: #050505;
   color: #ffffff;
   padding: 100px 5%;
   font-family: 'Inter', sans-serif;
-  overflow: hidden;
   overflow-x: hidden;
 }
 
@@ -12,7 +14,9 @@
   margin: 0 auto;
 }
 
-
+/* =========================
+   HERO
+========================= */
 .hero {
   display: flex;
   align-items: center;
@@ -32,7 +36,6 @@
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 13px;
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -45,16 +48,13 @@
 }
 
 .title span {
-   font-family: "Playfair Display", serif;
   text-transform: uppercase;
   background: linear-gradient(90deg, #ffffff, #fe851e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 
+  text-shadow:
     0 0 10px rgba(254, 133, 30, 0.35),
     0 0 25px rgba(254, 133, 30, 0.15);
-
-  margin-bottom: 1rem;
 }
 
 .description {
@@ -68,7 +68,7 @@
   background: #fe851e;
   color: white;
   padding: 16px 35px;
-  border-radius: 540px;
+  border-radius: 50px;
   border: none;
   font-weight: 700;
   cursor: pointer;
@@ -76,12 +76,13 @@
 }
 
 .ctaBtn:hover {
-  background: #fe851e;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(255, 106, 0, 0.3);
 }
 
-
+/* =========================
+   HERO IMAGE
+========================= */
 .heroImageWrapper {
   flex: 0.8;
   position: relative;
@@ -90,21 +91,20 @@
 }
 
 .floatingImage {
-  display: block;
   max-width: 80%;
-
 }
 
 .orangeGlow {
   position: absolute;
   width: 250px;
   height: 250px;
-  top: 50%;
-  left: 50%;
+  inset: 50%;
   transform: translate(-50%, -50%);
 }
 
-
+/* =========================
+   PROJECT GRID
+========================= */
 .projectsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -116,8 +116,7 @@
   border: 1px solid #222;
   border-radius: 20px;
   overflow: hidden;
-  cursor: pointer;
-  transition: border-color 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .projectCard:hover {
@@ -128,8 +127,8 @@
 
 .cardImageContainer {
   position: relative;
-  overflow: hidden;
   height: 220px;
+  overflow: hidden;
 }
 
 .cardImageContainer img {
@@ -139,18 +138,16 @@
   transition: 0.5s;
 }
 
-.projectCard:hover .cardImageContainer img {
+.projectCard:hover img {
   transform: scale(1.1);
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
   opacity: 0;
   transition: 0.3s;
 }
@@ -164,15 +161,13 @@
 }
 
 .cardContent h4 {
-  color: #fff;
   font-size: 20px;
   margin-bottom: 12px;
 }
 
 .cardContent p {
-  color: #888;
   font-size: 15px;
-  line-height: 1.5;
+  color: #888;
 }
 
 .cardFooter {
@@ -181,11 +176,13 @@
   font-size: 20px;
 }
 
-
+/* =========================
+   SCROLL REVEAL
+========================= */
 .reveal {
   opacity: 0;
   transform: translateY(50px);
-  transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+  transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .active {
@@ -193,14 +190,51 @@
   transform: translateY(0);
 }
 
-
+/* =========================
+   TABLET (≤900px)
+========================= */
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
     text-align: center;
+    margin-bottom: 80px;
   }
 
   .floatingImage {
-    max-width: 280px;
+    display: none;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   MOBILE (≤480px)
+========================= */
+@media (max-width: 480px) {
+  .mobileAppSection {
+    padding: 70px 16px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .ctaBtn {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .floatingImage {
+    max-width: 220px;
   }
 }

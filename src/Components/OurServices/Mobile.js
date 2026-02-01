@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import styles from "../../Styles/Mobile.module.css";
 import project1 from "../../images/Product-images/Ai.jpg";
 import mobile from "../../images/Product-images/mobile.jpg";
-
+import { Link } from "react-router-dom";
 const projects = [
   {
     id: 1,
@@ -87,7 +87,9 @@ const MobileAppSection = () => {
               whileTap={{ scale: 0.95 }}
               className={styles.ctaBtn}
             >
-              Connect with us
+              <Link to="/career" style={{ color: 'inherit', textDecoration: 'none' }}>
+            Connect With Us
+          </Link>
             </motion.button>
           </div>
 
