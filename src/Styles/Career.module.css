@@ -9,9 +9,6 @@
 }
 
 
-
-
-
 @keyframes moveLines {
   from {
     background-position: 0 0;
@@ -29,7 +26,6 @@
 }
 
 
-
 .content h1 {
   font-size: 5rem;
   margin: 1rem 0;
@@ -37,6 +33,7 @@
   background: linear-gradient(90deg, #fe851e, #fff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: "Playfair Display", serif;
 }
 
 .content p {
@@ -45,16 +42,11 @@
   color: #ddd;
 }
 
-
-
-
-
 .rolesSection {
   padding: 5rem 2rem;
   background: #000;
   color: #fff;
 }
-
 
 .tabs {
   display: flex;
@@ -84,7 +76,6 @@
   color: #000;
 }
 
-
 .cardsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -92,7 +83,6 @@
   max-width: 1200px;
   margin: auto;
 }
-
 
 .card {
   border-radius: 20px;
@@ -106,7 +96,9 @@
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 0 1px #fe851e, 0 20px 40px rgba(254, 133, 30, 0.3);
+  box-shadow:
+    0 0 0 1px #fe851e,
+    0 20px 40px rgba(254, 133, 30, 0.3);
 }
 
 .cardContent {
@@ -125,21 +117,20 @@
   left: -75%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(120deg,
-      transparent,
-      rgba(255, 255, 255, 0.25),
-      transparent);
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
   transform: skewX(-20deg);
 }
-
-
 
 .icon {
   font-size: 3rem;
   margin-bottom: 1rem;
   color: #fe851e;
 }
-
 
 .underline {
   margin: 1rem auto 0;
@@ -148,7 +139,6 @@
   background: #fe851e;
   border-radius: 10px;
 }
-
 
 .applyBtn {
   width: 100%;
@@ -168,7 +158,6 @@
   color: #000;
 }
 
-
 .applyBtn::after {
   content: "";
   position: absolute;
@@ -176,10 +165,12 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(120deg,
-      transparent,
-      rgba(254, 133, 30, 0.45),
-      transparent);
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(254, 133, 30, 0.45),
+    transparent
+  );
   transform: skewX(-20deg);
 }
 
@@ -196,7 +187,6 @@
     left: 125%;
   }
 }
-
 
 .card:hover .applyBtn::after {
   left: 100%;
@@ -345,7 +335,6 @@
   color: #ccc;
 }
 
-
 .openingWrapper {
   margin: auto;
 }
@@ -364,13 +353,9 @@
   bottom: 0;
   width: 100%;
   height: 1.5px;
-  background: linear-gradient(90deg,
-      transparent,
-      #fe851e,
-      transparent);
+  background: linear-gradient(90deg, transparent, #fe851e, transparent);
   animation: underlineGlow 2.5s ease-in-out infinite;
 }
-
 
 @keyframes underlineGlow {
   0% {
@@ -403,10 +388,7 @@
   bottom: 0;
   width: 150%;
   height: 1.5px;
-  background: linear-gradient(90deg,
-      transparent,
-      #fe851e,
-      transparent);
+  background: linear-gradient(90deg, transparent, #fe851e, transparent);
 }
 @keyframes slideFromLeft {
   0% {

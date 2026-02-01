@@ -34,7 +34,6 @@
 }
 
 .about h2 {
-
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -43,6 +42,7 @@
   background: linear-gradient(90deg, #ffffff, #fe851e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: "Playfair Display", serif;
 
   text-shadow:
     0 0 10px rgba(254, 133, 30, 0.35),
@@ -156,6 +156,12 @@
 
 .icon:hover {
   transform: scale(1.5);
-  color: #ffb347;
-
+  color: #ffb347; /* lighter orange on hover */
+}
+@media (max-width: 480px) {
+  .about p {
+    display: none;
+  }
+  .about h2 {
+  }
 }
