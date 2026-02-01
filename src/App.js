@@ -37,7 +37,7 @@
 //               <Route path="/services/CloudIT" element={<CloudIT />} />
 //         <Route path="/career" element={<CareerForm />} />
 //         <Route path="/gallery" element={<Achievements />} />
-//         <Route path="/contact" element={<Contact />} />       
+//         <Route path="/contact" element={<Contact />} />
 //       </Routes>
 //       <Footer />
 //     </BrowserRouter>
@@ -45,10 +45,6 @@
 // }
 
 // export default App;
-
-
-
-
 
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Hero from "./Components/Home/Hero";
@@ -71,6 +67,9 @@ import Cursor from "./Cursor";
 import Contact from "./Components/Contact/Contact";
 import RocketMenu from "./Components/Rocket";
 import ImageCardSection from "./Components/Our-Product/Product";
+import TermsAndConditions from "./Components/TermsandConditions";
+import PrivacyPolicy from "./Components/Privacypolicy";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function AppContent() {
   const location = useLocation();
@@ -82,24 +81,32 @@ function AppContent() {
 
       {!isHeroPage && <Navbar />}
       {isHeroPage && <RocketMenu />}
-
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Hero />} />
-        <Route path ="/ImageCardSection" element = {< ImageCardSection/>} />
+        <Route path="/ImageCardSection" element={<ImageCardSection />} />
         <Route path="/about" element={<AboutCarousel />} />
         <Route path="/products" element={<Products />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/WebDevelopment" element={<WebDevelopment />} />
-        <Route path="/services/MobileAppSection" element={<MobileAppSection />} />
+        <Route
+          path="/services/MobileAppSection"
+          element={<MobileAppSection />}
+        />
         <Route path="/services/ProjectsFlip" element={<ProjectsFlip />} />
         <Route path="/services/Software" element={<Software />} />
         <Route path="/services/GraphicDesign" element={<GraphicDesign />} />
-        <Route path="/services/DigitalMarketing" element={<DigitalMarketing />} />
+        <Route
+          path="/services/DigitalMarketing"
+          element={<DigitalMarketing />}
+        />
         <Route path="/services/OtherServices" element={<OtherServices />} />
         <Route path="/services/CloudIT" element={<CloudIT />} />
         <Route path="/career" element={<CareerForm />} />
         <Route path="/gallery" element={<Achievements />} />
-        <Route path="/contact" element={<Contact />} />       
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
 
       <Footer />
