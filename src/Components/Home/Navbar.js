@@ -50,14 +50,14 @@ const Navbar = () => {
         <NavLink to="/"><img src={logo} alt="Softnova Logo" /></NavLink>
       </div>
 
-      {/* Hamburger only for mobile */}
+    
       <div className={styles.hamburger} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
         <span className={isMobileMenuOpen ? styles.lineOpen1 : ""}></span>
         <span className={isMobileMenuOpen ? styles.lineOpen2 : ""}></span>
         <span className={isMobileMenuOpen ? styles.lineOpen3 : ""}></span>
       </div>
 
-      {/* Desktop & Mobile Menu Combined */}
+     
       <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.showMobile : ""}`}>
         <NavLink to="/" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Home</NavLink>
 
@@ -66,15 +66,15 @@ const Navbar = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {/* Link to the main services page */}
+    
           <NavLink
             to="/services"
             className={getLinkClass}
             onClick={() => {
               if (window.innerWidth <= 768) {
-                setServiceOpen(!serviceOpen); // Mobile-la click panna dropdown toggle aagum
+                setServiceOpen(!serviceOpen); 
               } else {
-                setIsMobileMenuOpen(false); // Desktop-la click panna page-ku pogum
+                setIsMobileMenuOpen(false); 
               }
             }}
           >
@@ -102,7 +102,7 @@ const Navbar = () => {
         <NavLink to="/about" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>About Us</NavLink>
         <a
           href="https://softnovatechnology.com/"
-          className={getLinkClass({ isActive: false })} // Manually passing false to keep same style
+          className={getLinkClass({ isActive: false })} 
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => setIsMobileMenuOpen(false)}

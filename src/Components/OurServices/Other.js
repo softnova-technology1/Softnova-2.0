@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Other.module.css";
 import { Settings, Cpu, Database, Share2, ArrowRight } from "lucide-react";
-
+import { Link } from "react-router-dom";
 const services = [
   {
     id: "01",
@@ -82,7 +82,9 @@ const OtherServices = () => {
         </div>
         
         <div className={styles.footerAction}>
-            <button className={styles.cta}>Connect with our Experts</button>
+            <button className={styles.cta}><Link to="/career" style={{ color: 'inherit', textDecoration: 'none' }}>
+            Connect With Us
+          </Link></button>
         </div>
       </div>
     </section>

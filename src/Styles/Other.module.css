@@ -24,17 +24,14 @@
 }
 
 .mainTitle span {
-    font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
   text-transform: uppercase;
-
   background: linear-gradient(90deg, #ffffff, #fe851e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  text-shadow: 
+  text-shadow:
     0 0 10px rgba(254, 133, 30, 0.35),
     0 0 25px rgba(254, 133, 30, 0.15);
-
   margin-bottom: 1rem;
 }
 
@@ -45,7 +42,6 @@
   font-size: 14px;
   font-weight: 600;
 }
-
 
 .listWrapper {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -110,7 +106,6 @@
   transition: all 0.3s ease;
 }
 
-
 .listItem:hover {
   padding-left: 40px;
   background: rgba(255, 140, 0, 0.02);
@@ -151,11 +146,13 @@
   transform: scale(1.05);
 }
 
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
   .listItem {
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+    padding: 30px 15px;
   }
 
   .listContent {
@@ -167,5 +164,18 @@
   .exploreBtn {
     opacity: 1;
     transform: translateX(0);
+  }
+
+  .textDetails h3 {
+    font-size: 24px;
+  }
+
+  .textDetails p {
+    max-width: 100%;
+  }
+
+  .cta {
+    padding: 15px 35px;
+    font-size: 16px;
   }
 }

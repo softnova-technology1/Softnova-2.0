@@ -11,7 +11,7 @@ import img7 from "../../images/Product-images/web7.png";
 import img8 from "../../images/Product-images/web8.png";
 import img9 from "../../images/Product-images/web9.png";
 import high from "../../images/Product-images/img.png";
-
+import { Link } from "react-router-dom";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -76,7 +76,9 @@ const WebDevelopment = () => {
               whileTap={{ scale: 0.9 }} 
               className={styles.ctaButton}
             >
-              Connect with Us
+              <Link to="/career" style={{ color: 'inherit', textDecoration: 'none' }}>
+                          Connect With Us
+                        </Link>
             </motion.button>
           </motion.div>
 

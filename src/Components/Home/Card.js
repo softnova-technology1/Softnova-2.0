@@ -27,7 +27,7 @@ export default function FeaturesCard() {
         exciting adventure!
       </p>
       <div className={styles.cardWrapper}>
-        {/* Card 1 */}
+        
         <div className={styles.card}>
           <div className={styles.cardContent}>
             <p className={styles.cardTitle}>Why Work With Us?</p>
@@ -65,7 +65,7 @@ export default function FeaturesCard() {
           </div>
         </div>
 
-        {/* Card 2 */}
+        
         <div className={styles.card}>
           <div className={styles.cardContent}>
             <p className={styles.cardTitle}>How to Get Started</p>

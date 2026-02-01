@@ -30,25 +30,19 @@ export default function WhyChooseSoftNova() {
       <div className={styles.container}>
         <h2 className={styles.heading}>Why Choose SoftNova?</h2>
 
-       
         <div className={styles.description}>
           <p>
-            At SoftNova, we understand that every business is unique. That’s why we
-            deliver tailored digital solutions designed to help your brand stand
-            out and grow.
-          </p>
-          <p>
-            From custom websites and e-commerce platforms to lead generation and
-            digital marketing, we combine technical excellence with creative
-            strategy to build scalable solutions aligned with your goals.
-          </p>
-          <p>
-            Our client-centric approach focuses on seamless integration, enhanced
-            user experience, and measurable outcomes that drive long-term success.
+            At SoftNova, we understand that every business is unique. That’s why
+            we deliver tailored digital solutions designed to help your brand
+            stand out and grow.From custom websites and e-commerce platforms to
+            lead generation and digital marketing, we combine technical
+            excellence with creative strategy to build scalable solutions
+            aligned with your goals.Our client-centric approach focuses on
+            seamless integration, enhanced user experience, and measurable
+            outcomes that drive long-term success.
           </p>
         </div>
 
-     
         <div className={styles.content}>
           <div className={styles.cards}>
             {features.map((item, index) => (
