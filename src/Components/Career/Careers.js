@@ -24,6 +24,7 @@ import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { BsGraphUpArrow, BsFillPeopleFill } from "react-icons/bs";
 import { RiDatabase2Fill } from "react-icons/ri";
 import CareerForm from "./Form";
+import CareerHero from "./Productpart";
 
 /* ⭐ STAR SVG — UNCHANGED */
 const StarSvg = () => (
@@ -100,15 +101,7 @@ const Careers = () => {
   return (
     <>
       <section className={styles.careerSection}>
-        <div className={styles.lines}></div>
-        <div className={styles.content}>
-          <span className={styles.smallTitle}>JOIN OUR TEAM</span>
-          <h1>CAREERS</h1>
-          <p>
-            Not just a job. <br />
-            A place to grow, learn, and belong.
-          </p>
-        </div>
+        <CareerHero/>
       </section>
 
       <section className={styles.introSection}>
