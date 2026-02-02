@@ -37,6 +37,7 @@
   border-radius: 20px;
   font-size: 13px;
   margin-bottom: 20px;
+  margin-top: 50px;
 }
 
 .title {
@@ -59,9 +60,8 @@
 
 .description {
   color: #a0a0a0;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.6;
-  margin-bottom: 35px;
 }
 
 .ctaBtn {

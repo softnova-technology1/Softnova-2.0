@@ -188,7 +188,141 @@
 .card:hover .overlay {
   bottom: 0;
 }
+@media (min-width: 2560px) {
+  .section {
+    padding: 120px 160px;
+  }
 
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+  }
+
+  .cardTitle {
+    font-size: 22px;
+  }
+
+  .cardDescription {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1440px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+@media (max-width: 1024px) {
+  .section {
+    padding: 70px 40px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 28px;
+  }
+
+  .tabs {
+    gap: 12px;
+  }
+
+  .tab {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .cardThumb {
+    height: 200px;
+  }
+
+  .overlayTitle {
+    font-size: 22px;
+  }
+
+  .tooltip {
+    width: 180px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 50px 20px;
+  }
+
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cardBody {
+    padding: 20px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+
+  .cardDescription {
+    font-size: 13px;
+  }
+}
+@media (max-width: 420px) {
+  .section {
+    padding: 40px 16px;
+  }
+
+  .cardThumb {
+    height: 180px;
+  }
+
+  .overlay {
+    height: 60%;
+    padding: 16px;
+  }
+
+  .overlayTitle {
+    font-size: 18px;
+  }
+
+  .tooltip {
+    width: 160px;
+  }
+}
+@media (max-width: 360px) {
+  .tab {
+    font-size: 12px;
+    padding: 8px 18px;
+  }
+
+  .cardTitle {
+    font-size: 15px;
+  }
+
+  .cardDescription {
+    font-size: 12px;
+  }
+}
 
 
 

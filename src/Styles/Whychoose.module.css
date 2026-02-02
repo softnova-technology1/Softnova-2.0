@@ -38,7 +38,7 @@
   line-height: 1.7;
   color: #c2c4c5;
   font-size: 13px;
-  text-align: center;
+  text-align: justify;
 }
 
 .cards {
@@ -111,3 +111,52 @@
   font-size: 14px;
   color: #c2c4c5;
 }
+@media (max-width: 428px) {
+  .wrapper {
+    padding: 2.5rem 0;
+  }
+
+  .heading {
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+    margin-top: 3rem;
+  }
+
+  .description p {
+    font-size: 10.5px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .cards {
+    gap: 1.2rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .card h4 {
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+
+  .imageBox img {
+   display: none;
+  }
+}
+

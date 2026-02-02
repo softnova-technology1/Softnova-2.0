@@ -24,7 +24,8 @@ import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { BsGraphUpArrow, BsFillPeopleFill } from "react-icons/bs";
 import { RiDatabase2Fill } from "react-icons/ri";
 import CareerForm from "./Form";
-import CareerHero from "./Productpart";
+import CareerHero from "./Careerpart";
+import Breadcrumb from "../BreadCrumb";
 
 /* ⭐ STAR SVG — UNCHANGED */
 const StarSvg = () => (
@@ -100,6 +101,7 @@ const Careers = () => {
 
   return (
     <>
+    <Breadcrumb/>
       <section className={styles.careerSection}>
         <CareerHero/>
       </section>

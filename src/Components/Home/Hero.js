@@ -15,6 +15,8 @@ import Workflow from "./WorkFlow";
 import videoSrc from "../../images/Video1.mp4";
 import GetStarted from "./Getstarted";
 
+
+
 const Hero = () => {
   const [shape] = useState("wave");
   const videoRef = useRef(null);

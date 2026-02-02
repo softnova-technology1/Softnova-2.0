@@ -3,6 +3,7 @@ import { useState } from "react";
 import AboutPage from "./Aboutcard";
 import Stats from "./AboutApproach";
 import {  useEffect, useRef } from "react";
+import Breadcrumb from "./BreadCrumb";
 
 const slides = [
   {
@@ -56,6 +57,7 @@ export default function AboutCarousel() {
 
   return (
      <>
+     <Breadcrumb/>
     <section
       className={styles.carousel}
       onMouseDown={handleMouseDown}

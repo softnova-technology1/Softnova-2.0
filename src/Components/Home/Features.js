@@ -11,7 +11,7 @@ export default function Features() {
             <div className={styles.circle}>
               <FaBook />
             </div>
-            <p>10+ Offline Courses</p>
+            <p className={styles.offp}>10+ Offline Courses</p>
           </div>
 
           <div className={styles.item1}>

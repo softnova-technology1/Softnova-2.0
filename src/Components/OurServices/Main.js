@@ -10,6 +10,8 @@ import {
 } from "react-icons/fi";
 import { motion } from "framer-motion";
 import Worldgalaxy from "./Animee";
+import Breadcrumb from "../BreadCrumb";
+
 
 const scrollConfig = {
   initial: "hidden",
@@ -53,7 +55,12 @@ const servicesData = [
 export default function Services() {
   return (
     <>
-      
+    
+    <div className={styles.wrapper}>
+       <Breadcrumb />
+      <div className={styles.galaxyLayer}>
+        <Worldgalaxy />
+      </div>
 
       <div className={styles.wrapper}>
         <div className={styles.galaxyLayer}>
@@ -175,6 +182,6 @@ export default function Services() {
           </motion.button>
         </section>
       </div>
-    </>
+   </div> </>
   );
 }
