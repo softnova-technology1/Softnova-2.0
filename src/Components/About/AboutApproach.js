@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import styles from "../Styles/Approach.module.css";
+import styles from "../../Styles/Approach.module.css";
 import { FaProjectDiagram, FaUsers, FaSmile, FaBriefcase } from "react-icons/fa";
-import img1 from '../images/About-Images/pro1.png';
-import img2 from '../images/About-Images/pro2.png';
-import img3 from '../images/About-Images/pro3.png';
-import img4 from '../images/About-Images/pro4.png';
+import img1 from '../../images/About-Images/pro1.png';
+import img2 from '../../images/About-Images/pro2.png';
+import img3 from '../../images/About-Images/pro3.png';
+import img4 from '../../images/About-Images/pro4.png';
 
 // Stats Data
 const statsData = [

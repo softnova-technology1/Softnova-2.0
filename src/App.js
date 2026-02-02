@@ -3,7 +3,6 @@ import Hero from "./Components/Home/Hero";
 import Navbar from "./Components/Home/Navbar";
 import Footer from "./Components/Footer";
 import Achievements from "./Components/Gallery/GalleryImg";
-import AboutCarousel from "./Components/Screenslide";
 import Products from "./Components/Our-Product/Product";
 import Services from "./Components/OurServices/Main";
 import WebDevelopment from "./Components/OurServices/Web";
@@ -17,6 +16,7 @@ import OtherServices from "./Components/OurServices/Other";
 import CloudIT from "./Components/OurServices/Cloud";
 import Cursor from "./Cursor";
 import Contact from "./Components/Contact/Contact";
+import About from "./Components/About/About";
 function App() {
   return (
     <BrowserRouter>
@@ -24,7 +24,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Hero />} />
-        <Route path="/about" element={<AboutCarousel />} />
+        <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
         {/* <Route path="/services/service-1" element={<Service1 />} /> */}
         {/* <Route path="/services/service-2" element={<Service2 />} /> */}
