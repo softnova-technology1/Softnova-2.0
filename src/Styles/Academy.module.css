@@ -30,7 +30,7 @@
 }
 
 .subtitle {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   color: #cfcfce;
   line-height: 1.6;
   margin-bottom: 1.8rem;
@@ -250,13 +250,13 @@
   }
 
   .title {
-    font-size: 18px;
+    font-size: 15px;
     letter-spacing: 0.08em;
     margin-top: 20px;
   }
 
   .subtitle {
-    font-size: 0.85rem;
+    font-size:12px;
     line-height: 1.5;
   }
 

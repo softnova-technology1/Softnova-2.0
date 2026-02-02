@@ -181,7 +181,7 @@ textarea:focus {
 }
 
 
-button {
+.conbut {
   margin-top: 32px;
   padding: 18px 46px;
   border-radius: 999px;
@@ -192,9 +192,10 @@ button {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
-button::after {
+.conbut::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -202,12 +203,12 @@ button::after {
   transform: translateX(-120%);
 }
 
-button:hover::after {
+.conbut:hover::after {
   transition: .7s;
   transform: translateX(120%);
 }
 
-button:active {
+.conbut:active {
   transform: scale(.96);
 }
 
@@ -560,4 +561,14 @@ button:active {
 
 .fil0 {
   fill: #fffdef;
+}
+@media(max-width:428px){
+  .formcard{
+    margin-top: 50px;
+  }
+}
+@media(max-width:768px){
+  .formcard{
+    margin-top: 50px;
+  }
 }

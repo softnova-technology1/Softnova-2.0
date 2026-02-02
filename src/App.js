@@ -51,7 +51,6 @@ import Hero from "./Components/Home/Hero";
 import Navbar from "./Components/Home/Navbar";
 import Footer from "./Components/Footer";
 import Achievements from "./Components/Gallery/GalleryImg";
-import AboutCarousel from "./Components/Screenslide";
 import Products from "./Components/Our-Product/Product";
 import Services from "./Components/OurServices/Main";
 import WebDevelopment from "./Components/OurServices/Web";
@@ -70,6 +69,8 @@ import ImageCardSection from "./Components/Our-Product/Product";
 import TermsAndConditions from "./Components/TermsandConditions";
 import PrivacyPolicy from "./Components/Privacypolicy";
 import ScrollToTop from "./Components/ScrollToTop";
+import GetStarted from "./Components/Home/Getstarted";
+import About from "./Components/About/About";
 
 
 function AppContent() {
@@ -88,7 +89,7 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/ImageCardSection" element={<ImageCardSection />} />
-        <Route path="/about" element={<AboutCarousel />} />
+        <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/WebDevelopment" element={<WebDevelopment />} />
@@ -111,6 +112,8 @@ function AppContent() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/GetStarted" element={<GetStarted />}/>
+       
       </Routes>
 
       <Footer />

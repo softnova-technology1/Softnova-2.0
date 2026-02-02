@@ -23,7 +23,7 @@
 
 /* Scrolled navbar style */
 .navbar.scrolled {
-  background: #ffa600
+ background: linear-gradient(90deg, #0a0a0a 0%, #ff8c00 50%, #0a0a0a 100%);
     /* Lighter yellow end */
   ;
   backdrop-filter: blur(14px);
@@ -235,6 +235,25 @@
 .dropdownItem:hover {
   background: rgba(254, 133, 30, 0.1);
   color: #fe851e;
+}
+
+
+/* When scrolled – change link color */
+.navbar.scrolled .button {
+  color: #ffd8a8;   /* light gold / cream */
+}
+
+/* Hover when scrolled */
+.navbar.scrolled .button:hover {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(255, 140, 0, 0.8);
+}
+
+/* Active link when scrolled */
+.navbar.scrolled .active {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 140, 0, 1);
 }
 
 
