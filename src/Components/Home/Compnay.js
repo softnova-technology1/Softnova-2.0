@@ -14,7 +14,7 @@ const CompanySection = () => {
     <div className={styles.container}>
       <div className={styles.about}>
         <h2>About Our Company</h2>
-        <p>
+        <p className={styles.para}>
           At SoftNova, we deliver tailored digital solutions designed to help
           businesses stand out. We specialize in custom website development,
           e-commerce platforms, and mobile applications. Our team combines

@@ -11,7 +11,10 @@
   margin: 0 auto;
  
 }
-
+.para{
+  
+text-align: justify;
+}
 @media(max-width:428px) {
   .container {
     display: flex;
