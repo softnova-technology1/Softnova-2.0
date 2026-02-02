@@ -3,11 +3,11 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { PointMaterial, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
 
-/* Generate SPHERE particles */
+
 const generateSpherePoints = (count) => {
   const positions = new Float32Array(count * 3);
   const flicker = new Float32Array(count);
-  const brightness = new Float32Array(count); // ⭐ thickness variation
+  const brightness = new Float32Array(count); 
 
   for (let i = 0; i < count; i++) {
     const i3 = i * 3;
@@ -22,14 +22,14 @@ const generateSpherePoints = (count) => {
     positions[i3 + 2] = r * Math.cos(phi);
 
     flicker[i] = Math.random() * Math.PI * 2;
-    brightness[i] = 0.6 + Math.random() * 0.8; // ⭐ some stars thick
+    brightness[i] = 0.6 + Math.random() * 0.8; 
   }
 
   return { positions, flicker, brightness };
 };
 
 const SphereParticles = () => {
-  const count = 16000; // ⭐ little less = more visible
+  const count = 16000; 
   const meshRef = useRef();
   const mouse = useRef({ x: 0, y: 0 });
   const active = useRef(true);
@@ -44,7 +44,7 @@ const SphereParticles = () => {
     []
   );
 
-  /* Mouse tracking */
+  
   useEffect(() => {
     const onMouseMove = (e) => {
       mouse.current.x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -54,7 +54,7 @@ const SphereParticles = () => {
     return () => window.removeEventListener("mousemove", onMouseMove);
   }, []);
 
-  /* Scroll reset */
+  
   useEffect(() => {
     const onScroll = () => {
       active.current = window.scrollY < window.innerHeight;
@@ -98,11 +98,11 @@ const SphereParticles = () => {
 
     attr.needsUpdate = true;
 
-    /* rotation */
+    
     meshRef.current.rotation.y += 0.0006;
     meshRef.current.rotation.x += 0.0003;
 
-    /* ⭐⭐ THICK KUTTU-KUTTU FLICKER ⭐⭐ */
+   
     const pulse =
       0.055 + Math.sin(time * 2 + flicker[0]) * 0.015;
 
@@ -123,8 +123,8 @@ const SphereParticles = () => {
       </bufferGeometry>
 
       <PointMaterial
-        color="#ff7301"     // ⭐ warm bright star
-        size={0.055}        // ⭐ THICK
+        color="#ff7301"     
+        size={0.055}        
         transparent
         opacity={0.85}
         depthWrite={false}

@@ -12,9 +12,9 @@ import logo from "../images/softnovaLogo.png";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      {/* ---------- TOP SECTION ---------- */}
+     
       <div className={styles.top}>
-        {/* About */}
+       
         <div className={styles.about}>
           <img src={logo} alt="Softnova Logo" className={styles.logoImg} />
           <p>
@@ -24,10 +24,10 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* VERTICAL DIVIDER */}
+       
         <div className={styles.verticalDivider}></div>
 
-        {/* Contact */}
+       
         <div className={styles.contact}>
           <h3>Please write to us</h3>
 
@@ -51,10 +51,10 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* HORIZONTAL DIVIDER */}
+     
       <div className={styles.horizontalDivider}></div>
 
-      {/* ---------- LINKS SECTION ---------- */}
+     
       <div className={styles.links}>
         <div>
           <h4>Company</h4>
@@ -62,7 +62,7 @@ const Footer = () => {
             <li><Link to="/about">About</Link></li>
             <li><Link to="/terms">Terms & Conditions</Link></li>
             <li><Link to="/services">Services</Link></li>
-            <li><Link to="/contact">Get Quote</Link></li>
+            <li><Link to="/GetStarted">Get Quote</Link></li>
           </ul>
         </div>
 
@@ -99,7 +99,7 @@ const Footer = () => {
 
       <div className={styles.horizontalDivider}></div>
 
-      {/* ---------- BOTTOM ---------- */}
+      
       <div className={styles.bottom}>
         © 2025 SOFTNOVA. All Rights Reserved.
       </div>
