@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import styles from "../../Styles/HeroContact.module.css"; // Styles object import
+import styles from "../../Styles/HeroContact.module.css"; 
 
 const ProductHero = () => {
   const [init, setInit] = useState(false);
@@ -20,7 +20,7 @@ const ProductHero = () => {
     fpsLimit: 120,
     particles: {
       number: { value: 120, density: { enable: true, area: 800 } },
-      /* Using your preferred orange accent */
+     
       color: { value: ["#f89e38", "#818cf8", "#fb7185", "#f472b6"] },
       shape: { type: ["circle", "triangle", "polygon"] },
       opacity: {
@@ -57,7 +57,7 @@ const ProductHero = () => {
   return (
     <div className={styles.container}>
       
-      {/* 1. Particles Background Layer */}
+      
       {init && (
         <div className={styles.particlesWrapper}>
           <Particles
@@ -67,7 +67,7 @@ const ProductHero = () => {
         </div>
       )}
 
-      {/* 2. Content Layer */}
+     
       <div className={styles.contentLayer}>
         <h1 className={styles.title}>OUR PRODUCT</h1>
         <p className={styles.description}>

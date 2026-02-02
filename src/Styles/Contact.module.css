@@ -561,3 +561,13 @@ button:active {
 .fil0 {
   fill: #fffdef;
 }
+@media(max-width:428px){
+  .formcard{
+    margin-top: 50px;
+  }
+}
+@media(max-width:768px){
+  .formcard{
+    margin-top: 50px;
+  }
+}

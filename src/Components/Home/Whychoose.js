@@ -26,13 +26,13 @@ export default function WhyChooseSoftNova() {
     },
   ];
 
-  // Animation variants
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: { 
-        staggerChildren: 0.15, // Cards sequence-ah varum
+        staggerChildren: 0.15, 
         delayChildren: 0.2
       },
     },
@@ -48,7 +48,7 @@ export default function WhyChooseSoftNova() {
   };
 
   const imageSlide = {
-    hidden: { opacity: 0, x: 100 }, // Right side-la start aagum
+    hidden: { opacity: 0, x: 100 }, 
     visible: { 
       opacity: 1, 
       x: 0, 
@@ -58,9 +58,6 @@ export default function WhyChooseSoftNova() {
 
   return (
     <section className={styles.wrapper}>
-      {/* viewport={{ once: false }} -> Idhu thaan ovvoru thadavaium scroll pandrappo 
-         animation-ah trigger pannum.
-      */}
       <motion.div 
         className={styles.container}
         initial="hidden"
@@ -84,7 +81,7 @@ export default function WhyChooseSoftNova() {
         </motion.div>
 
         <div className={styles.content}>
-          {/* Cards Section */}
+          
           <motion.div 
             className={styles.cards}
             variants={containerVariants}
@@ -103,7 +100,7 @@ export default function WhyChooseSoftNova() {
             ))}
           </motion.div>
 
-          {/* Image Section */}
+         
           <motion.div 
             className={styles.imageBox}
             variants={imageSlide}

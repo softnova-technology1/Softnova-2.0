@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const timeoutRef = useRef(null);
-  const DESKTOP_BREAKPOINT = 1024; // 👈 key line
+  const DESKTOP_BREAKPOINT = 1024; 
 
   const services = [
     { name: "Web Development", path: "/services/WebDevelopment" },
@@ -29,7 +29,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ Hover ONLY for desktop (1025px+)
+  
   const handleMouseEnter = () => {
     if (window.innerWidth >= DESKTOP_BREAKPOINT + 1) {
       clearTimeout(timeoutRef.current);

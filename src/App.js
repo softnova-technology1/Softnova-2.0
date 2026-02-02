@@ -70,6 +70,7 @@ import ImageCardSection from "./Components/Our-Product/Product";
 import TermsAndConditions from "./Components/TermsandConditions";
 import PrivacyPolicy from "./Components/Privacypolicy";
 import ScrollToTop from "./Components/ScrollToTop";
+import GetStarted from "./Components/Home/Getstarted";
 
 
 function AppContent() {
@@ -111,6 +112,8 @@ function AppContent() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/GetStarted" element={<GetStarted />}/>
+       
       </Routes>
 
       <Footer />
