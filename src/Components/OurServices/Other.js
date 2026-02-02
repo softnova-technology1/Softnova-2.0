@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Other.module.css";
 import { Settings, Cpu, Database, Share2, ArrowRight } from "lucide-react";
+import Breadcrumb from "../BreadCrumb";
 
 const services = [
   {
@@ -32,6 +33,8 @@ const services = [
 
 const OtherServices = () => {
   return (
+    <>
+    <Breadcrumb/>
     <section className={styles.section}>
       <div className={styles.container}>
        
@@ -86,6 +89,7 @@ const OtherServices = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

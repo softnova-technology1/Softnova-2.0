@@ -72,6 +72,7 @@ import Contact from "./Components/Contact/Contact";
 import RocketMenu from "./Components/Rocket";
 import ImageCardSection from "./Components/Our-Product/Product";
 
+
 function AppContent() {
   const location = useLocation();
   const isHeroPage = location.pathname === "/";
@@ -82,7 +83,8 @@ function AppContent() {
 
       {!isHeroPage && <Navbar />}
       {isHeroPage && <RocketMenu />}
-
+        
+       
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path ="/ImageCardSection" element = {< ImageCardSection/>} />
@@ -99,7 +101,7 @@ function AppContent() {
         <Route path="/services/CloudIT" element={<CloudIT />} />
         <Route path="/career" element={<CareerForm />} />
         <Route path="/gallery" element={<Achievements />} />
-        <Route path="/contact" element={<Contact />} />       
+        <Route path="/contact" element={<Contact />} />     
       </Routes>
 
       <Footer />

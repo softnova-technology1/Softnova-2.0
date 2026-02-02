@@ -1,0 +1,25 @@
+.breadcrumb {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  z-index: 9999;
+  font-size: 14px;
+  color: #777575;
+}
+
+.breadcrumb a {
+  color: #fe851e;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.active {
+  color: #949191;
+  opacity: 0.9;
+  text-transform: capitalize;
+}
+

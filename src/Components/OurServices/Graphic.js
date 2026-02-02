@@ -8,6 +8,7 @@ import img3 from "../../images/Product-images/web3.png";
 import img4 from "../../images/Product-images/web4.png";
 import img5 from "../../images/Product-images/web5.png";
 import img6 from "../../images/Product-images/web6.png";
+import Breadcrumb from "../BreadCrumb";
 
 const services = [
   { title: "Creative Branding & Logo", img: img1 },
@@ -41,6 +42,8 @@ const staggerContainer = {
 
 const GraphicDesign = () => {
   return (
+    <>
+    <Breadcrumb/>
     <div className={styles.pageWrapper}>
       <section className={styles.hero}>
         <div className={styles.overlay} />
@@ -114,6 +117,7 @@ const GraphicDesign = () => {
         </motion.div>
       </section>
     </div>
+    </>
   );
 };
 

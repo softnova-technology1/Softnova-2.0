@@ -4,6 +4,7 @@ import styles from "../../Styles/Software.module.css";
 import p1 from "../../images/Product-images/Ai.jpg";
 import { ArrowRight, Code, Cpu, ShieldCheck } from "lucide-react";
 import shan from "../../images/Product-images/software.jpg";
+import Breadcrumb from "../BreadCrumb";
 
 const projects = [
   { title: "ERP System", image: p1, category: "Enterprise" },
@@ -34,6 +35,8 @@ const staggerContainer = {
 
 const Software = () => {
   return (
+    <>
+    <Breadcrumb/>
     <div className={styles.pageWrapper}>
       
       <section className={styles.hero}>
@@ -114,6 +117,7 @@ const Software = () => {
         </motion.div>
       </section>
     </div>
+    </>
   );
 };
 

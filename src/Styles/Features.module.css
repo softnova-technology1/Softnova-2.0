@@ -142,7 +142,7 @@
 @media (max-width: 768px) {
   .foundation {
     padding: 4rem 1rem;
-    background-attachment: scroll; /* fix for mobile */
+    background-attachment: scroll; 
   }
 
   .foundation h2 {
@@ -151,5 +151,53 @@
 
   .foundation p {
     font-size: 0.95rem;
+  }
+}
+@media (max-width: 428px) {
+  .features {
+    flex-direction: column;
+    gap: 2.2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .item1 {
+    justify-content: center;
+    text-align: center;
+  }
+  .offp{
+    padding-right: 20px;
+  }
+
+  .item1 p {
+    font-size: 14px;
+    
+  }
+
+  .circle {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+    border-radius: 16px;
+  }
+
+  .foundation {
+    padding: 5rem 1.2rem;
+    background-attachment: scroll; /* mobile fix */
+  }
+
+  .foundation h2 {
+    font-size: 1.9rem;
+    letter-spacing: 0.08em;
+  }
+
+  .foundation p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+@media(max-width:768px){
+  .offp{
+    padding-right: 20px;
   }
 }

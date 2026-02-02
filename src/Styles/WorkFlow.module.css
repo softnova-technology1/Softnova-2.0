@@ -43,7 +43,7 @@
   margin: 0 auto 50px;
 }
 
-/* REFINED PROGRESS BAR */
+
 .progressSection {
   width: 350px;
   margin: 0 auto;
@@ -81,7 +81,7 @@
   color: #fff;
 }
 
-/* CARD GRID & GRADIENT COUNT */
+
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -95,7 +95,7 @@
   margin-top: 40px;
 }
 
-/* THE ORANGE-WHITE GRADIENT COUNT */
+
 .gradientNumber {
   position: absolute;
   top: -25px;
@@ -181,7 +181,7 @@
   align-items: center;
   justify-content: center;
   color: #fe851e;
-  /* Icons are now Orange */
+ 
 }
 
 .cardTitle {
@@ -215,9 +215,78 @@
 
   max-width: 90%;
 }
-
-/* Reveal description on hover */
 .cardBox:hover .cardDesc {
   opacity: 1;
   transform: translateY(0);
+}
+@media (max-width: 428px) {
+  .wrapper {
+    padding: 60px 16px;
+  }
+
+  .header {
+    margin-bottom: 60px;
+  }
+
+  .tagline {
+    font-size: 10px;
+    letter-spacing: 4px;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    margin-bottom: 40px;
+  }
+
+  .progressSection {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .grid {
+    gap: 20px;
+  }
+
+  .cardBox {
+    margin-top: 60px;
+  }
+
+  .gradientNumber {
+    font-size: 70px;
+    top: -18px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 280px;
+    height: 360px;
+  }
+
+  .glassLayer {
+    padding: 20px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+
+  .cardDesc {
+    font-size: 13px;
+    max-width: 100%;
+  }
+
+  .phaseBadge {
+    font-size: 9px;
+    padding: 8px 10px;
+  }
+
+  .iconCircle {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
 }

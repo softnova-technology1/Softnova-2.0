@@ -405,3 +405,97 @@
     opacity: 1;
   }
 }
+@media (max-width: 428px) {
+
+  /* ===== CAREER HERO ===== */
+  .careerSection {
+    min-height: 60vh;
+    padding: 40px 20px;
+  }
+
+  .content {
+    margin-top: 40px;
+  }
+
+  .content h1 {
+    font-size: 2.4rem;
+    letter-spacing: 3px;
+  }
+
+  .content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* ===== ROLES SECTION ===== */
+  .rolesSection {
+    padding: 3rem 1.2rem;
+  }
+
+  .tabs {
+    gap: 0.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .tabBtn {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+
+  /* ===== CARDS ===== */
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .cardContent {
+    padding: 2rem 1.5rem;
+  }
+
+  .icon {
+    font-size: 2.2rem;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  /* ===== APPLY BUTTON ===== */
+  .applyBtn {
+    padding: 1rem;
+    font-size: 15px;
+  }
+
+  /* ===== STAR BUTTON ===== */
+  .starButton {
+    padding: 6px 26px;
+    font-size: 14px;
+  }
+
+  /* ===== INTRO SECTION ===== */
+  .introSection {
+    padding: 40px 18px;
+  }
+
+  .title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .quote {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  /* ===== OPENINGS ===== */
+  .openingWrapper h3,
+  .openingTitle {
+    font-size: 22px;
+    white-space: normal;
+  }
+
+  .openingTitle::after {
+    width: 100%;
+  }
+}

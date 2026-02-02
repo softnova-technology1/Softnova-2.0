@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import styles from "../../Styles/Mobile.module.css";
 import project1 from "../../images/Product-images/Ai.jpg";
 import mobile from "../../images/Product-images/mobile.jpg";
+import Breadcrumb from "../BreadCrumb";
 
 const projects = [
   {
@@ -56,6 +57,8 @@ const cardVariants = {
 
 const MobileAppSection = () => {
   return (
+    <>
+    <Breadcrumb/>
     <section className={styles.mobileAppSection}>
       <div className={styles.container}>
 
@@ -142,6 +145,7 @@ const MobileAppSection = () => {
 
       </div>
     </section>
+    </>
   );
 };
 

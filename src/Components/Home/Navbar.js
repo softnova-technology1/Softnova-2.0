@@ -10,6 +10,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const timeoutRef = useRef(null);
+  const DESKTOP_BREAKPOINT = 1024; // 👈 key line
 
   const services = [
     { name: "Web Development", path: "/services/WebDevelopment" },
@@ -28,15 +29,16 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // ✅ Hover ONLY for desktop (1025px+)
   const handleMouseEnter = () => {
-    if (window.innerWidth > 768) {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    if (window.innerWidth >= DESKTOP_BREAKPOINT + 1) {
+      clearTimeout(timeoutRef.current);
       setServiceOpen(true);
     }
   };
 
   const handleMouseLeave = () => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth >= DESKTOP_BREAKPOINT + 1) {
       timeoutRef.current = setTimeout(() => setServiceOpen(false), 200);
     }
   };
@@ -47,39 +49,50 @@ const Navbar = () => {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.logo}>
-        <NavLink to="/"><img src={logo} alt="Softnova Logo" /></NavLink>
+        <NavLink to="/">
+          <img src={logo} alt="Softnova Logo" />
+        </NavLink>
       </div>
 
-      {/* Hamburger only for mobile */}
-      <div className={styles.hamburger} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+      {/* Hamburger → Mobile + Tablet (≤1024px, incl 768) */}
+      <div
+        className={styles.hamburger}
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      >
         <span className={isMobileMenuOpen ? styles.lineOpen1 : ""}></span>
         <span className={isMobileMenuOpen ? styles.lineOpen2 : ""}></span>
         <span className={isMobileMenuOpen ? styles.lineOpen3 : ""}></span>
       </div>
 
-      {/* Desktop & Mobile Menu Combined */}
-      <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.showMobile : ""}`}>
-        <NavLink to="/" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Home</NavLink>
+      <div
+        className={`${styles.navLinks} ${
+          isMobileMenuOpen ? styles.showMobile : ""
+        }`}
+      >
+        <NavLink to="/" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          Home
+        </NavLink>
 
         <div
           className={styles.dropdown}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {/* Link to the main services page */}
           <NavLink
             to="/services"
             className={getLinkClass}
             onClick={() => {
-              if (window.innerWidth <= 768) {
-                setServiceOpen(!serviceOpen); // Mobile-la click panna dropdown toggle aagum
+              if (window.innerWidth <= DESKTOP_BREAKPOINT) {
+                // ✅ Mobile + Tablet (0–1024 incl 768)
+                setServiceOpen(!serviceOpen);
               } else {
-                setIsMobileMenuOpen(false); // Desktop-la click panna page-ku pogum
+                setIsMobileMenuOpen(false);
               }
             }}
           >
             Our Services ▼
           </NavLink>
+
           <AnimatePresence>
             {serviceOpen && (
               <motion.div
@@ -89,7 +102,12 @@ const Navbar = () => {
                 exit={{ opacity: 0, y: 10 }}
               >
                 {services.map((s, i) => (
-                  <NavLink key={i} to={s.path} className={styles.dropdownItem} onClick={() => setIsMobileMenuOpen(false)}>
+                  <NavLink
+                    key={i}
+                    to={s.path}
+                    className={styles.dropdownItem}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
                     {s.name}
                   </NavLink>
                 ))}
@@ -98,20 +116,35 @@ const Navbar = () => {
           </AnimatePresence>
         </div>
 
-        <NavLink to="/products" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Our Product</NavLink>
-        <NavLink to="/about" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>About Us</NavLink>
+        <NavLink to="/products" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          Our Product
+        </NavLink>
+
+        <NavLink to="/about" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          About Us
+        </NavLink>
+
         <a
           href="https://softnovatechnology.com/"
-          className={getLinkClass({ isActive: false })} // Manually passing false to keep same style
+          className={getLinkClass({ isActive: false })}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => setIsMobileMenuOpen(false)}
         >
           Academy
         </a>
-        <NavLink to="/career" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Career</NavLink>
-        <NavLink to="/gallery" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Gallery</NavLink>
-        <NavLink to="/contact" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Contact Us</NavLink>
+
+        <NavLink to="/career" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          Career
+        </NavLink>
+
+        <NavLink to="/gallery" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          Gallery
+        </NavLink>
+
+        <NavLink to="/contact" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          Contact Us
+        </NavLink>
       </div>
     </nav>
   );

@@ -67,14 +67,14 @@
   text-shadow: 0 0 12px rgba(254, 133, 30, 0.8);
 }
 
-/* Logo */
+
 .logo img {
   height: 42px;
   object-fit: contain;
   filter: drop-shadow(0 0 12px rgba(254, 133, 30, 0.4));
 }
 
-/* Dropdown */
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -83,7 +83,6 @@
 .dropdownContent {
   position: absolute;
   top: 100%;
-  /* Intha line-ah konjam adjust panni gap illama pathukonga */
   left: 0;
   background: #111;
   min-width: 200px;
@@ -95,7 +94,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Intha pseudo-element dropdown-kum button-kum gap iruntha fill pannum */
+
 .dropdownContent::before {
   content: "";
   position: absolute;
@@ -181,7 +180,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  /* Spacing between links */
+ 
 }
 
 .button {
@@ -198,7 +197,7 @@
   color: #fe851e;
 }
 
-/* Hamburger - Hidden on Desktop */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -278,4 +277,44 @@
     transform: rotate(-45deg) translate(5px, -5px);
   }
   
+}
+@media (max-width: 1024px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 250px;
+    height: calc(100vh - 70px);
+    background: rgba(10, 10, 10, 0.95);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    transition: 0.4s ease-in-out;
+  }
+
+  .showMobile {
+    right: 0;
+  }
+
+  .dropdownContent {
+    position: static;
+    border: none;
+    padding-left: 15px;
+  }
+
+  .lineOpen1 {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .lineOpen2 {
+    opacity: 0;
+  }
+
+  .lineOpen3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
 }

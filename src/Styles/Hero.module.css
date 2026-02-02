@@ -1,10 +1,10 @@
-/* 🌌 HERO CONTAINER */
+
 .container {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: #000; /* Solid fallback */
+  background: #000; 
 }
 @media(max-width:428px){
   .container {
@@ -13,12 +13,12 @@
   height: 80vh;
   overflow: hidden;
   background: #000;
-   } /* Solid fallback */
+   } 
 
 }
 
 
-/* 🎥 BACKGROUND VIDEO */
+
 .video {
   position: absolute;
   inset: 0;
@@ -29,17 +29,17 @@
   filter: grayscale(100%) contrast(90%) brightness(0.7);
 }
 
-/* 🌑 DARK OVERLAY */
+
 .darkLayer {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* Slightly darker for better text contrast */
+  background: rgba(0, 0, 0, 0.5); 
   z-index: 2;
 }
 
-/* ✨ PARTICLE CANVAS */
+
 .canvas {
-  position: absolute !important; /* Force absolute */
+  position: absolute !important; 
   inset: 0;
   width: 100%;
   height: 100%;
@@ -47,33 +47,27 @@
   pointer-events: none;
 }
 
-/* 📝 TEXT OVERLAY */
+
 .overlay {
-  position: absolute; /* Changed from relative to absolute */
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 10; /* Higher z-index to stay on top */
-
+  z-index: 10; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   text-align: center;
   padding: 0 20px;
   color: #ffffff;
-  
-  /* Remove pointer-events: none; if you want to add buttons later */
   pointer-events: none; 
-  
-  /* 🚀 PERFORMANCE */
   transform: translateZ(0); 
   will-change: transform;
 }
 
-/* 🔥 MAIN TITLE */
+
 .title {
   font-family: "Playfair Display", serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
@@ -110,23 +104,23 @@
   opacity: 0.9;
   color: #ffffff;
 }
-/* ... (existing styles) ... */
 
-/* 📱 MOBILE VIEW (Up to 768px) */
+
+
 @media (max-width: 768px) {
   .container {
-    height: 80vh; /* Mobile-la full height short-ah iruntha nalla irukum */
+    height: 80vh; 
   }
 
   .video {
-    /* Mobile-la video portrait-ah theriya */
+    
     object-position: center; 
     max-width: 400%;
   
   }
 
   .title {
-    font-size: 1.8rem; /* Font size-ah kuraichuruken */
+    font-size: 1.8rem; 
     letter-spacing: 0.05em;
     padding: 0 10px;
   }
@@ -143,10 +137,10 @@
   }
 }
 
-/* 🖥️ 4K & LARGE DISPLAYS (Above 2560px) */
+
 @media (min-width: 2560px) {
   .title {
-    font-size: 6rem; /* Periya screen-kku periya title */
+    font-size: 6rem; 
   }
 
   .subtitle {
@@ -164,9 +158,40 @@
   }
 }
 
-/* ↕️ TALL SCREENS FIX (Optional) */
+
 @media (min-height: 1200px) and (min-width: 1024px) {
   .container {
-    height: 60vh; /* iPad Pro maari tall screens-la content center-la iruka */
+    height: 60vh; 
+  }
+}
+@media (max-width: 428px) {
+  .container {
+    height: 75vh;
+  }
+
+  .overlay {
+    padding: 0 14px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    max-width: 95%;
+  }
+
+  .video {
+    object-position: center;
   }
 }

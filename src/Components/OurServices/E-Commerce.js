@@ -4,6 +4,7 @@ import styles from "../../Styles/E-Commerce.module.css";
 import p1 from "../../images/Product-images/Ai.jpg";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import shan from "../../images/Product-images/online.jpg";
+import Breadcrumb from "../BreadCrumb";
 
 const projects = [
   { title: "E-Commerce Website", image: p1, category: "Web Solution" },
@@ -26,6 +27,8 @@ const cardVariants = {
 
 const ProjectsFlip = () => {
   return (
+    <>
+     <Breadcrumb/>
     <div className={styles.mainPage}>
      
       <section className={styles.hero}>
@@ -122,6 +125,7 @@ const ProjectsFlip = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
