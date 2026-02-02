@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import styles from "../../Styles/Cloud.module.css";
-import shieldImg from "../../images/Product-images/web3.png";
-import img1 from "../../images/Product-images/web2.png";
-import img2 from "../../images/Product-images/web1.png";
+import shieldImg from "../../images/Cloud1.jpg";
+import img1 from "../../images/Cloud2.jpg";
+import img2 from "../../images/Cloud3.jpg";
+import img4 from "../../images/Cloud4.jpg";
 import Breadcrumb from "../BreadCrumb";
 
 import { Link } from "react-router-dom";
@@ -137,7 +138,7 @@ const CloudIT = () => {
           ref={el => (revealRefs.current[4] = el)}
         >
           <div className={styles.mediaArea}>
-            <img src={img1} alt="Cloud Security" />
+            <img src={img4} alt="Cloud Security" />
           </div>
 
           <div className={styles.contentArea}>
