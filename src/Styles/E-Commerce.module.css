@@ -201,7 +201,99 @@
   opacity: 1;
   transform: translateY(0);
 }
+/* Sidebar Overlay */
+.canvasOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 99998; /* High z-index */
+}
 
+/* Sidebar Drawer */
+.sideCanvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 99999; /* Higher than navbar */
+  padding: 40px 30px;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Close/Remove Button */
+.closeBtn {
+  align-self: flex-end;
+  background: #ff3e3e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+
+.closeBtn:hover {
+  background: #d63030;
+  transform: translateY(-2px);
+}
+
+.canvasImg {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.canvasTag {
+  color: #fe851e;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.canvasBody h2 {
+  font-size: 2rem;
+  margin: 10px 0 20px;
+  color: #1a1a1a;
+}
+
+.canvasBody p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.canvasMeta {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.canvasMeta p {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 500px) {
+  .sideCanvas {
+    width: 100%;
+  }
+}
 
 @media (max-width: 768px) {
   .hero {

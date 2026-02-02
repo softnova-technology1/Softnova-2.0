@@ -1,4 +1,4 @@
-/* ================= WRAPPER ================= */
+
 .wrapper {
   background: #0b0b0b;
   color: #fff;
@@ -7,16 +7,13 @@
   position: relative;
 }
 
-/* ================= HERO ================= */
 .hero {
   position: relative;
   z-index: 1;
   text-align: center;
-  background: radial-gradient(
-    circle at top,
-    rgba(254, 133, 30, 0.15),
-    transparent 70%
-  );
+  background: radial-gradient(circle at top,
+      rgba(254, 133, 30, 0.15),
+      transparent 70%);
   min-height: 80vh;
   display: flex;
   flex-direction: column;
@@ -53,7 +50,6 @@
   color: #bfbfbf;
 }
 
-/* ================= GALAXY LAYER ================= */
 .galaxyLayer {
   position: absolute;
   inset: 0;
@@ -64,7 +60,7 @@
   margin-top: 5%;
 }
 
-/* ================= SERVICES ================= */
+
 .services {
   max-width: 1200px;
   margin: 10% auto 0;
@@ -130,7 +126,7 @@
   text-decoration: underline;
 }
 
-/* ================= CTA ================= */
+
 .cta {
   grid-column: 1 / -1;
   background: linear-gradient(135deg, #fa9b48, #fe851e);
@@ -140,7 +136,7 @@
   text-align: center;
 }
 
-/* ================= WORKFLOW ================= */
+
 .workflow {
   padding: 80px;
   background: #000;
@@ -165,7 +161,6 @@
   color: #fe851e;
 }
 
-/* ================= TIMELINE ================= */
 .timeline {
   position: relative;
   max-width: 1000px;
@@ -240,7 +235,7 @@
   color: #bbb;
 }
 
-/* ================= SOFTWARE ================= */
+
 .software {
   padding: 80px 100px;
 }
@@ -286,8 +281,8 @@
   cursor: pointer;
 }
 
-/* ================= MEDIA ================= */
 @media (max-width: 1024px) {
+
   .services,
   .software {
     padding: 70px 40px;
@@ -299,9 +294,7 @@
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding-top: 50%;
-  }
+   
 
   .hero h1 {
     font-size: 20px;
@@ -325,9 +318,77 @@
   .right .marker {
     left: -3px;
   }
+    .hero h1 {
+    font-size: 26px;
+  }
+
+  .serviceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .services,
+  .software {
+    padding: 40px 20px;
+  }
+
+  .centerLine {
+    left: 30px !important;
+    transform: none !important;
+    background: #fe851e !important;
+   
+  }
+
+  .timelineItem {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 20px 20px 30px 70px !important;
+    text-align: left !important;
+  }
+
+  .left,
+  .right {
+    text-align: left !important;
+    padding-left: 70px !important;
+    padding-right: 20px !important;
+    margin-left: 0 !important;
+  }
+
+  .marker {
+    left: 7px !important;
+    right: auto !important;
+    top: 20px !important;
+  }
+
+  .emoji {
+    width: 42px;
+    height: 42px;
+  }
+  .galaxyLayer {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    height: 100% !important;
+    min-height: 100vh !important;
+    z-index: 0 !important;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 1 !important;
+  }
+  .hero {
+    background: transparent !important;
+    position: relative;
+    z-index: 1; 
+     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('../images/g1.jpg') !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
 }
 
 @media (max-width: 640px) {
+
   .services,
   .software {
     padding: 50px 60px;
@@ -345,12 +406,88 @@
     padding: 2.5rem 1.8rem;
   }
 }
-@media (max-width: 428px) {
 
-  /* HERO */
+@media (max-width: 428px) {
+  .timeline::before,
+  .timeline::after,
+  .centerLine::after {
+    display: none !important;
+    content: none !important;
+  }
+
+
+  .centerLine {
+    position: absolute !important;
+    left: 28px !important;
+   
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 2px !important;
+    background: #fe851e !important;
+  
+    transform: none !important;
+    display: block !important;
+    z-index: 1 !important;
+  }
+
+
+  .timelineItem {
+    width: 100% !important;
+    padding: 0 0 50px 70px !important;
+  
+    text-align: left !important;
+    position: relative !important;
+  }
+
+  .left,
+  .right {
+    margin-left: 0 !important;
+    padding-left: 70px !important;
+    text-align: left !important;
+  }
+
+  
+  .marker {
+    position: absolute !important;
+    left: 8px !important;
+    
+    top: 0 !important;
+    z-index: 5 !important;
+    right: auto !important;
+  }
+
+  .emoji {
+    width: 40px !important;
+    height: 40px !important;
+    background: #0b0b0b !important;
+ 
+    border: 2px solid #fe851e !important;
+    font-size: 18px !important;
+  }
+
+  .workflow h2 {
+    font-size: 24px !important;
+    margin-bottom: 50px !important;
+    padding: 0 20px !important;
+  }
+
+  .timelineItem h3 {
+    font-size: 19px !important;
+    margin-top: 5px !important;
+  }
+
+ 
   .hero {
     min-height: 75vh;
-    padding-top: 55%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('../images/g1.jpg') !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    
+    min-height: 80vh !important;
   }
 
   .hero h1 {
@@ -361,11 +498,10 @@
   }
 
   .hero p {
-    font-size: 14px;
+    font-size: 12px;
     max-width: 92%;
   }
 
-  /* SERVICES */
   .services,
   .software {
     padding: 40px 20px;
@@ -380,13 +516,12 @@
     padding: 1.8rem;
   }
 
-  /* CTA */
   .cta {
     padding: 2rem 1.4rem;
     border-radius: 20px;
   }
 
-  
+
 
 
   .workflow h2 {
@@ -394,7 +529,6 @@
     margin-bottom: 60px;
   }
 
-  /* TIMELINE */
   .centerLine {
     left: 18px;
   }
@@ -418,7 +552,6 @@
     font-size: 14px;
   }
 
-  /* SOFTWARE */
   .software h2 {
     font-size: 30px;
   }
@@ -438,24 +571,23 @@
     font-size: 14px;
   }
 }
+
 @media (max-width: 428px) {
 
   .workflow {
     padding: 32px 16px;
   }
 
-  /* Timeline wrapper */
+  
   .timeline {
     position: relative;
     padding-left: 40px;
   }
 
-  /* REMOVE desktop middle line */
   .timeline::after {
     display: none;
   }
 
-  /* Single left line */
   .timeline::before {
     content: "";
     position: absolute;
@@ -466,7 +598,7 @@
     background: orange;
   }
 
-  /* Timeline items */
+  
   .timeline-item {
     position: relative;
     width: 100%;
@@ -475,14 +607,13 @@
     text-align: left;
   }
 
-  /* Remove zigzag positions */
   .timeline-item.left,
   .timeline-item.right {
     left: 0;
     transform: none;
   }
 
-  /* Icon fix */
+
   .timeline-icon {
     position: absolute;
     left: 16px;
@@ -490,5 +621,67 @@
     transform: translateX(-50%);
     z-index: 2;
     background: #000;
+  }
+}
+
+
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .serviceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .centerLine {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: block !important;
+  }
+
+  .timelineItem {
+    width: 50% !important;
+    padding: 20px 40px !important;
+  }
+
+  .left {
+    text-align: right !important;
+    padding-right: 60px !important;
+    left: 0 !important;
+  }
+
+  .right {
+    text-align: left !important;
+    padding-left: 60px !important;
+    margin-left: 50% !important;
+  }
+
+  .marker {
+    top: 25px !important;
+  }
+
+  .left .marker {
+    right: -23px !important;
+    left: auto !important;
+  }
+
+  .right .marker {
+    left: -23px !important;
+    right: auto !important;
+  }
+  .galaxyLayer {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    height: 100% !important;
+    min-height: 100vh !important;
+    z-index: 0 !important;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 1 !important; /* Fully visible */
+  }
+  .hero {
+    background: transparent !important;
+    position: relative;
+    z-index: 1; /* Content mela irukanum */
   }
 }
