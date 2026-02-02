@@ -25,7 +25,7 @@
   margin-bottom: 18px;
 }
 .title {
-  font-size: 52px;
+  font-size: 40px;
   line-height: 1.2;
   margin-bottom: 20px;
   font-weight: 700;
@@ -130,7 +130,7 @@
   }
 }
 
-/* ================= SERVICES ================= */
+
 
 .servicesSection {
   padding: 6rem 6%;
@@ -333,14 +333,13 @@
   fill: #fffdef;
 }
 
-/* ================= SERVICE SCROLL ANIMATION ================= */
 
 .show {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* ------------------ MOBILE MEDIA QUERY ------------------ */
+
 @media (max-width: 900px) {
   .section {
     flex-direction: column;
@@ -348,7 +347,6 @@
     padding: 3rem 5%;
   }
 
-  /* Hide image in header (assuming .imageWrap is header image wrapper) */
   .imageWrap {
     display: none !important;
   }
@@ -382,8 +380,8 @@
     flex-direction: column;
     gap: 2rem;
     text-align: center;
-    transform: none !important; /* reset transform for animation */
-    opacity: 1 !important; /* show all on mobile */
+    transform: none !important;
+    opacity: 1 !important; 
   }
 
   .contentArea {
@@ -410,7 +408,7 @@
     animation: none;
   }
 
-  /* Star button tweaks */
+
   .starButton {
     padding: 10px 28px;
     font-size: 15px;

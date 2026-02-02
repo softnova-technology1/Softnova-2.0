@@ -24,12 +24,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
+  gap: 80px;
 }
 
 .textSection h1,
 .title {
-  font-size: 56px;
+  font-size: 40px;
   line-height: 1.2;
   font-weight: 700;
   margin-bottom: 20px;
@@ -178,7 +178,7 @@
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 13px;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 /* =======================

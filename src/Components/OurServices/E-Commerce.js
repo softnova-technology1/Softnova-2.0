@@ -52,7 +52,7 @@ const ProjectsFlip = () => {
                 whileTap={{ scale: 0.95 }}
                 className={styles.primaryBtn}
               >
-                <Link to="/career" style={{ color: 'inherit', textDecoration: 'none' }}>
+                <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
             Connect With Us
           </Link> <ArrowRight size={18} />
               </motion.button>

@@ -1,15 +1,11 @@
-/* ======================
-   BASE
-====================== */
+
 .mainPage {
   background-color: #080808;
   color: #ffffff;
   overflow-x: hidden;
 }
 
-/* ======================
-   HERO
-====================== */
+
 .hero {
   min-height: 85vh;
   display: flex;
@@ -25,11 +21,8 @@
   gap: 60px;
 }
 
-/* ======================
-   TEXT
-====================== */
 .title {
-  font-size: clamp(34px, 5vw, 52px);
+  font-size: 40px;
   font-weight: 800;
   line-height: 1.1;
   font-family: "Playfair Display", serif;
@@ -61,9 +54,7 @@
   font-size: 16px;
 }
 
-/* ======================
-   BUTTON
-====================== */
+
 .primaryBtn {
   background: #fe851e;
   border: none;
@@ -76,9 +67,6 @@
   border-radius: 30px;
 }
 
-/* ======================
-   HERO IMAGE
-====================== */
 .heroImage {
   width: 100%;
   border-radius: 20px;
@@ -90,9 +78,7 @@
   50% { transform: translateY(-15px); }
 }
 
-/* ======================
-   PROJECT SECTION
-====================== */
+
 .wrapper {
   padding: 100px 5%;
 }
@@ -112,9 +98,6 @@
   perspective: 1200px;
 }
 
-/* ======================
-   PROJECT CARD
-====================== */
 .projectMinimal {
   position: relative;
   border-radius: 20px;
@@ -134,9 +117,6 @@
   transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-/* ======================
-   OVERLAY
-====================== */
 .projectOverlay {
   position: absolute;
   inset: 0;
@@ -164,9 +144,7 @@
   margin-top: 10px;
 }
 
-/* ======================
-   CTA BUTTON
-====================== */
+
 .roundBtn {
   position: absolute;
   bottom: 40px;
@@ -193,9 +171,6 @@
   transition: 0.6s ease;
 }
 
-/* ======================
-   HOVER
-====================== */
 .projectMinimal:hover img {
   transform: scale(1.1) rotate(1deg);
   filter: grayscale(0.5);
@@ -215,9 +190,6 @@
   width: 100%;
 }
 
-/* ======================
-   SCROLL REVEAL
-====================== */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -229,9 +201,7 @@
   transform: translateY(0);
 }
 
-/* ======================
-   TABLET (≤768px)
-====================== */
+
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
@@ -257,9 +227,6 @@
   }
 }
 
-/* ======================
-   MOBILE (≤480px)
-====================== */
 @media (max-width: 480px) {
   .wrapper {
     padding: 70px 16px;

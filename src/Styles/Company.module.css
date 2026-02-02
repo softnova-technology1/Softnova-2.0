@@ -27,7 +27,7 @@
   }
 }
 
-/* About section */
+
 .about {
   flex: 1;
   min-width: 300px;
@@ -56,7 +56,6 @@
   color: rgb(188, 187, 185);
 }
 
-/* Image container */
 .imageContainer {
   flex: 1;
   min-width: 300px;
@@ -66,20 +65,19 @@
   position: relative;
 }
 
-/* Circle border */
+
 .borderCircle {
   position: relative;
   width: 300px;
   height: 300px;
   border: 1px solid orange;
-  /* orange border */
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Image inside circle */
+
 .companyImage {
   width: 90%;
   height: 90%;
@@ -87,16 +85,16 @@
   object-fit: cover;
 }
 
-/* Icons around circle */
+
 .icon {
   position: absolute;
   color: orange;
   font-size: 1.8rem;
   animation: bounce 5s infinite ease-in-out;
-  /* bounce animation */
+
 }
 
-/* Position icons like clock */
+
 .i1 {
   top: -30px;
   left: 50%;
@@ -156,12 +154,11 @@
 
 .icon:hover {
   transform: scale(1.5);
-  color: #ffb347; /* lighter orange on hover */
+  color: #ffb347; 
 }
 @media (max-width: 480px) {
   .about p {
     display: none;
   }
-  .about h2 {
-  }
+ 
 }

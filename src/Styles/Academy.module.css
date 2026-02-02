@@ -6,8 +6,10 @@
   background: #000;
   overflow: hidden;
 }
+:global(.container) {
+  overflow-x: hidden !important;
+}
 
-/* ===== Content ===== */
 .content {
   max-width: 520px;
 }
@@ -34,7 +36,7 @@
   margin-bottom: 1.8rem;
 }
 
-/* ===== Icons ===== */
+
 .iconRow {
   display: flex;
   gap: 1rem;
@@ -69,7 +71,7 @@
   background: #4caf50;
 }
 
-/* ===== Buttons ===== */
+
 .buttonRow {
   display: flex;
   gap: 1.2rem;
@@ -86,7 +88,6 @@
   cursor: pointer;
 }
 
-/* ===== Image ===== */
 .imageWrap {
   display: flex;
   justify-content: center;
@@ -99,7 +100,7 @@
   border-bottom-left-radius: 30%;
 }
 
-/* ===== Responsive ===== */
+
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
@@ -235,7 +236,4 @@
 
 .fil0 {
   fill: #fffdef;
-}
-@media(max-width:428px){
-  
 }
