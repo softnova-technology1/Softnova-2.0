@@ -252,6 +252,18 @@
 }
 @media(max-width:428px){
   .wrapper h1{
-    font-size: 18px;
+    font-size: 15px;
   }
+  
+.wrapper > p {
+  
+  font-size: 10px;
+}
+.smallDesc {
+  font-size: 10px;
+
+}
+.starButton{
+  font-size: 10px;
+}
 }

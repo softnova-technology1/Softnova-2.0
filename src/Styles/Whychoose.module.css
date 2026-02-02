@@ -128,9 +128,9 @@
   }
 
   .description p {
-    font-size: 10.5px;
+    font-size: 10px;
     line-height: 1.6;
-    text-align: center;
+    text-align: justify;
   }
 
   .cards {
@@ -148,7 +148,7 @@
   }
 
   .card p {
-    font-size: 13px;
+    font-size: 10px;
   }
 
   .icon {

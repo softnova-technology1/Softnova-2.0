@@ -256,7 +256,7 @@
   }
 
   .subtitle {
-    font-size: 0.85rem;
+    font-size: 10px;
     line-height: 1.5;
   }
 
@@ -282,6 +282,7 @@
   .quote {
     width: 100%;
     max-width: 260px;
+    font-size: 10px;
   }
 
   .imageWrap {

@@ -111,7 +111,6 @@
 
   .timeline {
     flex-direction: column;
-    gap: 40px;
     align-items: center;
   }
 
@@ -146,7 +145,7 @@
   }
 
   .box p {
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1.6;
   }
 }
@@ -156,7 +155,7 @@
   }
 
   .heading {
-    font-size: 26px;
+    font-size: 18px;
     margin-bottom: 50px;
     letter-spacing: 2px;
   }
@@ -164,7 +163,7 @@
   .timeline {
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+   
   }
 
   .service {
@@ -198,7 +197,7 @@
   }
 
   .box p {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 
