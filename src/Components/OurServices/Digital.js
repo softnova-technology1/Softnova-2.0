@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Digital.module.css";
 import img1 from "../../images/Product-images/Ai.jpg";
+import Breadcrumb from "../BreadCrumb";
+
 import { Link } from "react-router-dom";
 const services = [
   { img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f", title: "SEO Optimization" },
@@ -13,6 +15,8 @@ const services = [
 
 const DigitalMarketing = () => {
   return (
+    <>
+     <Breadcrumb/>
     <div className={styles.pageContainer}>
       
       <section className={styles.wrapper}>
@@ -96,6 +100,7 @@ const DigitalMarketing = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

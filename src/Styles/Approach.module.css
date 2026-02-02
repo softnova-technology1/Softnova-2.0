@@ -725,3 +725,133 @@
     0 0 10px rgba(254, 133, 30, 0.35),
     0 0 25px rgba(254, 133, 30, 0.15);
 }
+@media (max-width: 420px) {
+  .wrapper {
+    padding: 70px 16px;
+  }
+
+  .heading {
+    font-size: 24px;
+    margin-bottom: 50px;
+  }
+
+  .content h2 {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  .nodeCard {
+    min-width: 100%;
+    padding: 14px 16px;
+  }
+
+  .statItem .number {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 600px) {
+  .heading {
+    font-size: 28px;
+  }
+
+  .frameGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .frameCard {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
+  .ctaBtn {
+    padding: 12px 26px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 90px 24px;
+    background-attachment: scroll;
+  }
+
+  .heading {
+    font-size: 32px;
+    margin-bottom: 70px;
+  }
+  .networkContainer {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .svgLines,
+  .pulse {
+    display: none;
+  }
+
+  .coreInner {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 40px;
+  }
+
+  .node,
+  .coreNode {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .statsRow {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .productSection {
+    flex-direction: column;
+    padding: 60px 24px;
+    text-align: center;
+  }
+
+  .content h2 {
+    font-size: 30px;
+    letter-spacing: 4px;
+  }
+
+  .frameGrid {
+    grid-template-columns: repeat(2, 180px);
+    justify-content: center;
+    margin: 40px auto 0;
+  }
+}
+@media (min-width: 2560px) {
+  .wrapper {
+    padding: 180px 10%;
+  }
+
+  .heading {
+    font-size: 56px;
+    margin-bottom: 140px;
+  }
+
+  .networkContainer {
+    width: 1200px;
+    height: 700px;
+  }
+
+  .coreInner {
+    width: 180px;
+    height: 180px;
+  }
+
+  .content h2 {
+    font-size: 52px;
+  }
+}

@@ -38,6 +38,7 @@ import intern9 from "../../images/intern9.jpg";
 import re1 from "../../images/re1.jpg";
 import re2 from "../../images/re2.png";
 import SphereBackground from "./Sphere";
+import Breadcrumb from "../BreadCrumb";
 
 
 const tabsData = {
@@ -94,6 +95,7 @@ export default function Achievements() {
 
   return (
     <>
+    <Breadcrumb/>
       <section className={styles.hero}>
         <div className={styles.sphereBg}>
           <SphereBackground />

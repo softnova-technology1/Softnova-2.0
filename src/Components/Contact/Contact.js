@@ -215,6 +215,7 @@ import { Maximize2 } from "lucide-react";
 import { Col, Container, Row } from "react-bootstrap";
 import emailjs from "@emailjs/browser";
 import HeroContact from "./HeroContact";
+import Breadcrumb from "../BreadCrumb";
 
 export default function Contact() {
   /* ---------------- CANVAS ---------------- */
@@ -286,7 +287,7 @@ export default function Contact() {
   return (
     <div>
   
-
+     <Breadcrumb/>
       {/* Hero */}
       <div className={styles.heros}>
         <HeroContact />

@@ -11,6 +11,8 @@ import img7 from "../../images/Product-images/web7.png";
 import img8 from "../../images/Product-images/web8.png";
 import img9 from "../../images/Product-images/web9.png";
 import high from "../../images/Product-images/img.png";
+import Breadcrumb from "../BreadCrumb";
+
 import { Link } from "react-router-dom";
 
 const fadeInUp = {
@@ -51,6 +53,8 @@ const projects = [
 
 const WebDevelopment = () => {
   return (
+    <>
+    <Breadcrumb/>
     <section className={styles.page}>
 
       <div className={styles.hero}>
@@ -130,6 +134,7 @@ const WebDevelopment = () => {
         ))}
       </div>
     </section>
+    </>
   );
 };
 

@@ -71,6 +71,7 @@ import TermsAndConditions from "./Components/TermsandConditions";
 import PrivacyPolicy from "./Components/Privacypolicy";
 import ScrollToTop from "./Components/ScrollToTop";
 
+
 function AppContent() {
   const location = useLocation();
   const isHeroPage = location.pathname === "/";
@@ -81,6 +82,8 @@ function AppContent() {
 
       {!isHeroPage && <Navbar />}
       {isHeroPage && <RocketMenu />}
+        
+       
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Hero />} />
@@ -104,6 +107,7 @@ function AppContent() {
         <Route path="/services/CloudIT" element={<CloudIT />} />
         <Route path="/career" element={<CareerForm />} />
         <Route path="/gallery" element={<Achievements />} />
+        <Route path="/contact" element={<Contact />} />     
         <Route path="/contact" element={<Contact />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />

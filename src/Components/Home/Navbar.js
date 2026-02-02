@@ -10,6 +10,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const timeoutRef = useRef(null);
+  const DESKTOP_BREAKPOINT = 1024; // 👈 key line
 
   const services = [
     { name: "Web Development", path: "/services/WebDevelopment" },
@@ -28,15 +29,16 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // ✅ Hover ONLY for desktop (1025px+)
   const handleMouseEnter = () => {
-    if (window.innerWidth > 768) {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    if (window.innerWidth >= DESKTOP_BREAKPOINT + 1) {
+      clearTimeout(timeoutRef.current);
       setServiceOpen(true);
     }
   };
 
   const handleMouseLeave = () => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth >= DESKTOP_BREAKPOINT + 1) {
       timeoutRef.current = setTimeout(() => setServiceOpen(false), 200);
     }
   };
@@ -47,7 +49,9 @@ const Navbar = () => {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.logo}>
-        <NavLink to="/"><img src={logo} alt="Softnova Logo" /></NavLink>
+        <NavLink to="/">
+          <img src={logo} alt="Softnova Logo" />
+        </NavLink>
       </div>
 
     
@@ -80,6 +84,7 @@ const Navbar = () => {
           >
             Our Services ▼
           </NavLink>
+
           <AnimatePresence>
             {serviceOpen && (
               <motion.div
@@ -89,7 +94,12 @@ const Navbar = () => {
                 exit={{ opacity: 0, y: 10 }}
               >
                 {services.map((s, i) => (
-                  <NavLink key={i} to={s.path} className={styles.dropdownItem} onClick={() => setIsMobileMenuOpen(false)}>
+                  <NavLink
+                    key={i}
+                    to={s.path}
+                    className={styles.dropdownItem}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
                     {s.name}
                   </NavLink>
                 ))}
@@ -98,8 +108,14 @@ const Navbar = () => {
           </AnimatePresence>
         </div>
 
-        <NavLink to="/products" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Our Product</NavLink>
-        <NavLink to="/about" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>About Us</NavLink>
+        <NavLink to="/products" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          Our Product
+        </NavLink>
+
+        <NavLink to="/about" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          About Us
+        </NavLink>
+
         <a
           href="https://softnovatechnology.com/"
           className={getLinkClass({ isActive: false })} 
@@ -109,9 +125,18 @@ const Navbar = () => {
         >
           Academy
         </a>
-        <NavLink to="/career" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Career</NavLink>
-        <NavLink to="/gallery" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Gallery</NavLink>
-        <NavLink to="/contact" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Contact Us</NavLink>
+
+        <NavLink to="/career" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          Career
+        </NavLink>
+
+        <NavLink to="/gallery" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          Gallery
+        </NavLink>
+
+        <NavLink to="/contact" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          Contact Us
+        </NavLink>
       </div>
     </nav>
   );

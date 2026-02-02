@@ -237,6 +237,60 @@
 .fil0 {
   fill: #fffdef;
 }
-@media(max-width:428px){
-  
+@media (max-width: 428px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    margin-top: 20px;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .iconRow {
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .icon {
+    width: 48px;
+    height: 48px;
+    font-size: 0.6rem;
+  }
+
+  .buttonRow {
+    flex-direction: column;
+    gap: 0.9rem;
+    align-items: center;
+  }
+
+  .starButton,
+  .quote {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .imageWrap {
+    margin-top: 2rem;
+  }
+
+  .image {
+    width: 85%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+  }
 }
+

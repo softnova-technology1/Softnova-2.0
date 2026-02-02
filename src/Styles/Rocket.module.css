@@ -279,3 +279,68 @@
   transform: rotate(90deg) scale(1.2);
   color: var(--accent-color);
 }
+@media (max-width: 428px) {
+  .openBtn {
+    right: 12px;
+    top: 35%;
+    width: 44px;
+    padding: 16px 8px;
+  }
+
+  .btnText {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .hamburger {
+    width: 20px;
+  }
+
+  .rocketContainer {
+    left: -220px;
+  }
+
+  .rocket img {
+    width: 160px;
+  }
+
+  .overlayContent {
+    padding: 0 8%;
+  }
+
+  .tagline {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+
+  .brandTitle {
+    font-size: 32px;
+    letter-spacing: 0.15em;
+  }
+
+  .lineGlow {
+    width: 90px;
+    margin-top: 18px;
+  }
+
+  .menuGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .menuGrid a {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  .menuGrid a::before {
+    left: -40px;
+  }
+
+  .closebtn {
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+  }
+}

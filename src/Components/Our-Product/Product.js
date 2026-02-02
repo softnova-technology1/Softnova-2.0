@@ -10,6 +10,7 @@ import chart4 from '../../images/Product-images/productchart4.jpg';
 import chart5 from '../../images/Product-images/productchart5.jpg';
 import chart6 from '../../images/Product-images/productchart6.jpg';
 import ProductHero from "./Productpart";
+import Breadcrumb from "../BreadCrumb";
 
 
 const items = [
@@ -121,6 +122,8 @@ export default function ImageCardSection() {
 
 
   return (
+    <>
+    <Breadcrumb/>
     <section className={styles.wrapper}>
       <ProductHero/>
         <div>
@@ -178,6 +181,7 @@ export default function ImageCardSection() {
         </section>
       </section>
     </section>
+    </>
   );
 }
 
