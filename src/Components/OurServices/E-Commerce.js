@@ -1,10 +1,12 @@
 import React from "react";
-import { motion } from "framer-motion"; // Library for smooth scroll animations
+import { motion } from "framer-motion"; 
 import styles from "../../Styles/E-Commerce.module.css";
 import p1 from "../../images/Product-images/Ai.jpg";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import shan from "../../images/Product-images/online.jpg";
+import Breadcrumb from "../BreadCrumb";
 
+import { Link } from "react-router-dom";
 const projects = [
   { title: "E-Commerce Website", image: p1, category: "Web Solution" },
   { title: "Mobile Shopping App", image: p1, category: "Mobile App" },
@@ -12,7 +14,7 @@ const projects = [
   { title: "Custom Dashboard", image: p1, category: "Analytics" },
 ];
 
-// Animation Settings
+
 const cardVariants = {
   hidden: { opacity: 0, y: 100, rotateX: -20, scale: 0.9 },
   visible: { 
@@ -26,8 +28,10 @@ const cardVariants = {
 
 const ProjectsFlip = () => {
   return (
+    <>
+     <Breadcrumb/>
     <div className={styles.mainPage}>
-      {/* HERO SECTION */}
+     
       <section className={styles.hero}>
         <div className={styles.container}>
           <motion.div 
@@ -52,7 +56,9 @@ const ProjectsFlip = () => {
                 whileTap={{ scale: 0.95 }}
                 className={styles.primaryBtn}
               >
-                Connect with Us <ArrowRight size={18} />
+                <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
+            Connect With Us
+          </Link> <ArrowRight size={18} />
               </motion.button>
             </div>
           </motion.div>
@@ -72,7 +78,7 @@ const ProjectsFlip = () => {
         </div>
       </section>
 
-      {/* PROJECTS SECTION */}
+      
       <section className={styles.wrapper}>
         <div className={styles.sectionHeader}>
           <motion.h2 
@@ -122,6 +128,7 @@ const ProjectsFlip = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

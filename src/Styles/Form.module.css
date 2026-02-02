@@ -3,31 +3,39 @@
   min-height: 100vh;
   overflow: hidden;
   font-family: "Poppins", sans-serif;
-  background: #000; 
+  background: #000;
 }
-
-
 
 .form {
   max-width: 900px;
   margin: 80px auto;
   padding: 30px;
-  background: rgba(0,0,0,0.6); 
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   border-radius: 16px;
   color: #fff;
-  transition: all 0.2s ease; 
+  transition: all 0.2s ease;
 }
 
 .form:hover {
-  box-shadow: 0 0 25px 5px #fe851e; 
+  box-shadow: 0 0 10px 5px #ad713c;
 }
 
 .title {
   text-align: center;
-  margin-bottom: 20px;
   font-size: 28px;
   color: #fe851e;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 1rem;
+
+  /* Gradient Text Fix */
+  background: linear-gradient(90deg, #ffffff, #fe851e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffffff; /* Fallback */
+
+  text-shadow: 0 0 20px rgba(254, 133, 30, 0.2);
 }
 
 .grid {
@@ -69,7 +77,6 @@ textarea {
 .submit:hover {
   background: #ff9a3c;
 }
-
 
 @media (max-width: 768px) {
   .grid {
@@ -141,14 +148,25 @@ textarea {
 }
 
 .mainTitle {
-  font-size: 36px;
-  color: #fe851e; 
+  font-size: 30px;
+  color: #fe851e;
   font-weight: 700;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 1rem;
+
+  /* Gradient Text Fix */
+  background: linear-gradient(90deg, #ffffff, #fe851e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffffff; /* Fallback */
+
+  text-shadow: 0 0 20px rgba(254, 133, 30, 0.2);
 }
 
 .subtitle {
   font-size: 16px;
-  color: #fff; 
+  color: #fff;
   max-width: 600px;
   margin: 10px auto 0 auto;
   line-height: 1.5;
@@ -172,7 +190,6 @@ textarea {
   transition: background 0.3s ease;
   left: 200px;
 }
-
 
 .star1,
 .star2,
@@ -278,4 +295,3 @@ textarea {
 .fil0 {
   fill: #fffdef;
 }
-

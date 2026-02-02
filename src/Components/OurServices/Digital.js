@@ -2,7 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Digital.module.css";
 import img1 from "../../images/Product-images/Ai.jpg";
+import Breadcrumb from "../BreadCrumb";
 
+import { Link } from "react-router-dom";
 const services = [
   { img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f", title: "SEO Optimization" },
   { img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7", title: "Social Media Marketing" },
@@ -13,8 +15,10 @@ const services = [
 
 const DigitalMarketing = () => {
   return (
+    <>
+     <Breadcrumb/>
     <div className={styles.pageContainer}>
-      {/* HERO SECTION */}
+      
       <section className={styles.wrapper}>
         <div className={styles.content}>
           <motion.div 
@@ -40,7 +44,9 @@ const DigitalMarketing = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Connect with us
+              <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
+            Connect With Us
+          </Link>
               {[...Array(6)].map((_, i) => (
                 <div key={i} className={styles[`star${i + 1}`]}><StarSvg /></div>
               ))}
@@ -60,7 +66,7 @@ const DigitalMarketing = () => {
         </div>
       </section>
 
-      {/* MARQUEE / SERVICES SECTION */}
+     
       <section className={styles.marqueeSection}>
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
@@ -94,6 +100,7 @@ const DigitalMarketing = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

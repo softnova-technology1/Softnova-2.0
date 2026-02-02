@@ -6,6 +6,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
+import { Link } from "react-router-dom";
 import logo from "../images/softnovaLogo.png";
 
 const Footer = () => {
@@ -58,30 +59,30 @@ const Footer = () => {
         <div>
           <h4>Company</h4>
           <ul>
-            <li>About</li>
-            <li>Terms & Conditions</li>
-            <li>Services</li>
-            <li>Get Quote</li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/terms">Terms & Conditions</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/contact">Get Quote</Link></li>
           </ul>
         </div>
 
         <div>
           <h4>Helpful Resources</h4>
           <ul>
-            <li>Products</li>
-            <li>Careers</li>
-            <li>Privacy Policy</li>
-            <li>Contact Us</li>
+            <li><Link to="/products">Products</Link></li>
+            <li><Link to="/career">Careers</Link></li>
+            <li><Link to="/privacy">Privacy Policy</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
           </ul>
         </div>
 
         <div>
           <h4>Services</h4>
           <ul>
-            <li>Cloud and IT</li>
-            <li>Graphic Design</li>
-            <li>Software Development</li>
-            <li>Other Services</li>
+            <li><Link to="/services/CloudIT">Cloud and IT</Link></li>
+            <li><Link to="/services/GraphicDesign">Graphic Design</Link></li>
+            <li><Link to="/services/Software">Software Development</Link></li>
+            <li><Link to="/services/OtherServices">Other Services</Link></li>
           </ul>
         </div>
 
@@ -95,9 +96,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
       <div className={styles.horizontalDivider}></div>
+
       {/* ---------- BOTTOM ---------- */}
-      <div className={styles.bottom}>© 2025 SOFTNOVA. All Rights Reserved.</div>
+      <div className={styles.bottom}>
+        © 2025 SOFTNOVA. All Rights Reserved.
+      </div>
     </footer>
   );
 };

@@ -2,9 +2,16 @@ import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "../../Styles/Navbar.module.css";
 import logo from "../../images/softnovaLogo.png";
-import { motion, AnimatePresence } from "framer-motion"; 
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
+  const [serviceOpen, setServiceOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const timeoutRef = useRef(null);
+  const DESKTOP_BREAKPOINT = 1024; // 👈 key line
+
   const services = [
     { name: "Web Development", path: "/services/WebDevelopment" },
     { name: "Mobile App Development", path: "/services/MobileAppSection" },
@@ -16,28 +23,24 @@ const Navbar = () => {
     { name: "Other Services", path: "/services/OtherServices" },
   ];
 
-  const [serviceOpen, setServiceOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const dropdownRef = useRef(null);
-  const timeoutRef = useRef(null); 
-
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
+  // ✅ Hover ONLY for desktop (1025px+)
   const handleMouseEnter = () => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setServiceOpen(true);
+    if (window.innerWidth >= DESKTOP_BREAKPOINT + 1) {
+      clearTimeout(timeoutRef.current);
+      setServiceOpen(true);
+    }
   };
 
-  
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setServiceOpen(false);
-    }, 200);
+    if (window.innerWidth >= DESKTOP_BREAKPOINT + 1) {
+      timeoutRef.current = setTimeout(() => setServiceOpen(false), 200);
+    }
   };
 
   const getLinkClass = ({ isActive }) =>
@@ -46,39 +49,58 @@ const Navbar = () => {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.logo}>
-        <NavLink to="/"><img src={logo} alt="Softnova Logo" /></NavLink>
+        <NavLink to="/">
+          <img src={logo} alt="Softnova Logo" />
+        </NavLink>
       </div>
 
-      <div className={styles.menuLeft}>
-        <NavLink to="/" className={getLinkClass}>Home</NavLink>
+    
+      <div className={styles.hamburger} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <span className={isMobileMenuOpen ? styles.lineOpen1 : ""}></span>
+        <span className={isMobileMenuOpen ? styles.lineOpen2 : ""}></span>
+        <span className={isMobileMenuOpen ? styles.lineOpen3 : ""}></span>
+      </div>
+
+     
+      <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.showMobile : ""}`}>
+        <NavLink to="/" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Home</NavLink>
 
         <div
-          ref={dropdownRef}
           className={styles.dropdown}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <NavLink to="/services" className={styles.button}>
+    
+          <NavLink
+            to="/services"
+            className={getLinkClass}
+            onClick={() => {
+              if (window.innerWidth <= 768) {
+                setServiceOpen(!serviceOpen); 
+              } else {
+                setIsMobileMenuOpen(false); 
+              }
+            }}
+          >
             Our Services ▼
           </NavLink>
 
           <AnimatePresence>
             {serviceOpen && (
-              <motion.div 
+              <motion.div
                 className={styles.dropdownContent}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.2 }}
               >
-                {services.map((service, i) => (
+                {services.map((s, i) => (
                   <NavLink
                     key={i}
-                    to={service.path}
-                    className={getLinkClass}
-                    onClick={() => setServiceOpen(false)}
+                    to={s.path}
+                    className={styles.dropdownItem}
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {service.name}
+                    {s.name}
                   </NavLink>
                 ))}
               </motion.div>
@@ -86,16 +108,35 @@ const Navbar = () => {
           </AnimatePresence>
         </div>
 
-        <NavLink to="/products" className={getLinkClass}>Our Product</NavLink>
-        <NavLink to="/about" className={getLinkClass}>About Us</NavLink>
-      </div>
+        <NavLink to="/products" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          Our Product
+        </NavLink>
 
-      <div className={styles.menuRight}>
-        <NavLink to="/academy" className={getLinkClass}>Academy</NavLink>
-        <NavLink to="/foundation" className={getLinkClass}>Foundation</NavLink>
-        <NavLink to="/career" className={getLinkClass}>Career</NavLink>
-        <NavLink to="/gallery" className={getLinkClass}>Gallery</NavLink>
-        <NavLink to="/contact" className={getLinkClass}>Contact Us</NavLink>
+        <NavLink to="/about" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          About Us
+        </NavLink>
+
+        <a
+          href="https://softnovatechnology.com/"
+          className={getLinkClass({ isActive: false })} 
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          Academy
+        </a>
+
+        <NavLink to="/career" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          Career
+        </NavLink>
+
+        <NavLink to="/gallery" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          Gallery
+        </NavLink>
+
+        <NavLink to="/contact" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
+          Contact Us
+        </NavLink>
       </div>
     </nav>
   );

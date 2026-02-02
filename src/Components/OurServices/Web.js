@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion"; // Framer motion import
+import { motion } from "framer-motion";
 import styles from "../../Styles/Web.module.css";
 import img1 from "../../images/Product-images/web1.png";
 import img2 from "../../images/Product-images/web2.png";
@@ -11,8 +11,10 @@ import img7 from "../../images/Product-images/web7.png";
 import img8 from "../../images/Product-images/web8.png";
 import img9 from "../../images/Product-images/web9.png";
 import high from "../../images/Product-images/img.png";
+import Breadcrumb from "../BreadCrumb";
 
-// Animation Variants
+import { Link } from "react-router-dom";
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -51,9 +53,10 @@ const projects = [
 
 const WebDevelopment = () => {
   return (
+    <>
+    <Breadcrumb/>
     <section className={styles.page}>
 
-      {/* HERO SECTION */}
       <div className={styles.hero}>
         <div className={styles.heroContainer}>
           <motion.div 
@@ -77,7 +80,9 @@ const WebDevelopment = () => {
               whileTap={{ scale: 0.9 }} 
               className={styles.ctaButton}
             >
-              Connect with Us
+              <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
+                          Connect With Us
+                        </Link>
             </motion.button>
           </motion.div>
 
@@ -93,7 +98,6 @@ const WebDevelopment = () => {
         </div>
       </div>
 
-      {/* TIMELINE SECTION */}
       <div className={styles.timeline}>
         {steps.map((step, i) => (
           <motion.div 
@@ -112,7 +116,6 @@ const WebDevelopment = () => {
         ))}
       </div>
 
-      {/* PROJECTS GRID SECTION */}
       <div className={styles.gridContainer}>
         {projects.map((project, index) => (
           <motion.div
@@ -120,7 +123,7 @@ const WebDevelopment = () => {
             className={styles.projectItem}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }} // 20% visible aana trigger aagum
+            viewport={{ once: false, amount: 0.2 }} 
             variants={index % 2 === 0 ? slideInLeft : slideInRight}
           >
             <div className={styles.imgWrapper}>
@@ -131,6 +134,7 @@ const WebDevelopment = () => {
         ))}
       </div>
     </section>
+    </>
   );
 };
 

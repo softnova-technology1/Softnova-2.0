@@ -2,7 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Other.module.css";
 import { Settings, Cpu, Database, Share2, ArrowRight } from "lucide-react";
+import Breadcrumb from "../BreadCrumb";
 
+import { Link } from "react-router-dom";
 const services = [
   {
     id: "01",
@@ -32,9 +34,11 @@ const services = [
 
 const OtherServices = () => {
   return (
+    <>
+    <Breadcrumb/>
     <section className={styles.section}>
       <div className={styles.container}>
-        {/* HERO AREA */}
+       
         <motion.div 
           className={styles.header}
           initial={{ opacity: 0, y: 30 }}
@@ -48,7 +52,7 @@ const OtherServices = () => {
           </h1>
         </motion.div>
 
-        {/* INTERACTIVE LIST AREA */}
+  
         <div className={styles.listWrapper}>
           {services.map((service, index) => (
             <motion.div 
@@ -75,17 +79,20 @@ const OtherServices = () => {
                 Learn More <ArrowRight size={20} />
               </motion.button>
               
-              {/* Subtle hover background line */}
+            
               <div className={styles.hoverBg}></div>
             </motion.div>
           ))}
         </div>
         
         <div className={styles.footerAction}>
-            <button className={styles.cta}>Connect with our Experts</button>
+            <button className={styles.cta}><Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
+            Connect With Us
+          </Link></button>
         </div>
       </div>
     </section>
+    </>
   );
 };
 

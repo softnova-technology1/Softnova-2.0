@@ -1,10 +1,12 @@
 import React from "react";
-import { motion } from "framer-motion"; // Framer Motion library
+import { motion } from "framer-motion";
 import styles from "../../Styles/Software.module.css";
 import p1 from "../../images/Product-images/Ai.jpg";
 import { ArrowRight, Code, Cpu, ShieldCheck } from "lucide-react";
 import shan from "../../images/Product-images/software.jpg";
+import Breadcrumb from "../BreadCrumb";
 
+import { Link } from "react-router-dom";
 const projects = [
   { title: "ERP System", image: p1, category: "Enterprise" },
   { title: "Custom CRM", image: p1, category: "Business" },
@@ -14,7 +16,7 @@ const projects = [
   { title: "Fintech App", image: p1, category: "Finance" },
 ];
 
-// Animation Variants
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
   visible: { 
@@ -34,8 +36,10 @@ const staggerContainer = {
 
 const Software = () => {
   return (
+    <>
+    <Breadcrumb/>
     <div className={styles.pageWrapper}>
-      {/* HERO SECTION */}
+      
       <section className={styles.hero}>
         <div className={styles.container}>
           <motion.div 
@@ -57,7 +61,9 @@ const Software = () => {
             </p>
             <div className={styles.actions}>
               <motion.button whileHover={{ scale: 1.05 }} className={styles.primaryBtn}>
-                Connect with Us <ArrowRight size={18} />
+                <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
+            Connect With Us
+          </Link> <ArrowRight size={18} />
               </motion.button>
               <button className={styles.secondaryBtn}>View Features</button>
             </div>
@@ -78,7 +84,6 @@ const Software = () => {
         </div>
       </section>
 
-      {/* PROJECTS SECTION */}
       <section className={styles.wrapper}>
         <motion.div 
           className={styles.sectionHeader}
@@ -115,6 +120,7 @@ const Software = () => {
         </motion.div>
       </section>
     </div>
+    </>
   );
 };
 

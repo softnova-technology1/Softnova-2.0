@@ -161,3 +161,8 @@
 .fil0 {
   fill: #fffdef;
 }
+@media (max-width:480px){  
+.slideSection {
+display: none;
+}
+}
