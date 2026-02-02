@@ -6,6 +6,7 @@ import { ArrowRight, Code, Cpu, ShieldCheck } from "lucide-react";
 import shan from "../../images/Product-images/software.jpg";
 import Breadcrumb from "../BreadCrumb";
 
+import { Link } from "react-router-dom";
 const projects = [
   { title: "ERP System", image: p1, category: "Enterprise" },
   { title: "Custom CRM", image: p1, category: "Business" },
@@ -60,7 +61,9 @@ const Software = () => {
             </p>
             <div className={styles.actions}>
               <motion.button whileHover={{ scale: 1.05 }} className={styles.primaryBtn}>
-                Connect with Us <ArrowRight size={18} />
+                <Link to="/career" style={{ color: 'inherit', textDecoration: 'none' }}>
+            Connect With Us
+          </Link> <ArrowRight size={18} />
               </motion.button>
               <button className={styles.secondaryBtn}>View Features</button>
             </div>

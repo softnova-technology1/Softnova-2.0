@@ -10,6 +10,7 @@ import img5 from "../../images/Product-images/web5.png";
 import img6 from "../../images/Product-images/web6.png";
 import Breadcrumb from "../BreadCrumb";
 
+import { Link } from "react-router-dom";
 const services = [
   { title: "Creative Branding & Logo", img: img1 },
   { title: "UI / UX Design", img: img2},
@@ -73,7 +74,9 @@ const GraphicDesign = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Connect with us
+             <Link to="/career" style={{ color: 'inherit', textDecoration: 'none' }}>
+            Connect With Us
+          </Link>
               {[...Array(6)].map((_, i) => (
                 <div key={i} className={styles[`star${i + 1}`]}><StarSvg /></div>
               ))}

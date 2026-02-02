@@ -1,41 +1,50 @@
+/* ================= WRAPPER ================= */
 .wrapper {
   background: #0b0b0b;
   color: #fff;
   font-family: "Inter", sans-serif;
-  background: #0b0b0b;
-  color: #fff;
   overflow-x: hidden;
   position: relative;
 }
 
+/* ================= HERO ================= */
 .hero {
-  padding: 6rem 1.5rem;
+  position: relative;
+  z-index: 1;
   text-align: center;
-  background: radial-gradient(circle at top, rgba(254, 133, 30, 0.15), transparent 60%);
+  background: radial-gradient(
+    circle at top,
+    rgba(254, 133, 30, 0.15),
+    transparent 70%
+  );
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20%;
 }
 
 .hero h1 {
-   font-family: "Playfair Display", serif;
-
-  font-weight: 400;
+  font-family: "Playfair Display", serif;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.1;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  margin-bottom: 20px;
 
   background: linear-gradient(90deg, #fffefe, #f87c0f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  text-shadow: 
+  text-shadow:
     0 0 10px rgba(254, 133, 30, 0.35),
     0 0 25px rgba(254, 133, 30, 0.15);
-
-  margin-bottom: 1rem;
-  
 }
 
 .hero span {
   color: #fe851e;
-  
 }
 
 .hero p {
@@ -43,21 +52,24 @@
   margin: 1rem auto 0;
   color: #bfbfbf;
 }
-.serviceCard h3 {
-  cursor: pointer;
-  transition: color 0.3s ease;
+
+/* ================= GALAXY LAYER ================= */
+.galaxyLayer {
+  position: absolute;
+  inset: 0;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  margin-top: 5%;
 }
 
-.serviceCard h3:hover {
-  color: #ff6600; /* Unga brand color - Orange mathiri */
-  text-decoration: underline;
-}
+/* ================= SERVICES ================= */
 .services {
   max-width: 1200px;
-  margin: auto;
+  margin: 10% auto 0;
   padding: 80px 100px;
   text-align: center;
-  margin-top: 5%;
 }
 
 .subtitle {
@@ -78,7 +90,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.2rem;
-  align-items: stretch;
 }
 
 .card {
@@ -109,7 +120,17 @@
   margin-bottom: 1.2rem;
 }
 
+.serviceCard h3 {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
 
+.serviceCard h3:hover {
+  color: #ff6600;
+  text-decoration: underline;
+}
+
+/* ================= CTA ================= */
 .cta {
   grid-column: 1 / -1;
   background: linear-gradient(135deg, #fa9b48, #fe851e);
@@ -119,6 +140,7 @@
   text-align: center;
 }
 
+/* ================= WORKFLOW ================= */
 .workflow {
   padding: 80px;
   background: #000;
@@ -143,10 +165,11 @@
   color: #fe851e;
 }
 
+/* ================= TIMELINE ================= */
 .timeline {
   position: relative;
   max-width: 1000px;
-  margin: auto;
+  margin: 60px auto;
 }
 
 .centerLine {
@@ -217,8 +240,7 @@
   color: #bbb;
 }
 
-
-
+/* ================= SOFTWARE ================= */
 .software {
   padding: 80px 100px;
 }
@@ -264,10 +286,8 @@
   cursor: pointer;
 }
 
-
-
+/* ================= MEDIA ================= */
 @media (max-width: 1024px) {
-
   .services,
   .software {
     padding: 70px 40px;
@@ -278,11 +298,39 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 50%;
+  }
 
+  .hero h1 {
+    font-size: 20px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .centerLine {
+    left: 20px;
+  }
+
+  .timelineItem {
+    width: 100%;
+    padding: 40px 20px 40px 80px;
+    text-align: left !important;
+  }
+
+  .left .marker,
+  .right .marker {
+    left: -3px;
+  }
+}
+
+@media (max-width: 640px) {
   .services,
   .software {
-    padding: 50px 20px;
+    padding: 50px 60px;
   }
 
   .serviceGrid {
@@ -297,67 +345,150 @@
     padding: 2.5rem 1.8rem;
   }
 }
+@media (max-width: 428px) {
 
-.wrapper {
-  background: #0b0b0b;
-  color: #fff;
-  font-family: "Inter", sans-serif;
-  overflow-x: hidden;
-  position: relative;
-}
+  /* HERO */
+  .hero {
+    min-height: 75vh;
+    padding-top: 55%;
+  }
 
-.galaxyLayer {
-  position: absolute;
-  inset: 0;
-  height: 100vh;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-  margin-top: 5%;
-}
+  .hero h1 {
+    font-size: 22px;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
 
-.hero {
-  position: relative;
-  z-index: 1;
-  padding: 10rem 1.5rem;
-  text-align: center;
-  background: radial-gradient(circle at top, rgba(254, 133, 30, 0.1), transparent 70%);
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 20%;
-}
+  .hero p {
+    font-size: 14px;
+    max-width: 92%;
+  }
 
-.hero h1 {
-  font-size:40px;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 20px;
-}
+  /* SERVICES */
+  .services,
+  .software {
+    padding: 40px 20px;
+  }
+
+  .serviceGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.8rem;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 2rem 1.4rem;
+    border-radius: 20px;
+  }
+
+  
 
 
-.timeline {
-  position: relative;
-  max-width: 1000px;
-  margin: 60px auto;
-}
+  .workflow h2 {
+    font-size: 28px;
+    margin-bottom: 60px;
+  }
 
-@media (max-width: 768px) {
+  /* TIMELINE */
   .centerLine {
-    left: 20px;
+    left: 18px;
   }
 
   .timelineItem {
     width: 100%;
-    text-align: left !important;
-    padding-left: 60px !important;
-    padding-right: 20px !important;
+    padding: 30px 20px 30px 70px;
   }
 
-  .left .marker,
-  .right .marker {
-    left: -3px;
+  .emoji {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .timelineItem h3 {
+    font-size: 20px;
+  }
+
+  .timelineItem p {
+    font-size: 14px;
+  }
+
+  /* SOFTWARE */
+  .software h2 {
+    font-size: 30px;
+  }
+
+  .softwareIntro {
+    font-size: 14px;
+    margin-bottom: 50px;
+  }
+
+  .softwareRow {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .connectBtn {
+    padding: 12px 34px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 428px) {
+
+  .workflow {
+    padding: 32px 16px;
+  }
+
+  /* Timeline wrapper */
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+  }
+
+  /* REMOVE desktop middle line */
+  .timeline::after {
+    display: none;
+  }
+
+  /* Single left line */
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 16px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: orange;
+  }
+
+  /* Timeline items */
+  .timeline-item {
+    position: relative;
+    width: 100%;
+    margin-bottom: 48px;
+    padding-left: 32px;
+    text-align: left;
+  }
+
+  /* Remove zigzag positions */
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+    transform: none;
+  }
+
+  /* Icon fix */
+  .timeline-icon {
+    position: absolute;
+    left: 16px;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 2;
+    background: #000;
   }
 }

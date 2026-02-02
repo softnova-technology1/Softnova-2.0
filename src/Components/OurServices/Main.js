@@ -128,7 +128,7 @@ export default function Services() {
           <motion.div className={styles.cta} variants={fadeUp} {...scrollConfig}>
             <h3>Have a Project in Mind?</h3>
             <p>Let’s turn your idea into reality.</p>
-            <a href="/web">Get Started</a>
+            <a href="/ImageCardSection">Get Started</a>
           </motion.div>
         </div>
       </section>

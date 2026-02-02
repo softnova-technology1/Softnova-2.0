@@ -11,6 +11,24 @@
   margin: 0 auto;
  
 }
+.para{
+  
+text-align: justify;
+}
+@media(max-width:428px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 8rem;    
+    gap: 2rem;   
+    flex-wrap: wrap;
+    background-color: #000;
+    color: #fff;
+    max-width: 1400px;
+    
+  }
+}
 
 /* About section */
 .about {

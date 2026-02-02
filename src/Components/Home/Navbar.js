@@ -54,39 +54,31 @@ const Navbar = () => {
         </NavLink>
       </div>
 
-      {/* Hamburger → Mobile + Tablet (≤1024px, incl 768) */}
-      <div
-        className={styles.hamburger}
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-      >
+    
+      <div className={styles.hamburger} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
         <span className={isMobileMenuOpen ? styles.lineOpen1 : ""}></span>
         <span className={isMobileMenuOpen ? styles.lineOpen2 : ""}></span>
         <span className={isMobileMenuOpen ? styles.lineOpen3 : ""}></span>
       </div>
 
-      <div
-        className={`${styles.navLinks} ${
-          isMobileMenuOpen ? styles.showMobile : ""
-        }`}
-      >
-        <NavLink to="/" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
-          Home
-        </NavLink>
+     
+      <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.showMobile : ""}`}>
+        <NavLink to="/" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Home</NavLink>
 
         <div
           className={styles.dropdown}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
+    
           <NavLink
             to="/services"
             className={getLinkClass}
             onClick={() => {
-              if (window.innerWidth <= DESKTOP_BREAKPOINT) {
-                // ✅ Mobile + Tablet (0–1024 incl 768)
-                setServiceOpen(!serviceOpen);
+              if (window.innerWidth <= 768) {
+                setServiceOpen(!serviceOpen); 
               } else {
-                setIsMobileMenuOpen(false);
+                setIsMobileMenuOpen(false); 
               }
             }}
           >
@@ -126,7 +118,7 @@ const Navbar = () => {
 
         <a
           href="https://softnovatechnology.com/"
-          className={getLinkClass({ isActive: false })}
+          className={getLinkClass({ isActive: false })} 
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => setIsMobileMenuOpen(false)}

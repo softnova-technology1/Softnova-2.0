@@ -1,3 +1,4 @@
+import { Container } from "react-bootstrap";
 import styles from "../../Styles/Whychoose.module.css";
 import office from "../../images/orangegirl.jpg";
 
@@ -27,44 +28,40 @@ export default function WhyChooseSoftNova() {
 
   return (
     <section className={styles.wrapper}>
-      <div className={styles.container}>
-        <h2 className={styles.heading}>Why Choose SoftNova?</h2>
+      <Container>
+        <div className={styles.container}>
+          <h2 className={styles.heading}>Why Choose SoftNova?</h2>
 
-       
-        <div className={styles.description}>
-          <p>
-            At SoftNova, we understand that every business is unique. That’s why we
-            deliver tailored digital solutions designed to help your brand stand
-            out and grow.
-          </p>
-          <p>
-            From custom websites and e-commerce platforms to lead generation and
-            digital marketing, we combine technical excellence with creative
-            strategy to build scalable solutions aligned with your goals.
-          </p>
-          <p>
-            Our client-centric approach focuses on seamless integration, enhanced
-            user experience, and measurable outcomes that drive long-term success.
-          </p>
-        </div>
-
-     
-        <div className={styles.content}>
-          <div className={styles.cards}>
-            {features.map((item, index) => (
-              <div key={index} className={styles.card}>
-                <span className={styles.icon}>{item.icon}</span>
-                <h4>{item.title}</h4>
-                <p>{item.desc}</p>
-              </div>
-            ))}
+          <div className={styles.description}>
+            <p>
+              At SoftNova, we understand that every business is unique. That’s
+              why we deliver tailored digital solutions designed to help your
+              brand stand out and grow.From custom websites and e-commerce
+              platforms to lead generation and digital marketing, we combine
+              technical excellence with creative strategy to build scalable
+              solutions aligned with your goals.Our client-centric approach
+              focuses on seamless integration, enhanced user experience, and
+              measurable outcomes that drive long-term success.
+            </p>
           </div>
 
-          <div className={styles.imageBox}>
-            <img src={office} alt="Why Choose SoftNova" />
+          <div className={styles.content}>
+            <div className={styles.cards}>
+              {features.map((item, index) => (
+                <div key={index} className={styles.card}>
+                  <span className={styles.icon}>{item.icon}</span>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className={styles.imageBox}>
+              <img src={office} alt="Why Choose SoftNova" />
+            </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

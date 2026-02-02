@@ -6,6 +6,7 @@ import { ArrowUpRight, ArrowRight } from "lucide-react";
 import shan from "../../images/Product-images/online.jpg";
 import Breadcrumb from "../BreadCrumb";
 
+import { Link } from "react-router-dom";
 const projects = [
   { title: "E-Commerce Website", image: p1, category: "Web Solution" },
   { title: "Mobile Shopping App", image: p1, category: "Mobile App" },
@@ -55,7 +56,9 @@ const ProjectsFlip = () => {
                 whileTap={{ scale: 0.95 }}
                 className={styles.primaryBtn}
               >
-                Connect with Us <ArrowRight size={18} />
+                <Link to="/career" style={{ color: 'inherit', textDecoration: 'none' }}>
+            Connect With Us
+          </Link> <ArrowRight size={18} />
               </motion.button>
             </div>
           </motion.div>

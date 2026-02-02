@@ -1,12 +1,17 @@
+/* =======================
+   GLOBAL
+======================= */
 .page {
   background: #0b0b0b;
   color: #fff;
   font-family: "Segoe UI", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
+/* =======================
+   HERO SECTION
+======================= */
 .hero {
-
   background: radial-gradient(circle at top left, #ff8c0030, #000 60%);
   display: flex;
   align-items: center;
@@ -22,11 +27,22 @@
   gap: 60px;
 }
 
-
-
-.textSection h1 {
+.textSection h1,
+.title {
   font-size: 56px;
+  line-height: 1.2;
+  font-weight: 700;
   margin-bottom: 20px;
+  font-family: "Playfair Display", serif;
+}
+
+.title span {
+  background: linear-gradient(90deg, #ffffff, #fe851e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 10px rgba(254, 133, 30, 0.35),
+    0 0 25px rgba(254, 133, 30, 0.15);
 }
 
 .textSection p {
@@ -37,7 +53,6 @@
 }
 
 .ctaButton {
-  margin-top: 30px;
   padding: 14px 36px;
   background: #fe851e;
   border: none;
@@ -47,15 +62,16 @@
 }
 
 .ctaButton:hover {
-  background: #fe851e;
+  opacity: 0.9;
 }
 
-
+/* =======================
+   VISUAL
+======================= */
 .visualSection {
   flex: 1;
   display: flex;
   justify-content: center;
-
 }
 
 .visualSection img {
@@ -70,10 +86,12 @@
   }
 }
 
-
+/* =======================
+   TIMELINE
+======================= */
 .timeline {
   max-width: 1200px;
-  margin: 30px auto;
+  margin: 40px auto;
   padding: 30px;
   background: #1a1a1a;
   border-radius: 12px;
@@ -97,29 +115,26 @@
   font-weight: bold;
 }
 
-
+/* =======================
+   PROJECT GRID
+======================= */
 .gridContainer {
   max-width: 900px;
   margin: auto;
-  padding: 60px 20px;
+  padding: 60px 5%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  padding: 50px 5%;
 }
 
 .projectItem {
   position: relative;
   overflow: hidden;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease;
-
-
   border-radius: 15px;
   padding: 20px;
   text-align: center;
-  transition: transform 0.3s ease;
+  background: #141414;
+  transition: transform 0.3s ease, opacity 0.6s ease;
 }
 
 .projectItem:hover {
@@ -133,7 +148,6 @@
 
 .projectItem img {
   width: 100%;
-  height: auto;
   transition: transform 0.5s ease;
 }
 
@@ -147,11 +161,9 @@
   width: 100%;
   padding: 12px;
   background: rgba(0, 0, 0, 0.7);
-  text-align: center;
-
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.4s ease;
+  transition: 0.4s ease;
 }
 
 .projectItem:hover h3 {
@@ -169,33 +181,12 @@
   margin-top: 20px;
 }
 
-.title {
-  font-size: 52px;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  font-weight: 700;
-  font-family: "Playfair Display", serif;
-}
-
-.title span {
-  color: #fe851e;
-  font-family: "Playfair Display", serif;
-  text-transform: uppercase;
-
-  background: linear-gradient(90deg, #ffffff, #fe851e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  text-shadow:
-    0 0 10px rgba(254, 133, 30, 0.35),
-    0 0 25px rgba(254, 133, 30, 0.15);
-
-  margin-bottom: 1rem;
-}
-
+/* =======================
+   ANIMATION HELPERS
+======================= */
 .visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(0);
 }
 
 .leftSlide {
@@ -208,10 +199,45 @@
   transform: translateX(80px);
 }
 
-
+/* =======================
+   MOBILE RESPONSIVE
+======================= */
 @media (max-width: 900px) {
   .heroContainer {
     flex-direction: column;
     text-align: center;
+    padding: 60px 20px;
+  }
+
+  .visualSection img {
+    display: none;
+  }
+
+  .timeline {
+    flex-direction: column;
+  }
+
+  .title,
+  .textSection h1 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title,
+  .textSection h1 {
+    font-size: 30px;
+  }
+
+  .textSection p {
+    font-size: 14px;
+  }
+
+  .ctaButton {
+    padding: 12px 28px;
+  }
+
+  .gridContainer {
+    padding: 40px 16px;
   }
 }
