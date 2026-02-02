@@ -31,34 +31,37 @@ export default function WhyChooseSoftNova() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { 
-        staggerChildren: 0.15, 
-        delayChildren: 0.2
+      transition: {
+        staggerChildren: 0.15, // Cards sequence-ah varum
+        delayChildren: 0.2,
       },
     },
   };
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.6, ease: "easeOut" } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
   const imageSlide = {
-    hidden: { opacity: 0, x: 100 }, 
-    visible: { 
-      opacity: 1, 
-      x: 0, 
-      transition: { duration: 0.8, ease: "backOut" } 
+    hidden: { opacity: 0, x: 100 }, // Right side-la start aagum
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "backOut" },
     },
   };
 
   return (
     <section className={styles.wrapper}>
-      <motion.div 
+      {/* viewport={{ once: false }} -> Idhu thaan ovvoru thadavaium scroll pandrappo 
+         animation-ah trigger pannum.
+      */}
+      <motion.div
         className={styles.container}
         initial="hidden"
         whileInView="visible"
@@ -68,30 +71,31 @@ export default function WhyChooseSoftNova() {
           <h2 className={styles.heading}>Why Choose SoftNova?</h2>
           <div className={styles.description}>
             <p>
-              At SoftNova, we understand that every business is unique. That’s why we
-              deliver tailored digital solutions designed to help your brand stand
-              out and grow.
-            </p>
-            <p>
-              From custom websites and e-commerce platforms to lead generation and
-              digital marketing, we combine technical excellence with creative
-              strategy to build scalable solutions aligned with your goals.
+              At SoftNova, we understand that every business is unique, so we
+              deliver tailored digital solutions that help your brand stand out.
+              We create personalized strategies, from custom website design to
+              effective lead generation, backed by strong technical and creative
+              expertise. Our team builds high-performing websites, e-commerce
+              platforms, and digital marketing solutions aligned with your
+              business goals. With a client-centric approach and end-to-end
+              services including web, mobile, and SEO, we help your business
+              grow and succeed in a competitive digital landscape.
             </p>
           </div>
         </motion.div>
 
         <div className={styles.content}>
-          
-          <motion.div 
-            className={styles.cards}
-            variants={containerVariants}
-          >
+          {/* Cards Section */}
+          <motion.div className={styles.cards} variants={containerVariants}>
             {features.map((item, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 className={styles.card}
                 variants={fadeInUp}
-                whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0,0,0,0.1)" }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0px 10px 20px rgba(0,0,0,0.1)",
+                }}
               >
                 <span className={styles.icon}>{item.icon}</span>
                 <h4>{item.title}</h4>
@@ -100,11 +104,8 @@ export default function WhyChooseSoftNova() {
             ))}
           </motion.div>
 
-         
-          <motion.div 
-            className={styles.imageBox}
-            variants={imageSlide}
-          >
+          {/* Image Section */}
+          <motion.div className={styles.imageBox} variants={imageSlide}>
             <img src={office} alt="Why Choose SoftNova" />
           </motion.div>
         </div>

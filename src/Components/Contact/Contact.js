@@ -208,7 +208,7 @@ export default function Contact() {
                       <textarea name="message" required></textarea>
                     </div>
 
-                    <button type="submit">SEND MESSAGE →</button>
+                    <button type="submit" className={styles.conbut}>SEND MESSAGE →</button>
                   </div>
                 </form>
               </Col>
