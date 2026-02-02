@@ -61,7 +61,7 @@ const Software = () => {
             </p>
             <div className={styles.actions}>
               <motion.button whileHover={{ scale: 1.05 }} className={styles.primaryBtn}>
-                <Link to="/career" style={{ color: 'inherit', textDecoration: 'none' }}>
+                <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
             Connect With Us
           </Link> <ArrowRight size={18} />
               </motion.button>

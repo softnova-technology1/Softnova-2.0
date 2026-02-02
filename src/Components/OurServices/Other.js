@@ -86,7 +86,7 @@ const OtherServices = () => {
         </div>
         
         <div className={styles.footerAction}>
-            <button className={styles.cta}><Link to="/career" style={{ color: 'inherit', textDecoration: 'none' }}>
+            <button className={styles.cta}><Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
             Connect With Us
           </Link></button>
         </div>

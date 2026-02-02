@@ -67,7 +67,7 @@ const CloudIT = () => {
           </p>
 
           <button className={styles.starButton}>
-           <Link to="/career" style={{ color: 'inherit', textDecoration: 'none' }}>
+           <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
             Connect With Us
           </Link>
             <span className={styles.star1}><StarSvg /></span>

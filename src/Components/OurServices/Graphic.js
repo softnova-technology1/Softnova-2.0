@@ -74,7 +74,7 @@ const GraphicDesign = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-             <Link to="/career" style={{ color: 'inherit', textDecoration: 'none' }}>
+             <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
             Connect With Us
           </Link>
               {[...Array(6)].map((_, i) => (

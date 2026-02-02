@@ -37,10 +37,11 @@
   border-radius: 20px;
   font-size: 13px;
   margin-bottom: 20px;
+  margin-top: 50px;
 }
 
 .title {
-  font-size: clamp(32px, 5vw, 56px);
+  font-size: 40px;
   line-height: 1.1;
   font-weight: 800;
   margin-bottom: 25px;
@@ -59,9 +60,8 @@
 
 .description {
   color: #a0a0a0;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.6;
-  margin-bottom: 35px;
 }
 
 .ctaBtn {

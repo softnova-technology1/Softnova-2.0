@@ -1,3 +1,17 @@
+/* index.css or App.css */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* Side scroll-ah mothama block pannidum */
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+
 .magnetic-cursor {
   position: fixed;
   top: 0;

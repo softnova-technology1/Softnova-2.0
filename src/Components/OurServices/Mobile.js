@@ -91,7 +91,7 @@ const MobileAppSection = () => {
               whileTap={{ scale: 0.95 }}
               className={styles.ctaBtn}
             >
-              <Link to="/career" style={{ color: 'inherit', textDecoration: 'none' }}>
+              <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
             Connect With Us
           </Link>
             </motion.button>

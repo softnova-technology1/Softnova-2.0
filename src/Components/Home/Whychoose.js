@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import { motion } from "framer-motion";
 import styles from "../../Styles/Whychoose.module.css";
 import office from "../../images/orangegirl.jpg";
 
@@ -26,42 +26,92 @@ export default function WhyChooseSoftNova() {
     },
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.15, // Cards sequence-ah varum
+        delayChildren: 0.2
+      },
+    },
+  };
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.6, ease: "easeOut" } 
+    },
+  };
+
+  const imageSlide = {
+    hidden: { opacity: 0, x: 100 }, // Right side-la start aagum
+    visible: { 
+      opacity: 1, 
+      x: 0, 
+      transition: { duration: 0.8, ease: "backOut" } 
+    },
+  };
+
   return (
     <section className={styles.wrapper}>
-      <Container>
-        <div className={styles.container}>
+      {/* viewport={{ once: false }} -> Idhu thaan ovvoru thadavaium scroll pandrappo 
+         animation-ah trigger pannum.
+      */}
+      <motion.div 
+        className={styles.container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+      >
+        <motion.div variants={fadeInUp}>
           <h2 className={styles.heading}>Why Choose SoftNova?</h2>
-
           <div className={styles.description}>
             <p>
-              At SoftNova, we understand that every business is unique. That’s
-              why we deliver tailored digital solutions designed to help your
-              brand stand out and grow.From custom websites and e-commerce
-              platforms to lead generation and digital marketing, we combine
-              technical excellence with creative strategy to build scalable
-              solutions aligned with your goals.Our client-centric approach
-              focuses on seamless integration, enhanced user experience, and
-              measurable outcomes that drive long-term success.
+              At SoftNova, we understand that every business is unique. That’s why we
+              deliver tailored digital solutions designed to help your brand stand
+              out and grow.
+            </p>
+            <p>
+              From custom websites and e-commerce platforms to lead generation and
+              digital marketing, we combine technical excellence with creative
+              strategy to build scalable solutions aligned with your goals.
             </p>
           </div>
+        </motion.div>
 
-          <div className={styles.content}>
-            <div className={styles.cards}>
-              {features.map((item, index) => (
-                <div key={index} className={styles.card}>
-                  <span className={styles.icon}>{item.icon}</span>
-                  <h4>{item.title}</h4>
-                  <p>{item.desc}</p>
-                </div>
-              ))}
-            </div>
+        <div className={styles.content}>
+          {/* Cards Section */}
+          <motion.div 
+            className={styles.cards}
+            variants={containerVariants}
+          >
+            {features.map((item, index) => (
+              <motion.div 
+                key={index} 
+                className={styles.card}
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0,0,0,0.1)" }}
+              >
+                <span className={styles.icon}>{item.icon}</span>
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
 
-            <div className={styles.imageBox}>
-              <img src={office} alt="Why Choose SoftNova" />
-            </div>
-          </div>
+          {/* Image Section */}
+          <motion.div 
+            className={styles.imageBox}
+            variants={imageSlide}
+          >
+            <img src={office} alt="Why Choose SoftNova" />
+          </motion.div>
         </div>
-      </Container>
+      </motion.div>
     </section>
   );
 }

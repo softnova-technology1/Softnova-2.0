@@ -20,7 +20,7 @@
 }
 
 .textBox h1 {
-  font-size: 4.2rem;
+  font-size: 40px;
   font-weight: 700;
   line-height: 1.15;
   font-family: "Playfair Display", serif;
@@ -85,7 +85,7 @@
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 13px;
-  margin-top: 25px;
+  margin-bottom: 15px;
 }
 
 .marqueeSection {
@@ -286,8 +286,6 @@
 .fil0 {
   fill: #fffdef;
 }
-
-/* ------------------ MOBILE MEDIA QUERY ------------------- */
 @media screen and (max-width: 600px) {
   .wrapper {
     padding: 2rem 1.5rem;
@@ -357,8 +355,6 @@
     font-size: 14px;
     border-radius: 24px;
   }
-
-  /* Adjust star sizes and positions if necessary */
   .star1 {
     width: 18px;
   }

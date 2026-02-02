@@ -1,22 +1,28 @@
+/* 🌍 GLOBAL WRAPPER TO PREVENT SIDE SCROLL */
+.mainWrapper {
+  width: 100%;
+  overflow-x: hidden; /* Idhu dhaan main fix */
+  position: relative;
+}
+
+/* 🌌 HERO CONTAINER */
 
 .container {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  background: #000;
+  max-width: 100vw;
   background: #000; 
 }
-@media(max-width:428px){
-  .container {
-  position: relative;
+
+/* 🎞️ SCROLL SECTION WRAPPER */
+.scrollSectionWrapper {
   width: 100%;
-  height: 80vh;
-  overflow: hidden;
-  background: #000;
-   } 
-
+  overflow: hidden; /* Animation nadakkumbodhu scroll varaama thadukkum */
+  position: relative;
 }
-
 
 
 .video {
@@ -70,19 +76,15 @@
 
 .title {
   font-family: "Playfair Display", serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 1rem;
-
-  /* Gradient Text Fix */
   background: linear-gradient(90deg, #ffffff, #fe851e);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #ffffff; /* Fallback */
-
   text-shadow: 0 0 20px rgba(254, 133, 30, 0.2);
 }
 
@@ -93,7 +95,6 @@
   color: #fe851e;
   letter-spacing: 0.08em;
   margin-bottom: 1rem;
-  z-index: 11;
 }
 
 .description {
@@ -124,12 +125,9 @@
     letter-spacing: 0.05em;
     padding: 0 10px;
   }
-
   .subtitle {
     font-size: 0.9rem;
-    margin-bottom: 0.5rem;
   }
-
   .description {
     font-size: 0.85rem;
     max-width: 90%;
