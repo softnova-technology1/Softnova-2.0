@@ -184,6 +184,6 @@
 }
 @media (max-width:768px){
   .metaContainer{
-    display: none;
+    display: block;
   }
 }

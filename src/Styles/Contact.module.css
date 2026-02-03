@@ -609,3 +609,13 @@ textarea:focus {
     font-size: 12px;
   }
 }
+@media(max-width:428px){
+  .formcard{
+    margin-top: 50px;
+  }
+}
+@media(max-width:768px){
+  .formcard{
+    margin-top: 50px;
+  }
+}

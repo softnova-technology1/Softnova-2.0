@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../../Styles/Ourservice.module.css";
-import Slide from "../../Components/Slide";
+import Slide from "../Slide";
+
 
 const services = [
   {

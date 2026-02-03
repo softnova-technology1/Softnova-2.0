@@ -10,14 +10,14 @@ export default function AcademyHero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Oru element vandhu 0.2s gap-la aduthadhu varum
+        staggerChildren: 0.2, 
       },
     },
   };
 
-  // 2. Individual item variants (Text, Button)
+  
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 }, // Keezha irundhu 50px gap-la start aagum
+    hidden: { opacity: 0, y: 50 }, 
     visible: {
       opacity: 1,
       y: 0,
@@ -25,9 +25,9 @@ export default function AcademyHero() {
     },
   };
 
-  // 3. Image specific animation
+  
   const imageVariants = {
-    hidden: { opacity: 0, x: -100 }, // Left side-la irundhu varum
+    hidden: { opacity: 0, x: -100 }, 
     visible: {
       opacity: 1,
       x: 0,
@@ -44,7 +44,7 @@ export default function AcademyHero() {
         className={styles.hero}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }} // once: false kudutha eppo scroll pannalum animation aagum
+        viewport={{ once: false, amount: 0.2 }} 
       >
         {/* Image Section */}
         <motion.div className={styles.imageWrap} variants={imageVariants}>
