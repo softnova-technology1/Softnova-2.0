@@ -4,7 +4,7 @@ import { PerspectiveCamera } from "@react-three/drei";
 import { motion } from "framer-motion"; 
 import ParticleSystem from "../Home/particalSystem";
 import styles from "../../Styles/Hero.module.css";
-
+// import butterfly from "../../images/butterfly.gif";
 import OurBestServices from "./Ourservices";
 import CompanySection from "./Compnay";
 import WhyChooseSoftNova from "./Whychoose";
@@ -65,8 +65,9 @@ const Hero = () => {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ staggerChildren: 0.2 }}
         >
-          <motion.h1 className={styles.title} variants={itemVariants}>
-            STERLING IT SERVICE
+          <motion.h1 className={styles.title} variants={itemVariants} style={{display:"flex"}}>
+            
+            STERLINGIT  SERVICE
           </motion.h1>
           <motion.h6 className={styles.subtitle} variants={itemVariants}>
             To drive your success

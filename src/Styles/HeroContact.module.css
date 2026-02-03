@@ -55,3 +55,16 @@
   color: #fe851e;
   padding:10px 90px !important;
 }
+@media (max-width: 425px) {
+  .container {
+    height: 400px; 
+    padding: 8rem 0;
+  }
+  .title{
+    font-size:35px;
+    padding-top: 3rem;
+  }
+  .description{
+    font-size: 12px;
+  }
+}
