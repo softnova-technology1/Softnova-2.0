@@ -166,6 +166,57 @@
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes aiPulse {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes portalSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.nodeIcon i {
+  font-size: 32px;
+  color: currentColor;
+  filter:
+    drop-shadow(0 0 6px currentColor) drop-shadow(0 0 14px currentColor) drop-shadow(0 0 28px currentColor) drop-shadow(0 0 60px rgba(255, 255, 255, 0.4));
+  transition: 0.3s;
+}
+
+.icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(254, 133, 30, 0.2);
+  color: #fe851e !important;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 1.2rem;
+}
+@media (max-width:768px){
+  .metaContainer{
+    display: block;
+  }
 }

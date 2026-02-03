@@ -162,7 +162,7 @@ const Stats = () => {
                 </div>
             </motion.section>
 
-            {/* Product Section */}
+           
             <motion.section
                 className={styles.productSection}
                 initial={{ opacity: 0, y: 50 }}
@@ -184,7 +184,7 @@ const Stats = () => {
                         whileInView={{ scale: 1 }}
                         viewport={{ once: false }}
                         transition={{ duration: 0.6 }}
-                    >
+                    ><a className={styles.stara} href="/contact">
                         Connect With Us
                         {[...Array(6)].map((_, i) => (
                             <motion.div
@@ -198,6 +198,7 @@ const Stats = () => {
                                 <StarSvg />
                             </motion.div>
                         ))}
+                        </a>
                     </motion.button>
                 </div>
 

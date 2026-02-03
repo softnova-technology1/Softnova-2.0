@@ -442,49 +442,7 @@
   opacity: 0.6;
 }
 
-.frameCard::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(254, 133, 30, 0.5),
-    rgba(255, 255, 255, 0.3),
-    rgba(0, 0, 0, 0.4)
-  );
-  transform: translateX(-100%) skewX(-20deg);
-  transition: transform 0.6s ease;
-  z-index: 2;
-}
 
-.frameCard::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 2px solid #fe851e;
-  opacity: 0;
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
-  transform: scale(0.9);
-  z-index: 3;
-}
-
-.frameCard:hover img {
-  opacity: 1;
-}
-
-.frameCard:hover::before {
-  transform: translateX(100%) skewX(-20deg);
-}
-
-.frameCard:hover::after {
-  opacity: 1;
-  transform: scale(1.05);
-  box-shadow:
-    0 0 20px #fe851e,
-    0 0 40px rgba(254, 133, 30, 0.5);
-}
 
 .productSection {
   display: flex;
@@ -588,7 +546,10 @@
     letter-spacing: 4px;
   }
 }
-
+.stara{
+  text-decoration: none;
+  color:white;
+}
 .starButton {
   position: relative;
   padding: 12px 35px;

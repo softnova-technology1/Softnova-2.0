@@ -562,3 +562,60 @@ textarea:focus {
 .fil0 {
   fill: #fffdef;
 }
+
+@media (max-width: 425px) {
+  .left h1 {
+    font-size: 35px;
+  }
+
+  .subtitle,
+  label {
+    font-size: 12px;
+  }
+
+  .contactCta,
+  .infoitem {
+    font-size: 12px;
+  }
+
+  .formcard {
+    margin-top: 3rem;
+    padding: 20px;
+  }
+
+  input {
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .heroDesc {
+    font-size: 12px;
+  }
+
+  .contactCta {
+    padding-bottom: 5px;
+  }
+
+  .contactwrapper {
+    padding: 20px;
+  }
+
+  .mapFrame {
+    height: 400px;
+  }
+
+  .conbut {
+    padding: 12px 20px;
+    font-size: 12px;
+  }
+}
+@media(max-width:428px){
+  .formcard{
+    margin-top: 50px;
+  }
+}
+@media(max-width:768px){
+  .formcard{
+    margin-top: 50px;
+  }
+}

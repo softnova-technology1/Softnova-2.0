@@ -82,7 +82,7 @@
 
 .imageBox img {
   width: 100%;
-  height: 600px; /* adjust as you like */
+  height: 600px;
   object-fit: cover;
   border-top-right-radius: 30%;
   border-bottom-left-radius: 30%;
@@ -155,6 +155,11 @@
     font-size: 1.5rem;
   }
 
+  .imageBox img {
+   display: none;
+  }
+}
+@media(max-width:768px){
   .imageBox img {
    display: none;
   }

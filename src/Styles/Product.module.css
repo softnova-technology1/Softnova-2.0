@@ -402,3 +402,172 @@
 .fil0 {
   fill: #fffdef;
 }
+@media (max-width: 768px) {
+
+  .wrapper {
+    padding: 4rem 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .sub {
+    font-size: 12px;
+    margin-bottom: 3rem;
+  }
+
+  .grid {
+    gap: 2rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .card {
+    height: 260px;
+  }
+
+  .overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .overlay p {
+    font-size: 0.95rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+    gap: 4rem;
+  }
+
+  .cardd {
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .left,
+  .right {
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateX(0);
+  }
+
+  .cardTitle {
+    font-size: 2rem;
+    top: 20px;
+    left: 20px;
+  }
+
+  .overlay1 {
+    padding: 2rem;
+  }
+
+  .overlay1 h2 {
+    font-size: 2.2rem;
+  }
+
+  .overlay1 p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .overlay1 button {
+    font-size: 0.95rem;
+    padding: 0.7rem 2rem;
+  }
+
+  .sectionWrapper {
+    padding: 4rem 1.5rem;
+  }
+
+  .headingWrap {
+    margin-bottom: 3rem;
+  }
+
+  .starButton {
+    font-size: 15px;
+    padding: 10px 28px;
+  }
+
+}
+
+@media (max-width: 428px) {
+
+  .wrapper {
+    padding: 3rem 1rem;
+  }
+
+ 
+  .heading {
+    font-size: 15px;
+    line-height: 1.4;
+    letter-spacing: 1px;
+  }
+
+ 
+  .sub {
+    font-size: 12px;
+    margin-bottom: 2rem;
+  }
+
+  .grid {
+    gap: 1.5rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+ 
+  .card {
+    height: 240px;
+    border-radius: 16px;
+  }
+
+  .overlay h2 {
+    font-size: 14px;
+  }
+
+  .overlay p {
+    font-size: 12px;
+  }
+
+
+  .cardd {
+    width: 100%;
+    height: 260px;
+    margin: 0;
+    transform: translateX(0);
+  }
+
+  .left,
+  .right {
+    margin: 0;
+    transform: translateX(0);
+  }
+
+  .cardTitle {
+    font-size: 16px;
+    top: 16px;
+    left: 16px;
+  }
+
+  .overlay1 h2 {
+    font-size: 18px;
+  }
+
+  .overlay1 p {
+    font-size: 12px;
+  }
+
+  .overlay1 button {
+    font-size: 12px;
+    padding: 0.6rem 1.6rem;
+  }
+
+
+  .starButton {
+    font-size: 13px;
+    padding: 10px 24px;
+  }
+}
+

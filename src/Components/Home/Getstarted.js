@@ -29,6 +29,8 @@ export default function GetStarted() {
       e.target.reset();
     };
   return (
+    <>
+   
     <section className={styles.container}>
     
       <div className={styles.left}>
@@ -55,12 +57,14 @@ export default function GetStarted() {
             <input type="number" placeholder="Phone No." required/>
           </div>
 
-          {/* <input type="text" placeholder="Subject" /> */}
+          
           <textarea placeholder="Leave a message here" rows="5" name="message" required></textarea>
 
           <button type="submit">Send Message</button>
         </form>
       </div>
     </section>
+   
+    </>
   );
 }

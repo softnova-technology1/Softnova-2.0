@@ -15,226 +15,118 @@
 }
 
 /* =========================
-   HERO
+   HERO & PROJECT GRID (UNGA OLD STYLES)
 ========================= */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-  margin-bottom: 120px;
-}
+.hero { display: flex; align-items: center; justify-content: space-between; gap: 60px; margin-bottom: 120px; }
+.heroText { flex: 1; }
+.tagLine { display: inline-block; background: rgba(255, 123, 0, 0.15); color: #fe851e; padding: 6px 14px; border-radius: 20px; font-size: 13px; margin-bottom: 20px; margin-top: 50px; }
+.title { font-size: 40px; line-height: 1.1; font-weight: 800; margin-bottom: 25px; font-family: "Playfair Display", serif; }
+.title span { text-transform: uppercase; background: linear-gradient(90deg, #ffffff, #fe851e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.description { color: #a0a0a0; font-size: 15px; line-height: 1.6; }
+.ctaBtn { background: #fe851e; color: white; padding: 16px 35px; border-radius: 50px; border: none; font-weight: 700; cursor: pointer; transition: 0.3s; }
+.heroImageWrapper { flex: 0.8; position: relative; display: flex; justify-content: center; }
+.floatingImage { max-width: 80%; }
 
-.heroText {
-  flex: 1;
-}
-
-.tagLine {
-  display: inline-block;
-  background: rgba(255, 123, 0, 0.15);
-  color: #fe851e;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-  margin-bottom: 20px;
-  margin-top: 50px;
-}
-
-.title {
-  font-size: 40px;
-  line-height: 1.1;
-  font-weight: 800;
-  margin-bottom: 25px;
-  font-family: "Playfair Display", serif;
-}
-
-.title span {
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #ffffff, #fe851e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow:
-    0 0 10px rgba(254, 133, 30, 0.35),
-    0 0 25px rgba(254, 133, 30, 0.15);
-}
-
-.description {
-  color: #a0a0a0;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.ctaBtn {
-  background: #fe851e;
-  color: white;
-  padding: 16px 35px;
-  border-radius: 50px;
-  border: none;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.ctaBtn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(255, 106, 0, 0.3);
-}
+.projectsGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.projectCard { background: #111; border: 1px solid #222; border-radius: 20px; overflow: hidden; transition: 0.3s ease; }
+.cardImageContainer { position: relative; height: 220px; overflow: hidden; }
+.cardImageContainer img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.cardContent { padding: 25px; }
+.cardContent h4 { font-size: 20px; margin-bottom: 12px; }
+.cardContent p { font-size: 15px; color: #888; }
+.cardFooter { margin-top: 20px; color: #fe851e; font-size: 20px; cursor: pointer; }
 
 /* =========================
-   HERO IMAGE
+   NEW CANVAS STYLES (AS PER IMAGE)
 ========================= */
-.heroImageWrapper {
-  flex: 0.8;
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
 
-.floatingImage {
-  max-width: 80%;
-}
-
-.orangeGlow {
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  inset: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* =========================
-   PROJECT GRID
-========================= */
-.projectsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-}
-
-.projectCard {
-  background: #111;
-  border: 1px solid #222;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: 0.3s ease;
-}
-
-.projectCard:hover {
-  border-color: #fe851e;
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-}
-
-.cardImageContainer {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
-}
-
-.cardImageContainer img {
+/* Darkened background overlay */
+.canvasOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: 0.5s;
+  background: rgba(0, 0, 0, 0.7); /* Darker backdrop like the image */
+  backdrop-filter: blur(5px);
+  z-index: 99998; /* Must be lower than sideCanvas but higher than everything else */
 }
 
-.projectCard:hover img {
-  transform: scale(1.1);
+/* Side Drawer */
+.sideCanvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 450px; /* Width set as per standard drawer */
+  height: 100vh;
+  background: #ffffff;
+  z-index: 99999; /* Highest priority to cover Navbar */
+  padding: 30px;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
+/* Remove Button - Top Right Positioning */
+.closeBtn {
+  align-self: flex-end; /* Pushes the button to the right */
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 20px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: 0.3s;
+  gap: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
 }
 
-.projectCard:hover .overlay {
-  opacity: 1;
+.closeBtn:hover {
+  background: #e63946;
+  transform: scale(1.02);
 }
 
-.cardContent {
-  padding: 25px;
+.canvasImg {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.cardContent h4 {
-  font-size: 20px;
-  margin-bottom: 12px;
+.canvasBody h2 {
+  color: #1a1a1a;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-family: 'Inter', sans-serif;
 }
 
-.cardContent p {
-  font-size: 15px;
-  color: #888;
+.canvasBody p {
+  color: #555555;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
-.cardFooter {
-  margin-top: 20px;
-  color: #fe851e;
-  font-size: 20px;
-}
-
-/* =========================
-   SCROLL REVEAL
-========================= */
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
-}
-
-.active {
-  opacity: 1;
-  transform: translateY(0);
+.canvasBody strong {
+  color: #000;
 }
 
 /* =========================
-   TABLET (≤900px)
+   RESPONSIVENESS
 ========================= */
 @media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 80px;
-  }
-
-  .floatingImage {
-    display: none;
-  }
-
-  .description {
-    font-size: 16px;
-  }
+  .hero { flex-direction: column; text-align: center; }
+  .floatingImage { display: none; }
 }
 
-/* =========================
-   MOBILE (≤480px)
-========================= */
-@media (max-width: 480px) {
-  .mobileAppSection {
-    padding: 70px 16px;
-  }
-
-  .title {
-    font-size: 30px;
-  }
-
-  .description {
-    font-size: 14px;
-  }
-
-  .ctaBtn {
-    padding: 14px 28px;
-    font-size: 14px;
-  }
-
-  .projectsGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .floatingImage {
-    max-width: 220px;
+@media (max-width: 500px) {
+  .sideCanvas {
+    width: 100%; /* Mobile full screen drawer */
   }
 }

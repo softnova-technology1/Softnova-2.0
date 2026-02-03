@@ -22,4 +22,9 @@
   opacity: 0.9;
   text-transform: capitalize;
 }
+@media(max-width:428px){
+  .breadcrumb{
+    display: none;
+  }
+}
 

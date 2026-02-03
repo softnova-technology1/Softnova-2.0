@@ -82,9 +82,7 @@ const Software = () => {
             transition={{ duration: 1 }}
           >
             <img src={shan} alt="Software Development" />
-            <div className={styles.floatingBadge}>
-               <Cpu size={20} /> <span>Scalable Architecture</span>
-            </div>
+           
           </motion.div>
         </div>
       </section>

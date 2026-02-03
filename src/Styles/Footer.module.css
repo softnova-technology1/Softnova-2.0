@@ -128,21 +128,21 @@
 @media (max-width: 900px) {
   .footer {
     padding: 40px 40px 20px;
-    text-align: center; /* Centers text globally for mobile */
+    text-align: center; 
   }
 
   .top {
     flex-direction: column;
-    align-items: center; /* Centers the About and Contact sections */
+    align-items: center; 
   }
 
   .about p {
-    max-width: 100%; /* Allows text to use full width for better centering */
+    max-width: 100%; 
   }
 
   .contactItem {
-    justify-content: center; /* Centers the icon and text together */
-    text-align: left; /* Keeps text readable but container centered */
+    justify-content: center; 
+    text-align: left; 
   }
 
   .verticalDivider {
@@ -151,11 +151,11 @@
 
   .links {
     grid-template-columns: repeat(2, 1fr);
-    justify-items: center; /* Centers grid content */
+    text-align: start;
   }
 
   .social {
-    justify-content: center; /* Centers social icons */
+    justify-content: start; 
     margin-top: 10px;
   }
 }
