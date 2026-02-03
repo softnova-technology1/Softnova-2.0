@@ -1,6 +1,3 @@
-/* ================= CSS MODULE ================= */
-
-/* Terms.module.css */
 
 .container {
   padding: 40px;
@@ -35,12 +32,11 @@
   text-transform: uppercase;
   margin-bottom: 1rem;
 
-  /* Gradient Text Fix */
   background: linear-gradient( #ffffff, #fe851e);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #ffffff; /* Fallback */
+  color: #ffffff; 
 
   text-shadow: 0 0 20px rgba(254, 133, 30, 0.2);
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../Styles/Ourservice.module.css";
+import butterfly from "../../images/butterfly.gif";
 import Slide from "../Slide";
 
 
@@ -42,7 +43,8 @@ const Ourservice = () => {
       <section className={styles.wrapper}>
        
         <div className={styles.container}>
-          <h2 className={styles.heading}>OUR BEST SERVICES</h2>
+          <h2 className={styles.heading}><span>
+            <img src={butterfly} alt="" width={'100px'}/></span>OUR BEST SERVICES</h2>
 
           <div className={styles.timeline}>
             {services.map((item) => (

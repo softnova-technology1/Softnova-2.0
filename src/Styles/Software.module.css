@@ -3,7 +3,6 @@
   overflow-x: hidden;
 }
 
-/* ================= HERO SECTION ================= */
 .hero {
   position: relative;
   min-height: 95vh;
@@ -23,7 +22,7 @@
   align-items: center;
 }
 
-/* ================= TEXT ================= */
+
 .tag {
   display: inline-block;
   background: rgba(255, 123, 0, 0.1);
@@ -63,7 +62,7 @@
   max-width: 550px;
 }
 
-/* ================= ACTIONS ================= */
+
 .actions {
   display: flex;
   gap: 20px;
@@ -97,7 +96,7 @@
   color: #000;
 }
 
-/* ================= HERO CARD ================= */
+
 .card {
   position: relative;
   background: rgba(255, 255, 255, 0.03);
@@ -127,7 +126,7 @@
   box-shadow: 0 10px 30px rgba(255, 123, 0, 0.3);
 }
 
-/* ================= PROJECTS SECTION ================= */
+
 .wrapper {
   padding: 100px 5%;
   background: linear-gradient(180deg, #0b0b0b, #000);
@@ -204,7 +203,6 @@
   width: fit-content;
 }
 
-/* Hover */
 .projectBox:hover img {
   transform: scale(1.1);
 }
@@ -219,7 +217,7 @@
   color: #000;
 }
 
-/* ================= TABLET (≤992px) ================= */
+
 @media (max-width: 992px) {
   .hero {
     min-height: auto;
@@ -252,7 +250,7 @@
   }
 }
 
-/* ================= MOBILE (≤480px) ================= */
+
 @media (max-width: 480px) {
   .container {
     padding: 0 16px;

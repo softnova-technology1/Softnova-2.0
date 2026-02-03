@@ -143,7 +143,7 @@ export default function Services() {
 
         <section className={styles.software}>
           <motion.h2 variants={fadeUp} {...scrollConfig}>
-            End-to-End IT Solutions
+            <h1 className={styles.a1}>End-to-End IT Solutions</h1>
           </motion.h2>
 
           <div className={styles.softwareList}>
