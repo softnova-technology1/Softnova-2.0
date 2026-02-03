@@ -1,17 +1,21 @@
 import React, { useState } from "react"; // Added useState
 import { motion, AnimatePresence } from "framer-motion"; // Added AnimatePresence
 import styles from "../../Styles/E-Commerce.module.css";
-import p1 from "../../images/Product-images/Ai.jpg";
+import ecommerce2 from "../../images/Ourservices-images/e-commerce2.jpg";
+import ecommerce3 from "../../images/Ourservices-images/e-commerce3.jpg";
+import ecommerce4 from "../../images/Ourservices-images/e-commerce4.jpg";
+import ecommerce5 from "../../images/Ourservices-images/e-commerce5.jpg";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
-import shan from "../../images/Product-images/online.jpg";
+import shan from "../../images/Ourservices-images/e-commerce1.jpg";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 
+
 const projects = [
-  { id: 1, title: "E-Commerce Website", image: p1, category: "Web Solution", desc: "A robust online store with advanced filtering and seamless checkout." },
-  { id: 2, title: "Mobile Shopping App", image: p1, category: "Mobile App", desc: "Fast and responsive mobile application for on-the-go shopping." },
-  { id: 3, title: "B2B Marketplace", image: p1, category: "Enterprise", desc: "Scalable platform for business-to-business transactions and bulk orders." },
-  { id: 4, title: "Custom Dashboard", image: p1, category: "Analytics", desc: "Insightful data visualization tools for managing e-commerce performance." },
+  { id: 1, title: "E-Commerce Website", image: ecommerce2, category: "Web Solution", desc: "A robust online store with advanced filtering and seamless checkout." },
+  { id: 2, title: "Mobile Shopping App", image: ecommerce3, category: "Mobile App", desc: "Fast and responsive mobile application for on-the-go shopping." },
+  { id: 3, title: "B2B Marketplace", image: ecommerce4, category: "Enterprise", desc: "Scalable platform for business-to-business transactions and bulk orders." },
+  { id: 4, title: "Custom Dashboard", image: ecommerce5, category: "Analytics", desc: "Insightful data visualization tools for managing e-commerce performance." },
 ];
 
 const cardVariants = {
