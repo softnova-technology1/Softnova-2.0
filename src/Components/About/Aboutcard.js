@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import styles from "../Styles/Aboutcard.module.css";
-import img1 from '../images/About-Images/pro4.png';
+import styles from "../../Styles/Aboutcard.module.css";
+import img1 from '../../images/About-Images/pro4.png';
 
 const tabs = ["Who we are", "Why choose", "What we do", "Who we work with"];
 

@@ -1,17 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion"; 
 import styles from "../../Styles/E-Commerce.module.css";
-import p1 from "../../images/Product-images/Ai.jpg";
+import ecommerce2 from "../../images/Ourservices-images/e-commerce2.jpg";
+import ecommerce3 from "../../images/Ourservices-images/e-commerce3.jpg";
+import ecommerce4 from "../../images/Ourservices-images/e-commerce4.jpg";
+import ecommerce5 from "../../images/Ourservices-images/e-commerce5.jpg";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
-import shan from "../../images/Product-images/online.jpg";
+import shan from "../../images/Ourservices-images/e-commerce1.jpg";
 import Breadcrumb from "../BreadCrumb";
 
 import { Link } from "react-router-dom";
 const projects = [
-  { title: "E-Commerce Website", image: p1, category: "Web Solution" },
-  { title: "Mobile Shopping App", image: p1, category: "Mobile App" },
-  { title: "B2B Marketplace", image: p1, category: "Enterprise" },
-  { title: "Custom Dashboard", image: p1, category: "Analytics" },
+  { title: "E-Commerce Website", image:  ecommerce2, category: "Web Solution" },
+  { title: "Mobile Shopping App", image: ecommerce3, category: "Mobile App" },
+  { title: "B2B Marketplace", image: ecommerce4, category: "Enterprise" },
+  { title: "Custom Dashboard", image: ecommerce5 , category: "Analytics" },
 ];
 
 

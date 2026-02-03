@@ -1,0 +1,141 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&family=Playfair+Display:ital@1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap");
+
+.pageWrapper {
+    margin-top: 5rem;
+}
+
+.stackContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18vh;
+}
+
+.cardItem {
+    position: sticky;
+    width: 80vw;
+    max-width: 1300px;
+    height: 70vh;
+    border-radius: 44px;
+    background: radial-gradient(120% 120% at 10% 0%, rgba(168, 168, 168, 0.18), transparent 45%), linear-gradient(160deg, #0c0f15, #0a0d12);
+    border: 1px solid rgba(255, 140, 40, .18);
+    box-shadow: 0 40px 90px rgba(0, 0, 0, .8), inset 0 0 0 1px rgba(255, 255, 255, .04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* glowing edge */
+.cardItem::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background-image: url("../images/stickybg.png");
+    background-size: cover;
+    opacity: .5;
+    filter: blur(18px);
+    animation: edgeFlow 10s linear infinite;
+}
+
+@keyframes edgeFlow {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: 300% 0%;
+    }
+}
+
+.cardInner {
+    position: relative;
+    text-align: center;
+    padding: 5rem;
+    max-width: 720px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s cubic-bezier(.22, .8, .22, 1);
+}
+
+.active {
+    opacity: 1;
+    transform: none;
+}
+
+.cardTitle {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    line-height: 1.05;
+    color: #000;
+    background-image: url("https://themesflat.co/html/vitour/assets/images/slide/mask-h5-2.svg");
+    background-size: cover;
+}
+
+.cardSubtitle {
+    margin-top: 3rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #fe851e;
+}
+
+.cardDesc {
+    margin-top: 26px;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    font-family: "Titillium Web", system-ui, sans-serif;
+
+    color: #fff;
+}
+
+.ring {
+    position: absolute;
+    right: 10%;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 1px solid rgb(241, 125, 22);
+    filter: drop-shadow(0 0 40px rgba(255, 120, 40, .4));
+    animation: spin 18s linear infinite;
+}
+
+.ring::after {
+    content: "";
+    position: absolute;
+    inset: 25px;
+    border: 1px dashed rgba(255, 160, 70, .35);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+    .ring {
+        display: none;
+    }
+
+    .cardItem {
+        width: 92vw;
+        height: 65vh;
+    }
+
+    .cardInner {
+        padding: 3rem;
+    }
+}

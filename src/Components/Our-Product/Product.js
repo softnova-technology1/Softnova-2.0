@@ -5,10 +5,10 @@ import imgp2 from '../../images/soft1.png';
 import imgp3 from '../../images/soft23.jpg';
 import chart1 from '../../images/Product-images/productchart1.jpg';
 import chart2 from '../../images/Product-images/productchart2.jpg';
-import chart3 from '../../images/Product-images/productchart3.jpg';
-import chart4 from '../../images/lms.png';
+import chart3 from '../../images/Ourservices-images/ourproduct(e-commerce).jpg';
+import chart4 from '../../images/Ourservices-images/ourproduct(EducationLMS).jpg';
 import chart5 from '../../images/soft28.jpg';
-import chart6 from '../../images/Product-images/productchart6.jpg';
+import chart6 from '../../images/Ourservices-images/ourproduct(booking).jpg';
 import ProductHero from "./Productpart";
 import Breadcrumb from "../BreadCrumb";
 

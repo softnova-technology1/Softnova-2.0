@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import styles from "../../Styles/Animee.module.css";
 
 const nodes = [
@@ -13,6 +13,17 @@ const nodes = [
 const Worldgalaxy = () => {
   const [angle, setAngle] = useState(0);
   const [warp, setWarp] = useState(false);
+  const [comet, setComet] = useState(false);
+
+  // Background Star Generation
+  const stars = useMemo(() => 
+    Array.from({ length: 100 }).map((_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      s: Math.random() * 2,
+      op: Math.random()
+    })), []);
 
   useEffect(() => {
     const i = setInterval(() => {
@@ -28,25 +39,49 @@ const Worldgalaxy = () => {
       window.warpTimeout = setTimeout(() => setWarp(false), 700);
     };
     window.addEventListener("wheel", handleScroll);
-    return () => window.removeEventListener("wheel", handleScroll);
+    
+    // Random Comet Trigger
+    const cometInterval = setInterval(() => {
+        if(Math.random() > 0.7) {
+            setComet(true);
+            setTimeout(() => setComet(false), 1500);
+        }
+    }, 4000);
+
+    return () => {
+        window.removeEventListener("wheel", handleScroll);
+        clearInterval(cometInterval);
+    };
   }, []);
 
-  
   const radius = 220; 
 
   return (
     <div className={styles.metaContainer}>
+        {/* Deep Space Layer */}
+        <div className={styles.starField}>
+            {stars.map(s => (
+                <div key={s.id} className={styles.tinyStar} style={{left: `${s.x}%`, top: `${s.y}%`, width: s.s, height: s.s, opacity: s.op}} />
+            ))}
+        </div>
+
+        {comet && <div className={styles.cometStreak} />}
+
       <div className={`${styles.metaContent} ${warp ? styles.metaWarp : ""}`}>
-       
+        
+        {/* Reactor Core */}
         <div className={styles.aiCore} onClick={() => setWarp(!warp)}>
-          <div className={styles.aiInner}></div>
+          <div className={styles.aiInner}>
+              <div className={styles.corePulse}></div>
+          </div>
           <div className={styles.aiRing}></div>
           <div className={styles.aiText}>SOFTNOVA</div>
         </div>
 
+        {/* Orbit Path */}
         <div className={styles.portal}></div>
 
-        
+        {/* Nodes */}
         {nodes.map((n, i) => {
           const a = angle + (i * (Math.PI * 2)) / nodes.length;
           const x = Math.cos(a) * radius;
@@ -58,16 +93,19 @@ const Worldgalaxy = () => {
               className={styles.metaNode}
               style={{
                 transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
-                color: n.color,
+                boxShadow: `0 0 20px ${n.color}44`,
+                border: `1px solid ${n.color}66`,
                 left: '50%',
                 top: '50%',
-                background: `radial-gradient(circle, #02000a, #000)`,
               }}
             >
               <div className={styles.nodeIcon} style={{ color: n.color }}>
                 <i className={n.icon}></i>
               </div>
-              <div className={styles.nodeText}>{n.name}</div>
+              <div className={styles.nodeText} style={{color: n.color}}>{n.name}</div>
+              
+              {/* Decorative small orbit around node */}
+              <div className={styles.miniOrbit} style={{borderColor: n.color}}></div>
             </div>
           );
         })}

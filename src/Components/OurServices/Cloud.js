@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import styles from "../../Styles/Cloud.module.css";
-import shieldImg from "../../images/Cloud1.jpg";
-import img1 from "../../images/Cloud2.jpg";
-import img2 from "../../images/Cloud3.jpg";
-import img4 from "../../images/Cloud4.jpg";
+import shieldImg from "../../images/Ourservices-images/Cloud1.jpg";
+import img1 from "../../images/Ourservices-images/Cloud2.jpg";
+import img2 from "../../images/Ourservices-images/Cloud3.jpg";
+import img4 from "../../images/Ourservices-images/Cloud4.jpg";
 import Breadcrumb from "../BreadCrumb";
 
 import { Link } from "react-router-dom";

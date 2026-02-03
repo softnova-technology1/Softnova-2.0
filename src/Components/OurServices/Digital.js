@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Digital.module.css";
-import img1 from "../../images/Product-images/Ai.jpg";
+import img1 from "../../images/Ourservices-images/soft22.jpg";
 import Breadcrumb from "../BreadCrumb";
 
 import { Link } from "react-router-dom";

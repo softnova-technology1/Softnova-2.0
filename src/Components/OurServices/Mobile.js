@@ -1,39 +1,43 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Mobile.module.css";
-import project1 from "../../images/Product-images/Ai.jpg";
-import mobile from "../../images/Product-images/mobile.jpg";
+import Mobileapps1 from "../../images/Ourservices-images/Mobileapps1.jpg";
+import Mobileapps2 from "../../images/Ourservices-images/Mobileapps2.jpg";
+import Mobileapps3 from "../../images/Ourservices-images/Mobileapps3.jpg";
+import Mobileapps4 from "../../images/Ourservices-images/Mobileapps4.jpg";
+import Mobileapps5 from "../../images/Ourservices-images/Mobileapps5.jpg";
+import mobile from "../../images/Ourservices-images/mobile.jpg";
 import Breadcrumb from "../BreadCrumb";
 
 import { Link } from "react-router-dom";
 const projects = [
   {
     id: 1,
-    img: project1,
+    img: Mobileapps1,
     title: "Mobile App",
     desc: "A seamless shopping experience with intuitive UI and secure payment integration for effortless online retail."
   },
   {
     id: 2,
-    img: project1,
+    img: Mobileapps2,
     title: "Delivery App",
     desc: "Real-time order tracking and optimized routing to ensure lightning-fast deliveries and customer satisfaction."
   },
   {
     id: 3,
-    img: project1,
+    img: Mobileapps3,
     title: "Management App",
     desc: "Streamline your workflow with powerful task organization, team collaboration tools, and insightful analytics."
   },
   {
     id: 4,
-    img: project1,
+    img: Mobileapps4,
     title: "Ticket Booking App",
     desc: "Hassle-free reservation system for movies, events, and travel with instant confirmation and digital passes."
   },
   {
     id: 5,
-    img: project1,
+    img: Mobileapps5,
     title: "E-Commerce",
     desc: "A comprehensive digital storefront featuring smart product filtering, personalized wishlists, and robust checkout."
   },
