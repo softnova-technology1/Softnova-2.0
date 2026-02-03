@@ -405,7 +405,7 @@
 @media (max-width: 768px) {
 
   .wrapper {
-    padding: 4rem 1.5rem;
+    /* padding: 10px 0 5px 0; */
   }
 
   .heading {
@@ -436,8 +436,9 @@
   }
 
   .section {
-    padding: 4rem 0;
+    padding: 2rem 0;
     gap: 4rem;
+    margin: 10px 0;
   }
 
   .cardd {
