@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import styles from "../../Styles/HeroContact.module.css"; // Styles object import
+import styles from "../../Styles/HeroContact.module.css";
 
 const CareerHero = () => {
   const [init, setInit] = useState(false);
