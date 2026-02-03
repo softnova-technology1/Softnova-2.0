@@ -146,7 +146,7 @@
   transform: scale(1.05);
 }
 
-/* MOBILE RESPONSIVE */
+
 @media (max-width: 768px) {
   .listItem {
     flex-direction: column;
@@ -179,3 +179,58 @@
     font-size: 16px;
   }
 }
+@media (max-width: 428px) {
+
+  
+  .mainTitle,
+  .textDetails h3 {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .tag,
+  .id {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .textDetails p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+ 
+  .exploreBtn,
+  .cta {
+    font-size: 12px;
+  }
+
+}
+@media (max-width: 380px) {
+
+
+  .mainTitle,
+  .textDetails h3 {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .tag,
+  .id {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .textDetails p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+ 
+  .exploreBtn,
+  .cta {
+    font-size: 12px;
+  }
+
+}
+

@@ -157,6 +157,7 @@ const form = useRef();
         <textarea
           placeholder="Why should we hire you?"
           rows="4"
+          className="textarea"
         ></textarea>
 
         <button className={styles.starButton}>
