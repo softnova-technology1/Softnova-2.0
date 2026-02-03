@@ -43,7 +43,7 @@
 }
 
 .textBox h1 {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 1.15;
   font-family: "Playfair Display", serif;
@@ -65,7 +65,7 @@
 }
 
 .textBox p {
-  font-size: 16px;
+  font-size: 15px;
   color: #cfcfcf;
   max-width: 520px;
   margin-bottom: 35px;

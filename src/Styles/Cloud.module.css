@@ -49,7 +49,7 @@
   margin-bottom: 18px;
 }
 .title {
-  font-size: 40px;
+  font-size: 30px;
   line-height: 1.2;
   margin-bottom: 20px;
   font-weight: 700;
@@ -69,9 +69,9 @@
 }
 
 .desc {
-  font-size: 1.05rem;
+  font-size: 15px;
   line-height: 1.9;
-  color: #d6d6d6;
+  color: #cfcfcf;
   margin-bottom: 2.5rem;
 }
 
@@ -461,5 +461,69 @@
 
   .star6 {
     width: 4px;
+  }
+}
+/* =========================
+   SECTION MOBILE BG – 428px
+========================= */
+@media (max-width: 428px) {
+
+  .section {
+    position: relative;
+    min-height: 100vh;
+    background: none;
+    padding: 4rem 1.2rem;
+    overflow: hidden;
+  }
+
+  /* Background image */
+  .section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/soft38.jpg"); /* 🔁 change image */
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.15);
+    z-index: 0;
+  }
+
+  /* Dark blue cinematic overlay */
+  .section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      rgba(0, 18, 45, 0.88),
+      rgba(0, 0, 0, 0.95)
+    );
+    z-index: 1;
+  }
+
+  /* Content on top */
+  .container,
+  .flexWrapper,
+  .content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .desc {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .btn,
+  .starButton {
+    margin: auto;
+  }
+
+  /* Hide floating image on mobile */
+  .imageWrap {
+    display: none !important;
   }
 }

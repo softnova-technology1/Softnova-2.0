@@ -110,7 +110,7 @@ const WebDevelopment = () => {
             transition={{ delay: i * 0.1 }}
           >
             <div className={styles.stepNumber}>{i + 1}</div>
-            <h3>{step.title}</h3>
+            <h5>{step.title}</h5>
             <p>{step.desc}</p>
           </motion.div>
         ))}
