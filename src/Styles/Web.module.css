@@ -1,6 +1,4 @@
-/* =======================
-   GLOBAL
-======================= */
+
 .page {
   background: #0b0b0b;
   color: #fff;
@@ -8,9 +6,6 @@
   overflow-x: hidden;
 }
 
-/* =======================
-   HERO SECTION
-======================= */
 .hero {
   background: radial-gradient(circle at top left, #ff8c0030, #000 60%);
   display: flex;
@@ -65,9 +60,6 @@
   opacity: 0.9;
 }
 
-/* =======================
-   VISUAL
-======================= */
 .visualSection {
   flex: 1;
   display: flex;
@@ -86,9 +78,6 @@
   }
 }
 
-/* =======================
-   TIMELINE
-======================= */
 .timeline {
   max-width: 1200px;
   margin: 40px auto;
@@ -115,9 +104,7 @@
   font-weight: bold;
 }
 
-/* =======================
-   PROJECT GRID
-======================= */
+
 .gridContainer {
   max-width: 900px;
   margin: auto;
@@ -198,9 +185,7 @@
   transform: translateX(80px);
 }
 
-/* =======================
-   MOBILE RESPONSIVE
-======================= */
+
 @media (max-width: 900px) {
   .heroContainer {
     flex-direction: column;

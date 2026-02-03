@@ -37,7 +37,7 @@ export default function FeaturesCard() {
               advancement opportunities.
             </p>
            
-            <button className={styles.starButton}>
+            <a className={styles.stara} href="/career"><button className={styles.starButton}>
               Read More
               <span className={styles.star1}>
                 <StarSvg />
@@ -57,7 +57,7 @@ export default function FeaturesCard() {
               <span className={styles.star6}>
                 <StarSvg />
               </span>
-            </button>
+            </button></a>
            
           </div>
           <div className={styles.goCorner}>
@@ -73,7 +73,7 @@ export default function FeaturesCard() {
               Send your updated resume along with a cover letter to the
               specified application link or email address.
             </p>
-            <button className={styles.starButton}>
+           <a className={styles.stara} href="/career"> <button className={styles.starButton}>
               Read More
               <span className={styles.star1}>
                 <StarSvg />
@@ -93,7 +93,7 @@ export default function FeaturesCard() {
               <span className={styles.star6}>
                 <StarSvg />
               </span>
-            </button>
+            </button></a>
           </div>
           <div className={styles.goCorner}>
             <div className={styles.goArrow}>→</div>
@@ -106,7 +106,7 @@ export default function FeaturesCard() {
               Send your updated resume along with a cover letter to the
               specified application link or email address.
             </p>
-            <button className={styles.starButton}>
+            <a className={styles.stara} href="/career"><button className={styles.starButton}>
              Read More
               <span className={styles.star1}><StarSvg /></span>
               <span className={styles.star2}><StarSvg /></span>
@@ -114,7 +114,7 @@ export default function FeaturesCard() {
               <span className={styles.star4}><StarSvg /></span>
               <span className={styles.star5}><StarSvg /></span>
               <span className={styles.star6}><StarSvg /></span>
-            </button>
+            </button></a>
           </div>
           <div className={styles.goCorner}>
             <div className={styles.goArrow}>→</div>

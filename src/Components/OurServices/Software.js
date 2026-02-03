@@ -1,19 +1,24 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Software.module.css";
-import p1 from "../../images/Product-images/Ai.jpg";
+import software1 from "../../images/Ourservices-images/Software1.jpg";
+import software2 from "../../images/Ourservices-images/Software2.jpg";
+import software3 from "../../images/Ourservices-images/Software3.jpg";
+import software4 from "../../images/Ourservices-images/Software4.jpg";
+import software5 from "../../images/Ourservices-images/Software5.jpg";
+import software6 from "../../images/Ourservices-images/Software6.jpg";
 import { ArrowRight, Code, Cpu, ShieldCheck } from "lucide-react";
-import shan from "../../images/Product-images/software.jpg";
+import shan from "../../images/Ourservices-images/software.jpg";
 import Breadcrumb from "../BreadCrumb";
 
 import { Link } from "react-router-dom";
 const projects = [
-  { title: "ERP System", image: p1, category: "Enterprise" },
-  { title: "Custom CRM", image: p1, category: "Business" },
-  { title: "Inventory Manager", image: p1, category: "Logistics" },
-  { title: "School Management", image: p1, category: "Education" },
-  { title: "Hospital Portal", image: p1, category: "Healthcare" },
-  { title: "Fintech App", image: p1, category: "Finance" },
+  { title: "ERP System", image: software1, category: "Enterprise" },
+  { title: "Custom CRM", image: software2, category: "Business" },
+  { title: "Inventory Manager", image: software3, category: "Logistics" },
+  { title: "School Management", image: software4, category: "Education" },
+  { title: "Hospital Portal", image: software5, category: "Healthcare" },
+  { title: "Fintech App", image: software6, category: "Finance" },
 ];
 
 
@@ -77,9 +82,7 @@ const Software = () => {
             transition={{ duration: 1 }}
           >
             <img src={shan} alt="Software Development" />
-            <div className={styles.floatingBadge}>
-               <Cpu size={20} /> <span>Scalable Architecture</span>
-            </div>
+           
           </motion.div>
         </div>
       </section>

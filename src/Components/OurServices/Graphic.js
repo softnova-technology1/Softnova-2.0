@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Graphic.module.css";
-import desktop from "../../images/Product-images/tea.jpg";
-import img1 from "../../images/Product-images/web1.png";
-import img2 from "../../images/Product-images/web2.png";
-import img3 from "../../images/Product-images/web3.png";
-import img4 from "../../images/Product-images/web4.png";
-import img5 from "../../images/Product-images/web5.png";
-import img6 from "../../images/Product-images/web6.png";
+import desktop from "../../images/Ourservices-images/Graphic1.jpg";
+import img1 from "../../images/Ourservices-images/Graphic2.jpg";
+import img2 from "../../images/Ourservices-images/Graphic3.jpg";
+import img3 from "../../images/Ourservices-images/Graphic4.jpg";
+import img4 from "../../images/Ourservices-images/Graphic5.jpg";
+import img5 from "../../images/Ourservices-images/Graphic6.jpg";
+import img6 from "../../images/Ourservices-images/Graphic7.jpg";
 import Breadcrumb from "../BreadCrumb";
 
 import { Link } from "react-router-dom";

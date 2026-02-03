@@ -20,18 +20,18 @@ const phases = [
 const Workflow = () => {
   const [activeProgress, setActiveProgress] = useState(20);
 
-  // 1. Parent Layout Variant: Child elements-ah eppo trigger pannanum nu sollum
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Ovvoru card-kum idaila 0.2s gap irukkum
+        staggerChildren: 0.2, 
       },
     },
   };
 
-  // 2. Individual Card Variant: Card eppadi ulla varanum nu sollum
+  
   const cardVariants = {
     hidden: { 
       opacity: 0, 
@@ -54,7 +54,7 @@ const Workflow = () => {
       <Container>
         <div className={styles.wrapper}>
           
-          {/* Header Animation */}
+          
           <motion.header 
             className={styles.header}
             initial={{ opacity: 0, y: -20 }}
@@ -82,20 +82,20 @@ const Workflow = () => {
             </div>
           </motion.header>
 
-          {/* Grid with Individual Card Reveal */}
+          
           <motion.div 
             className={styles.grid}
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.1 }} // Oru thadavai scroll pannalum thirumba trigger aagum
+            viewport={{ once: false, amount: 0.1 }} 
           >
             {phases.map((p) => (
               <motion.div 
                 key={p.id} 
                 className={styles.cardBox} 
                 onMouseEnter={() => setActiveProgress(p.progress)}
-                variants={cardVariants} // Ovvoru card-um mela irukra delay-oda varum
+                variants={cardVariants} 
               >
                 <h2 className={styles.gradientNumber}>{p.id}</h2>
 
