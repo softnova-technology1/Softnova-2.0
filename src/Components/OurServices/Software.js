@@ -70,7 +70,7 @@ const Software = () => {
             Connect With Us
           </Link> <ArrowRight size={18} />
               </motion.button>
-              <button className={styles.secondaryBtn}>View Features</button>
+              
             </div>
           </motion.div>
 
