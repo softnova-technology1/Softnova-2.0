@@ -3,6 +3,11 @@
   color: #fff;
   padding: 140px 6%;
 }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
 
 .heading {
   text-align: center;
@@ -461,7 +466,7 @@
 }
 
 .content h2 {
-  font-size: 42px;
+  font-size: 30px;
   letter-spacing: 8px;
   margin-bottom: 24px;
   background: linear-gradient(90deg, #ffffff, #fe851e);
@@ -476,12 +481,12 @@
 }
 
 .content p {
-  font-size: 15px;
+  font-size: 12px;
   margin: 0 auto 24px;
   max-width: 620px;
   text-align: center;
   line-height: 1.8;
-  color: #fff;
+  color: #b1b1b1;
   opacity: 0.9;
 }
 
@@ -692,12 +697,12 @@
   }
 
   .heading {
-    font-size: 24px;
+    font-size: 15px;
     margin-bottom: 50px;
   }
 
   .content h2 {
-    font-size: 24px;
+    font-size: 15px;
     letter-spacing: 2px;
   }
 
@@ -713,7 +718,7 @@
 
 @media (max-width: 600px) {
   .heading {
-    font-size: 28px;
+    font-size: 15px;
   }
 
   .frameGrid {
@@ -727,7 +732,7 @@
   }
 
   .content p {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .ctaBtn {
@@ -815,4 +820,69 @@
   .content h2 {
     font-size: 52px;
   }
+}
+@media (max-width: 380px) {
+
+  .wrapper {
+    padding: 60px 14px;
+  }
+
+  .heading,
+  .content h2,
+  .overlay h1,
+  .mainTitle {
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+  }
+
+  .content p,
+  .text p,
+  .label {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .text h4 {
+    font-size: 13px;
+  }
+
+  .statsSection {
+    padding: 60px 16px;
+  }
+
+  .number {
+    font-size: 30px;
+  }
+
+  .icon {
+    font-size: 26px;
+  }
+
+ .frameGrid {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .frameCard {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .nodeCard {
+    min-width: 100%;
+    padding: 12px 14px;
+  }
+
+  .nodeCard p {
+    font-size: 12px;
+  }
+
+  .ctaBtn,
+  .starButton {
+    padding: 10px 22px;
+    font-size: 13px;
+  }
+
 }

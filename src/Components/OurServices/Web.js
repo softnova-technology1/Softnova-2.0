@@ -1,16 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Web.module.css";
-import img1 from "../../images/Product-images/web1.png";
-import img2 from "../../images/Product-images/web2.png";
-import img3 from "../../images/Product-images/web3.png";
-import img4 from "../../images/Product-images/web4.png";
-import img5 from "../../images/Product-images/web5.png";
-import img6 from "../../images/Product-images/web6.png";
-import img7 from "../../images/Product-images/web7.png";
-import img8 from "../../images/Product-images/web8.png";
-import img9 from "../../images/Product-images/web9.png";
-import high from "../../images/Product-images/img.png";
+import img1 from "../../images/Ourservices-images/WebDevelopment1.jpg";
+import img2 from "../../images/Ourservices-images/WebDevelopment2.jpg";
+import img3 from "../../images/Ourservices-images/WebDevelopment3.jpg";
+import img4 from "../../images/Ourservices-images/WebDevelopment4.jpg";
+import img5 from "../../images/Ourservices-images/WebDevelopment5.jpg";
+import img6 from "../../images/Ourservices-images/WebDevelopment6.jpg";
+import img7 from "../../images/Ourservices-images/WebDevelopment7.jpg";
+import img8 from "../../images/Ourservices-images/WebDevelopment8.jpg";
+import img9 from "../../images/Ourservices-images/WebDevelopment9.jpg";
+import high from "../../images/Ourservices-images/WebDevelopment.jpg";
 import Breadcrumb from "../BreadCrumb";
 
 import { Link } from "react-router-dom";
@@ -48,7 +48,7 @@ const projects = [
   { title: "Banking Website", img: img7 },
   { title: "Educational Website", img: img8 },
   { title: "Event Website", img: img9 },
-  { title: "StartUp Website", img: img9 }
+  { title: "StartUp Website", img: img1 }
 ];
 
 const WebDevelopment = () => {

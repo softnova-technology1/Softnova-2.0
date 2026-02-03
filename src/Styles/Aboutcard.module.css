@@ -55,7 +55,7 @@
 }
 
 .cardThumb {
-    height: 220px;
+    height: 300px;
     overflow: hidden;
 }
 
@@ -128,7 +128,7 @@
   color: #8e8c8c;
   border-left: 4px solid #fe851e; 
   border-radius: 8px;
-  font-size: 1.1rem;
+  font-size: 15px;
   line-height: 1.6;
 }
 
@@ -308,6 +308,9 @@
   .tooltip {
     width: 160px;
   }
+  .tabContent{
+    font-size: 12px;
+  }
 }
 @media (max-width: 360px) {
   .tab {
@@ -320,6 +323,9 @@
   }
 
   .cardDescription {
+    font-size: 12px;
+  }
+   .tabContent{
     font-size: 12px;
   }
 }
