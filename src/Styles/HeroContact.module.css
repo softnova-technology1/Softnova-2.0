@@ -82,3 +82,16 @@
     height: 200px;
   }
 }
+@media (max-width: 425px) {
+  .container {
+    height: 400px; 
+    padding: 8rem 0;
+  }
+  .title{
+    font-size:35px;
+    padding-top: 3rem;
+  }
+  .description{
+    font-size: 12px;
+  }
+}
