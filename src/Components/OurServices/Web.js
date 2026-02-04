@@ -54,86 +54,89 @@ const projects = [
 const WebDevelopment = () => {
   return (
     <>
-    <Breadcrumb/>
-    <section className={styles.page}>
+      <Breadcrumb />
+      <section className={styles.page}>
 
-      <div className={styles.hero}>
-        <div className={styles.heroContainer}>
-          <motion.div 
-            className={styles.textSection}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
-            variants={fadeInUp}
-          >
-            <span className={styles.tag}>Web Development</span>
-            <h1 className={styles.title}>
-              Smart <span>Web-Development</span> <br />
-              for a digital first world
-            </h1>
-            <p>
-              Softnova Technology specializes in developing advanced management
-              software tailored for businesses, schools, and enterprises.
-            </p>
-            <motion.button 
-              whileHover={{ scale: 1.1 }} 
-              whileTap={{ scale: 0.9 }} 
-              className={styles.ctaButton}
+        <div className={styles.hero}>
+          <div className={styles.heroContainer}>
+            <motion.div
+              className={styles.textSection}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+              variants={fadeInUp}
             >
-              <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
-                          Connect With Us
-                        </Link>
-            </motion.button>
-          </motion.div>
+              {/* Wrapped Header Content in a Container */}
+              <div className={styles.headerContainer}>
+                <span className={styles.tag}>Web Development</span>
+                <h1 className={styles.title}>
+                  Smart <span>Web-Development</span> <br />
+                  for a digital first world
+                </h1>
+                <p>
+                  Softnova Technology specializes in developing advanced management
+                  software tailored for businesses, schools, and enterprises.
+                </p>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className={styles.ctaButton}
+                >
+                  <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    Connect With Us
+                  </Link>
+                </motion.button>
+              </div>
+            </motion.div>
 
-          <motion.div 
-            className={styles.visualSection}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.8 }}
-          >
-            <img src={high} alt="Web Development" />
-          </motion.div>
+            <motion.div
+              className={styles.visualSection}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8 }}
+            >
+              <img src={high} alt="Web Development" />
+            </motion.div>
+          </div>
         </div>
-      </div>
 
-      <div className={styles.timeline}>
-        {steps.map((step, i) => (
-          <motion.div 
-            key={step.id} 
-            className={styles.step}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.5 }}
-            variants={fadeInUp}
-            transition={{ delay: i * 0.1 }}
-          >
-            <div className={styles.stepNumber}>{i + 1}</div>
-            <h5>{step.title}</h5>
-            <p>{step.desc}</p>
-          </motion.div>
-        ))}
-      </div>
+        <div className={styles.timeline}>
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.id}
+              className={styles.step}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.5 }}
+              variants={fadeInUp}
+              transition={{ delay: i * 0.1 }}
+            >
+              <div className={styles.stepNumber}>{i + 1}</div>
+              <h5>{step.title}</h5>
+              <p>{step.desc}</p>
+            </motion.div>
+          ))}
+        </div>
 
-      <div className={styles.gridContainer}>
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            className={styles.projectItem}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }} 
-            variants={index % 2 === 0 ? slideInLeft : slideInRight}
-          >
-            <div className={styles.imgWrapper}>
-               <img src={project.img} alt={project.title} />
-            </div>
-            <h3>{project.title}</h3>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+        <div className={styles.gridContainer}>
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              className={styles.projectItem}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
+              variants={index % 2 === 0 ? slideInLeft : slideInRight}
+            >
+              <div className={styles.imgWrapper}>
+                <img src={project.img} alt={project.title} />
+              </div>
+              <h3>{project.title}</h3>
+            </motion.div>
+          ))}
+        </div>
+      </section>
     </>
   );
 };

@@ -81,9 +81,10 @@
 }
 
 .desktop {
-  width: 80%;
+  width: 70%;
   max-width: 560px;
   animation: floatDesktop 5s ease-in-out infinite;
+  margin-top: 10%;
 }
 
 .tag {
