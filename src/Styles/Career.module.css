@@ -460,19 +460,19 @@
     font-size: 1.2rem;
   }
 
-  /* ===== APPLY BUTTON ===== */
+
   .applyBtn {
     padding: 1rem;
     font-size: 15px;
   }
 
-  /* ===== STAR BUTTON ===== */
+
   .starButton {
     padding: 6px 26px;
     font-size: 10px;
   }
 
-  /* ===== INTRO SECTION ===== */
+
   .introSection {
     /* padding: 40px 18px; */
   }
@@ -485,10 +485,10 @@
   .quote {
     font-size: 12px;
     line-height: 1.6;
-    /* margin-bottom: 30px; */
+    
   }
 
-  /* ===== OPENINGS ===== */
+
   .openingWrapper h3,
   .openingTitle {
     font-size: 22px;
