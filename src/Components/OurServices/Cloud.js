@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import styles from "../../Styles/Cloud.module.css";
-import shieldImg from "../../images/Product-images/web3.png";
-import img1 from "../../images/Product-images/web2.png";
-import img2 from "../../images/Product-images/web1.png";
+import shieldImg from "../../images/Ourservices-images/Cloud1.jpg";
+import img1 from "../../images/Ourservices-images/Cloud2.jpg";
+import img2 from "../../images/Ourservices-images/Cloud3.jpg";
+import img4 from "../../images/Ourservices-images/Cloud4.jpg";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 
@@ -117,6 +118,47 @@ const CloudIT = () => {
           </div>
 
         </div>
+
+
+        <div
+          className={`${styles.serviceRow} ${styles.rowReverse}`}
+          ref={el => (revealRefs.current[3] = el)}
+        >
+          <div className={styles.mediaArea}>
+            <img src={img2} alt="IT Consulting" />
+          </div>
+
+          <div className={styles.contentArea}>
+            <span className={styles.accentBar}></span>
+            <h2 className={styles.serviceTitle}>
+              IT Consulting & Support
+            </h2>
+            <p className={styles.serviceDesc}>
+              Expert guidance and hands-on IT support for smooth operations.
+            </p>
+          </div>
+        </div>
+
+
+        <div
+          className={styles.serviceRow}
+          ref={el => (revealRefs.current[4] = el)}
+        >
+          <div className={styles.mediaArea}>
+            <img src={img4} alt="Cloud Security" />
+          </div>
+
+          <div className={styles.contentArea}>
+            <span className={styles.accentBar}></span>
+            <h2 className={styles.serviceTitle}>
+              Cloud Security & Monitoring
+            </h2>
+            <p className={styles.serviceDesc}>
+              Advanced monitoring and security for cloud environments.
+            </p>
+          </div>
+        </div>
+
       </section>
     </>
   );
