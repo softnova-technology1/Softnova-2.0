@@ -15,11 +15,11 @@ const Navbar = () => {
   const services = [
     { name: "Web Development", path: "/services/WebDevelopment" },
     { name: "Mobile App Development", path: "/services/MobileAppSection" },
-    { name: "E-Commerce", path: "/services/ProjectsFlip" },
-    { name: "Software Development", path: "/services/Software" },
+    { name: "E-Commerce", path: "/services/ECommerce" },
+    { name: "Software Development", path: "/services/SoftwareDevelopment" },
     { name: "Graphics Design", path: "/services/GraphicDesign" },
     { name: "Digital Marketing", path: "/services/DigitalMarketing" },
-    { name: "Cloud and IT", path: "/services/CloudIT" },
+    { name: "Cloud and IT", path: "/services/CloudandIT" },
     { name: "Other Services", path: "/services/OtherServices" },
   ];
 
