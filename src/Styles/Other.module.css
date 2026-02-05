@@ -148,114 +148,126 @@
   background: transparent !important;
 }
 /* Canvas Overlay Styling */
+/* Canvas Overlay Styling */
 .canvasOverlay {
   position: fixed;
   inset: 0;
-  z-index: 9999;
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(15px);
+  z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-.canvasContent {
-  position: relative;
-  z-index: 10;
-  width: 90%;
-  max-width: 600px;
+/* Close/Remove Button */
+.closeCanvas {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: #fe851e;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 2100;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
+.closeCanvas:hover {
+  background: white;
+  color: #fe851e;
+  transform: scale(1.1);
+}
+
+/* Glass Card */
 .glassCard {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(254, 133, 30, 0.3);
-  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 60px;
   border-radius: 40px;
+  max-width: 700px;
+  width: 90%;
   text-align: center;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(254, 133, 30, 0.1);
+  position: relative;
+  z-index: 2050;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
 .canvasIcon {
   color: #fe851e;
-  margin-bottom: 1.5rem;
-  display: inline-block;
-  padding: 20px;
-  background: rgba(254, 133, 30, 0.1);
-  border-radius: 50%;
+  margin-bottom: 25px;
+  transform: scale(1.5);
 }
 
-.glassCard h2 {
-  font-size: 2.5rem;
-  color: #fff;
-  margin-bottom: 1rem;
+.canvasTitle {
+  font-size: 3rem;
+  margin: 20px 0;
+  color: white;
 }
 
-.glassCard p {
+.canvasDesc {
   color: #ccc;
   line-height: 1.8;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
 .techStack {
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    color: #fe851e;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.closeCanvas {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.closeCanvas:hover {
-  transform: rotate(90deg) scale(1.1);
   color: #fe851e;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
 }
 
-/* Background Blobs for Canvas Feel */
+.canvasBackBtn {
+  background: transparent;
+  border: 1px solid #fe851e;
+  color: #fe851e;
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.canvasBackBtn:hover {
+  background: #fe851e;
+  color: white;
+}
+
+/* Animated Blobs */
 .canvasParticles {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
+  position: absolute;
+  inset: 0;
+  z-index: 2001;
+  pointer-events: none;
 }
 
 .blob {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(254, 133, 30, 0.15) 0%, transparent 70%);
-    filter: blur(50px);
-    border-radius: 50%;
-}
-
-.blob:nth-child(1) { top: 10%; left: 10%; }
-.blob:nth-child(2) { bottom: 10%; right: 10%; background: rgba(0, 255, 255, 0.05); }
-.closeCanvas {
   position: absolute;
-  top: 40px;
-  right: 40px;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  z-index: 100; /* Particles-ku mela button irukanum */
-  transition: all 0.3s ease;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(254, 133, 30, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
 }
 
-.closeCanvas:hover {
-  transform: rotate(90deg) scale(1.2); /* Hover panna stylish-ah rotate aagum */
-  color: #fe851e;
-}
+/* Positioning blobs randomly */
+.blob:nth-child(1) { top: 10%; left: 10%; }
+.blob:nth-child(2) { bottom: 10%; right: 10%; }
+.blob:nth-child(3) { top: 50%; left: 50%; width: 400px; }
 
+@media (max-width: 768px) {
+  .canvasTitle { font-size: 2rem; }
+  .glassCard { padding: 30px; }
+  .closeCanvas { top: 20px; right: 20px; }
+}
 
 @media (max-width: 768px) {
   .listItem {
