@@ -5,6 +5,7 @@ import { Settings, Cpu, Database, Share2, ArrowRight } from "lucide-react";
 import Breadcrumb from "../BreadCrumb";
 
 import { Link } from "react-router-dom";
+import CareerHero from "./Otherpart";
 const services = [
   {
     id: "01",
@@ -37,22 +38,8 @@ const OtherServices = () => {
     <>
     <Breadcrumb/>
     <section className={styles.section}>
+       <CareerHero/>
       <div className={styles.container}>
-       
-        <motion.div 
-          className={styles.header}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.8 }}
-        >
-          <span className={styles.tag}>Premium Solutions</span>
-          <h1 className={styles.mainTitle}>
-            Strategic Services for <br /> <span>Next-Gen Evolution.</span>
-          </h1>
-        </motion.div>
-
-  
         <div className={styles.listWrapper}>
           {services.map((service, index) => (
             <motion.div 
