@@ -81,10 +81,16 @@
 }
 
 .desktop {
-  width: 70%;
+  width: 80%;
   max-width: 560px;
-  animation: floatDesktop 5s ease-in-out infinite;
+   animation: float 4s ease-in-out infinite;
   margin-top: 10%;
+  border-radius: 50px;
+}
+@keyframes float {
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 .tag {
@@ -104,7 +110,7 @@
   background: #fe851e;
   font-size: 16px;
   font-weight: 500;
-  color: #181818;
+  color:white;
   border-radius: 30px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -398,5 +404,53 @@
   .visualBox,
   .desktop {
     display: none;
+  }
+}
+@media (max-width:768px){
+  .hero {
+    min-height: 100vh;
+    background: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Background image layer */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/soft30.jpg"); /* 🔁 change if needed */
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.15);
+    z-index: 0;
+  }
+
+  /* Dark cinematic overlay */
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      rgba(0, 15, 40, 0.9),
+      rgba(0, 0, 0, 0.95)
+    );
+    z-index: 1;
+  }
+
+  /* Content always on top */
+  .overlay {
+    display: none; /* desktop overlay remove */
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+  .textBox{
+    margin-top: 25%;
   }
 }

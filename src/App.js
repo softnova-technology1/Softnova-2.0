@@ -55,13 +55,10 @@ import Products from "./Components/Our-Product/Product";
 import Services from "./Components/OurServices/Main";
 import WebDevelopment from "./Components/OurServices/Web";
 import MobileAppSection from "./Components/OurServices/Mobile";
-import ProjectsFlip from "./Components/OurServices/E-Commerce";
-import Software from "./Components/OurServices/Software";
 import CareerForm from "./Components/Career/Careers";
 import GraphicDesign from "./Components/OurServices/Graphic";
 import DigitalMarketing from "./Components/OurServices/Digital";
 import OtherServices from "./Components/OurServices/Other";
-import CloudIT from "./Components/OurServices/Cloud";
 import Cursor from "./Cursor";
 import Contact from "./Components/Contact/Contact";
 import RocketMenu from "./Components/Rocket";
@@ -71,6 +68,9 @@ import PrivacyPolicy from "./Components/Privacypolicy";
 import ScrollToTop from "./Components/ScrollToTop";
 import GetStarted from "./Components/Home/Getstarted";
 import About from "./Components/About/About";
+import ECommerce from "./Components/OurServices/E-Commerce";
+import CloudandIT from "./Components/OurServices/Cloud";
+import SoftwareDevelopment from "./Components/OurServices/Software";
 
 
 function AppContent() {
@@ -97,15 +97,15 @@ function AppContent() {
           path="/services/MobileAppSection"
           element={<MobileAppSection />}
         />
-        <Route path="/services/ProjectsFlip" element={<ProjectsFlip />} />
-        <Route path="/services/Software" element={<Software />} />
+        <Route path="/services/ECommerce" element={<ECommerce />} />
+        <Route path="/services/SoftwareDevelopment" element={<SoftwareDevelopment />} />
         <Route path="/services/GraphicDesign" element={<GraphicDesign />} />
         <Route
           path="/services/DigitalMarketing"
           element={<DigitalMarketing />}
         />
         <Route path="/services/OtherServices" element={<OtherServices />} />
-        <Route path="/services/CloudIT" element={<CloudIT />} />
+        <Route path="/services/CloudandIT" element={<CloudandIT />} />
         <Route path="/career" element={<CareerForm />} />
         <Route path="/gallery" element={<Achievements />} />
         <Route path="/contact" element={<Contact />} />     
