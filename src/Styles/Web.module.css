@@ -69,8 +69,9 @@
 }
 
 .visualSection img {
-  max-width: 420px;
-  width: 100%;
+  /* max-width: 420px; */
+  width: 80%;
+  margin-top: 10%;
   animation: float 4s ease-in-out infinite;
 }
 

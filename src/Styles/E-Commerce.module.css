@@ -1,10 +1,10 @@
-
 .mainPage {
   background-color: #080808;
   color: #ffffff;
   overflow-x: hidden;
 }
 
+/* ===== HERO ===== */
 
 .hero {
   min-height: 85vh;
@@ -19,6 +19,7 @@
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 60px;
+  margin-top: 10%;
 }
 
 .title {
@@ -55,7 +56,6 @@
   font-size: 15px;
 }
 
-
 .primaryBtn {
   background: #fe851e;
   border: none;
@@ -69,9 +69,10 @@
 }
 
 .heroImage {
-  width: 100%;
+  width: 80%;
   border-radius: 20px;
   animation: float 6s ease-in-out infinite;
+  margin-top: 10%;
 }
 
 @keyframes float {
@@ -79,6 +80,7 @@
   50% { transform: translateY(-15px); }
 }
 
+/* ===== PROJECTS ===== */
 
 .wrapper {
   padding: 40px 5%;
@@ -117,20 +119,26 @@
   transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
+/* ===== Overlay ===== */
+
 .projectOverlay {
   position: absolute;
   inset: 0;
   padding: 40px;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    transparent 60%
+  );
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+/* 🔥 HEADING ALWAYS VISIBLE */
 .topInfo {
-  transform: translateY(-20px);
-  opacity: 0;
-  transition: 0.5s ease;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .catName {
@@ -142,8 +150,10 @@
 .topInfo h3 {
   font-size: 24px;
   margin-top: 10px;
+  transition: color 0.3s ease;
 }
 
+/* ===== Hover Button ===== */
 
 .roundBtn {
   position: absolute;
@@ -171,14 +181,11 @@
   transition: 0.6s ease;
 }
 
+/* ===== HOVER EFFECTS ===== */
+
 .projectMinimal:hover img {
   transform: scale(1.1) rotate(1deg);
   filter: grayscale(0.5);
-}
-
-.projectMinimal:hover .topInfo {
-  transform: translateY(0);
-  opacity: 1;
 }
 
 .projectMinimal:hover .roundBtn {
@@ -190,6 +197,8 @@
   width: 100%;
 }
 
+/* ===== Scroll Reveal ===== */
+
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -200,7 +209,9 @@
   opacity: 1;
   transform: translateY(0);
 }
-/* Sidebar Overlay */
+
+/* ===== SIDEBAR CANVAS ===== */
+
 .canvasOverlay {
   position: fixed;
   top: 0;
@@ -209,10 +220,9 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(8px);
-  z-index: 99998; /* High z-index */
+  z-index: 99998;
 }
 
-/* Sidebar Drawer */
 .sideCanvas {
   position: fixed;
   top: 0;
@@ -220,7 +230,7 @@
   width: 450px;
   height: 100vh;
   background: #ffffff;
-  z-index: 99999; /* Higher than navbar */
+  z-index: 99999;
   padding: 40px 30px;
   box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
   overflow-y: auto;
@@ -228,7 +238,6 @@
   flex-direction: column;
 }
 
-/* Close/Remove Button */
 .closeBtn {
   align-self: flex-end;
   background: #ff3e3e;
@@ -285,6 +294,7 @@
   font-size: 0.9rem;
   margin-bottom: 5px;
 }
+
 
 /* Responsive for Mobile */
 @media (max-width: 500px) {
