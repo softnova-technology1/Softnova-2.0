@@ -1,15 +1,14 @@
-import React, { useState } from "react"; // Added useState
-import { motion, AnimatePresence } from "framer-motion"; // Added AnimatePresence
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "../../Styles/E-Commerce.module.css";
 import ecommerce2 from "../../images/Ourservices-images/e-commerce2.jpg";
 import ecommerce3 from "../../images/Ourservices-images/e-commerce3.jpg";
 import ecommerce4 from "../../images/Ourservices-images/e-commerce4.jpg";
 import ecommerce5 from "../../images/Ourservices-images/e-commerce5.jpg";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react"; // X icon added
 import shan from "../../images/Ourservices-images/e-commerce1.jpg";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
-
 
 const projects = [
   { id: 1, title: "E-Commerce Website", image: ecommerce2, category: "Web Solution", desc: "A robust online store with advanced filtering and seamless checkout." },
@@ -29,7 +28,7 @@ const cardVariants = {
   }
 };
 
-const ProjectsFlip = () => {
+const ECommerce = () => {
   // --- Canvas State Logic ---
   const [isCanvasOpen, setIsCanvasOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
@@ -37,17 +36,20 @@ const ProjectsFlip = () => {
   const openCanvas = (project) => {
     setSelectedProject(project);
     setIsCanvasOpen(true);
+    document.body.style.overflow = "hidden"; // Scroll freeze when canvas open
   };
 
   const closeCanvas = () => {
     setIsCanvasOpen(false);
     setSelectedProject(null);
+    document.body.style.overflow = "auto"; // Resume scroll on close
   };
 
   return (
     <>
       <Breadcrumb/>
       <div className={styles.mainPage}>
+        {/* --- Hero Section --- */}
         <section className={styles.hero}>
           <div className={styles.container}>
             <motion.div 
@@ -74,7 +76,7 @@ const ProjectsFlip = () => {
                 >
                   <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
                     Connect With Us
-                  </Link> <ArrowRight size={18} />
+                  </Link> 
                 </motion.button>
               </div>
             </motion.div>
@@ -94,6 +96,7 @@ const ProjectsFlip = () => {
           </div>
         </section>
 
+        {/* --- Projects Grid Section --- */}
         <section className={styles.wrapper}>
           <div className={styles.sectionHeader}>
             <motion.h2 
@@ -121,6 +124,7 @@ const ProjectsFlip = () => {
                   
                   <motion.div 
                     className={styles.projectOverlay}
+                    initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
                   >
                       <div className={styles.topInfo}>
@@ -128,11 +132,10 @@ const ProjectsFlip = () => {
                         <h3>{item.title}</h3>
                       </div>
                       
-                      {/* --- Clickable Arrow --- */}
                       <motion.div 
                         className={styles.roundBtn}
                         whileHover={{ scale: 1.2, rotate: 45 }}
-                        onClick={() => openCanvas(item)} // Trigger Canvas
+                        onClick={() => openCanvas(item)} 
                         style={{ cursor: 'pointer' }}
                       >
                         <ArrowUpRight size={24} className={styles.arrowIcon} />
@@ -151,36 +154,53 @@ const ProjectsFlip = () => {
       <AnimatePresence>
         {isCanvasOpen && (
           <>
+            {/* Background Blur Overlay */}
             <motion.div 
               className={styles.canvasOverlay}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={closeCanvas}
+              onClick={closeCanvas} // Clicking outside also closes
             />
+            
+            {/* Sliding Panel */}
             <motion.div 
               className={styles.sideCanvas}
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
             >
+              {/* REMOVE BUTTON - Fixes your requirement */}
               <button className={styles.closeBtn} onClick={closeCanvas}>
-                ✕ Remove
+                <X size={20} /> <span>Remove</span>
               </button>
               
               <div className={styles.canvasBody}>
                 {selectedProject && (
-                  <>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                  >
                     <img src={selectedProject.image} alt={selectedProject.title} className={styles.canvasImg} />
                     <span className={styles.canvasTag}>{selectedProject.category}</span>
-                    <h2>{selectedProject.title}</h2>
-                    <p>{selectedProject.desc}</p>
+                    <h2 className={styles.canvasTitle}>{selectedProject.title}</h2>
+                    <p className={styles.canvasDesc}>{selectedProject.desc}</p>
+                    
                     <div className={styles.canvasMeta}>
-                      <p><strong>Status:</strong> Completed</p>
-                      <p><strong>Service:</strong> Enterprise Solution</p>
+                      <div className={styles.metaItem}>
+                        <strong>Status:</strong> <span>Completed</span>
+                      </div>
+                      <div className={styles.metaItem}>
+                        <strong>Service:</strong> <span>Enterprise Solution</span>
+                      </div>
                     </div>
-                  </>
+                    
+                    <button className={styles.canvasCta}>
+                       View Live Project
+                    </button>
+                  </motion.div>
                 )}
               </div>
             </motion.div>
@@ -191,4 +211,4 @@ const ProjectsFlip = () => {
   );
 };
 
-export default ProjectsFlip;
+export default ECommerce;

@@ -13,9 +13,9 @@ const nodes = [
 const Worldgalaxy = () => {
   const [angle, setAngle] = useState(0);
   const [warp, setWarp] = useState(false);
-  const [comet, setComet] = useState(false);
+  // Track multiple comets using an array of IDs
+  const [comets, setComets] = useState([]);
 
-  // Background Star Generation
   const stars = useMemo(() => 
     Array.from({ length: 100 }).map((_, i) => ({
       id: i,
@@ -40,13 +40,28 @@ const Worldgalaxy = () => {
     };
     window.addEventListener("wheel", handleScroll);
     
-    // Random Comet Trigger
+    // Increased frequency: Runs every 1.5 seconds now
+   // ... (rest of the code)
+
     const cometInterval = setInterval(() => {
-        if(Math.random() > 0.7) {
-            setComet(true);
-            setTimeout(() => setComet(false), 1500);
+        if(Math.random() > 0.4) {
+            const id = Date.now();
+            const style = {
+                top: `${Math.random() * 40}%`, 
+                // Random-ah konjam slow/fast irukathukku 3 to 5 seconds
+                animationDuration: `${3 + Math.random() * 2}s` 
+            };
+            
+            setComets(prev => [...prev, { id, style }]);
+            
+            // Wait for 5 seconds before removing from DOM
+            setTimeout(() => {
+                setComets(prev => prev.filter(c => c.id !== id));
+            }, 5000); 
         }
-    }, 4000);
+    }, 2000); // New comet every 2 seconds
+
+// ...
 
     return () => {
         window.removeEventListener("wheel", handleScroll);
@@ -58,30 +73,26 @@ const Worldgalaxy = () => {
 
   return (
     <div className={styles.metaContainer}>
-        {/* Deep Space Layer */}
         <div className={styles.starField}>
             {stars.map(s => (
                 <div key={s.id} className={styles.tinyStar} style={{left: `${s.x}%`, top: `${s.y}%`, width: s.s, height: s.s, opacity: s.op}} />
             ))}
         </div>
 
-        {comet && <div className={styles.cometStreak} />}
+        {/* Render multiple comets */}
+        {comets.map(c => (
+            <div key={c.id} className={styles.cometStreak} style={c.style} />
+        ))}
 
       <div className={`${styles.metaContent} ${warp ? styles.metaWarp : ""}`}>
-        
-        {/* Reactor Core */}
         <div className={styles.aiCore} onClick={() => setWarp(!warp)}>
-          <div className={styles.aiInner}>
-              <div className={styles.corePulse}></div>
-          </div>
+          <div className={styles.aiInner}><div className={styles.corePulse}></div></div>
           <div className={styles.aiRing}></div>
           <div className={styles.aiText}>SOFTNOVA</div>
         </div>
 
-        {/* Orbit Path */}
         <div className={styles.portal}></div>
 
-        {/* Nodes */}
         {nodes.map((n, i) => {
           const a = angle + (i * (Math.PI * 2)) / nodes.length;
           const x = Math.cos(a) * radius;
@@ -103,8 +114,6 @@ const Worldgalaxy = () => {
                 <i className={n.icon}></i>
               </div>
               <div className={styles.nodeText} style={{color: n.color}}>{n.name}</div>
-              
-              {/* Decorative small orbit around node */}
               <div className={styles.miniOrbit} style={{borderColor: n.color}}></div>
             </div>
           );

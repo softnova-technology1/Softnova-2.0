@@ -33,20 +33,35 @@
 }
 
 /* Comet Animation */
+/* Updated Comet Streak */
 .cometStreak {
     position: absolute;
     width: 200px;
-    height: 1px;
+    height: 2px;
     background: linear-gradient(90deg, transparent, #fe851e, #fff);
     transform: rotate(-35deg);
     top: -10%;
     left: 110%;
-    animation: cometMove 1.5s linear forwards;
+    filter: blur(1px);
+    /* Speed-ah inge thaan control panrom (1.5s -> 3.5s) */
+    animation: cometMove 3.5s linear forwards; 
     z-index: 1;
+    pointer-events: none;
 }
 
 @keyframes cometMove {
-    to { top: 110%; left: -20%; }
+    0% {
+        top: -10%;
+        left: 110%;
+        opacity: 0;
+    }
+    10% { opacity: 1; } /* Methuva light vanthu appram move aagum */
+    90% { opacity: 1; }
+    100% {
+        top: 100%;
+        left: -20%;
+        opacity: 0;
+    }
 }
 
 .metaContent {

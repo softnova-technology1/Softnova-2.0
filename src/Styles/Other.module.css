@@ -128,24 +128,146 @@
   margin-top: 80px;
   display: flex;
   justify-content: center;
+  
 }
 
 .cta {
   background: #fe851e;
-  color: #000;
   padding: 18px 45px;
   border-radius: 50px;
   font-weight: 700;
   border: none;
   cursor: pointer;
   transition: 0.3s;
+  color: white;
 }
 
 .cta:hover {
-  background: #fff;
   transform: scale(1.05);
+  color:"white" !important;
+  background: transparent !important;
+}
+/* Canvas Overlay Styling */
+/* Canvas Overlay Styling */
+.canvasOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(15px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
+/* Close/Remove Button */
+.closeCanvas {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: #fe851e;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 2100;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.closeCanvas:hover {
+  background: white;
+  color: #fe851e;
+  transform: scale(1.1);
+}
+
+/* Glass Card */
+.glassCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 60px;
+  border-radius: 40px;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  z-index: 2050;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.canvasIcon {
+  color: #fe851e;
+  margin-bottom: 25px;
+  transform: scale(1.5);
+}
+
+.canvasTitle {
+  font-size: 3rem;
+  margin: 20px 0;
+  color: white;
+}
+
+.canvasDesc {
+  color: #ccc;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.techStack {
+  color: #fe851e;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+.canvasBackBtn {
+  background: transparent;
+  border: 1px solid #fe851e;
+  color: #fe851e;
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.canvasBackBtn:hover {
+  background: #fe851e;
+  color: white;
+}
+
+/* Animated Blobs */
+.canvasParticles {
+  position: absolute;
+  inset: 0;
+  z-index: 2001;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(254, 133, 30, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+/* Positioning blobs randomly */
+.blob:nth-child(1) { top: 10%; left: 10%; }
+.blob:nth-child(2) { bottom: 10%; right: 10%; }
+.blob:nth-child(3) { top: 50%; left: 50%; width: 400px; }
+
+@media (max-width: 768px) {
+  .canvasTitle { font-size: 2rem; }
+  .glassCard { padding: 30px; }
+  .closeCanvas { top: 20px; right: 20px; }
+}
 
 @media (max-width: 768px) {
   .listItem {
