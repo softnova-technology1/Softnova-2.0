@@ -408,7 +408,7 @@
     opacity: 1 !important; /* Mobile-la eppovume theriyanum */
     transform: translateX(0) !important;
     margin-top: 10px;
-    padding-left: 0;
+    padding-left: 30px;
     font-size: 15px;
   }
   .container{
