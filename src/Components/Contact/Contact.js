@@ -70,10 +70,10 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        "service_4lkn34d",
-        "template_yfhst2s",
+        "service_n9biyvg",
+        "template_gt6gftv",
         formRef.current,
-        "YLR_KloHoA2ojMGC2",
+        "_hV06UfPLcbKQaLam",
       )
       .then(
         () => alert("Email sent successfully!"),

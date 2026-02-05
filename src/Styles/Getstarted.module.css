@@ -38,7 +38,8 @@
 .left p {
   max-width: 480px;
   line-height: 1.7;
-  color: #cbd5f5;
+   color: #b1b1b1;
+  font-size: 12px;
 }
 
 /* RIGHT FORM */
