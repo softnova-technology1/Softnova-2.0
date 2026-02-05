@@ -37,7 +37,7 @@
   margin-bottom: 1.2rem;
   line-height: 1.7;
   color: #c2c4c5;
-  font-size: 12px;
+  font-size: 14px;
   text-align: justify;
 }
 
@@ -108,7 +108,7 @@
     0 0 25px rgba(254, 133, 30, 0.15);
 }
 .card p{
-  font-size: 12px;
+  font-size: 14px;
   color: #b1b1b1;
 }
 @media (max-width: 428px) {
