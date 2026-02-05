@@ -282,6 +282,7 @@
   .quote {
     width: 100%;
     max-width: 260px;
+    font-size: 10px;
   }
 
   .imageWrap {
