@@ -12,7 +12,7 @@ import AgricultureHero from "./Academy";
 import Features from "./Features";
 import FeaturesCard from "./Card";
 import Workflow from "./WorkFlow";
-import videoSrc from "../../images/Video1.mp4";
+import videoSrc from "../../images/Video2.mp4";
 import GetStarted from "./Getstarted";
 import { useLocation } from "react-router-dom";
 
