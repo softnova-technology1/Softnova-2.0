@@ -427,7 +427,7 @@
   grid-template-columns: repeat(2, 220px);
   gap: 32px;
   justify-content: end;
-  margin-left: auto;
+ 
 }
 
 .frameCard {
@@ -452,7 +452,7 @@
 .productSection {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:center;
   padding: 80px;
   background: #000;
   color: #fff;

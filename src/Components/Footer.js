@@ -89,18 +89,10 @@ const Footer = () => {
         <div>
           <h4>Services</h4>
           <ul>
-            <li>
-              <Link to="/services/CloudIT">Cloud and IT</Link>
-            </li>
-            <li>
-              <Link to="/services/GraphicDesign">Graphic Design</Link>
-            </li>
-            <li>
-              <Link to="/services/Software">Software Development</Link>
-            </li>
-            <li>
-              <Link to="/services/OtherServices">Other Services</Link>
-            </li>
+            <li><Link to="/services/CloudandIT">Cloud and IT</Link></li>
+            <li><Link to="/services/GraphicDesign">Graphic Design</Link></li>
+            <li><Link to="/services/SoftwareDevelopment">Software Development</Link></li>
+            <li><Link to="/services/OtherServices">Other Services</Link></li>
           </ul>
         </div>
 
