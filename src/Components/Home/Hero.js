@@ -78,7 +78,7 @@ const Hero = () => {
         >
           <motion.h1 className={styles.title} variants={itemVariants} style={{display:"flex"}}>
             
-            STERLINGIT  SERVICE
+            STERLING IT  SERVICE
           </motion.h1>
           <motion.h6 className={styles.subtitle} variants={itemVariants}>
             To drive your success
