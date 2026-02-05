@@ -88,11 +88,11 @@
 
 .cardDesc {
     margin-top: 26px;
-    font-size: 1.15rem;
+    font-size: 15px;
     line-height: 1.9;
     font-family: "Titillium Web", system-ui, sans-serif;
 
-    color: #fff;
+    color:  rgb(215, 214, 214);
 }
 
 .ring {
@@ -138,4 +138,61 @@
     .cardInner {
         padding: 3rem;
     }
+}
+@media (max-width: 428px) {
+
+  .pageWrapper {
+    margin-top: 5px;
+  }
+
+  .stackContainer {
+    gap: 12vh;
+  }
+
+  .cardItem {
+    width: 92vw;
+    height: auto;
+    min-height: 70vh;
+    border-radius: 26px;
+  }
+
+  .cardItem::before {
+    opacity: 0.35;
+    filter: blur(14px);
+  }
+
+  .cardInner {
+    padding: 2.2rem 1.6rem;
+    max-width: 100%;
+  }
+
+  .cardTitle {
+    font-size: clamp(1.9rem, 7vw, 2.4rem);
+    line-height: 1.1;
+    background-position: center;
+  }
+
+  .cardSubtitle {
+    margin-top: 1.6rem;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+  }
+
+  .cardDesc {
+    margin-top: 18px;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .ring {
+    width: 140px;
+    height: 140px;
+    right: -10%;
+    top: 8%;
+    opacity: 0.65;
+  }
+
+  .ring::after {
+    inset: 18px;
+  }
 }

@@ -1,8 +1,19 @@
 .metaContainer {
   position: relative;
+  /* height: 100vh; */
+  width: 100vw;
+
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Starfield with Parallax and Warp effect */.metaContainer {
+  position: relative;
   height: 100vh;
   width: 100vw;
-  background: radial-gradient(circle at center, #02000a 0%, #000 100%);
+  /* background: radial-gradient(circle at center, #02000a 0%, #000 100%); */
   overflow: hidden;
   font-family: 'Segoe UI', sans-serif;
 }
@@ -166,57 +177,149 @@
 }
 
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.starField {
+  position: absolute;
+  inset: -10%;
+  width: 120%;
+  height: 120%;
+  pointer-events: none;
+  transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
 }
 
-@keyframes aiPulse {
-  from {
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  to {
-    transform: translate(-50%, -50%) scale(1.1);
-  }
+.star {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #fff;
+  animation: float linear infinite;
 }
 
-@keyframes portalSpin {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+@keyframes float {
+  from { transform: translateZ(0) translateY(0); }
+  to { transform: translateZ(100px) translateY(-20px); }
 }
 
-.nodeIcon i {
-  font-size: 32px;
-  color: currentColor;
-  filter:
-    drop-shadow(0 0 6px currentColor) drop-shadow(0 0 14px currentColor) drop-shadow(0 0 28px currentColor) drop-shadow(0 0 60px rgba(255, 255, 255, 0.4));
-  transition: 0.3s;
+.starWarp {
+  transform: scale(1.5) rotate(5deg);
+  filter: blur(1px);
 }
 
-.icon {
-  width: 52px;
-  height: 52px;
-  background: rgba(254, 133, 30, 0.2);
-  color: #fe851e !important;
-  border-radius: 14px;
+/* Nebula Clouds */
+.cosmicDust {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(138, 43, 226, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(0, 255, 255, 0.08) 0%, transparent 40%);
+  filter: blur(100px);
+}
+
+/* Black Hole Core Design */
+.blackHole {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.eventHorizon {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #000;
+  box-shadow: 
+    0 0 40px #fe851e, 
+    inset 0 0 40px #fe851e,
+    0 0 80px rgba(254, 133, 30, 0.3);
+  animation: corePulse 4s infinite alternate ease-in-out;
+}
+
+@keyframes corePulse {
+  0% { transform: scale(1); box-shadow: 0 0 40px #fe851e; }
+  100% { transform: scale(1.1); box-shadow: 0 0 100px #fe851e, 0 0 150px rgba(254, 133, 30, 0.2); }
+}
+
+.coreText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 6px;
+  text-shadow: 0 0 10px #fe851e;
+}
+
+/* Liquid Glass Planet Nodes */
+.liquidNode {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  transition: transform 0.2s ease-out;
+}
+
+.glassSurface {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Organic shape */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
-  margin-bottom: 1.2rem;
+  animation: morph 8s infinite alternate ease-in-out;
+  z-index: 5;
+}
+
+@keyframes morph {
+  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+.orbitalAura {
+  position: absolute;
+  inset: -10px;
+  background: var(--node-aura);
+  filter: blur(20px);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.iconBox i {
+  font-size: 36px;
+  filter: drop-shadow(0 0 10px var(--node-accent));
+}
+
+.planetInfo {
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+.metaWarp {
+  filter: contrast(1.2) brightness(1.2);
+}
+@media (max-width:428px){
+  .metaContainer{
+    display: none;
+  }
+
 }
 @media (max-width:768px){
   .metaContainer{
-    display: block;
+    margin-top: 5%;
   }
 }

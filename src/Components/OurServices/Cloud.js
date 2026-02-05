@@ -6,7 +6,7 @@ import img2 from "../../images/Ourservices-images/Cloud3.jpg";
 import img4 from "../../images/Ourservices-images/Cloud4.jpg";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
-
+import { motion } from "framer-motion";
 const StarSvg = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53" className={styles.svg}>
     <path className={styles.fil0} d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" />
@@ -72,8 +72,18 @@ const CloudIT = () => {
               className={styles.imageWrap}
               ref={el => (revealRefs.current[1] = el)}
             >
-              <div className={styles.glow}></div>
-              <img src={shieldImg} alt="Cloud & IT Security" />
+            <motion.div 
+              className={styles.cardContainer}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1 }}
+            >
+              <div className={styles.imageWrapper}>
+                <img src={shieldImg} alt="Cloud & IT Security" />
+                <div className={styles.glowEffect}></div>
+              </div>
+            </motion.div>
             </div>
 
           </div>

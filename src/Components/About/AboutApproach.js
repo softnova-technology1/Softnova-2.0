@@ -70,7 +70,7 @@ const Stats = () => {
     const sectionRef = useRef(null);
     const [startCount, setStartCount] = useState(false);
 
-    // Intersection observer to trigger counter every scroll
+    
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => setStartCount(entry.isIntersecting),
@@ -82,7 +82,7 @@ const Stats = () => {
 
     return (
         <>
-            {/* Approach / Network Section */}
+           
             <motion.div
                 className={styles.wrapper}
                 initial={{ opacity: 0, y: 50 }}
@@ -96,7 +96,7 @@ const Stats = () => {
                 </h1>
 
                 <div className={styles.networkContainer}>
-                    {/* SVG Lines - Connecting core to nodes */}
+                   
                     <svg className={styles.svgLines}>
                         <line x1="50%" y1="50%" x2="20%" y2="20%" className={styles.line} />
                         <line x1="50%" y1="50%" x2="80%" y2="20%" className={styles.line} />
@@ -106,7 +106,7 @@ const Stats = () => {
                         <line x1="50%" y1="50%" x2="15%" y2="50%" className={styles.line} />
                     </svg>
 
-                    {/* Center Node */}
+                  
                     <div className={styles.coreNode}>
                         <div className={styles.coreInner}>
                             <span className={styles.brand}>SOFTNOVA</span>
@@ -114,7 +114,7 @@ const Stats = () => {
                         </div>
                     </div>
 
-                    {/* Peripheral Nodes */}
+                   
                     {steps.map((step, i) => (
                         <motion.div
                             key={step.id}
@@ -133,7 +133,7 @@ const Stats = () => {
                 </div>
             </motion.div>
 
-            {/* Stats Section */}
+           
             <motion.section
                 ref={sectionRef}
                 className={styles.statsSection}
@@ -163,60 +163,64 @@ const Stats = () => {
             </motion.section>
 
            
-            <motion.section
-                className={styles.productSection}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 0.8 }}
+  <div className={styles.container}>
+  <motion.section
+    className={styles.productSection}
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false, amount: 0.3 }}
+    transition={{ duration: 0.8 }}
+  >
+    <div className={styles.content}>
+      <h2>OUR PRODUCT & SERVICE</h2>
+      <p>
+        We provide both premium products and exceptional<br />
+        services, ensuring that our customers not only receive high-quality<br />
+        items but also ongoing support and expertise.
+      </p>
+
+      <motion.button
+        className={styles.starButton}
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.6 }}
+      >
+        <a className={styles.stara} href="/contact">
+          Connect With Us
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className={styles[`star${i + 1}`]}
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false }}
+              transition={{ delay: 0.2 + i * 0.15 }}
             >
-                <div className={styles.content}>
-                    <h2>OUR PRODUCT & SERVICE</h2>
-                    <p>
-                        We provide both premium products and exceptional<br />
-                        services, ensuring that our customers not only receive high-quality<br />
-                        items but also ongoing support and expertise.
-                    </p>
+              <StarSvg />
+            </motion.div>
+          ))}
+        </a>
+      </motion.button>
+    </div>
 
-                    <motion.button
-                        className={styles.starButton}
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 0.6 }}
-                    ><a className={styles.stara} href="/contact">
-                        Connect With Us
-                        {[...Array(6)].map((_, i) => (
-                            <motion.div
-                                key={i}
-                                className={styles[`star${i + 1}`]}
-                                initial={{ opacity: 0, scale: 0 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: false }}
-                                transition={{ delay: 0.2 + i * 0.15 }}
-                            >
-                                <StarSvg />
-                            </motion.div>
-                        ))}
-                        </a>
-                    </motion.button>
-                </div>
+    <div className={styles.frameGrid}>
+      {images.map((img, i) => (
+        <motion.div
+          key={i}
+          className={styles.frameCard}
+          initial={{ opacity: 0, y: 50, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ delay: i * 0.2 }}
+        >
+          <img src={img} alt={`service ${i + 1}`} />
+        </motion.div>
+      ))}
+    </div>
+  </motion.section>
+</div>
 
-                <div className={styles.frameGrid}>
-                    {images.map((img, i) => (
-                        <motion.div
-                            key={i}
-                            className={styles.frameCard}
-                            initial={{ opacity: 0, y: 50, scale: 0.95 }}
-                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                            viewport={{ once: false, amount: 0.3 }}
-                            transition={{ delay: i * 0.2 }}
-                        >
-                            <img src={img} alt={`service ${i + 1}`} />
-                        </motion.div>
-                    ))}
-                </div>
-            </motion.section>
         </>
     );
 };
