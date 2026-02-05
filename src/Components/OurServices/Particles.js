@@ -1,9 +1,9 @@
 import { useEffect, useState, useMemo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import styles from "../../Styles/HeroContact.module.css";
+import styles from "../../Styles/HeroContact.module.css"; 
 
-const CareerHero = () => {
+const ProductHero = () => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const CareerHero = () => {
     fpsLimit: 120,
     particles: {
       number: { value: 120, density: { enable: true, area: 800 } },
-      /* Using your preferred orange accent */
+     
       color: { value: ["#f89e38", "#818cf8", "#fb7185", "#f472b6"] },
       shape: { type: ["circle", "triangle", "polygon"] },
       opacity: {
@@ -56,8 +56,8 @@ const CareerHero = () => {
 
   return (
     <div className={styles.container}>
-
-      {/* 1. Particles Background Layer */}
+      
+      
       {init && (
         <div className={styles.particlesWrapper}>
           <Particles
@@ -67,17 +67,15 @@ const CareerHero = () => {
         </div>
       )}
 
-      {/* 2. Content Layer */}
+     
       <div className={styles.contentLayer}>
-        <span className={styles.smallTitle}>JOIN OUR TEAM</span>
-        <h1 className={styles.title}>CAREER</h1>
+        <h1 className={styles.title}>OUR PRODUCT</h1>
         <p className={styles.description}>
-         Not just a job. <br />
-            A place to grow, learn, and belong.
+          Responsibility, user-first thinking & strategic business gains.
         </p>
       </div>
     </div>
   );
 };
 
-export default CareerHero;
+export default ProductHero;

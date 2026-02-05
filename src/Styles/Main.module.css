@@ -63,9 +63,10 @@
 
 
 .services {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   padding: 80px 100px;
   text-align: center;
+  margin-top: 10%;
 }
 
 .subtitle {
@@ -273,12 +274,15 @@
   margin: 80px auto 0;
   display: block;
   background: #fe851e;
-  color: #000;
+  color: white;
   border: none;
   padding: 14px 40px;
   border-radius: 30px;
   font-weight: 600;
   cursor: pointer;
+}
+.connectBtn:hover {
+  color: white;
 }
 
 @media (max-width: 428px) {
@@ -454,161 +458,93 @@
     font-size: 12px;
   }
 }
-@media (max-width: 768px) {
-
+@media (max-width: 992px) and (min-width: 429px) {
+  /* --- Hero Section --- */
   .hero {
-    min-height: auto;
-    padding-left: 16px;
-    padding-right: 16px;
+    min-height: 100px;
+    margin-top: 20%;
   }
 
   .hero h1 {
-    font-size: 15px;
-    letter-spacing: 0.08em;
-    margin-bottom: 12px;
+    font-size: 32px; /* Much better for tablet */
+    line-height: 1.2;
   }
 
   .hero p {
-    font-size: 12px;
-    line-height: 1.5;
+    font-size: 16px;
+    max-width: 80%;
   }
 
- 
+  /* --- Services Section --- */
   .services {
-    
-    padding: 40px 16px;
-  }
-
-  .subtitle {
-    font-size: 12px;
-  }
-
-  .line {
-    margin: 14px auto 40px;
+    margin-top: 20%;
   }
 
   .serviceGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns is better for tablet */
     gap: 1.5rem;
   }
 
-  .card {
-    padding: 1.6rem;
-  }
-
-  .serviceCard h3 {
-    font-size: 15px;
-  }
-
-  .card p {
-    font-size: 12px;
-  }
-
-  .cta {
-    padding: 2rem 1.5rem;
-  }
-
- 
+  /* --- Workflow / Timeline --- */
   .workflow {
-    padding: 50px 16px;
+    padding: 60px 40px;
   }
 
   .workflow h2 {
-    font-size: 15px;
+    font-size: 36px;
     margin-bottom: 60px;
   }
 
-  
   .timeline {
-    margin: 40px auto;
-    padding-left: 0;
+    margin-left: 30px; /* Shift to give room for line */
   }
 
   .centerLine {
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0; /* Move line to the far left */
+    transform: none;
   }
 
   .timelineItem {
     width: 100%;
-    padding: 30px 16px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: left;
+    padding: 20px 0 20px 40px; /* Space for the marker */
+    display: block;
+    margin-left: 0;
   }
 
-  .left,
-  .right {
+  .left, .right {
+    padding-left: 40px;
+    padding-right: 0;
+    text-align: left;
     margin-left: 0;
-    padding: 0;
   }
 
   .marker {
-    position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
-    margin-bottom: 10px;
-  }
-
-  .emoji {
-    width: 38px;
-    height: 38px;
-    font-size: 18px;
+    left: -23px !important;
+    right: auto !important;
+    top: 20px;
   }
 
   .content {
-    max-width: 100%;
-    text-align: center;
+    max-width: 90%;
+    text-align: left;
   }
 
-  .step {
-    font-size: 12px;
-    margin-bottom: 4px;
-    display: block;
-  }
-
-  .timelineItem h3 {
-    font-size: 15px;
-    margin-bottom: 4px;
-  }
-
-  .timelineItem p {
-    font-size: 12px;
-    line-height: 1.4;
-  }
-
-
+  /* --- Software Section --- */
   .software {
-    padding: 50px 16px;
+    padding: 60px 40px;
   }
 
   .software h2 {
-    font-size: 15px;
-  }
-
-  .softwareIntro {
-    font-size: 12px;
-    margin-bottom: 40px;
+    font-size: 32px;
   }
 
   .softwareRow {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    padding: 24px 0;
+    grid-template-columns: 1fr 1.5fr; /* Keep side-by-side on tablet */
+    gap: 20px;
   }
 
   .softwareRow h3 {
-    font-size: 15px;
-  }
-
-  .softwareRow p {
-    font-size: 12px;
-  }
-
-  .connectBtn {
-    padding: 12px 30px;
-    font-size: 12px;
+    font-size: 18px;
   }
 }

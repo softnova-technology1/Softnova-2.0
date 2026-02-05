@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import styles from "../../Styles/HeroContact.module.css";
+import styles from "../../Styles/HeroContact.module.css"; // Styles object import
 
 const CareerHero = () => {
   const [init, setInit] = useState(false);
@@ -69,15 +69,13 @@ const CareerHero = () => {
 
       {/* 2. Content Layer */}
       <div className={styles.contentLayer}>
-        <span className={styles.smallTitle}>JOIN OUR TEAM</span>
-        <h1 className={styles.title}>CAREER</h1>
-        <p className={styles.description}>
-         Not just a job. <br />
-            A place to grow, learn, and belong.
-        </p>
+        <span className={styles.smallTitle}>Premium Solutions</span>
+        <h1 className={styles.title}> Strategic Services for <br /> <span>Next-Gen Evolution.</span></h1>
       </div>
     </div>
+     
   );
 };
 
 export default CareerHero;
+ 

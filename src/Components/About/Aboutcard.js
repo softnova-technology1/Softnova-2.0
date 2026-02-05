@@ -1,7 +1,32 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "../../Styles/Aboutcard.module.css";
-import img1 from '../../images/About-Images/pro4.png';
+import img1 from '../../images/About-Images/card1.jpg';
+import img2 from '../../images/About-Images/card2.jpg';
+import img3 from '../../images/About-Images/card3.jpg';
+import img4 from '../../images/About-Images/card4.jpg';
+import img5 from '../../images/About-Images/card5.jpg';
+import img6 from '../../images/About-Images/card6.jpg';
+import img7 from '../../images/About-Images/card7.jpg';
+import img8 from '../../images/About-Images/card8.jpg';
+import img9 from '../../images/About-Images/card9.jpg';
+import img10 from '../../images/About-Images/card10.jpg';
+import img11 from '../../images/About-Images/card11.jpg';
+import img12 from '../../images/About-Images/card12.jpg';
+import img13 from '../../images/About-Images/card13.jpg';
+import img14 from '../../images/About-Images/card14.jpg';
+import img15 from '../../images/About-Images/card15.jpg';
+import img16 from '../../images/About-Images/card16.jpg';
+import img17 from '../../images/About-Images/card17.jpg';
+import img18 from '../../images/About-Images/card18.jpg';
+import img19 from '../../images/About-Images/card19.jpg';
+import img20 from '../../images/About-Images/card20.jpg';
+import img21 from '../../images/About-Images/card21.jpg';
+import img22 from '../../images/About-Images/card22.jpg';
+import img23 from '../../images/About-Images/card23.jpg';
+import img24 from '../../images/About-Images/card24.jpg';
+
+
 
 const tabs = ["Who we are", "Why choose", "What we do", "Who we work with"];
 
@@ -14,27 +39,27 @@ const data = {
     },
     {
       title: "Problem Solvers",
-      img: img1,
+      img: img2,
       desc: "We convert complex challenges into simple answers.",
     },
     {
       title: "Collaborative Spirit",
-      img: img1,
+      img: img3,
       desc: "Teamwork is our strongest weapon.",
     },
     {
       title: "Driven by Excellence",
-      img: img1,
+      img: img4,
       desc: "Quality and perfection guide our work.",
     },
     {
       title: "Passionate Learners",
-      img: img1,
+      img: img5,
       desc: "We evolve with continuous learning.",
     },
     {
       title: "Empowered Innovators",
-      img: img1,
+      img: img6,
       desc: "Ideas are empowered to make impact.",
     },
   ],
@@ -42,32 +67,32 @@ const data = {
   "Why choose": [
     {
       title: "Trusted Partner",
-      img: img1,
+      img: img7,
       desc: "We build long-term trusted relationships.",
     },
     {
       title: "Client First",
-      img: img1,
+      img: img8,
       desc: "Client success is our priority.",
     },
     {
       title: "Agile Team",
-      img: img1,
+      img: img9   ,
       desc: "Fast, flexible, and future-ready.",
     },
     {
       title: "Quality Focus",
-      img: img1,
+      img: img10,
       desc: "Quality without compromise.",
     },
     {
       title: "Innovation Driven",
-      img: img1,
+      img: img11,
       desc: "Innovation powers every solution.",
     },
     {
       title: "Proven Results",
-      img: img1,
+      img: img12,
       desc: "Results that speak for themselves.",
     },
   ],
@@ -75,32 +100,32 @@ const data = {
   "What we do": [
     {
       title: "Web Development",
-      img: img1,
+      img: img13,
       desc: "Modern & scalable web apps.",
     },
     {
       title: "UI / UX Design",
-      img: img1,
+      img: img14,
       desc: "User-focused digital experiences.",
     },
     {
       title: "Mobile Apps",
-      img: img1,
+      img: img15,
       desc: "High-performance mobile solutions.",
     },
     {
       title: "Cloud Services",
-      img:img1,
+      img:img16,
       desc: "Secure & scalable cloud systems.",
     },
     {
       title: "Digital Strategy",
-      img:img1,
+      img:img17,
       desc: "Growth-oriented strategies.",
     },
     {
       title: "Maintenance",
-      img: img1,
+      img: img18,
       desc: "Reliable long-term support.",
     },
   ],
@@ -108,32 +133,32 @@ const data = {
   "Who we work with": [
     {
       title: "Startups",
-      img: img1,
+      img: img19,
       desc: "Helping startups scale faster.",
     },
     {
       title: "Enterprises",
-      img:img1,
+      img:img20,
       desc: "Enterprise-grade solutions.",
     },
     {
       title: "Agencies",
-      img: img1,
+      img: img21,
       desc: "Strong agency partnerships.",
     },
     {
       title: "Product Teams",
-      img:img1,
+      img:img22,
       desc: "Building scalable products.",
     },
     {
       title: "Innovators",
-      img: img1,
+      img: img23,
       desc: "Supporting innovation worldwide.",
     },
     {
       title: "Global Clients",
-      img: img1,
+      img: img24,
       desc: "Working across industries.",
     },
   ],

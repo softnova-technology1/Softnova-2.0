@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react"; // Added useState
+import { motion, AnimatePresence } from "framer-motion"; // Added AnimatePresence
 import styles from "../../Styles/Software.module.css";
 import software1 from "../../images/Ourservices-images/Software1.jpg";
 import software2 from "../../images/Ourservices-images/Software2.jpg";
@@ -7,20 +7,19 @@ import software3 from "../../images/Ourservices-images/Software3.jpg";
 import software4 from "../../images/Ourservices-images/Software4.jpg";
 import software5 from "../../images/Ourservices-images/Software5.jpg";
 import software6 from "../../images/Ourservices-images/Software6.jpg";
-import { ArrowRight, Code, Cpu, ShieldCheck } from "lucide-react";
+import { ArrowRight, X } from "lucide-react"; // Added X for remove button
 import shan from "../../images/Ourservices-images/software.jpg";
 import Breadcrumb from "../BreadCrumb";
-
 import { Link } from "react-router-dom";
-const projects = [
-  { title: "ERP System", image: software1, category: "Enterprise" },
-  { title: "Custom CRM", image: software2, category: "Business" },
-  { title: "Inventory Manager", image: software3, category: "Logistics" },
-  { title: "School Management", image: software4, category: "Education" },
-  { title: "Hospital Portal", image: software5, category: "Healthcare" },
-  { title: "Fintech App", image: software6, category: "Finance" },
-];
 
+const projects = [
+  { title: "ERP System", image: software1, category: "Enterprise", desc: "Complete resource planning solution." },
+  { title: "Custom CRM", image: software2, category: "Business", desc: "Customer relationship management." },
+  { title: "Inventory Manager", image: software3, category: "Logistics", desc: "Real-time stock tracking." },
+  { title: "School Management", image: software4, category: "Education", desc: "Digital campus administration." },
+  { title: "Hospital Portal", image: software5, category: "Healthcare", desc: "Patient and staff management." },
+  { title: "Fintech App", image: software6, category: "Finance", desc: "Secure banking and payments." },
+];
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
@@ -39,92 +38,140 @@ const staggerContainer = {
   }
 };
 
-const Software = () => {
+const SoftwareDevelopment = () => {
+  // State to handle the selected project for the modal
+  const [selectedProject, setSelectedProject] = useState(null);
+
   return (
     <>
-    <Breadcrumb/>
-    <div className={styles.pageWrapper}>
+      <Breadcrumb />
       
-      <section className={styles.hero}>
-        <div className={styles.container}>
-          <motion.div 
-            className={styles.content}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
-            variants={fadeInUp}
-          >
-            <span className={styles.tag}>Software Development</span>
-            <h1 className={styles.title}>
-              Tailored <span>Software Solutions</span> <br />
-              for Modern Enterprises
-            </h1>
-            <p className={styles.description}>
-              Softnova Technology delivers high-quality, scalable, and efficient 
-              custom software solutions. We focus on application design and 
-              system integration to ensure your business stays ahead.
-            </p>
-            <div className={styles.actions}>
-              <motion.button whileHover={{ scale: 1.05 }} className={styles.primaryBtn}>
-                <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
-            Connect With Us
-          </Link> <ArrowRight size={18} />
-              </motion.button>
-              
-            </div>
-          </motion.div>
-
-          <motion.div 
-            className={styles.card}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false }}
-            transition={{ duration: 1 }}
-          >
-            <img src={shan} alt="Software Development" />
-           
-          </motion.div>
-        </div>
-      </section>
-
-      <section className={styles.wrapper}>
-        <motion.div 
-          className={styles.sectionHeader}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: false }}
-        >
-          <h2 className={styles.heading}>Our Software Portfolio</h2>
-          <div className={styles.line}></div>
-        </motion.div>
-
-        <motion.div 
-          className={styles.projectsGrid}
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.1 }}
-        >
-          {projects.map((item, index) => (
+      {/* Background Wrapper: Blurred when selectedProject is not null */}
+      <div className={`${styles.pageWrapper} ${selectedProject ? styles.blurred : ""}`}>
+        <section className={styles.hero}>
+          <div className={styles.container}>
             <motion.div 
-              key={index} 
-              className={styles.projectBox}
+              className={styles.content}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
               variants={fadeInUp}
-              whileHover={{ y: -10 }}
             >
-              <img src={item.image} alt={item.title} />
-              <div className={styles.overlay}>
-                <span className={styles.category}>{item.category}</span>
-                <h3>{item.title}</h3>
-                <button className={styles.viewBtn}>View Case Study</button>
+              <span className={styles.tag}>Software Development</span>
+              <h1 className={styles.title}>
+                Tailored <span>Software Solutions</span> <br />
+                for Modern Enterprises
+              </h1>
+              <p className={styles.description}>
+                Softnova Technology delivers high-quality, scalable, and efficient 
+                custom software solutions. We focus on application design and 
+                system integration to ensure your business stays ahead.
+              </p>
+              <div className={styles.actions}>
+                <motion.button whileHover={{ scale: 1.05 }} className={styles.primaryBtn}>
+                  <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    Connect With Us
+                  </Link>
+                </motion.button>
               </div>
             </motion.div>
-          ))}
-        </motion.div>
-      </section>
-    </div>
+
+            <motion.div 
+              className={styles.card}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1 }}
+            >
+              <img src={shan} alt="Software Development" />
+            </motion.div>
+          </div>
+        </section>
+
+        <section className={styles.wrapper}>
+          <motion.div 
+            className={styles.sectionHeader}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false }}
+          >
+            <h2 className={styles.heading}>Our Software Portfolio</h2>
+            <div className={styles.line}></div>
+          </motion.div>
+
+          <motion.div 
+            className={styles.projectsGrid}
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.1 }}
+          >
+            {projects.map((item, index) => (
+              <motion.div 
+                key={index} 
+                className={styles.projectBox}
+                variants={fadeInUp}
+                whileHover={{ y: -10 }}
+              >
+                <img src={item.image} alt={item.title} />
+                <div className={styles.overlay}>
+                  <span className={styles.category}>{item.category}</span>
+                  <h3>{item.title}</h3>
+                  {/* Updated Button Click */}
+                  <button 
+                    className={styles.viewBtn} 
+                    onClick={() => setSelectedProject(item)}
+                  >
+                    View Case Study
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </section>
+      </div>
+
+      {/* --- Case Study Modal (Canvas) --- */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div 
+            className={styles.modalOverlay}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div 
+              className={styles.modalCanvas}
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+            >
+              {/* Remove/Close Button */}
+              <button 
+                className={styles.closeModal} 
+                onClick={() => setSelectedProject(null)}
+              >
+                <X size={24} />
+              </button>
+
+              <div className={styles.modalBody}>
+                <img src={selectedProject.image} alt={selectedProject.title} />
+                <div className={styles.modalText}>
+                  <span className={styles.tag}>{selectedProject.category}</span>
+                  <h2>{selectedProject.title}</h2>
+                  <p>{selectedProject.desc}</p>
+                  <p className={styles.detailedInfo}>
+                    This project focuses on delivering high-performance results using 
+                    modern technology stacks and scalable architecture.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
 
-export default Software;
+export default SoftwareDevelopment;
