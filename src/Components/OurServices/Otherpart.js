@@ -1,8 +1,7 @@
 import { useEffect, useState, useMemo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import styles from "../../Styles/HeroContact.module.css"; // Styles object import
-
+import styles from "../../Styles/HeroContact.module.css";
 const CareerHero = () => {
   const [init, setInit] = useState(false);
 
@@ -20,7 +19,6 @@ const CareerHero = () => {
     fpsLimit: 120,
     particles: {
       number: { value: 120, density: { enable: true, area: 800 } },
-      /* Using your preferred orange accent */
       color: { value: ["#f89e38", "#818cf8", "#fb7185", "#f472b6"] },
       shape: { type: ["circle", "triangle", "polygon"] },
       opacity: {
@@ -57,7 +55,6 @@ const CareerHero = () => {
   return (
     <div className={styles.container}>
 
-      {/* 1. Particles Background Layer */}
       {init && (
         <div className={styles.particlesWrapper}>
           <Particles
@@ -67,15 +64,14 @@ const CareerHero = () => {
         </div>
       )}
 
-      {/* 2. Content Layer */}
       <div className={styles.contentLayer}>
         <span className={styles.smallTitle}>Premium Solutions</span>
         <h1 className={styles.title}> Strategic Services for <br /> <span>Next-Gen Evolution.</span></h1>
       </div>
     </div>
-     
+
   );
 };
 
 export default CareerHero;
- 
+

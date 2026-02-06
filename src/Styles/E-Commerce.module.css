@@ -4,8 +4,6 @@
   overflow-x: hidden;
 }
 
-/* ===== HERO ===== */
-
 .hero {
   min-height: 85vh;
   display: flex;
@@ -76,11 +74,16 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
 
-/* ===== PROJECTS ===== */
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
 
 .wrapper {
   padding: 40px 5%;
@@ -119,23 +122,18 @@
   transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-/* ===== Overlay ===== */
-
 .projectOverlay {
   position: absolute;
   inset: 0;
   padding: 40px;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.9) 0%,
-    transparent 60%
-  );
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.9) 0%,
+      transparent 60%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* 🔥 HEADING ALWAYS VISIBLE */
 .topInfo {
   opacity: 1;
   transform: translateY(0);
@@ -153,7 +151,6 @@
   transition: color 0.3s ease;
 }
 
-/* ===== Hover Button ===== */
 
 .roundBtn {
   position: absolute;
@@ -181,7 +178,6 @@
   transition: 0.6s ease;
 }
 
-/* ===== HOVER EFFECTS ===== */
 
 .projectMinimal:hover img {
   transform: scale(1.1) rotate(1deg);
@@ -197,7 +193,6 @@
   width: 100%;
 }
 
-/* ===== Scroll Reveal ===== */
 
 .reveal {
   opacity: 0;
@@ -210,7 +205,6 @@
   transform: translateY(0);
 }
 
-/* ===== SIDEBAR CANVAS ===== */
 
 .canvasOverlay {
   position: fixed;
@@ -240,7 +234,6 @@
 
 .closeBtn {
   align-self: flex-end;
-  /* Pushes the button to the right */
   background: #ff4d4d;
   cursor: pointer;
   font-weight: bold;
@@ -259,7 +252,7 @@
   border-radius: 15px;
   margin-bottom: 20px;
   object-fit: cover;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .canvasTag {
@@ -293,58 +286,53 @@
   margin-bottom: 5px;
 }
 
-
-/* Responsive for Mobile */
 @media (max-width: 500px) {
   .sideCanvas {
     width: 100%;
   }
 }
-@media (max-width:428px){
-   .container {
+
+@media (max-width:428px) {
+  .container {
     margin-bottom: 20%;
   }
 }
+
 @media (max-width: 768px) {
   .hero {
-  position: relative;
-  width: 100%;
-  height: 350px; /* adjust if needed */
-  background: none;
-  overflow: hidden;
-}
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background: none;
+    overflow: hidden;
+  }
 
-/* 🔹 BLURRED IMAGE */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: -20px; /* blur edges hide */
-  background-image: url("../images/e-commerce1.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.1);
-  z-index: 0;
-}
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background-image: url("../images/e-commerce1.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.1);
+    z-index: 0;
+  }
 
-/* 🔹 DARK + BLUE SHADE */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(0, 20, 60, 0.75),
-    rgba(0, 0, 0, 0.85)
-  );
-  z-index: 1;
-}
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 20, 60, 0.75),
+        rgba(0, 0, 0, 0.85));
+    z-index: 1;
+  }
 
-/* 🔹 CONTENT ABOVE IMAGE */
-.hero > * {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-}
+  .hero>* {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+  }
 
   .container {
     grid-template-columns: 1fr;
@@ -354,9 +342,11 @@
   .imageBox {
     height: 350px;
   }
-.heroImage{
-  display: none;
-}
+
+  .heroImage {
+    display: none;
+  }
+
   .roundBtn {
     width: 50px;
     height: 50px;
@@ -366,9 +356,6 @@
 }
 
 @media (max-width: 480px) {
-  /* .wrapper {
-    padding: 17px 16px;
-  } */
 
   .heading {
     font-size: 24px;
@@ -392,51 +379,49 @@
     height: 45px;
   }
 }
-@media (max-width:480px){
-  .title{
+
+@media (max-width:480px) {
+  .title {
     font-size: 20px;
   }
-  .description{
+
+  .description {
     font-size: 12px;
   }
- .hero {
-  position: relative;
-  width: 100%;
-  height: 350px; /* adjust if needed */
-  background: none;
-  overflow: hidden;
-}
 
-/* 🔹 BLURRED IMAGE */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: -20px; /* blur edges hide */
-  background-image: url("../images/e-commerce1.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.1);
-  z-index: 0;
-}
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background: none;
+    overflow: hidden;
+  }
 
-/* 🔹 DARK + BLUE SHADE */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(0, 20, 60, 0.75),
-    rgba(0, 0, 0, 0.85)
-  );
-  z-index: 1;
-}
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background-image: url("../images/e-commerce1.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.1);
+    z-index: 0;
+  }
 
-/* 🔹 CONTENT ABOVE IMAGE */
-.hero > * {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-}
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 20, 60, 0.75),
+        rgba(0, 0, 0, 0.85));
+    z-index: 1;
+  }
+
+  .hero>* {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+  }
 
 }

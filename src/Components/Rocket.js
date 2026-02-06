@@ -125,7 +125,7 @@ const RocketMenu = () => {
     <>
       <button id="menu-btn" className={styles.openBtn} onClick={launchAndOpen}>
         <div className={styles.btnContent}>
-           <span><img src={navgif} alt="SoftNova Logo" style={{ height: '50px'}} /></span>
+          <span><img src={navgif} alt="SoftNova Logo" style={{ height: '50px' }} /></span>
           <span className={styles.hamburger}></span>
           <span className={styles.btnText}>EXPLORE</span>
         </div>

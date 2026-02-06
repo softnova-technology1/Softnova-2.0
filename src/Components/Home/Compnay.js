@@ -37,7 +37,7 @@ const CompanySection = () => {
           SoftNova, we’re not just service providers—we’re your partners in
           growth.
         </p>
-      <a href="/about"> <button className={styles.starButton}>
+        <a href="/about"> <button className={styles.starButton}>
           Show More
           <div className={styles.star1}><StarSvg /></div>
           <div className={styles.star2}><StarSvg /></div>
@@ -45,7 +45,7 @@ const CompanySection = () => {
           <div className={styles.star4}><StarSvg /></div>
           <div className={styles.star5}><StarSvg /></div>
           <div className={styles.star6}><StarSvg /></div>
-        </button></a> 
+        </button></a>
       </div>
 
       <div className={styles.imageContainer}>

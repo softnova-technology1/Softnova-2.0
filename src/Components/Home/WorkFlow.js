@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ClipboardList, Layout, Code2, Monitor, CheckCircle2 } from 'lucide-react';
-import { motion } from 'framer-motion'; 
+import { motion } from 'framer-motion';
 import styles from '../../Styles/WorkFlow.module.css';
 import { Container } from 'react-bootstrap';
 import phase1 from '../../images/phase01.webp';
@@ -20,32 +20,32 @@ const phases = [
 const Workflow = () => {
   const [activeProgress, setActiveProgress] = useState(20);
 
-  
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, 
+        staggerChildren: 0.2,
       },
     },
   };
 
-  
+
   const cardVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 50, 
-      scale: 0.9 
+    hidden: {
+      opacity: 0,
+      y: 50,
+      scale: 0.9
     },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
+    visible: {
+      opacity: 1,
+      y: 0,
       scale: 1,
-      transition: { 
-        duration: 0.6, 
-        ease: "easeOut" 
-      } 
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
     }
   };
 
@@ -53,9 +53,9 @@ const Workflow = () => {
     <div className={styles.scrollWrapper}>
       <Container>
         <div className={styles.wrapper}>
-          
-          
-          <motion.header 
+
+
+          <motion.header
             className={styles.header}
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -67,8 +67,8 @@ const Workflow = () => {
 
             <div className={styles.progressSection}>
               <div className={styles.track}>
-                <motion.div 
-                  className={styles.fill} 
+                <motion.div
+                  className={styles.fill}
                   initial={{ width: "0%" }}
                   whileInView={{ width: `${activeProgress}%` }}
                   viewport={{ once: false }}
@@ -82,20 +82,20 @@ const Workflow = () => {
             </div>
           </motion.header>
 
-          
-          <motion.div 
+
+          <motion.div
             className={styles.grid}
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.1 }} 
+            viewport={{ once: false, amount: 0.1 }}
           >
             {phases.map((p) => (
-              <motion.div 
-                key={p.id} 
-                className={styles.cardBox} 
+              <motion.div
+                key={p.id}
+                className={styles.cardBox}
                 onMouseEnter={() => setActiveProgress(p.progress)}
-                variants={cardVariants} 
+                variants={cardVariants}
               >
                 <h2 className={styles.gradientNumber}>{p.id}</h2>
 

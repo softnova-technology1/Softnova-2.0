@@ -62,7 +62,6 @@ const cardVariants = {
 };
 
 const MobileAppSection = () => {
-  // Canvas open/close state and data storage
   const [isCanvasOpen, setIsCanvasOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -154,8 +153,8 @@ const MobileAppSection = () => {
                         animate={{ x: [0, 5, 0] }}
                         transition={{ repeat: Infinity, duration: 1.5 }}
                         className={styles.arrow}
-                        style={{ cursor: 'pointer' }} // Cursor change
-                        onClick={() => openCanvas(project)} // Click event
+                        style={{ cursor: 'pointer' }}
+                        onClick={() => openCanvas(project)}
                       >
                         →
                       </motion.span>
@@ -167,21 +166,17 @@ const MobileAppSection = () => {
           </div>
         </div>
       </section>
-
-      {/* --- SIDE CANVAS (DRAWER) --- */}
       <AnimatePresence>
         {isCanvasOpen && (
           <>
-            {/* Background Overlay */}
-            <motion.div 
+            <motion.div
               className={styles.canvasOverlay}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={closeCanvas}
             />
-            {/* Canvas Content */}
-            <motion.div 
+            <motion.div
               className={styles.sideCanvas}
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -191,7 +186,7 @@ const MobileAppSection = () => {
               <button className={styles.closeBtn} onClick={closeCanvas}>
                 ✕ Remove
               </button>
-              
+
               <div className={styles.canvasBody}>
                 {selectedProject && (
                   <>
@@ -199,8 +194,8 @@ const MobileAppSection = () => {
                     <h2>{selectedProject.title}</h2>
                     <p>{selectedProject.desc}</p>
                     <div className={styles.canvasDetails}>
-                       <p><strong>Project ID:</strong> {selectedProject.id}</p>
-                       <p>Custom details for the mobile application can be added here.</p>
+                      <p><strong>Project ID:</strong> {selectedProject.id}</p>
+                      <p>Custom details for the mobile application can be added here.</p>
                     </div>
                   </>
                 )}

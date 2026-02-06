@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import ParticleSystem from "../Home/particalSystem";
 import styles from "../../Styles/Hero.module.css";
-// import butterfly from "../../images/butterfly.webp";
 import OurBestServices from "./Ourservices";
 import CompanySection from "./Compnay";
 import WhyChooseSoftNova from "./Whychoose";
@@ -29,11 +28,11 @@ const Hero = () => {
   }, []);
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 }, 
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.8, ease: "easeOut" } 
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
     }
   };
   const { hash } = useLocation();
@@ -48,7 +47,7 @@ const Hero = () => {
   }, [hash]);
 
   return (
-    <div style={{ width: "100%", overflowX: "hidden" }}> 
+    <div style={{ width: "100%", overflowX: "hidden" }}>
       <section className={styles.container}>
         <video ref={videoRef} className={styles.video} autoPlay loop muted playsInline>
           <source src={videoSrc} type="video/mp4" />
@@ -69,15 +68,15 @@ const Hero = () => {
           </Canvas>
         </div>
 
-        <motion.div 
+        <motion.div
           className={styles.overlay}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}
           transition={{ staggerChildren: 0.2 }}
         >
-          <motion.h1 className={styles.title} variants={itemVariants} style={{display:"flex"}}>
-            
+          <motion.h1 className={styles.title} variants={itemVariants} style={{ display: "flex" }}>
+
             STERLING IT  SERVICE
           </motion.h1>
           <motion.h6 className={styles.subtitle} variants={itemVariants}>
@@ -90,7 +89,7 @@ const Hero = () => {
         </motion.div>
       </section>
 
-      
+
       <ScrollSection><OurBestServices /></ScrollSection>
       <ScrollSection><CompanySection /></ScrollSection>
       <ScrollSection><WhyChooseSoftNova /></ScrollSection>
@@ -107,7 +106,7 @@ const Hero = () => {
 const ScrollSection = ({ children }) => (
   <div className={styles.scrollSectionWrapper}>
     <motion.div
-      initial={{ opacity: 0, y: 60 }} 
+      initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}

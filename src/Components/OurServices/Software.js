@@ -1,5 +1,5 @@
-import React, { useState } from "react"; // Added useState
-import { motion, AnimatePresence } from "framer-motion"; // Added AnimatePresence
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "../../Styles/Software.module.css";
 import software1 from "../../images/Ourservices-images/Software1.webp";
 import software2 from "../../images/Ourservices-images/Software2.webp";
@@ -7,7 +7,7 @@ import software3 from "../../images/Ourservices-images/Software3.webp";
 import software4 from "../../images/Ourservices-images/Software4.webp";
 import software5 from "../../images/Ourservices-images/Software5.webp";
 import software6 from "../../images/Ourservices-images/Software6.webp";
-import { ArrowRight, X } from "lucide-react"; // Added X for remove button
+import { ArrowRight, X } from "lucide-react";
 import shan from "../../images/Ourservices-images/software.webp";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
@@ -23,10 +23,10 @@ const projects = [
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.8, ease: "easeOut" } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" }
   }
 };
 
@@ -39,18 +39,16 @@ const staggerContainer = {
 };
 
 const SoftwareDevelopment = () => {
-  // State to handle the selected project for the modal
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
     <>
       <Breadcrumb />
-      
-      {/* Background Wrapper: Blurred when selectedProject is not null */}
+
       <div className={`${styles.pageWrapper} ${selectedProject ? styles.blurred : ""}`}>
         <section className={styles.hero}>
           <div className={styles.container}>
-            <motion.div 
+            <motion.div
               className={styles.content}
               initial="hidden"
               whileInView="visible"
@@ -63,8 +61,8 @@ const SoftwareDevelopment = () => {
                 for Modern Enterprises
               </h1>
               <p className={styles.description}>
-                Softnova Technology delivers high-quality, scalable, and efficient 
-                custom software solutions. We focus on application design and 
+                Softnova Technology delivers high-quality, scalable, and efficient
+                custom software solutions. We focus on application design and
                 system integration to ensure your business stays ahead.
               </p>
               <div className={styles.actions}>
@@ -76,7 +74,7 @@ const SoftwareDevelopment = () => {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className={styles.card}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -89,7 +87,7 @@ const SoftwareDevelopment = () => {
         </section>
 
         <section className={styles.wrapper}>
-          <motion.div 
+          <motion.div
             className={styles.sectionHeader}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -99,7 +97,7 @@ const SoftwareDevelopment = () => {
             <div className={styles.line}></div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className={styles.projectsGrid}
             variants={staggerContainer}
             initial="hidden"
@@ -107,8 +105,8 @@ const SoftwareDevelopment = () => {
             viewport={{ once: false, amount: 0.1 }}
           >
             {projects.map((item, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 className={styles.projectBox}
                 variants={fadeInUp}
                 whileHover={{ y: -10 }}
@@ -117,9 +115,8 @@ const SoftwareDevelopment = () => {
                 <div className={styles.overlay}>
                   <span className={styles.category}>{item.category}</span>
                   <h3>{item.title}</h3>
-                  {/* Updated Button Click */}
-                  <button 
-                    className={styles.viewBtn} 
+                  <button
+                    className={styles.viewBtn}
                     onClick={() => setSelectedProject(item)}
                   >
                     View Case Study
@@ -131,24 +128,22 @@ const SoftwareDevelopment = () => {
         </section>
       </div>
 
-      {/* --- Case Study Modal (Canvas) --- */}
       <AnimatePresence>
         {selectedProject && (
-          <motion.div 
+          <motion.div
             className={styles.modalOverlay}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <motion.div 
+            <motion.div
               className={styles.modalCanvas}
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
             >
-              {/* Remove/Close Button */}
-              <button 
-                className={styles.closeModal} 
+              <button
+                className={styles.closeModal}
                 onClick={() => setSelectedProject(null)}
               >
                 <X size={24} />
@@ -161,7 +156,7 @@ const SoftwareDevelopment = () => {
                   <h2>{selectedProject.title}</h2>
                   <p>{selectedProject.desc}</p>
                   <p className={styles.detailedInfo}>
-                    This project focuses on delivering high-performance results using 
+                    This project focuses on delivering high-performance results using
                     modern technology stacks and scalable architecture.
                   </p>
                 </div>

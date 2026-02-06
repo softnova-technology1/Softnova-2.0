@@ -7,14 +7,14 @@
   color: #fff;
   font-family: "Poppins", sans-serif;
 }
+
 .container {
-  max-width: 1200px; 
-  margin: 0 auto;    
+  max-width: 1200px;
+  margin: 0 auto;
   width: 100%;
-   
+
 }
 
-/* Flexbox for hero content */
 .content {
   display: flex;
   align-items: center;
@@ -23,7 +23,6 @@
   padding: 80px 0;
 }
 
-/* Mobile-la image matrum text-ah onnu kila onnu align panna */
 @media (max-width: 768px) {
   .content {
     flex-direction: column;
@@ -31,6 +30,7 @@
     padding: 40px 0;
   }
 }
+
 .content {
   width: 100%;
   display: flex;
@@ -57,7 +57,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  text-shadow: 
+  text-shadow:
     0 0 10px rgba(254, 133, 30, 0.35),
     0 0 25px rgba(254, 133, 30, 0.15);
 
@@ -100,14 +100,16 @@
   object-fit: cover;
   overflow: hidden;
   border-radius: 50px;
-    animation: float 4s ease-in-out infinite;
-    height: 400px;
+  animation: float 4s ease-in-out infinite;
+  height: 400px;
 }
+
 @keyframes float {
   50% {
     transform: translateY(-15px);
   }
 }
+
 .tag {
   display: inline-block;
   background: rgba(255, 123, 0, 0.15);
@@ -316,7 +318,7 @@
 .fil0 {
   fill: #fffdef;
 }
-/* --- TABLET VIEW (769px to 1100px) --- */
+
 @media screen and (max-width: 1100px) {
   .container {
     padding: 0 40px;
@@ -336,47 +338,41 @@
   }
 
   .imageWrapper {
-    width: 45%; /* Flexible width instead of fixed px */
+    width: 45%;
     height: auto;
   }
 }
 
-/* --- SMALL TABLET / LARGE MOBILE (601px to 768px) --- */
 @media screen and (max-width: 768px) {
- .wrapper {
+  .wrapper {
     position: relative;
     background: none;
     padding: 50px 0;
     overflow: hidden;
   }
 
-  /* Background Image */
   .wrapper::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/Ourservices-images/soft22.webp"); /* 👈 image path */
+    background-image: url("../images/Ourservices-images/soft22.webp");
     background-size: cover;
     background-position: center;
     transform: scale(1.15);
     z-index: 0;
-    
+
   }
 
-  /* Dark Blue Overlay */
   .wrapper::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      rgba(0, 25, 70, 0.8),
-      rgba(0, 0, 0, 0.9)
-    );
+    background: linear-gradient(rgba(0, 25, 70, 0.8),
+        rgba(0, 0, 0, 0.9));
     z-index: 1;
     width: 100%;
   }
 
-  /* Content Above BG */
   .textBox,
   .ImageWrapper {
     position: relative;
@@ -405,35 +401,34 @@
 
 
   .content {
-    flex-direction: column; /* Stack elements */
+    flex-direction: column;
     text-align: center;
     justify-content: center;
   }
 
   .textBox {
     max-width: 100%;
-    order: 1; /* Text comes first */
+    order: 1;
     margin-top: 10%;
   }
 
   .textBox p {
-    margin: 0 auto 30px; /* Center the paragraph */
+    margin: 0 auto 30px;
   }
 
   .imageWrapper {
     width: 100%;
-    max-width: 400px; /* Limit size so it doesn't look huge */
+    max-width: 400px;
     height: auto;
-    order: 2; /* Image comes after text */
+    order: 2;
   }
 
   .rotateImg {
-    display: none; /* Fixed: Don't hide the image, it looks better shown */
+    display: none;
     width: 100%;
   }
 }
 
-/* --- MOBILE VIEW (Up to 600px) --- */
 @media screen and (max-width: 600px) {
   .wrapper {
     padding: 20px 15px;
@@ -451,12 +446,12 @@
   }
 
   .textBox h1 {
-    font-size: 24px; /* Proper mobile heading size */
+    font-size: 24px;
     line-height: 1.3;
   }
 
   .textBox p {
-    font-size: 13px; /* 10px was too small; 13px is standard for mobile */
+    font-size: 13px;
     line-height: 1.5;
     margin-bottom: 25px;
   }
@@ -465,7 +460,6 @@
     max-width: 280px;
   }
 
-  /* Marquee/Cards Adjustment */
   .marqueeCard {
     width: 240px;
     height: 160px;
