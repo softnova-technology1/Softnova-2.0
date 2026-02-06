@@ -22,11 +22,12 @@
   justify-content: space-between;
   gap: 40px;
   padding: 80px 0;
+  margin-top: 7%;
 }
 
 .content {
   max-width: 560px;
-  opacity: 0;
+  opacity: 0; 
   transform: translateX(-60px);
   transition: all 0.8s ease-out;
 }
@@ -125,7 +126,7 @@
 }
 
 .heroImg {
-  width: 100%;
+  width: 80%;
   border-radius: 50px;
   animation: float 4s ease-in-out infinite;
 }

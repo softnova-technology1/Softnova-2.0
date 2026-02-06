@@ -118,7 +118,7 @@ const CloudandIT = () => {
             </div>
             <div className={styles.contentArea}>
               <span className={styles.accentBar}></span>
-              <h2 className={styles.serviceTitle}>Cloud Security & Monitoring</h2>
+              <h2 className={styles.serviceTitle}>Data Security & Backup Solution</h2>
               <p className={styles.serviceDesc}>Advanced real-time monitoring and threat detection for complex cloud environments.</p>
             </div>
           </div>

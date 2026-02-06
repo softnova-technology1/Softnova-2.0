@@ -48,8 +48,8 @@ const servicesData = [
   { title: "Digital Marketing", desc: "SEO, social media, and content strategies.", path: "/services/DigitalMarketing" },
   { title: "Mobile Applications", desc: "User-friendly Android & iOS apps.", path: "/services/MobileAppSection" },
   { title: "Graphic Design", desc: "Creative designs for brand identity.", path: "/services/GraphicDesign" },
-  { title: "E-Commerce Solutions", desc: "Conversion-optimized online stores.", path: "/services/ProjectsFlip" },
-  { title: "Software Development", desc: "ERP & custom software.", path: "/services/Software" },
+  { title: "E-Commerce Solutions", desc: "Conversion-optimized online stores.", path: "/services/ECommerce" },
+  { title: "Software Development", desc: "ERP & custom software.", path: "/services/SoftwareDevelopment" },
 ];
 
 export default function Services() {

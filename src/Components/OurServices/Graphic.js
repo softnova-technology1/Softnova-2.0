@@ -8,16 +8,19 @@ import img3 from "../../images/Ourservices-images/Graphic4.jpg";
 import img4 from "../../images/Ourservices-images/Graphic5.jpg";
 import img5 from "../../images/Ourservices-images/Graphic6.jpg";
 import img6 from "../../images/Ourservices-images/Graphic7.jpg";
+import img7 from "../../images/soft25.jpg";
 import Breadcrumb from "../BreadCrumb";
 
 import { Link } from "react-router-dom";
 const services = [
   { title: "Creative Branding & Logo", img: img1 },
   { title: "UI / UX Design", img: img2},
-  { title: "Web Development", img:img3 },
-  { title: "Mobile App Design", img: img4},
-  { title: "Digital Marketing", img:img5 },
-  { title: "Product Strategy", img:img6 }
+  { title: "Social Media & Digital Marketing Graphics", img:img3 },
+  { title: "Business & Corporate Design", img: img4},
+  { title: "E-commerce & Product Design", img:img5 },
+  { title: "Video Editing & Motion Graphics", img:img6 },
+  { title: "Print & UI-Based Graphics", img:img7 }
+
 ];
 
 

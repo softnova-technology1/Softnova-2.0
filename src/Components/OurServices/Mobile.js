@@ -14,7 +14,7 @@ const projects = [
   {
     id: 1,
     img: Mobileapps1,
-    title: "Mobile App",
+    title: "Booking App",
     desc: "A seamless shopping experience with intuitive UI and secure payment integration for effortless online retail."
   },
   {
