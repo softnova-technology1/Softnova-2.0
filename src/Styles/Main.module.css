@@ -1,8 +1,7 @@
-
 .wrapper {
-   background: radial-gradient(circle at center, #02000a 0%, #000 100%);
+  background: radial-gradient(circle at center, #02000a 0%, #000 100%);
   color: #fff;
-   background: #000005;
+  background: #000005;
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
   position: relative;
@@ -63,7 +62,6 @@
 
 
 .services {
-  /* max-width: 1200px; */
   padding: 80px 100px;
   text-align: center;
   margin-top: 10%;
@@ -281,35 +279,36 @@
   font-weight: 600;
   cursor: pointer;
 }
+
 .connectBtn:hover {
   color: white;
 }
 
 @media (max-width: 428px) {
 
-.hero {
-  position: relative;
-  width: 100%;
-  height: 350px;
-  padding-left: 16px;
-  padding-right: 16px;
-  background: url("../images/soft10.jpg") center/cover no-repeat;
-  overflow: hidden;
-}
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background: url("../images/soft10.jpg") center/cover no-repeat;
+    overflow: hidden;
+  }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 20, 60, 0.6);
-  backdrop-filter: blur(1px);
-  z-index: 0;
-}
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 20, 60, 0.6);
+    backdrop-filter: blur(1px);
+    z-index: 0;
+  }
 
-.hero > * {
-  position: relative;
-  z-index: 1;
-}
+  .hero>* {
+    position: relative;
+    z-index: 1;
+  }
 
   .hero h1 {
     font-size: 15px;
@@ -324,11 +323,11 @@
 
   .services {
     padding: 100px 16px;
-    
+
   }
 
   .subtitle {
-    margin:auto;
+    margin: auto;
     font-size: 12px;
   }
 
@@ -458,15 +457,15 @@
     font-size: 12px;
   }
 }
+
 @media (max-width: 992px) and (min-width: 429px) {
-  /* --- Hero Section --- */
   .hero {
     min-height: 100px;
     margin-top: 20%;
   }
 
   .hero h1 {
-    font-size: 32px; /* Much better for tablet */
+    font-size: 32px;
     line-height: 1.2;
   }
 
@@ -475,17 +474,15 @@
     max-width: 80%;
   }
 
-  /* --- Services Section --- */
   .services {
     margin-top: 20%;
   }
 
   .serviceGrid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns is better for tablet */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 
-  /* --- Workflow / Timeline --- */
   .workflow {
     padding: 60px 40px;
   }
@@ -496,23 +493,24 @@
   }
 
   .timeline {
-    margin-left: 30px; /* Shift to give room for line */
+    margin-left: 30px;
   }
 
   .centerLine {
-    left: 0; /* Move line to the far left */
+    left: 0;
     transform: none;
   }
 
   .timelineItem {
     width: 100%;
     text-align: left;
-    padding: 20px 0 20px 40px; /* Space for the marker */
+    padding: 20px 0 20px 40px;
     display: block;
     margin-left: 0;
   }
 
-  .left, .right {
+  .left,
+  .right {
     padding-left: 40px;
     padding-right: 0;
     text-align: left;
@@ -530,7 +528,6 @@
     text-align: left;
   }
 
-  /* --- Software Section --- */
   .software {
     padding: 60px 40px;
   }
@@ -540,7 +537,7 @@
   }
 
   .softwareRow {
-    grid-template-columns: 1fr 1.5fr; /* Keep side-by-side on tablet */
+    grid-template-columns: 1fr 1.5fr;
     gap: 20px;
   }
 

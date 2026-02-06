@@ -3,7 +3,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  /* full width */
   height: 64px;
 
   display: flex;
@@ -18,20 +17,16 @@
 
   z-index: 1000;
   transition: background 0.3s ease;
-  
+
 }
 
-/* Scrolled navbar style */
 .navbar.scrolled {
- background: linear-gradient(90deg, #0a0a0a 0%, #ff8c00 50%, #0a0a0a 100%);
-    /* Lighter yellow end */
-  ;
+  background: linear-gradient(90deg, #0a0a0a 0%, #ff8c00 50%, #0a0a0a 100%);
   backdrop-filter: blur(14px);
   transition: background 0.3s ease;
 }
 
 
-/* Menus */
 .menuLeft,
 .menuRight {
   display: flex;
@@ -39,7 +34,6 @@
   gap: 20px;
 }
 
-/* Buttons */
 .button {
   font-family: "Poppins", sans-serif;
   font-size: 12px;
@@ -62,7 +56,6 @@
   text-shadow: 0 0 10px rgba(254, 133, 30, 0.6);
 }
 
-/* Active link */
 .button.active {
   color: #fa8620;
   text-shadow: 0 0 12px rgba(254, 133, 30, 0.8);
@@ -181,7 +174,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
- 
+
 }
 
 .button {
@@ -213,7 +206,6 @@
   transition: 0.3s;
 }
 
-/* Dropdown Content Fix */
 .dropdownContent {
   position: absolute;
   top: 100%;
@@ -238,19 +230,16 @@
 }
 
 
-/* When scrolled – change link color */
 .navbar.scrolled .button {
-  color: #ffd8a8;   /* light gold / cream */
+  color: #ffd8a8;
 }
 
-/* Hover when scrolled */
 .navbar.scrolled .button:hover {
   color: #ffffff;
   font-weight: bold;
   text-shadow: 0 0 8px rgba(255, 140, 0, 0.8);
 }
 
-/* Active link when scrolled */
 .navbar.scrolled .active {
   color: #ffffff;
   text-shadow: 0 0 10px rgba(255, 140, 0, 1);
@@ -296,8 +285,9 @@
   .lineOpen3 {
     transform: rotate(-45deg) translate(5px, -5px);
   }
-  
+
 }
+
 @media (max-width: 1024px) {
   .hamburger {
     display: flex;

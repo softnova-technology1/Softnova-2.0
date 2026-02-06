@@ -123,64 +123,64 @@ export default function ImageCardSection() {
 
   return (
     <>
-    <Breadcrumb/>
-    <section className={styles.wrapper}>
-      <ProductHero/>
+      <Breadcrumb />
+      <section className={styles.wrapper}>
+        <ProductHero />
         <div>
-      </div>
-
-      <div className={styles.grid}>
-        {items.map((item, i) => (
-          <div key={i} className={styles.card}>
-            <img src={item.img} alt={item.title} />
-            <div className={styles.overlay}>
-              <h2>{item.title}</h2>
-              <p>{item.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <section className={styles.sectionWrapper}>
-        <div className={styles.headingWrap}>
-          <h1 className={styles.heading}>
-            We can help you at every stage from <span>concept</span> to{" "}
-            <span>launch</span>
-          </h1>
         </div>
 
-        <section className={styles.section}>
-          {data.map((item, index) => (
-            <div
-              key={index}
-              ref={el => (itemsRef.current[index] = el)}
-              className={`${styles.cardd} ${item.align === "left" ? styles.left : styles.right
-                }`}
-            >
+        <div className={styles.grid}>
+          {items.map((item, i) => (
+            <div key={i} className={styles.card}>
               <img src={item.img} alt={item.title} />
-
-              <div className={styles.cardTitle}>
-                {item.title}
-              </div>
-
-              <div className={styles.overlay1}>
+              <div className={styles.overlay}>
+                <h2>{item.title}</h2>
                 <p>{item.desc}</p>
-
-                <button className={styles.starButton}>
-                  Find Out More
-                  <div className={styles.star1}><StarSvg /></div>
-                  <div className={styles.star2}><StarSvg /></div>
-                  <div className={styles.star3}><StarSvg /></div>
-                  <div className={styles.star4}><StarSvg /></div>
-                  <div className={styles.star5}><StarSvg /></div>
-                  <div className={styles.star6}><StarSvg /></div>
-                </button>
               </div>
             </div>
           ))}
+        </div>
+
+        <section className={styles.sectionWrapper}>
+          <div className={styles.headingWrap}>
+            <h1 className={styles.heading}>
+              We can help you at every stage from <span>concept</span> to{" "}
+              <span>launch</span>
+            </h1>
+          </div>
+
+          <section className={styles.section}>
+            {data.map((item, index) => (
+              <div
+                key={index}
+                ref={el => (itemsRef.current[index] = el)}
+                className={`${styles.cardd} ${item.align === "left" ? styles.left : styles.right
+                  }`}
+              >
+                <img src={item.img} alt={item.title} />
+
+                <div className={styles.cardTitle}>
+                  {item.title}
+                </div>
+
+                <div className={styles.overlay1}>
+                  <p>{item.desc}</p>
+
+                  <button className={styles.starButton}>
+                    Find Out More
+                    <div className={styles.star1}><StarSvg /></div>
+                    <div className={styles.star2}><StarSvg /></div>
+                    <div className={styles.star3}><StarSvg /></div>
+                    <div className={styles.star4}><StarSvg /></div>
+                    <div className={styles.star5}><StarSvg /></div>
+                    <div className={styles.star6}><StarSvg /></div>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </section>
         </section>
       </section>
-    </section>
     </>
   );
 }

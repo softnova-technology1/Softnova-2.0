@@ -1,6 +1,5 @@
 .metaContainer {
   position: relative;
-  /* height: 100vh; */
   width: 100vw;
 
   overflow: hidden;
@@ -8,17 +7,14 @@
   align-items: center;
   justify-content: center;
 }
-
-/* Starfield with Parallax and Warp effect */.metaContainer {
+.metaContainer {
   position: relative;
   height: 100vh;
   width: 100vw;
-  /* background: radial-gradient(circle at center, #02000a 0%, #000 100%); */
   overflow: hidden;
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Star Background */
 .starField {
     position: absolute;
     inset: 0;
@@ -32,8 +28,6 @@
     filter: blur(0.5px);
 }
 
-/* Comet Animation */
-/* Updated Comet Streak */
 .cometStreak {
     position: absolute;
     width: 200px;
@@ -43,7 +37,6 @@
     top: -10%;
     left: 110%;
     filter: blur(1px);
-    /* Speed-ah inge thaan control panrom (1.5s -> 3.5s) */
     animation: cometMove 3.5s linear forwards; 
     z-index: 1;
     pointer-events: none;
@@ -55,7 +48,7 @@
         left: 110%;
         opacity: 0;
     }
-    10% { opacity: 1; } /* Methuva light vanthu appram move aagum */
+    10% { opacity: 1; } 
     90% { opacity: 1; }
     100% {
         top: 100%;
@@ -137,7 +130,6 @@
   font-size: 11px;
 }
 
-/* Orbit Path */
 .portal {
   position: absolute;
   top: 50%;
@@ -150,7 +142,6 @@
   box-shadow: inset 0 0 50px rgba(254, 133, 30, 0.05);
 }
 
-/* Unique Circular Nodes */
 .metaNode {
   position: absolute;
   width: 70px;
@@ -222,7 +213,6 @@
   filter: blur(1px);
 }
 
-/* Nebula Clouds */
 .cosmicDust {
   position: absolute;
   inset: 0;
@@ -232,7 +222,6 @@
   filter: blur(100px);
 }
 
-/* Black Hole Core Design */
 .blackHole {
   position: absolute;
   top: 50%;
@@ -272,7 +261,6 @@
   text-shadow: 0 0 10px #fe851e;
 }
 
-/* Liquid Glass Planet Nodes */
 .liquidNode {
   position: absolute;
   width: 100px;
@@ -287,7 +275,7 @@
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Organic shape */
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   display: flex;
   flex-direction: column;
   align-items: center;

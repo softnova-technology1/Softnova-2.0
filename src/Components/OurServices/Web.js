@@ -66,7 +66,6 @@ const WebDevelopment = () => {
               viewport={{ once: false, amount: 0.3 }}
               variants={fadeInUp}
             >
-              {/* Wrapped Header Content in a Container */}
               <div className={styles.headerContainer}>
                 <span className={styles.tag}>Web Development</span>
                 <h1 className={styles.title}>

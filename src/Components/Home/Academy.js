@@ -4,20 +4,19 @@ import styles from "../../Styles/Academy.module.css";
 import academy from "../../images/academygirl.jpg";
 
 export default function AcademyHero() {
-  // 1. Container variants - for staggering children
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, 
+        staggerChildren: 0.2,
       },
     },
   };
 
-  
+
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 }, 
+    hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
@@ -25,9 +24,9 @@ export default function AcademyHero() {
     },
   };
 
-  
+
   const imageVariants = {
-    hidden: { opacity: 0, x: -100 }, 
+    hidden: { opacity: 0, x: -100 },
     visible: {
       opacity: 1,
       x: 0,
@@ -37,21 +36,15 @@ export default function AcademyHero() {
 
   return (
     <Container>
-      {/* Outer motion.section is the trigger. 
-          When this enters the viewport, animations start.
-      */}
       <motion.section
         className={styles.hero}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }} 
+        viewport={{ once: false, amount: 0.2 }}
       >
-        {/* Image Section */}
         <motion.div className={styles.imageWrap} variants={imageVariants}>
           <img src={academy} alt="Academy" className={styles.image} />
         </motion.div>
-
-        {/* Content Section */}
         <motion.div className={styles.content} variants={containerVariants}>
           <motion.h1 className={styles.title} variants={itemVariants}>
             Academy

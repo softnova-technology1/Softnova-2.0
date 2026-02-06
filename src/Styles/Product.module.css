@@ -403,10 +403,6 @@
 
 @media (max-width: 768px) {
 
-  .wrapper {
-    /* padding: 10px 0 5px 0; */
-  }
-
   .heading {
     font-size: 1.2rem;
   }
@@ -424,7 +420,7 @@
 
   .card {
     height: 200px;
-    
+
   }
 
   .overlay {
@@ -436,7 +432,7 @@
   }
 
   .overlay p {
-    font-size:12px;
+    font-size: 12px;
   }
 
   .section {
