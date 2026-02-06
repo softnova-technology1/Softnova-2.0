@@ -3,11 +3,11 @@ import { ClipboardList, Layout, Code2, Monitor, CheckCircle2 } from 'lucide-reac
 import { motion } from 'framer-motion'; 
 import styles from '../../Styles/WorkFlow.module.css';
 import { Container } from 'react-bootstrap';
-import phase1 from '../../images/phase01.png';
-import phase2 from '../../images/phase2.png';
-import phase3 from '../../images/phase3.png';
-import phase5 from '../../images/phase4.png';
-import phase4 from '../../images/phase5.png';
+import phase1 from '../../images/phase01.webp';
+import phase2 from '../../images/phase2.webp';
+import phase3 from '../../images/phase3.webp';
+import phase5 from '../../images/phase4.webp';
+import phase4 from '../../images/phase5.webp';
 
 const phases = [
   { id: '01', title: 'PLANNING', desc: 'We have extensive experience in transforming innovative ideas into', icon: <ClipboardList size={20} />, progress: 20, img: phase1 },

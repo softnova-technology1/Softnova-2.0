@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styles from "../Styles/Rocket.module.css";
-import rocketImg from "../images/sn.png";
-import navgif from "../images/navgif.gif";
+import rocketImg from "../images/sn.webp";
+import navgif from "../images/navgif.webp";
 
 const RocketMenu = () => {
   const canvasRef = useRef(null);

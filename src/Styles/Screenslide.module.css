@@ -113,7 +113,7 @@
 .bg {
   position: absolute;
   inset: 0;
-  background: url("../images/About-Images/lap.jpg") center / cover no-repeat;
+  background: url("../images/About-Images/lap.webp") center / cover no-repeat;
   /* Brightness 0.65 and Opacity 0.5 (50% transparency) */
   filter: brightness(0.65) opacity(0.5); 
 }

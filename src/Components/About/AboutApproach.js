@@ -7,10 +7,10 @@ import {
   FaSmile,
   FaBriefcase,
 } from "react-icons/fa";
-import img1 from "../../images/About-Images/pro1.png";
-import img2 from "../../images/About-Images/pro2.png";
-import img3 from "../../images/About-Images/pro3.png";
-import img4 from "../../images/About-Images/pro4.png";
+import img1 from "../../images/About-Images/pro1.webp";
+import img2 from "../../images/About-Images/pro2.webp";
+import img3 from "../../images/About-Images/pro3.webp";
+import img4 from "../../images/About-Images/pro4.webp";
 import { Container } from "react-bootstrap";
 
 // Stats Data

@@ -1,14 +1,14 @@
 import React, { useState } from "react"; // Added useState
 import { motion, AnimatePresence } from "framer-motion"; // Added AnimatePresence
 import styles from "../../Styles/Software.module.css";
-import software1 from "../../images/Ourservices-images/Software1.jpg";
-import software2 from "../../images/Ourservices-images/Software2.jpg";
-import software3 from "../../images/Ourservices-images/Software3.jpg";
-import software4 from "../../images/Ourservices-images/Software4.jpg";
-import software5 from "../../images/Ourservices-images/Software5.jpg";
-import software6 from "../../images/Ourservices-images/Software6.jpg";
+import software1 from "../../images/Ourservices-images/Software1.webp";
+import software2 from "../../images/Ourservices-images/Software2.webp";
+import software3 from "../../images/Ourservices-images/Software3.webp";
+import software4 from "../../images/Ourservices-images/Software4.webp";
+import software5 from "../../images/Ourservices-images/Software5.webp";
+import software6 from "../../images/Ourservices-images/Software6.webp";
 import { ArrowRight, X } from "lucide-react"; // Added X for remove button
-import shan from "../../images/Ourservices-images/software.jpg";
+import shan from "../../images/Ourservices-images/software.webp";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../Styles/Ourservice.module.css";
-import butterfly from "../../images/butterfly.gif";
+import butterfly from "../../images/butterfly.webp";
 import Slide from "../Slide";
 
 

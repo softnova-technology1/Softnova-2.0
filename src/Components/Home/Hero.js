@@ -4,7 +4,7 @@ import { PerspectiveCamera } from "@react-three/drei";
 import { motion } from "framer-motion"; 
 import ParticleSystem from "../Home/particalSystem";
 import styles from "../../Styles/Hero.module.css";
-// import butterfly from "../../images/butterfly.gif";
+// import butterfly from "../../images/butterfly.webp";
 import OurBestServices from "./Ourservices";
 import CompanySection from "./Compnay";
 import WhyChooseSoftNova from "./Whychoose";

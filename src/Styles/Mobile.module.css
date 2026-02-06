@@ -242,7 +242,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/soft19.jpg"); /* 👈 image path */
+    background-image: url("../images/soft19.webp"); /* 👈 image path */
     background-size: cover;
     background-position: center;
     transform: scale(1.15);
@@ -323,7 +323,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/soft19.jpg"); /* 👈 image path */
+    background-image: url("../images/soft19.webp"); /* 👈 image path */
     background-size: cover;
     background-position: center;
     transform: scale(1.15);

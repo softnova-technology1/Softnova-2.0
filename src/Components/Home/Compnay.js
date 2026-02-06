@@ -8,7 +8,7 @@ import {
   FaJsSquare,
   FaHtml5,
 } from "react-icons/fa";
-import aboutimg from "../../images/aboutimg.png";
+import aboutimg from "../../images/aboutimg.webp";
 const CompanySection = () => {
 
   const StarSvg = () => (

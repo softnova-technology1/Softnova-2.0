@@ -223,7 +223,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/soft25.jpg"); /* 👈 your image */
+    background-image: url("../images/soft25.webp"); /* 👈 your image */
     background-size: cover;
     background-position: center;
     transform: scale(1.1);
@@ -274,7 +274,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/soft25.jpg"); /* 👈 bg image */
+    background-image: url("../images/soft25.webp"); /* 👈 bg image */
     background-size: cover;
     background-position: center;
     transform: scale(1.1);

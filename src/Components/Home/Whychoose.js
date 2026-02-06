@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styles from "../../Styles/Whychoose.module.css";
-import office from "../../images/orangegirl.jpg";
+import office from "../../images/orangegirl.webp";
 
 export default function WhyChooseSoftNova() {
   const features = [

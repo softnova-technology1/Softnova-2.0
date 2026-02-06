@@ -34,7 +34,7 @@
     position: absolute;
     inset: -1px;
     border-radius: inherit;
-    background-image: url("../images/stickybg.png");
+    background-image: url("../images/stickybg.webp");
     background-size: cover;
     opacity: .5;
     filter: blur(18px);

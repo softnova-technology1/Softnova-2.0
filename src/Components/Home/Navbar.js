@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "../../Styles/Navbar.module.css";
-import logo from "../../images/softnovaLogo.png";
+import logo from "../../images/softnovaLogo.webp";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {

@@ -355,7 +355,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/Ourservices-images/soft22.jpg"); /* 👈 image path */
+    background-image: url("../images/Ourservices-images/soft22.webp"); /* 👈 image path */
     background-size: cover;
     background-position: center;
     transform: scale(1.15);

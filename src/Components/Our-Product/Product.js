@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import styles from "../../Styles/Product.module.css";
-import imgp1 from '../../images/soft8.jpg';
-import imgp2 from '../../images/soft1.png';
-import imgp3 from '../../images/soft23.jpg';
-import chart1 from '../../images/Product-images/productchart1.jpg';
-import chart2 from '../../images/Product-images/productchart2.jpg';
-import chart3 from '../../images/Ourservices-images/ourproduct(e-commerce).jpg';
-import chart4 from '../../images/Ourservices-images/ourproduct(EducationLMS).jpg';
-import chart5 from '../../images/soft28.jpg';
-import chart6 from '../../images/Ourservices-images/ourproduct(booking).jpg';
+import imgp1 from '../../images/soft8.webp';
+import imgp2 from '../../images/soft1.webp';
+import imgp3 from '../../images/soft23.webp';
+import chart1 from '../../images/Product-images/productchart1.webp';
+import chart2 from '../../images/Product-images/productchart2.webp';
+import chart3 from '../../images/Ourservices-images/ourproduct(e-commerce).webp';
+import chart4 from '../../images/Ourservices-images/ourproduct(EducationLMS).webp';
+import chart5 from '../../images/soft28.webp';
+import chart6 from '../../images/Ourservices-images/ourproduct(booking).webp';
 import ProductHero from "./Productpart";
 import Breadcrumb from "../BreadCrumb";
 

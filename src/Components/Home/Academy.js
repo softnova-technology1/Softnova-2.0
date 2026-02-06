@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Academy.module.css";
-import academy from "../../images/academygirl.jpg";
+import academy from "../../images/academygirl.webp";
 
 export default function AcademyHero() {
   // 1. Container variants - for staggering children
