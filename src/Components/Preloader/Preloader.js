@@ -4,7 +4,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Stars, Float, Cloud, Sparkles } from '@react-three/drei';
 import * as THREE from 'three';
 import './Preloader.css';
-import softnovaLogo from '../../images/softnovaLogo.png';
+import softnovaLogo from '../../images/softnovaLogo.webp';
 
 
 const GalaxyScene = () => {
@@ -19,14 +19,9 @@ const GalaxyScene = () => {
     return (
         <>
             <group ref={groupRef}>
-                {/* Deep field stars - Optimized count */}
                 <Stars radius={100} depth={50} count={3000} factor={4} saturation={0} fade speed={1} />
-
-                {/* Nebula Clouds (Using transparent Clouds for fog effect) */}
                 <Cloud opacity={0.3} speed={0.4} width={10} depth={1.5} segments={20} color="#1a0f2e" position={[0, -5, -10]} />
                 <Cloud opacity={0.3} speed={0.4} width={10} depth={1.5} segments={20} color="#2e1a0f" position={[0, 5, -10]} />
-
-                {/* Floating Space Dust */}
                 <Sparkles count={500} scale={12} size={3} speed={0.4} opacity={0.6} color="#fe851e" />
             </group>
 
