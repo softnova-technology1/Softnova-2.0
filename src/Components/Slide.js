@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "../Styles/Slide.module.css";
-import pro1 from '../images/pro3.png';
-import pro2 from '../images/pro2.png';
-import pro3 from '../images/pro1.png';
-import pro4 from '../images/pro5.png';
-import pro5 from '../images/pro6.png';
-import pro6 from '../images/pro3.png';
+import pro1 from '../images/pro3.webp';
+import pro2 from '../images/pro2.webp';
+import pro3 from '../images/pro1.webp';
+import pro4 from '../images/pro5.webp';
+import pro5 from '../images/pro6.webp';
+import pro6 from '../images/pro3.webp';
 
 const StarSvg = () => (
   <svg
@@ -31,34 +31,34 @@ export default function Slide() {
     {
       img: pro1,
       title: "Salary Management",
-      desc:"Effortlessly handle employee salaries, tax deductions, and benefits with our all"
+      desc: "Effortlessly handle employee salaries, tax deductions, and benefits with our all"
     },
     {
       img: pro2,
       title: "Retail POS Server",
-      desc:"Boost your retail business with our cloud-based POS system, offering real-time"
+      desc: "Boost your retail business with our cloud-based POS system, offering real-time"
     },
     {
       img: pro3,
       title: "Hotel & Resort Reser",
-      desc:"Our hotel reservation system provides seamless booking experiences for guests."
+      desc: "Our hotel reservation system provides seamless booking experiences for guests."
     },
     {
       img: pro4,
       title: "Hospital Management",
-      desc:"Our hospital management system streamlines patient records, appointments, and bi"
+      desc: "Our hospital management system streamlines patient records, appointments, and bi"
     },
     {
       img: pro5,
       title: "Attendance System",
-      desc:"Optimize workforce efficiency with our AI-powered Work Hours Monitoring System,"
+      desc: "Optimize workforce efficiency with our AI-powered Work Hours Monitoring System,"
     },
-     {
+    {
       img: pro6,
       title: "CRM Ssystem",
-      desc:"Automate follow-ups, track conversions, and improve customer satisfaction with o"
+      desc: "Automate follow-ups, track conversions, and improve customer satisfaction with o"
     },
-    
+
   ];
 
   useEffect(() => {
@@ -90,18 +90,18 @@ export default function Slide() {
                 <p>{item.desc}</p>
               </div>
 
-             
+
               <div className={styles.showBtn}>
                 <a href="/ImageCardSection">
-                <button className={styles.starButton}>
-                  Show More
-                  <span className={styles.star1}><StarSvg /></span>
-                  <span className={styles.star2}><StarSvg /></span>
-                  <span className={styles.star3}><StarSvg /></span>
-                  <span className={styles.star4}><StarSvg /></span>
-                  <span className={styles.star5}><StarSvg /></span>
-                  <span className={styles.star6}><StarSvg /></span>
-                </button> </a>
+                  <button className={styles.starButton}>
+                    Show More
+                    <span className={styles.star1}><StarSvg /></span>
+                    <span className={styles.star2}><StarSvg /></span>
+                    <span className={styles.star3}><StarSvg /></span>
+                    <span className={styles.star4}><StarSvg /></span>
+                    <span className={styles.star5}><StarSvg /></span>
+                    <span className={styles.star6}><StarSvg /></span>
+                  </button> </a>
               </div>
             </div>
           );

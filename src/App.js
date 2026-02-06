@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Hero from "./Components/Home/Hero";
 import Navbar from "./Components/Home/Navbar";

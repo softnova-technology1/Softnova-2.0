@@ -30,14 +30,12 @@ export default function Cursor() {
     const particles = [];
 
     const drawStar = (x, y, spikes, innerRadius, outerRadius, color, opacity) => {
-      ctx.save(); // Style settings-a save panrom
+      ctx.save(); 
 
       let rot = (Math.PI / 2) * 3;
       let step = Math.PI / spikes;
 
-      // Glow logic
       ctx.shadowBlur = 10;
-      // ctx.shadowColor = `rgb(247, 3, 174, ${opacity})`; // Orange Glow
       ctx.beginPath();
       ctx.moveTo(x, y - outerRadius);
 
@@ -53,7 +51,7 @@ export default function Cursor() {
       ctx.fillStyle = color;
       ctx.fill();
 
-      ctx.restore(); // Next particle draw aagum pothu effect mix aagama iruka restore
+      ctx.restore(); 
     };
 
     const spawn = () => {
@@ -66,8 +64,7 @@ export default function Cursor() {
           life: 50 + Math.random() * 20,
           maxLife: 60,
           size: Math.random() * 3.5 + 1.5,
-          // Orange HSL range
-          hue: Math.random() * 15 + 15, // 15 to 30 range (Deep Orange to Bright Orange)
+          hue: Math.random() * 15 + 15,
         });
       }
     };

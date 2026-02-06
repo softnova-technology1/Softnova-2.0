@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
 import { Link } from "react-router-dom";
-import logo from "../images/softnovaLogo.png";
+import logo from "../images/softnovaLogo.webp";
 
 const Footer = () => {
   return (

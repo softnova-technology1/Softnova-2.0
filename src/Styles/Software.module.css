@@ -1,12 +1,8 @@
-/* ================= PAGE ================= */
 
 .pageWrapper {
   background-color: #0b0b0b;
   overflow-x: hidden;
 }
-
-/* ================= HERO ================= */
-
 .hero {
   position: relative;
   min-height: 95vh;
@@ -133,8 +129,6 @@
   box-shadow: 0 10px 30px rgba(255, 123, 0, 0.3);
 }
 
-/* ================= PROJECTS ================= */
-
 .wrapper {
   padding: 100px 5%;
   background: linear-gradient(180deg, #0b0b0b, #000);
@@ -160,8 +154,6 @@
   gap: 30px;
 }
 
-/* ===== PROJECT CARD ===== */
-
 .projectBox {
   position: relative;
   height: 380px;
@@ -170,7 +162,6 @@
   cursor: pointer;
 }
 
-/* Image */
 .projectBox img {
   width: 100%;
   height: 100%;
@@ -178,7 +169,6 @@
   transition: transform 0.6s ease;
 }
 
-/* Overlay ALWAYS visible */
 .overlay {
   position: absolute;
   inset: 0;
@@ -193,7 +183,6 @@
   padding: 30px;
 }
 
-/* Category */
 .catName {
   color: #ff7b00;
   font-size: 13px;
@@ -202,14 +191,12 @@
   margin-bottom: 10px;
 }
 
-/* Heading ALWAYS visible */
 .projectBox h3 {
   font-size: 24px;
   margin-bottom: 15px;
   color: #fff;
 }
 
-/* Button hidden by default */
 .viewBtn {
   background: transparent;
   border: 1px solid #ff7b00;
@@ -224,12 +211,10 @@
   transition: 0.3s ease;
 }
 
-/* Hover effects */
 .projectBox:hover img {
   transform: scale(1.1);
 }
 
-/* Button ONLY appears on hover */
 .projectBox:hover .viewBtn {
   opacity: 1;
   transform: translateY(0);
@@ -239,14 +224,12 @@
   background: #ff7b00;
   color: #000;
 }
-/* Background Blur when modal is active */
 .pageWrapper.blurred {
   filter: blur(10px);
-  pointer-events: none; /* Disables clicks on background while open */
+  pointer-events: none; 
   transition: filter 0.3s ease;
 }
 
-/* Modal Overlay */
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -261,7 +244,6 @@
   padding: 20px;
 }
 
-/* The Canvas/Modal Box */
 .modalCanvas {
   background: #ffffff;
   width: 100%;
@@ -271,8 +253,6 @@
   overflow: hidden;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
-
-/* Remove Button at Top Right */
 .closeModal {
   position: absolute;
   top: 15px;
@@ -355,9 +335,6 @@
 }
 
 
-/* =========================
-   HERO MOBILE BG – 428px
-========================= */
 @media (max-width: 428px) {
 
   .hero {
@@ -367,19 +344,17 @@
     overflow: hidden;
   }
 
-  /* Background image layer */
   .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/soft19.jpg"); /* 👈 change image if needed */
+    background-image: url("../images/soft19.webp");
     background-size: cover;
     background-position: center;
     transform: scale(1.15);
     z-index: 0;
   }
 
-  /* Dark blue cinematic overlay */
   .hero::after {
     content: "";
     position: absolute;
@@ -391,7 +366,6 @@
     z-index: 1;
   }
 
-  /* Keep content above background */
   .container {
     position: relative;
     z-index: 2;
@@ -413,7 +387,6 @@
     justify-content: center;
   }
 
-  /* Hide right-side image card on mobile (already you did, reinforcing) */
   .card {
     display: none;
   }
@@ -430,19 +403,17 @@
     overflow: hidden;
   }
 
-  /* Background image layer */
   .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/soft19.jpg"); /* 👈 change image if needed */
+    background-image: url("../images/soft19.webp"); 
     background-size: cover;
     background-position: center;
     transform: scale(1.15);
     z-index: 0;
   }
 
-  /* Dark blue cinematic overlay */
   .hero::after {
     content: "";
     position: absolute;
@@ -454,7 +425,6 @@
     z-index: 1;
   }
 
-  /* Keep content above background */
   .container {
     position: relative;
     z-index: 2;

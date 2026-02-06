@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import styles from "../../Styles/Cloud.module.css";
-import shieldImg from "../../images/Ourservices-images/Cloud1.jpg";
-import img1 from "../../images/Ourservices-images/Cloud2.jpg";
-import img2 from "../../images/Ourservices-images/Cloud3.jpg";
-import img4 from "../../images/Ourservices-images/Cloud4.jpg";
+import shieldImg from "../../images/Ourservices-images/Cloud1.webp";
+import img1 from "../../images/Ourservices-images/Cloud2.webp";
+import img2 from "../../images/Ourservices-images/Cloud3.webp";
+import img4 from "../../images/Ourservices-images/Cloud4.webp";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -39,9 +39,8 @@ const CloudandIT = () => {
     <>
       <Breadcrumb />
 
-      {/* ================= HERO SECTION ================= */}
       <section className={styles.section}>
-        <div className={styles.container}> 
+        <div className={styles.container}>
           <div className={styles.flexWrapper}>
             <div
               className={styles.content}
@@ -57,7 +56,6 @@ const CloudandIT = () => {
                 technology solutions.
               </p>
 
-              {/* RESTORED: Stylish Star Button wrapped in Link */}
               <Link to="/Contact" className={styles.buttonLink}>
                 <button className={styles.starButton}>
                   Connect With Us
@@ -72,7 +70,7 @@ const CloudandIT = () => {
               className={styles.imageWrap}
               ref={el => (revealRefs.current[1] = el)}
             >
-              <motion.div 
+              <motion.div
                 className={styles.imageWrapper}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -86,10 +84,9 @@ const CloudandIT = () => {
         </div>
       </section>
 
-      {/* ================= SERVICES SECTION ================= */}
       <section className={styles.servicesSection}>
         <div className={styles.container}>
-          
+
           <div className={styles.serviceRow} ref={el => (revealRefs.current[2] = el)}>
             <div className={styles.mediaArea}>
               <img src={img1} alt="Cloud Hosting" />

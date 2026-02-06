@@ -2,11 +2,10 @@
   display: flex;
   gap: 4rem;
   padding: 4rem 6rem;
-  background: #000000; /* dark theme */
+  background: #000000;
   color: #e5e7eb;
 }
 
-/* LEFT CONTENT */
 .left {
   flex: 1;
 }
@@ -38,7 +37,7 @@
 .left p {
   max-width: 480px;
   line-height: 1.7;
-   color: #b1b1b1;
+  color: #b1b1b1;
   font-size: 14px;
 }
 
@@ -53,7 +52,6 @@
   gap: 1.2rem;
 }
 
-/* Two inputs in one row */
 .row {
   display: flex;
   gap: 1rem;
@@ -80,7 +78,6 @@ textarea {
   resize: none;
 }
 
-/* Button */
 button {
   margin-top: 0.5rem;
   padding: 0.9rem;
@@ -99,7 +96,6 @@ button:hover {
   border: 1px solid #fe851e;
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
@@ -114,6 +110,7 @@ button:hover {
     font-size: 2rem;
   }
 }
+
 @media (max-width: 428px) {
   .container {
     flex-direction: column;
@@ -153,4 +150,3 @@ button:hover {
     padding: 0.85rem;
   }
 }
-

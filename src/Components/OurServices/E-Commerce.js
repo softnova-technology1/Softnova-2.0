@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "../../Styles/E-Commerce.module.css";
-import ecommerce2 from "../../images/Ourservices-images/e-commerce2.jpg";
-import ecommerce3 from "../../images/Ourservices-images/e-commerce3.jpg";
-import ecommerce4 from "../../images/Ourservices-images/e-commerce4.jpg";
-import ecommerce5 from "../../images/Ourservices-images/e-commerce5.jpg";
-import { ArrowUpRight, X } from "lucide-react"; // X icon added
-import shan from "../../images/Ourservices-images/e-commerce1.jpg";
+import ecommerce2 from "../../images/Ourservices-images/e-commerce2.webp";
+import ecommerce3 from "../../images/Ourservices-images/e-commerce3.webp";
+import ecommerce4 from "../../images/Ourservices-images/e-commerce4.webp";
+import ecommerce5 from "../../images/Ourservices-images/e-commerce5.webp";
+import { ArrowUpRight, X } from "lucide-react";
+import shan from "../../images/Ourservices-images/e-commerce1.webp";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 
@@ -19,40 +19,39 @@ const projects = [
 
 const cardVariants = {
   hidden: { opacity: 0, y: 100, rotateX: -20, scale: 0.9 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    rotateX: 0, 
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
     scale: 1,
-    transition: { duration: 0.8, ease: "easeOut" } 
+    transition: { duration: 0.8, ease: "easeOut" }
   }
 };
 
 const ECommerce = () => {
-  // --- Canvas State Logic ---
   const [isCanvasOpen, setIsCanvasOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
   const openCanvas = (project) => {
     setSelectedProject(project);
     setIsCanvasOpen(true);
-    document.body.style.overflow = "hidden"; // Scroll freeze when canvas open
+    document.body.style.overflow = "hidden";
   };
 
   const closeCanvas = () => {
     setIsCanvasOpen(false);
     setSelectedProject(null);
-    document.body.style.overflow = "auto"; // Resume scroll on close
+    document.body.style.overflow = "auto";
   };
 
   return (
     <>
-      <Breadcrumb/>
+      <Breadcrumb />
       <div className={styles.mainPage}>
         {/* --- Hero Section --- */}
         <section className={styles.hero}>
           <div className={styles.container}>
-            <motion.div 
+            <motion.div
               className={styles.content}
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -69,19 +68,19 @@ const ECommerce = () => {
                 with seamless payment integration.
               </p>
               <div className={styles.actions}>
-                <motion.button 
+                <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className={styles.primaryBtn}
                 >
                   <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
                     Connect With Us
-                  </Link> 
+                  </Link>
                 </motion.button>
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className={styles.cardContainer}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -96,10 +95,9 @@ const ECommerce = () => {
           </div>
         </section>
 
-        {/* --- Projects Grid Section --- */}
         <section className={styles.wrapper}>
           <div className={styles.sectionHeader}>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
@@ -108,11 +106,11 @@ const ECommerce = () => {
               Case Studies
             </motion.h2>
           </div>
-          
+
           <div className={styles.projectsGrid}>
             {projects.map((item, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 className={styles.projectMinimal}
                 variants={cardVariants}
                 initial="hidden"
@@ -121,27 +119,27 @@ const ECommerce = () => {
               >
                 <div className={styles.imageBox}>
                   <img src={item.image} alt={item.title} />
-                  
-                  <motion.div 
+
+                  <motion.div
                     className={styles.projectOverlay}
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
                   >
-                      <div className={styles.topInfo}>
-                        <span className={styles.catName}>{item.category}</span>
-                        <h3>{item.title}</h3>
-                      </div>
-                      
-                      <motion.div 
-                        className={styles.roundBtn}
-                        whileHover={{ scale: 1.2, rotate: 45 }}
-                        onClick={() => openCanvas(item)} 
-                        style={{ cursor: 'pointer' }}
-                      >
-                        <ArrowUpRight size={24} className={styles.arrowIcon} />
-                      </motion.div>
-                      
-                      <div className={styles.accentLine}></div>
+                    <div className={styles.topInfo}>
+                      <span className={styles.catName}>{item.category}</span>
+                      <h3>{item.title}</h3>
+                    </div>
+
+                    <motion.div
+                      className={styles.roundBtn}
+                      whileHover={{ scale: 1.2, rotate: 45 }}
+                      onClick={() => openCanvas(item)}
+                      style={{ cursor: 'pointer' }}
+                    >
+                      <ArrowUpRight size={24} className={styles.arrowIcon} />
+                    </motion.div>
+
+                    <div className={styles.accentLine}></div>
                   </motion.div>
                 </div>
               </motion.div>
@@ -150,32 +148,28 @@ const ECommerce = () => {
         </section>
       </div>
 
-      {/* --- Side Canvas Component --- */}
       <AnimatePresence>
         {isCanvasOpen && (
           <>
-            {/* Background Blur Overlay */}
-            <motion.div 
+            <motion.div
               className={styles.canvasOverlay}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={closeCanvas} // Clicking outside also closes
+              onClick={closeCanvas}
             />
-            
-            {/* Sliding Panel */}
-            <motion.div 
+
+            <motion.div
               className={styles.sideCanvas}
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
             >
-              {/* REMOVE BUTTON - Fixes your requirement */}
               <button className={styles.closeBtn} onClick={closeCanvas}>
                 <X size={20} /> <span>Remove</span>
               </button>
-              
+
               <div className={styles.canvasBody}>
                 {selectedProject && (
                   <motion.div
@@ -187,7 +181,7 @@ const ECommerce = () => {
                     <span className={styles.canvasTag}>{selectedProject.category}</span>
                     <h2 className={styles.canvasTitle}>{selectedProject.title}</h2>
                     <p className={styles.canvasDesc}>{selectedProject.desc}</p>
-                    
+
                     <div className={styles.canvasMeta}>
                       <div className={styles.metaItem}>
                         <strong>Status:</strong> <span>Completed</span>
@@ -196,9 +190,9 @@ const ECommerce = () => {
                         <strong>Service:</strong> <span>Enterprise Solution</span>
                       </div>
                     </div>
-                    
+
                     <button className={styles.canvasCta}>
-                       View Live Project
+                      View Live Project
                     </button>
                   </motion.div>
                 )}

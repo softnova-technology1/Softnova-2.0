@@ -1,7 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&family=Playfair+Display:ital@1&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap");
-
 .pageWrapper {
     margin-top: 5rem;
 }
@@ -28,13 +25,12 @@
     overflow: hidden;
 }
 
-/* glowing edge */
 .cardItem::before {
     content: "";
     position: absolute;
     inset: -1px;
     border-radius: inherit;
-    background-image: url("../images/stickybg.png");
+    background-image: url("../images/stickybg.webp");
     background-size: cover;
     opacity: .5;
     filter: blur(18px);
@@ -92,7 +88,7 @@
     line-height: 1.9;
     font-family: "Titillium Web", system-ui, sans-serif;
 
-    color:  rgb(215, 214, 214);
+    color: rgb(215, 214, 214);
 }
 
 .ring {
@@ -123,7 +119,6 @@
     }
 }
 
-/* ================= RESPONSIVE ================= */
 
 @media (max-width: 900px) {
     .ring {
@@ -139,60 +134,61 @@
         padding: 3rem;
     }
 }
+
 @media (max-width: 428px) {
 
-  .pageWrapper {
-    margin-top: 5px;
-  }
+    .pageWrapper {
+        margin-top: 5px;
+    }
 
-  .stackContainer {
-    gap: 12vh;
-  }
+    .stackContainer {
+        gap: 12vh;
+    }
 
-  .cardItem {
-    width: 92vw;
-    height: auto;
-    min-height: 70vh;
-    border-radius: 26px;
-  }
+    .cardItem {
+        width: 92vw;
+        height: auto;
+        min-height: 70vh;
+        border-radius: 26px;
+    }
 
-  .cardItem::before {
-    opacity: 0.35;
-    filter: blur(14px);
-  }
+    .cardItem::before {
+        opacity: 0.35;
+        filter: blur(14px);
+    }
 
-  .cardInner {
-    padding: 2.2rem 1.6rem;
-    max-width: 100%;
-  }
+    .cardInner {
+        padding: 2.2rem 1.6rem;
+        max-width: 100%;
+    }
 
-  .cardTitle {
-    font-size: clamp(1.9rem, 7vw, 2.4rem);
-    line-height: 1.1;
-    background-position: center;
-  }
+    .cardTitle {
+        font-size: clamp(1.9rem, 7vw, 2.4rem);
+        line-height: 1.1;
+        background-position: center;
+    }
 
-  .cardSubtitle {
-    margin-top: 1.6rem;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-  }
+    .cardSubtitle {
+        margin-top: 1.6rem;
+        font-size: 12px;
+        letter-spacing: 0.12em;
+    }
 
-  .cardDesc {
-    margin-top: 18px;
-    font-size: 12px;
-    line-height: 1.7;
-  }
+    .cardDesc {
+        margin-top: 18px;
+        font-size: 12px;
+        line-height: 1.7;
+    }
 
-  .ring {
-    width: 140px;
-    height: 140px;
-    right: -10%;
-    top: 8%;
-    opacity: 0.65;
-  }
+    .ring {
+        width: 140px;
+        height: 140px;
+        right: -10%;
+        top: 8%;
+        opacity: 0.65;
+    }
 
-  .ring::after {
-    inset: 18px;
-  }
+    .ring::after {
+        inset: 18px;
+    }
 }

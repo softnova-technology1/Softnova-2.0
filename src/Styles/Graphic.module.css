@@ -30,7 +30,7 @@
 }
 
 .textBox h1 {
-  font-size:30px;
+  font-size: 30px;
   color: #fff;
   margin-bottom: 1.5rem;
   font-family: "Playfair Display", serif;
@@ -83,10 +83,11 @@
 .desktop {
   width: 80%;
   max-width: 560px;
-   animation: float 4s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
   margin-top: 10%;
   border-radius: 50px;
 }
+
 @keyframes float {
   50% {
     transform: translateY(-15px);
@@ -110,7 +111,7 @@
   background: #fe851e;
   font-size: 16px;
   font-weight: 500;
-  color:white;
+  color: white;
   border-radius: 30px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -296,16 +297,14 @@
   transform: scale(1.1);
 }
 
-/* Heading always visible */
 .serviceTitle {
   text-align: center;
   margin-top: 1.4rem;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #fe851e;   /* hover illama visible */
+  color: #fe851e;
 }
 
-/* Border ONLY on hover */
 .serviceCard::before {
   content: "";
   position: absolute;
@@ -321,16 +320,15 @@
     linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  opacity: 0;          /* normal – no border */
+  opacity: 0;
   transition: 0.5s;
 }
 
 .serviceCard:hover::before {
-  opacity: 1;          /* hover – border appears */
+  opacity: 1;
 }
 
 
-/* --- MOBILE MEDIA QUERY --- */
 
 @media (max-width: 900px) {
   .content {
@@ -341,9 +339,11 @@
   .textBox p {
     margin: auto;
   }
-.textBox h1{
-  font-size: 30px;
-}
+
+  .textBox h1 {
+    font-size: 30px;
+  }
+
   .visualBox {
     margin-top: 3rem;
   }
@@ -353,14 +353,11 @@
     transform: none;
   }
 
-  /* Hide header image on mobile */
   .desktop {
     display: none;
   }
 }
-/* =========================
-   HERO MOBILE BG – 428px
-========================= */
+
 @media (max-width: 428px) {
 
   .hero {
@@ -370,33 +367,28 @@
     overflow: hidden;
   }
 
-  /* Background image layer */
   .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/soft30.jpg"); /* 🔁 change if needed */
+    background-image: url("../images/soft30.webp");
     background-size: cover;
     background-position: center;
     transform: scale(1.15);
     z-index: 0;
   }
 
-  /* Dark cinematic overlay */
   .hero::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      rgba(0, 15, 40, 0.9),
-      rgba(0, 0, 0, 0.95)
-    );
+    background: linear-gradient(rgba(0, 15, 40, 0.9),
+        rgba(0, 0, 0, 0.95));
     z-index: 1;
   }
 
-  /* Content always on top */
   .overlay {
-    display: none; /* desktop overlay remove */
+    display: none;
   }
 
   .content {
@@ -421,13 +413,13 @@
     margin: auto;
   }
 
-  /* Hide image already – reinforcing */
   .visualBox,
   .desktop {
     display: none;
   }
 }
-@media (max-width:768px){
+
+@media (max-width:768px) {
   .hero {
     min-height: 100vh;
     background: none;
@@ -435,33 +427,28 @@
     overflow: hidden;
   }
 
-  /* Background image layer */
   .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/soft30.jpg"); /* 🔁 change if needed */
+    background-image: url("../images/soft30.webp");
     background-size: cover;
     background-position: center;
     transform: scale(1.15);
     z-index: 0;
   }
 
-  /* Dark cinematic overlay */
   .hero::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      rgba(0, 15, 40, 0.9),
-      rgba(0, 0, 0, 0.95)
-    );
+    background: linear-gradient(rgba(0, 15, 40, 0.9),
+        rgba(0, 0, 0, 0.95));
     z-index: 1;
   }
 
-  /* Content always on top */
   .overlay {
-    display: none; /* desktop overlay remove */
+    display: none;
   }
 
   .content {
@@ -471,7 +458,8 @@
     text-align: center;
     padding: 3rem 1rem;
   }
-  .textBox{
+
+  .textBox {
     margin-top: 25%;
   }
 }

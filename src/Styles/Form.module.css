@@ -27,15 +27,11 @@
   color: #fe851e;
   font-family: "Playfair Display", serif;
   margin-bottom: 1rem;
-
-  /* Gradient Text Fix */
   background: linear-gradient(90deg, #ffffff, #fe851e);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #ffffff;
-  /* Fallback */
-
   text-shadow: 0 0 20px rgba(254, 133, 30, 0.2);
 }
 
@@ -156,15 +152,11 @@ textarea {
   font-weight: 700;
   font-family: "Playfair Display", serif;
   margin-bottom: 1rem;
-
-  /* Gradient Text Fix */
   background: linear-gradient(90deg, #ffffff, #fe851e);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #ffffff;
-  /* Fallback */
-
   text-shadow: 0 0 20px rgba(254, 133, 30, 0.2);
 }
 
@@ -177,7 +169,7 @@ textarea {
 }
 
 .starButton {
-  position: relative; 
+  position: relative;
   padding: 12px 35px;
   font-weight: 500;
   color: #181818;
@@ -301,7 +293,6 @@ textarea {
   fill: #fffdef;
 }
 
-/* Mobile Responsive Adjustments */
 @media (max-width: 480px) {
   .page {
     padding: 20px;
@@ -366,11 +357,12 @@ textarea {
     min-width: 100px;
   }
 }
-@media(max-width:380px){
-    .starButton {
+
+@media(max-width:380px) {
+  .starButton {
     font-size: 12px;
     padding: 6px 22px;
-   position: relative;
-   left: 70px !important;
+    position: relative;
+    left: 70px !important;
   }
 }

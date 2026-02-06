@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Digital.module.css";
-import img1 from "../../images/Ourservices-images/soft22.jpg";
+import img1 from "../../images/Ourservices-images/soft22.webp";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 
@@ -18,15 +18,10 @@ const DigitalMarketing = () => {
     <>
       <Breadcrumb />
       <div className={styles.pageContainer}>
-        
-        {/* ================= HERO WRAPPER ================= */}
         <section className={styles.wrapper}>
-          {/* Intha Container thaan content-ah center-la vekkum */}
-          <div className={styles.container}> 
+          <div className={styles.container}>
             <div className={styles.content}>
-              
-              {/* TEXT BOX */}
-              <motion.div 
+              <motion.div
                 className={styles.textBox}
                 initial={{ opacity: 0, x: -60 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -44,7 +39,7 @@ const DigitalMarketing = () => {
                   engagement, and ROI through data-driven execution.
                 </p>
 
-                <motion.button 
+                <motion.button
                   className={styles.starButton}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -57,9 +52,7 @@ const DigitalMarketing = () => {
                   ))}
                 </motion.button>
               </motion.div>
-
-              {/* IMAGE WRAPPER */}
-              <motion.div 
+              <motion.div
                 className={styles.imageWrapper}
                 initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
                 whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -74,9 +67,8 @@ const DigitalMarketing = () => {
           </div>
         </section>
 
-        {/* ================= MARQUEE SECTION ================= */}
         <section className={styles.marqueeSection}>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
@@ -87,19 +79,19 @@ const DigitalMarketing = () => {
           </motion.div>
 
           <div className={styles.marquee}>
-            <motion.div 
+            <motion.div
               className={styles.marqueeTrack}
               animate={{ x: ["0%", "-50%"] }}
-              transition={{ 
-                repeat: Infinity, 
-                duration: 20, 
-                ease: "linear" 
+              transition={{
+                repeat: Infinity,
+                duration: 20,
+                ease: "linear"
               }}
             >
               {services.concat(services).map((item, index) => (
                 <div key={index} className={styles.marqueeCard}>
                   <div className={styles.cardImage}>
-                     <img src={item.img} alt={item.title} loading="lazy" />
+                    <img src={item.img} alt={item.title} loading="lazy" />
                   </div>
                   <h3>{item.title}</h3>
                 </div>

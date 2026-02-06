@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "../../Styles/Navbar.module.css";
-import logo from "../../images/softnovaLogo.png";
+import logo from "../../images/softnovaLogo.webp";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const timeoutRef = useRef(null);
-  const DESKTOP_BREAKPOINT = 1024; 
+  const DESKTOP_BREAKPOINT = 1024;
 
   const services = [
     { name: "Web Development", path: "/services/WebDevelopment" },
@@ -29,7 +29,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  
+
   const handleMouseEnter = () => {
     if (window.innerWidth >= DESKTOP_BREAKPOINT + 1) {
       clearTimeout(timeoutRef.current);
@@ -54,14 +54,14 @@ const Navbar = () => {
         </NavLink>
       </div>
 
-    
+
       <div className={styles.hamburger} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
         <span className={isMobileMenuOpen ? styles.lineOpen1 : ""}></span>
         <span className={isMobileMenuOpen ? styles.lineOpen2 : ""}></span>
         <span className={isMobileMenuOpen ? styles.lineOpen3 : ""}></span>
       </div>
 
-     
+
       <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.showMobile : ""}`}>
         <NavLink to="/" className={getLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Home</NavLink>
 
@@ -70,15 +70,15 @@ const Navbar = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-    
+
           <NavLink
             to="/services"
             className={getLinkClass}
             onClick={() => {
               if (window.innerWidth <= 768) {
-                setServiceOpen(!serviceOpen); 
+                setServiceOpen(!serviceOpen);
               } else {
-                setIsMobileMenuOpen(false); 
+                setIsMobileMenuOpen(false);
               }
             }}
           >
@@ -118,7 +118,7 @@ const Navbar = () => {
 
         <a
           href="https://softnovatechnology.com/"
-          className={getLinkClass({ isActive: false })} 
+          className={getLinkClass({ isActive: false })}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => setIsMobileMenuOpen(false)}

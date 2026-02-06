@@ -4,14 +4,14 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: #000000; /* Black Theme */
-  z-index: 999; /* Background-la irukka */
+  background-color: #000000;
+  z-index: 999;
   overflow: hidden;
 }
 
 .particle {
   position: absolute;
-  background-color: #fe851e; /* Unga Orange Color */
+  background-color: #fe851e;
   border-radius: 50%;
   opacity: 0.6;
   pointer-events: none;

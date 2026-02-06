@@ -1,35 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Graphic.module.css";
-import desktop from "../../images/Ourservices-images/Graphic1.jpg";
-import img1 from "../../images/Ourservices-images/Graphic2.jpg";
-import img2 from "../../images/Ourservices-images/Graphic3.jpg";
-import img3 from "../../images/Ourservices-images/Graphic4.jpg";
-import img4 from "../../images/Ourservices-images/Graphic5.jpg";
-import img5 from "../../images/Ourservices-images/Graphic6.jpg";
-import img6 from "../../images/Ourservices-images/Graphic7.jpg";
+import desktop from "../../images/Ourservices-images/Graphic1.webp";
+import img1 from "../../images/Ourservices-images/Graphic2.webp";
+import img2 from "../../images/Ourservices-images/Graphic3.webp";
+import img3 from "../../images/Ourservices-images/Graphic4.webp";
+import img4 from "../../images/Ourservices-images/Graphic5.webp";
+import img5 from "../../images/Ourservices-images/Graphic6.webp";
+import img6 from "../../images/Ourservices-images/Graphic7.webp";
 import Breadcrumb from "../BreadCrumb";
 
 import { Link } from "react-router-dom";
 const services = [
   { title: "Creative Branding & Logo", img: img1 },
-  { title: "UI / UX Design", img: img2},
-  { title: "Web Development", img:img3 },
-  { title: "Mobile App Design", img: img4},
-  { title: "Digital Marketing", img:img5 },
-  { title: "Product Strategy", img:img6 }
+  { title: "UI / UX Design", img: img2 },
+  { title: "Web Development", img: img3 },
+  { title: "Mobile App Design", img: img4 },
+  { title: "Digital Marketing", img: img5 },
+  { title: "Product Strategy", img: img6 }
 ];
 
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      duration: 0.5, 
-      ease: "easeOut" 
-    } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
   }
 };
 
@@ -44,82 +44,82 @@ const staggerContainer = {
 const GraphicDesign = () => {
   return (
     <>
-    <Breadcrumb/>
-    <div className={styles.pageWrapper}>
-      <section className={styles.hero}>
-        <div className={styles.overlay} />
+      <Breadcrumb />
+      <div className={styles.pageWrapper}>
+        <section className={styles.hero}>
+          <div className={styles.overlay} />
 
-        <div className={styles.content}>
-          <motion.div 
-            className={styles.textBox}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className={styles.tag}>
-              Graphic <span>Design</span>
-            </span>
-            <h1 className={styles.title}>
-              Bringing your brand to life through <span>design</span>
-            </h1>
-            <p>
-              Softnova Technology’s graphic design expertise helps businesses
-              stand out in a competitive market by delivering high-quality,
-              professional, and engaging visuals.
-            </p>
-
-            <motion.button 
-              className={styles.starButton}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+          <div className={styles.content}>
+            <motion.div
+              className={styles.textBox}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8 }}
             >
-             <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
-            Connect With Us
-          </Link>
-              {[...Array(6)].map((_, i) => (
-                <div key={i} className={styles[`star${i + 1}`]}><StarSvg /></div>
-              ))}
-            </motion.button>
-          </motion.div>
+              <span className={styles.tag}>
+                Graphic <span>Design</span>
+              </span>
+              <h1 className={styles.title}>
+                Bringing your brand to life through <span>design</span>
+              </h1>
+              <p>
+                Softnova Technology’s graphic design expertise helps businesses
+                stand out in a competitive market by delivering high-quality,
+                professional, and engaging visuals.
+              </p>
 
-          <motion.div 
-            className={styles.visualBox}
-            initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
-            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 1, type: "spring" }}
-          >
-            <img src={desktop} alt="Desktop" className={styles.desktop} />
-          </motion.div>
-        </div>
-      </section>
-
-      <section className={styles.servicesSection}>
-        <motion.div 
-          className={styles.servicesGrid}
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
-        >
-          {services.map((item, index) => (
-            <motion.div 
-              className={styles.serviceCard} 
-              key={index}
-              variants={fadeInUp}
-              whileHover={{ y: -15, transition: { duration: 0.3 } }}
-            >
-              <div className={styles.serviceImage}>
-                <img src={item.img} alt={item.title} />
-                <div className={styles.cardOverlay} />
-              </div>
-              <h3 className={styles.serviceTitle}>{item.title}</h3>
+              <motion.button
+                className={styles.starButton}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link to="/Contact" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  Connect With Us
+                </Link>
+                {[...Array(6)].map((_, i) => (
+                  <div key={i} className={styles[`star${i + 1}`]}><StarSvg /></div>
+                ))}
+              </motion.button>
             </motion.div>
-          ))}
-        </motion.div>
-      </section>
-    </div>
+
+            <motion.div
+              className={styles.visualBox}
+              initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1, type: "spring" }}
+            >
+              <img src={desktop} alt="Desktop" className={styles.desktop} />
+            </motion.div>
+          </div>
+        </section>
+
+        <section className={styles.servicesSection}>
+          <motion.div
+            className={styles.servicesGrid}
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+          >
+            {services.map((item, index) => (
+              <motion.div
+                className={styles.serviceCard}
+                key={index}
+                variants={fadeInUp}
+                whileHover={{ y: -15, transition: { duration: 0.3 } }}
+              >
+                <div className={styles.serviceImage}>
+                  <img src={item.img} alt={item.title} />
+                  <div className={styles.cardOverlay} />
+                </div>
+                <h3 className={styles.serviceTitle}>{item.title}</h3>
+              </motion.div>
+            ))}
+          </motion.div>
+        </section>
+      </div>
     </>
   );
 };

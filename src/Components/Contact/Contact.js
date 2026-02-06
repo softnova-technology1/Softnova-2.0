@@ -198,7 +198,7 @@ export default function Contact() {
                       <Col md={6}>
                         <div className={styles.field}>
                           <label>PHONE</label>
-                          <input name="user_phone" />
+                          <input name="user_mobile" />
                         </div>
                       </Col>
                     </Row>
