@@ -65,7 +65,7 @@ function AppContent() {
         <Route path="/career" element={<CareerForm />} />
         <Route path="/gallery" element={<Achievements />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/contact" element={<Contact />} />
+        {/* <Route path="/contact" element={<Contact />} /> */}
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/GetStarted" element={<GetStarted />} />
