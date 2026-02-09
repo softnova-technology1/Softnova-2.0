@@ -41,10 +41,10 @@ const Ourservice = () => {
   return (
     <>
       <section className={styles.wrapper}>
-       
+
         <div className={styles.container}>
           <h2 className={styles.heading}><span>
-            <img src={butterfly} alt="" width={'100px'}/></span>OUR BEST SERVICES</h2>
+            <img src={butterfly} alt="" width={'100px'} /></span>OUR BEST SERVICES</h2>
 
           <div className={styles.timeline}>
             {services.map((item) => (

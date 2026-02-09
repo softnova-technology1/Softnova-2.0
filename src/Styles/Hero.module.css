@@ -1,11 +1,9 @@
-/* 🌍 GLOBAL WRAPPER TO PREVENT SIDE SCROLL */
 .mainWrapper {
   width: 100%;
-  overflow-x: hidden; /* Idhu dhaan main fix */
+  overflow-x: hidden; 
   position: relative;
 }
 
-/* 🌌 HERO CONTAINER */
 
 .container {
   position: relative;
@@ -17,10 +15,9 @@
   background: #000; 
 }
 
-/* 🎞️ SCROLL SECTION WRAPPER */
 .scrollSectionWrapper {
   width: 100%;
-  overflow: hidden; /* Animation nadakkumbodhu scroll varaama thadukkum */
+  overflow: hidden; 
   position: relative;
 }
 

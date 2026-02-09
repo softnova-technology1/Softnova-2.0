@@ -84,7 +84,7 @@
 
 .box p {
   font-size: 14px;
-   color: #b1b1b1;
+  color: #b1b1b1;
   line-height: 1.5;
 }
 
@@ -98,6 +98,7 @@
     margin-bottom: 50px;
   }
 }
+
 @media (max-width: 428px) {
   .wrapper {
     padding: 35px 18px;
@@ -149,6 +150,7 @@
     line-height: 1.6;
   }
 }
+
 @media (max-width: 768px) {
   .wrapper {
     padding: 40px 20px;
@@ -163,7 +165,7 @@
   .timeline {
     flex-direction: column;
     align-items: center;
-   
+
   }
 
   .service {
@@ -200,5 +202,3 @@
     font-size: 10px;
   }
 }
-
-

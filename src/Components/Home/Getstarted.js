@@ -48,7 +48,7 @@ export default function GetStarted() {
           </div>
           <div className={styles.row}>
             <input type="email" placeholder="Email" name="user_email" required />
-            <input type="number" placeholder="Phone No." name="user_phone"  required/>
+            <input type="number" placeholder="Phone No." name="user_mobile"  required/>
           </div>
 
           

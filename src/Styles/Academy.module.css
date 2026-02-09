@@ -6,6 +6,7 @@
   background: #000;
   overflow: hidden;
 }
+
 :global(.container) {
   overflow-x: hidden !important;
 }
@@ -59,15 +60,19 @@
 .html {
   background: #e44d26;
 }
+
 .css {
   background: #1572b6;
 }
+
 .java {
   background: #5382a1;
 }
+
 .react {
   background: #03a5b7;
 }
+
 .mongo {
   background: #4caf50;
 }
@@ -238,6 +243,7 @@
 .fil0 {
   fill: #fffdef;
 }
+
 @media (max-width: 428px) {
   .hero {
     grid-template-columns: 1fr;
@@ -256,7 +262,7 @@
   }
 
   .subtitle {
-    font-size:12px;
+    font-size: 12px;
     line-height: 1.5;
   }
 
@@ -295,4 +301,3 @@
     border-bottom-left-radius: 25%;
   }
 }
-

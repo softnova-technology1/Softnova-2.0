@@ -5,12 +5,9 @@ import styles from './Styles/Particles.module.css';
 const ParticlesBackground = () => {
   const [particles, setParticles] = useState([]);
   const { scrollYProgress } = useScroll();
-
-  // Scroll panna panna particles mela move aagum
   const yRange = useTransform(scrollYProgress, [0, 1], [0, -500]);
 
   useEffect(() => {
-    // 50 random particles create panrom
     const tempParticles = Array.from({ length: 50 }).map((_, i) => ({
       id: i,
       size: Math.random() * 6 + 2,
@@ -32,7 +29,7 @@ const ParticlesBackground = () => {
             height: p.size,
             top: p.top,
             left: p.left,
-            y: yRange, // Intha line thaan scroll animation-ah tharum
+            y: yRange,
           }}
           animate={{
             opacity: [0.2, 0.8, 0.2],

@@ -91,8 +91,8 @@
 }
 
 .exploreBtn {
-  background: transparent; /* Background eppovume transparent */
-  border: 1px solid rgba(254, 133, 30, 0.3); /* Default-ah oru light orange border */
+  background: transparent;
+  border: 1px solid rgba(254, 133, 30, 0.3);
   color: #fe851e;
   display: flex;
   align-items: center;
@@ -101,30 +101,26 @@
   font-size: 16px;
   cursor: pointer;
   z-index: 2;
-  
-  /* Buttons eppovume theriyarathukku main settings */
-  opacity: 1 !important; 
+
+  opacity: 1 !important;
   transform: translateX(0) !important;
-  
+
   padding: 10px 22px;
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
 }
 
-/* Mouse mela pogumpothu vara effect */
 .exploreBtn:hover {
-  background: rgba(254, 133, 30, 0.08); /* Romba light-ah background maarum */
-  border: 1px solid #fe851e; /* Border nalla bright-ah maarum */
-  box-shadow: 0 0 15px rgba(254, 133, 30, 0.2); /* Light-ah oru glow effect */
+  background: rgba(254, 133, 30, 0.08);
+  border: 1px solid #fe851e;
+  box-shadow: 0 0 15px rgba(254, 133, 30, 0.2);
 }
 
-/* Hover-il arrow mattum konjam move aagarathukku (Optional) */
 .exploreBtn:hover svg {
   transform: translateX(5px);
   transition: 0.3s;
 }
 
-/* Mobile-la button padding konjam adjust pannalam */
 @media (max-width: 768px) {
   .exploreBtn {
     opacity: 1 !important;
@@ -132,7 +128,7 @@
     margin-top: 15px;
     padding: 8px 18px;
     font-size: 14px;
-    border: 1px solid rgba(254, 133, 30, 0.5); /* Mobile-la border innum konjam nalla theriyum */
+    border: 1px solid rgba(254, 133, 30, 0.5);
   }
 }
 
@@ -158,7 +154,7 @@
   margin-top: 80px;
   display: flex;
   justify-content: center;
-  
+
 }
 
 .cta {
@@ -174,11 +170,10 @@
 
 .cta:hover {
   transform: scale(1.05);
-  color:"white" !important;
+  color: "white" !important;
   background: transparent !important;
 }
-/* Canvas Overlay Styling */
-/* Canvas Overlay Styling */
+
 .canvasOverlay {
   position: fixed;
   inset: 0;
@@ -191,7 +186,6 @@
   overflow: hidden;
 }
 
-/* Close/Remove Button */
 .closeCanvas {
   position: absolute;
   top: 40px;
@@ -216,7 +210,6 @@
   transform: scale(1.1);
 }
 
-/* Glass Card */
 .glassCard {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -271,7 +264,6 @@
   color: white;
 }
 
-/* Animated Blobs */
 .canvasParticles {
   position: absolute;
   inset: 0;
@@ -288,16 +280,22 @@
   filter: blur(40px);
 }
 
-/* Positioning blobs randomly */
-.blob:nth-child(1) { top: 10%; left: 10%; }
-.blob:nth-child(2) { bottom: 10%; right: 10%; }
-.blob:nth-child(3) { top: 50%; left: 50%; width: 400px; }
+.blob:nth-child(1) {
+  top: 10%;
+  left: 10%;
+}
 
-/* --- EXISTING STYLES UNCHANGED UNTIL MEDIA QUERIES --- */
+.blob:nth-child(2) {
+  bottom: 10%;
+  right: 10%;
+}
 
-/* ... unga mela ulla section, container, listItem styles ... */
+.blob:nth-child(3) {
+  top: 50%;
+  left: 50%;
+  width: 400px;
+}
 
-/* TABLET VIEW (max-width: 1024px) */
 @media (max-width: 1024px) {
   .section {
     padding: 80px 5%;
@@ -313,7 +311,6 @@
   }
 }
 
-/* MOBILE VIEW (max-width: 768px) */
 @media (max-width: 768px) {
   .header {
     margin-bottom: 50px;
@@ -331,7 +328,7 @@
   }
 
   .listContent {
-    flex-direction: row; /* Icon and text side-by-side on mobile also looks better */
+    flex-direction: row;
     align-items: flex-start;
     gap: 20px;
   }
@@ -343,10 +340,9 @@
   .exploreBtn {
     opacity: 1;
     transform: translateX(0);
-    margin-left: 55px; /* Aligns with text details */
+    margin-left: 55px;
   }
 
-  /* Canvas Mobile Adjustments */
   .canvasTitle {
     font-size: 24px;
   }
@@ -364,16 +360,14 @@
   }
 }
 
-/* SMALL MOBILE VIEW (max-width: 480px) */
-/* --- TABLET & MOBILE ALIGNMENT FIX --- */
 
 @media (max-width: 768px) {
   .section {
-    padding: 60px 20px; /* Padding konjam kammi pannalam */
+    padding: 60px 20px;
   }
 
   .mainTitle {
-    font-size: 28px !important; /* Title size-ah kammi pannanum overlap thavirkka */
+    font-size: 28px !important;
     line-height: 1.2;
     margin-bottom: 40px;
     text-align: center;
@@ -384,11 +378,11 @@
     align-items: flex-start !important;
     gap: 15px;
     padding: 30px 15px !important;
-    margin-bottom: 10px; /* Items-ku nadula gap */
+    margin-bottom: 10px;
   }
 
   .listContent {
-    flex-direction: row; /* Icon and ID side-by-side-la irukatum */
+    flex-direction: row;
     gap: 15px;
     width: 100%;
   }
@@ -405,25 +399,25 @@
   }
 
   .exploreBtn {
-    opacity: 1 !important; /* Mobile-la eppovume theriyanum */
+    opacity: 1 !important;
     transform: translateX(0) !important;
     margin-top: 10px;
     padding-left: 30px;
     font-size: 15px;
   }
-  .container{
+
+  .container {
     margin-top: 20%;
   }
 }
 
-/* VERY SMALL MOBILE (428px and below) */
 @media (max-width: 428px) {
   .mainTitle {
-    font-size: 22px !important; /* Innum konjam chinathakalam */
+    font-size: 22px !important;
   }
-  
+
   .listContent {
-    flex-direction: column; /* Romba chinna screen-la stack pannalam */
+    flex-direction: column;
     gap: 10px;
   }
 
@@ -435,4 +429,3 @@
     font-size: 18px !important;
   }
 }
-

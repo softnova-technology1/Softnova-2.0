@@ -34,17 +34,16 @@ const services = [
 ];
 
 const OtherServices = () => {
-  // --- Canvas State Logic ---
   const [activeCanvas, setActiveCanvas] = useState(null);
 
   const openCanvas = (service) => {
     setActiveCanvas(service);
-    document.body.style.overflow = "hidden"; // Scroll freeze
+    document.body.style.overflow = "hidden";
   };
 
   const closeCanvas = () => {
     setActiveCanvas(null);
-    document.body.style.overflow = "auto"; // Resume scroll
+    document.body.style.overflow = "auto";
   };
 
   return (
@@ -95,7 +94,6 @@ const OtherServices = () => {
         </div>
       </section>
 
-      {/* --- CANVAS OVERLAY LAYER (As per your requested style) --- */}
       <AnimatePresence>
         {activeCanvas && (
           <motion.div
@@ -104,7 +102,6 @@ const OtherServices = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            {/* CLOSE BUTTON */}
             <button className={styles.closeCanvas} onClick={closeCanvas}>
               <X size={30} /> <span>Remove</span>
             </button>
@@ -126,14 +123,13 @@ const OtherServices = () => {
                 <div className={styles.techStack}>
                   <span>Dynamic</span> • <span>Scalable</span> • <span>Secure</span>
                 </div>
-                
+
                 <button className={styles.canvasBackBtn} onClick={closeCanvas}>
                   Back to Services
                 </button>
               </motion.div>
             </div>
 
-            {/* Animated Particles/Blobs in Background */}
             <div className={styles.canvasParticles}>
               {[...Array(5)].map((_, i) => (
                 <motion.div

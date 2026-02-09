@@ -1,4 +1,3 @@
-
 .page {
   background: #0b0b0b;
   color: #fff;
@@ -46,7 +45,7 @@
   font-size: 15px;
   color: #cfcfcf;
   max-width: 520px;
- 
+
 }
 
 .ctaButton {
@@ -69,7 +68,6 @@
 }
 
 .visualSection img {
-  /* max-width: 420px; */
   width: 70%;
   margin-top: 10%;
   animation: float 4s ease-in-out infinite;
@@ -84,7 +82,7 @@
 
 .timeline {
   max-width: 1200px;
- margin: auto;
+  margin: auto;
   padding: 30px;
   background: #1a1a1a;
   border-radius: 12px;
@@ -97,7 +95,7 @@
 .step {
   flex: 1;
   text-align: center;
-  
+
 }
 
 .stepNumber {
@@ -215,7 +213,7 @@
 }
 
 @media (max-width: 480px) {
-   .hero {
+  .hero {
     background: none;
   }
 
@@ -223,7 +221,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/soft25.jpg"); /* 👈 your image */
+    background-image: url("../images/soft25.jpg");
     background-size: cover;
     background-position: center;
     transform: scale(1.1);
@@ -234,10 +232,8 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      rgba(0, 20, 60, 0.75),
-      rgba(0, 0, 0, 0.85)
-    );
+    background: linear-gradient(rgba(0, 20, 60, 0.75),
+        rgba(0, 0, 0, 0.85));
     z-index: 1;
   }
 
@@ -245,9 +241,11 @@
     position: relative;
     z-index: 2;
   }
+
   .hero::before {
-    filter: blur(4px); /* mobile performance friendly */
+    filter: blur(4px);
   }
+
   .title,
   .textSection h1 {
     font-size: 20px;
@@ -265,6 +263,7 @@
     padding: 40px 16px;
   }
 }
+
 @media (max-width: 768px) {
   .hero {
     background: none;
@@ -274,7 +273,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/soft25.jpg"); /* 👈 bg image */
+    background-image: url("../images/soft25.jpg");
     background-size: cover;
     background-position: center;
     transform: scale(1.1);
@@ -285,10 +284,8 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      rgba(0, 20, 60, 0.75),
-      rgba(0, 0, 0, 0.85)
-    );
+    background: linear-gradient(rgba(0, 20, 60, 0.75),
+        rgba(0, 0, 0, 0.85));
     z-index: 1;
   }
 
