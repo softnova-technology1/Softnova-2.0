@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "../../Styles/Software.module.css";
-import software1 from "../../images/Ourservices-images/Software1.jpg";
-import software2 from "../../images/Ourservices-images/Software2.jpg";
-import software3 from "../../images/Ourservices-images/Software3.jpg";
-import software4 from "../../images/Ourservices-images/Software4.jpg";
-import software5 from "../../images/Ourservices-images/Software5.jpg";
-import software6 from "../../images/Ourservices-images/Software6.jpg";
+import software1 from "../../images/Ourservices-images/Software1.webp";
+import software2 from "../../images/Ourservices-images/Software2.webp";
+import software3 from "../../images/Ourservices-images/Software3.webp";
+import software4 from "../../images/Ourservices-images/Software4.webp";
+import software5 from "../../images/Ourservices-images/Software5.webp";
+import software6 from "../../images/Ourservices-images/Software6.webp";
 import { ArrowRight, X } from "lucide-react";
-import shan from "../../images/Ourservices-images/software.jpg";
+import shan from "../../images/Ourservices-images/software.webp";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 
@@ -81,7 +81,7 @@ const SoftwareDevelopment = () => {
               viewport={{ once: false }}
               transition={{ duration: 1 }}
             >
-              <img src={shan} alt="Software Development" />
+              <img loading="lazy" src={shan} alt="Software Development" />
             </motion.div>
           </div>
         </section>
@@ -111,7 +111,7 @@ const SoftwareDevelopment = () => {
                 variants={fadeInUp}
                 whileHover={{ y: -10 }}
               >
-                <img src={item.image} alt={item.title} />
+                <img loading="lazy" src={item.image} alt={item.title} />
                 <div className={styles.overlay}>
                   <span className={styles.category}>{item.category}</span>
                   <h3>{item.title}</h3>
@@ -150,7 +150,7 @@ const SoftwareDevelopment = () => {
               </button>
 
               <div className={styles.modalBody}>
-                <img src={selectedProject.image} alt={selectedProject.title} />
+                <img loading="lazy" src={selectedProject.image} alt={selectedProject.title} />
                 <div className={styles.modalText}>
                   <span className={styles.tag}>{selectedProject.category}</span>
                   <h2>{selectedProject.title}</h2>

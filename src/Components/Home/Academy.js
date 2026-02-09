@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Academy.module.css";
-import academy from "../../images/academygirl.jpg";
+import academy from "../../images/academygirl.webp";
 
 export default function AcademyHero() {
   const containerVariants = {
@@ -43,7 +43,7 @@ export default function AcademyHero() {
         viewport={{ once: false, amount: 0.2 }}
       >
         <motion.div className={styles.imageWrap} variants={imageVariants}>
-          <img src={academy} alt="Academy" className={styles.image} />
+          <img loading="lazy" src={academy} alt="Academy" className={styles.image} />
         </motion.div>
         <motion.div className={styles.content} variants={containerVariants}>
           <motion.h1 className={styles.title} variants={itemVariants}>

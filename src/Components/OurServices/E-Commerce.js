@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "../../Styles/E-Commerce.module.css";
-import ecommerce2 from "../../images/Ourservices-images/e-commerce2.jpg";
-import ecommerce3 from "../../images/Ourservices-images/e-commerce3.jpg";
-import ecommerce4 from "../../images/Ourservices-images/e-commerce4.jpg";
-import ecommerce5 from "../../images/Ourservices-images/e-commerce5.jpg";
+import ecommerce2 from "../../images/Ourservices-images/e-commerce2.webp";
+import ecommerce3 from "../../images/Ourservices-images/e-commerce3.webp";
+import ecommerce4 from "../../images/Ourservices-images/e-commerce4.webp";
+import ecommerce5 from "../../images/Ourservices-images/e-commerce5.webp";
 import { ArrowUpRight, X } from "lucide-react";
-import shan from "../../images/Ourservices-images/e-commerce1.jpg";
+import shan from "../../images/Ourservices-images/e-commerce1.webp";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 
@@ -88,7 +88,7 @@ const ECommerce = () => {
               transition={{ duration: 1 }}
             >
               <div className={styles.imageWrapper}>
-                <img src={shan} alt="Ecommerce" className={styles.heroImage} />
+                <img loading="lazy" src={shan} alt="Ecommerce" className={styles.heroImage} />
                 <div className={styles.glowEffect}></div>
               </div>
             </motion.div>
@@ -118,7 +118,7 @@ const ECommerce = () => {
                 viewport={{ once: false, amount: 0.2 }}
               >
                 <div className={styles.imageBox}>
-                  <img src={item.image} alt={item.title} />
+                  <img loading="lazy" src={item.image} alt={item.title} />
 
                   <motion.div
                     className={styles.projectOverlay}
@@ -177,7 +177,7 @@ const ECommerce = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                   >
-                    <img src={selectedProject.image} alt={selectedProject.title} className={styles.canvasImg} />
+                    <img loading="lazy" src={selectedProject.image} alt={selectedProject.title} className={styles.canvasImg} />
                     <span className={styles.canvasTag}>{selectedProject.category}</span>
                     <h2 className={styles.canvasTitle}>{selectedProject.title}</h2>
                     <p className={styles.canvasDesc}>{selectedProject.desc}</p>

@@ -371,7 +371,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/soft30.jpg");
+    background-image: url("../images/soft30.webp");
     background-size: cover;
     background-position: center;
     transform: scale(1.15);
@@ -431,7 +431,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/soft30.jpg");
+    background-image: url("../images/soft30.webp");
     background-size: cover;
     background-position: center;
     transform: scale(1.15);

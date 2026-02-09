@@ -1,14 +1,14 @@
 // import React, { useEffect, useRef } from "react";
 // import styles from "../../Styles/Product.module.css";
-// import imgp1 from '../../images/soft8.jpg';
-// import imgp2 from '../../images/soft1.png';
-// import imgp3 from '../../images/soft23.jpg';
-// import chart1 from '../../images/Product-images/productchart1.jpg';
-// import chart2 from '../../images/Product-images/productchart2.jpg';
-// import chart3 from '../../images/Ourservices-images/ourproduct(e-commerce).jpg';
-// import chart4 from '../../images/Ourservices-images/ourproduct(EducationLMS).jpg';
-// import chart5 from '../../images/soft28.jpg';
-// import chart6 from '../../images/Ourservices-images/ourproduct(booking).jpg';
+// import imgp1 from '../../images/soft8.webp';
+// import imgp2 from '../../images/soft1.webp';
+// import imgp3 from '../../images/soft23.webp';
+// import chart1 from '../../images/Product-images/productchart1.webp';
+// import chart2 from '../../images/Product-images/productchart2.webp';
+// import chart3 from '../../images/Ourservices-images/ourproduct(e-commerce).webp';
+// import chart4 from '../../images/Ourservices-images/ourproduct(EducationLMS).webp';
+// import chart5 from '../../images/soft28.webp';
+// import chart6 from '../../images/Ourservices-images/ourproduct(booking).webp';
 // import ProductHero from "./Productpart";
 // import Breadcrumb from "../BreadCrumb";
 
@@ -129,7 +129,7 @@
 //       <div className={styles.grid}>
 //         {items.map((item, i) => (
 //           <div key={i} className={styles.card}>
-//             <img src={item.img} alt={item.title} />
+//             <img loading="lazy" src={item.img} alt={item.title} />
 //             <div className={styles.overlay}>
 //               <h2>{item.title}</h2>
 //               <p>{item.desc}</p>
@@ -154,7 +154,7 @@
 //               className={`${styles.cardd} ${item.align === "left" ? styles.left : styles.right
 //                 }`}
 //             >
-//               <img src={item.img} alt={item.title} />
+//               <img loading="lazy" src={item.img} alt={item.title} />
 
 //               <div className={styles.cardTitle}>
 //                 {item.title}
@@ -202,16 +202,16 @@ import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "../../Styles/Product.module.css";
 
-import imgp1 from "../../images/soft8.jpg";
-import imgp2 from "../../images/soft1.png";
-import imgp3 from "../../images/soft23.jpg";
+import imgp1 from "../../images/soft8.webp";
+import imgp2 from "../../images/soft1.webp";
+import imgp3 from "../../images/soft23.webp";
 
-import chart1 from "../../images/Product-images/productchart1.jpg";
-import chart2 from "../../images/Product-images/productchart2.jpg";
-import chart3 from "../../images/Ourservices-images/ourproduct(e-commerce).jpg";
-import chart4 from "../../images/Ourservices-images/ourproduct(EducationLMS).jpg";
-import chart5 from "../../images/soft28.jpg";
-import chart6 from "../../images/Ourservices-images/ourproduct(booking).jpg";
+import chart1 from "../../images/Product-images/productchart1.webp";
+import chart2 from "../../images/Product-images/productchart2.webp";
+import chart3 from "../../images/Ourservices-images/ourproduct(e-commerce).webp";
+import chart4 from "../../images/Ourservices-images/ourproduct(EducationLMS).webp";
+import chart5 from "../../images/soft28.webp";
+import chart6 from "../../images/Ourservices-images/ourproduct(booking).webp";
 
 import ProductHero from "./Productpart";
 import Breadcrumb from "../BreadCrumb";
@@ -318,7 +318,7 @@ export default function ImageCardSection() {
         <div className={styles.grid}>
           {items.map((item, i) => (
             <div key={i} className={styles.card}>
-              <img src={item.img} alt={item.title} />
+              <img loading="lazy" src={item.img} alt={item.title} />
               <div className={styles.overlay}>
                 <h2>{item.title}</h2>
                 <p>{item.desc}</p>
@@ -345,7 +345,7 @@ export default function ImageCardSection() {
                   item.align === "left" ? styles.left : styles.right
                 }`}
               >
-                <img src={item.img} alt={item.title} />
+                <img loading="lazy" src={item.img} alt={item.title} />
 
                 <div className={styles.cardTitle}>{item.title}</div>
 

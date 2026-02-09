@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styles from "../../Styles/Whychoose.module.css";
-import office from "../../images/orangegirl.jpg";
+import office from "../../images/orangegirl.webp";
 
 export default function WhyChooseSoftNova() {
   const features = [
@@ -102,7 +102,7 @@ export default function WhyChooseSoftNova() {
           </motion.div>
 
           <motion.div className={styles.imageBox} variants={imageSlide}>
-            <img src={office} alt="Why Choose SoftNova" />
+            <img loading="lazy" src={office} alt="Why Choose SoftNova" />
           </motion.div>
         </div>
       </motion.div>

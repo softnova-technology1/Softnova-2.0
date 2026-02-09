@@ -7,14 +7,14 @@ import {
 } from "react-icons/fa";
 import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
 import { Link } from "react-router-dom";
-import logo from "../images/softnovaLogo.png";
+import logo from "../images/softnovaLogo.webp";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.top}>
         <div className={styles.about}>
-          <img src={logo} alt="Softnova Logo" className={styles.logoImg} />
+          <img loading="lazy" src={logo} alt="Softnova Logo" className={styles.logoImg} />
           <p>
             Where innovation and excellence converge in web design, development,
             mobile app creation, digital marketing, and SEO solutions customized

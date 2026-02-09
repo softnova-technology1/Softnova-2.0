@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../Styles/Galaxy.module.css";
-import logo from ".././images/sn.png";
+import logo from ".././images/sn.webp";
 
 const orbits = [
   {
@@ -89,7 +89,7 @@ const Galaxy = () => {
         />
       ))}
 
-      <img src={logo} alt="logo" className={styles.galaxyLogo} />
+      <img loading="lazy" src={logo} alt="logo" className={styles.galaxyLogo} />
 
       {orbits.map((orbit, i) => (
         <React.Fragment key={i}>

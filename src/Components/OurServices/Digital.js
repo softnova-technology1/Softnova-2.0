@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Digital.module.css";
-import img1 from "../../images/Ourservices-images/soft22.jpg";
+import img1 from "../../images/Ourservices-images/soft22.webp";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 
@@ -59,7 +59,7 @@ const DigitalMarketing = () => {
                 viewport={{ once: false }}
                 transition={{ duration: 1, type: "spring", bounce: 0.4 }}
               >
-                <img src={img1} alt="Digital" className={styles.rotateImg} />
+                <img loading="lazy" src={img1} alt="Digital" className={styles.rotateImg} />
                 <div className={styles.glow}></div>
               </motion.div>
 
@@ -91,7 +91,7 @@ const DigitalMarketing = () => {
               {services.concat(services).map((item, index) => (
                 <div key={index} className={styles.marqueeCard}>
                   <div className={styles.cardImage}>
-                    <img src={item.img} alt={item.title} loading="lazy" />
+                    <img loading="lazy" src={item.img} alt={item.title} loading="lazy" />
                   </div>
                   <h3>{item.title}</h3>
                 </div>

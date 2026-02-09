@@ -44,7 +44,7 @@ const Ourservice = () => {
 
         <div className={styles.container}>
           <h2 className={styles.heading}><span>
-            <img src={butterfly} alt="" width={'100px'} /></span>OUR BEST SERVICES</h2>
+            <img loading="lazy" src={butterfly} alt="" width={'100px'} /></span>OUR BEST SERVICES</h2>
 
           <div className={styles.timeline}>
             {services.map((item) => (
@@ -69,7 +69,6 @@ const Ourservice = () => {
         </div>
       </section>
       <Slide />
-
     </>
   );
 };

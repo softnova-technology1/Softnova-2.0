@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "../../Styles/Navbar.module.css";
-import logo from "../../images/softnovaLogo.png";
+import logo from "../../images/softnovaLogo.webp";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -50,7 +50,7 @@ const Navbar = () => {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.logo}>
         <NavLink to="/">
-          <img src={logo} alt="Softnova Logo" />
+          <img loading="lazy" src={logo} alt="Softnova Logo" />
         </NavLink>
       </div>
 
