@@ -19,10 +19,10 @@ const GalaxyScene = () => {
     return (
         <>
             <group ref={groupRef}>
-                <Stars radius={100} depth={50} count={3000} factor={4} saturation={0} fade speed={1} />
+                <Stars radius={100} depth={50} count={1500} factor={4} saturation={0} fade speed={1} />
                 <Cloud opacity={0.3} speed={0.4} width={10} depth={1.5} segments={20} color="#1a0f2e" position={[0, -5, -10]} />
                 <Cloud opacity={0.3} speed={0.4} width={10} depth={1.5} segments={20} color="#2e1a0f" position={[0, 5, -10]} />
-                <Sparkles count={500} scale={12} size={3} speed={0.4} opacity={0.6} color="#fe851e" />
+                <Sparkles count={200} scale={12} size={3} speed={0.4} opacity={0.6} color="#fe851e" />
             </group>
 
             <ambientLight intensity={0.5} />
@@ -96,10 +96,9 @@ const Preloader = ({ finishLoading }) => {
             }
         },
         exit: {
-            scale: 20, // Fly into camera
+            scale: 1.5, // Subtle expansion instead of massive scale
             opacity: 0,
-            filter: "blur(20px)",
-            transition: { duration: 0.8 }
+            transition: { duration: 0.5, ease: "easeIn" }
         }
     };
 
@@ -159,7 +158,10 @@ const Preloader = ({ finishLoading }) => {
                 </div>
 
                 {/* --- SUBTITLE --- */}
-                <div className="subtitle-container">
+                <motion.div
+                    className="subtitle-container"
+                    exit={{ opacity: 0, y: -20, transition: { duration: 0.5 } }}
+                >
                     {subtitleText.split("").map((char, i) => (
                         <motion.span
                             key={i}
@@ -170,7 +172,7 @@ const Preloader = ({ finishLoading }) => {
                             {char}
                         </motion.span>
                     ))}
-                </div>
+                </motion.div>
 
                 {/* --- LOADER --- */}
                 <div className="loader-track">

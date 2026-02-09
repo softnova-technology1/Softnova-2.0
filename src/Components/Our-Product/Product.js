@@ -84,7 +84,7 @@ const data = [
     desc: "Automated salary processing with built-in tax compliance and expense tracking, designed to handle complex payroll needs for growing businesses.",
     img: chart6,
     align: "left",
-    link: "https://nova-salary-management.netlify.app/",
+    link: "https://salary-management-system-nova.netlify.app/",
   },
   {
     title: "Omnichannel CRM Platform",
