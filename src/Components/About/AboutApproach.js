@@ -11,9 +11,7 @@ import img1 from "../../images/About-Images/pro1.webp";
 import img2 from "../../images/About-Images/pro2.webp";
 import img3 from "../../images/About-Images/pro3.webp";
 import img4 from "../../images/About-Images/pro4.webp";
-import { Container } from "react-bootstrap";
 
-// Stats Data
 const statsData = [
   {
     icon: <FaProjectDiagram />,
@@ -26,7 +24,6 @@ const statsData = [
   { icon: <FaBriefcase />, value: 1, suffix: "+", label: "Year Of Experience" },
 ];
 
-// Approach Steps
 const steps = [
   { id: 1, title: "Assess Infrastructure", pos: "top-left" },
   { id: 2, title: "Define Strategic Goals", pos: "top-right" },
@@ -36,10 +33,7 @@ const steps = [
   { id: 6, title: "Optimize Performance", pos: "left" },
 ];
 
-// Product Images
 const images = [img1, img2, img3, img4];
-
-// Counter Component
 const Counter = ({ value, suffix, start }) => {
   const [count, setCount] = useState(0);
 
@@ -69,7 +63,6 @@ const Counter = ({ value, suffix, start }) => {
   );
 };
 
-// Star SVG
 const StarSvg = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -89,8 +82,6 @@ const StarSvg = ({ className }) => (
 const Stats = () => {
   const sectionRef = useRef(null);
   const [startCount, setStartCount] = useState(false);
-
-  // Intersection observer to trigger counter every scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setStartCount(entry.isIntersecting),
@@ -102,7 +93,6 @@ const Stats = () => {
 
   return (
     <>
-      {/* Approach / Network Section */}
       <motion.div
         className={styles.wrapper}
         initial={{ opacity: 0, y: 50 }}
@@ -116,7 +106,6 @@ const Stats = () => {
         </h1>
 
         <div className={styles.networkContainer}>
-          {/* SVG Lines - Connecting core to nodes */}
           <svg className={styles.svgLines}>
             <line x1="50%" y1="50%" x2="20%" y2="20%" className={styles.line} />
             <line x1="50%" y1="50%" x2="80%" y2="20%" className={styles.line} />
@@ -125,16 +114,12 @@ const Stats = () => {
             <line x1="50%" y1="50%" x2="20%" y2="80%" className={styles.line} />
             <line x1="50%" y1="50%" x2="15%" y2="50%" className={styles.line} />
           </svg>
-
-          {/* Center Node */}
           <div className={styles.coreNode}>
             <div className={styles.coreInner}>
               <span className={styles.brand}>SOFTNOVA</span>
               <div className={styles.pulse}></div>
             </div>
           </div>
-
-          {/* Peripheral Nodes */}
           {steps.map((step, i) => (
             <motion.div
               key={step.id}
@@ -152,8 +137,6 @@ const Stats = () => {
           ))}
         </div>
       </motion.div>
-
-      {/* Stats Section */}
       <motion.section
         ref={sectionRef}
         className={styles.statsSection}

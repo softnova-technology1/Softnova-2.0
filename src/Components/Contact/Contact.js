@@ -17,7 +17,7 @@ import HeroContact from "./HeroContact";
 import Breadcrumb from "../BreadCrumb";
 
 export default function Contact() {
- 
+
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function Contact() {
     return () => window.removeEventListener("resize", resize);
   }, []);
 
-  
+
   const formRef = useRef(null);
 
   const sendEmail = (e) => {
@@ -85,19 +85,19 @@ export default function Contact() {
 
   return (
     <div>
-  
-     <Breadcrumb/>
-     
+
+      <Breadcrumb />
+
       <div className={styles.heros}>
         <HeroContact />
       </div>
 
-     
+
       <div className={styles.Contactbg}>
         <Container>
           <section className={styles.contactwrapper}>
             <Row>
-              
+
               <Col lg={6}>
                 <div className={styles.left}>
                   <h1>
@@ -160,7 +160,7 @@ export default function Contact() {
                 </div>
               </Col>
 
-              
+
               <Col lg={6}>
                 <form ref={formRef} onSubmit={sendEmail}>
                   <div className={styles.formcard}>
@@ -217,45 +217,36 @@ export default function Contact() {
         </Container>
       </div>
 
-     
-            <section className={styles.mapSection}>
-                <div className={styles.mapContainer}>
-                    <div className={styles.floatingTag}>
-                        <div className={styles.dot}></div>
-                        <span>LIVE LOCATION • PERAVURANI</span>
-                    </div>
 
-                    <div className={styles.mapFrame}>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6602.088636045032!2d79.20126495835765!3d10.291737089695312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a16e9c50ca4939d%3A0x646da28beabf28ab!2sSoftnova%20Technology!5e0!3m2!1sen!2sin!4v1769763275538!5m2!1sen!2sin" 
-                            width="100%"
-                            height="100%"
-                            style={{ border: 0 }}
-                            allowFullScreen=""
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            className={styles.mapIframe}
-                        ></iframe>
+      <section className={styles.mapSection}>
+        <div className={styles.mapContainer}>
+          <div className={styles.floatingTag}>
+            <div className={styles.dot}></div>
+            <span>LIVE LOCATION • PERAVURANI</span>
+          </div>
 
-                        <div className={styles.decorLayer}>
-                            <div className={styles.cornerTopLeft}></div>
-                            <div className={styles.cornerTopRight}></div>
-                            <div className={styles.cornerBottomLeft}></div>
-                            <div className={styles.cornerBottomRight}></div>
-                        </div>
-                    </div>
+          <div className={styles.mapFrame}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6602.088636045032!2d79.20126495835765!3d10.291737089695312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a16e9c50ca4939d%3A0x646da28beabf28ab!2sSoftnova%20Technology!5e0!3m2!1sen!2sin!4v1769763275538!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className={styles.mapIframe}
+            ></iframe>
 
-                    <a
-                        href="https://maps.app.goo.gl/YourPeravuraniLocationLink" 
-                        target="_blank"
-                        rel="noreferrer"
-                        className={styles.floatBtn}
-                    >
-                        <Maximize2 size={18} />
-                        <span>FULL SCREEN VIEW</span>
-                    </a>
-                </div>
-            </section>
+            <div className={styles.decorLayer}>
+              <div className={styles.cornerTopLeft}></div>
+              <div className={styles.cornerTopRight}></div>
+              <div className={styles.cornerBottomLeft}></div>
+              <div className={styles.cornerBottomRight}></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
     </div>
   );
 }

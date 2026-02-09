@@ -91,7 +91,7 @@ const DigitalMarketing = () => {
               {services.concat(services).map((item, index) => (
                 <div key={index} className={styles.marqueeCard}>
                   <div className={styles.cardImage}>
-                    <img loading="lazy" src={item.img} alt={item.title} loading="lazy" />
+                    <img loading="lazy" src={item.img} alt={item.title}  />
                   </div>
                   <h3>{item.title}</h3>
                 </div>

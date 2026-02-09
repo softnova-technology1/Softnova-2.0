@@ -15,7 +15,7 @@ import Breadcrumb from "../BreadCrumb";
 const scrollConfig = {
   initial: "hidden",
   whileInView: "visible",
-  viewport: { once: true, amount: 0.2 }, // changed
+  viewport: { once: true, amount: 0.2 },
 };
 
 const fadeUp = {
@@ -55,13 +55,9 @@ export default function Services() {
   return (
     <div className={styles.wrapper}>
       <Breadcrumb />
-
-      {/* Galaxy Background – only once */}
       <div className={styles.galaxyLayer}>
         <Worldgalaxy />
       </div>
-
-      {/* HERO */}
       <section className={styles.hero}>
         <motion.h1 variants={fadeUp} {...scrollConfig}>
           Empowering Your <span>Digital Future</span>
@@ -76,8 +72,6 @@ export default function Services() {
           Softnova builds powerful digital products that help businesses scale.
         </motion.p>
       </section>
-
-      {/* SERVICES */}
       <section className={styles.services}>
         <motion.span className={styles.subtitle} variants={fadeUp} {...scrollConfig}>
           WHAT WE OFFER
@@ -103,8 +97,6 @@ export default function Services() {
           </motion.div>
         </div>
       </section>
-
-      {/* WORKFLOW */}
       <section className={styles.workflow}>
         <motion.span className={styles.eyebrow} variants={fadeUp} {...scrollConfig}>
           OUR STRATEGY
@@ -138,8 +130,6 @@ export default function Services() {
           ))}
         </div>
       </section>
-
-      {/* SOFTWARE LIST */}
       <section className={styles.software}>
         <motion.h2 className={styles.a1} variants={fadeUp} {...scrollConfig}>
           End-to-End IT Solutions
@@ -156,7 +146,7 @@ export default function Services() {
                 className={styles.softwareRow}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                whileHover={{ x: 8 }} // transform only
+                whileHover={{ x: 8 }}
                 transition={{ duration: 0.4 }}
                 viewport={{ once: true }}
               >

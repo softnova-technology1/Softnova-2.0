@@ -19,7 +19,6 @@
     backface-visibility: hidden;
 }
 
-/* Simplified but smoother background */
 .gridBackground {
     position: absolute;
     width: 200%;
@@ -89,7 +88,6 @@
     will-change: scale, opacity;
 }
 
-/* Progress Section */
 .progressWrapper {
     display: flex;
     flex-direction: column;

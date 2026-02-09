@@ -48,7 +48,6 @@ const ECommerce = () => {
     <>
       <Breadcrumb />
       <div className={styles.mainPage}>
-        {/* --- Hero Section --- */}
         <section className={styles.hero}>
           <div className={styles.container}>
             <motion.div

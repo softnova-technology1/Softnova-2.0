@@ -24,6 +24,9 @@ import About from "./Components/About/About";
 import ECommerce from "./Components/OurServices/E-Commerce";
 import CloudandIT from "./Components/OurServices/Cloud";
 import SoftwareDevelopment from "./Components/OurServices/Software";
+import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+import Preloader from "./Components/Preloader/Preloader";
 
 
 
@@ -64,7 +67,6 @@ function AppContent() {
         <Route path="/career" element={<CareerForm />} />
         <Route path="/gallery" element={<Achievements />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/GetStarted" element={<GetStarted />} />
@@ -76,9 +78,25 @@ function AppContent() {
   );
 }
 
+
 function App() {
+  const [loading, setLoading] = useState(() => {
+    const hasVisited = sessionStorage.getItem("softnova_visited");
+    return !hasVisited;
+  });
+
+  const handleFinishLoading = () => {
+    setLoading(false);
+    sessionStorage.setItem("softnova_visited", "true");
+  };
+
   return (
     <BrowserRouter>
+      <AnimatePresence>
+        {loading && (
+          <Preloader key="preloader" finishLoading={handleFinishLoading} />
+        )}
+      </AnimatePresence>
       <AppContent />
     </BrowserRouter>
   );

@@ -1,5 +1,5 @@
-import React, { useState } from "react"; // Added useState
-import { motion, AnimatePresence } from "framer-motion"; // Added AnimatePresence
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion"; 
 import styles from "../../Styles/Mobile.module.css";
 import Mobileapps1 from "../../images/Ourservices-images/Mobileapps1.webp";
 import Mobileapps2 from "../../images/Ourservices-images/Mobileapps2.webp";

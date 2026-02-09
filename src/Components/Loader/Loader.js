@@ -7,7 +7,7 @@ const Loader = ({ finishLoading }) => {
     const [status, setStatus] = useState("System Startup");
     const frameRef = useRef();
     const startTimeRef = useRef(Date.now());
-    const duration = 2000; // 2 seconds total
+    const duration = 2000; 
 
     useEffect(() => {
         const statusSteps = [
@@ -24,8 +24,6 @@ const Loader = ({ finishLoading }) => {
 
             const displayProgress = Math.floor(p * 100);
             setProgress(displayProgress);
-
-            // Update status based on progress ratio
             const currentStep = statusSteps.findLast(step => p >= step.t);
             if (currentStep) setStatus(currentStep.text);
 
@@ -51,8 +49,6 @@ const Loader = ({ finishLoading }) => {
         >
             <div className="noiseOverlay" />
             <div className="gridBackground" />
-
-            {/* Background Particles */}
             {[...Array(25)].map((_, i) => (
                 <motion.div
                     key={`p-${i}`}
@@ -75,8 +71,6 @@ const Loader = ({ finishLoading }) => {
                     }}
                 />
             ))}
-
-            {/* Micro Sparks */}
             {[...Array(15)].map((_, i) => (
                 <motion.div
                     key={`s-${i}`}
@@ -119,7 +113,6 @@ const Loader = ({ finishLoading }) => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    {/* Trailing Particles for 'Soft' */}
                     {[...Array(6)].map((_, i) => (
                         <motion.div
                             key={`t-left-${i}`}
@@ -147,8 +140,6 @@ const Loader = ({ finishLoading }) => {
                     >
                         Soft
                     </motion.span>
-
-                    {/* Trailing Particles for 'nova' */}
                     {[...Array(6)].map((_, i) => (
                         <motion.div
                             key={`t-right-${i}`}
@@ -177,8 +168,6 @@ const Loader = ({ finishLoading }) => {
                     >
                         nova
                     </motion.span>
-
-                    {/* Merge Burst Particles */}
                     {[...Array(12)].map((_, i) => (
                         <motion.div
                             key={`m-${i}`}
