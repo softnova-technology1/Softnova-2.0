@@ -1,10 +1,12 @@
 import { useEffect, useState, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import styles from "../../Styles/HeroContact.module.css";
 
 const ProductHero = () => {
   const [init, setInit] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -69,10 +71,19 @@ const ProductHero = () => {
 
 
       <div className={styles.contentLayer}>
-        <h1 className={styles.title}>OUR PRODUCT</h1>
+        <h1 className={styles.title}>PREMIUM SOFTWARE SOLUTIONS</h1>
         <p className={styles.description}>
-          Responsibility, user-first thinking & strategic business gains.
+          Empowering businesses with cutting-edge technology and seamless digital transformation.
+          We build scalable, secure, and intuitive products that drive real business growth.
         </p>
+        <button
+          className={styles.ctaButton}
+          onClick={() => navigate("/contact")}
+        >
+          <div className={styles.ghost}></div>
+          <div className={styles.shine}></div>
+          Explore Our Solutions
+        </button>
       </div>
     </div>
   );

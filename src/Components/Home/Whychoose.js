@@ -1,27 +1,27 @@
 import { motion } from "framer-motion";
 import styles from "../../Styles/Whychoose.module.css";
-import office from "../../images/orangegirl.jpg";
+import office from "../../images/orangegirl.webp";
 
 export default function WhyChooseSoftNova() {
   const features = [
     {
       title: "Tailored Digital Solutions",
-      desc: "Custom strategies and platforms built around your business goals.",
+      desc: "Personalized strategies and Digital platforms designed to match your business objectives.",
       icon: "💡",
     },
     {
       title: "Technical & Creative Expertise",
-      desc: "A perfect blend of modern technology and creative thinking.",
+      desc: "A powerful combination of advanced technology and creative innovation.",
       icon: "⚙️",
     },
     {
       title: "Scalable & Future-Ready",
-      desc: "Solutions designed to grow with your business.",
+      desc: "Flexible solutions built to evolve with your business growth",
       icon: "📈",
     },
     {
       title: "Client-Centric Approach",
-      desc: "We work closely with you to deliver measurable results.",
+      desc: "We collaborate closely with you to achieve meaningful, measurable results.",
       icon: "🤝",
     },
   ];
@@ -69,15 +69,7 @@ export default function WhyChooseSoftNova() {
           <h2 className={styles.heading}>Why Choose SoftNova?</h2>
           <div className={styles.description}>
             <p>
-              At SoftNova, we understand that every business is unique, so we
-              deliver tailored digital solutions that help your brand stand out.
-              We create personalized strategies, from custom website design to
-              effective lead generation, backed by strong technical and creative
-              expertise. Our team builds high-performing websites, e-commerce
-              platforms, and digital marketing solutions aligned with your
-              business goals. With a client-centric approach and end-to-end
-              services including web, mobile, and SEO, we help your business
-              grow and succeed in a competitive digital landscape.
+             At SoftNova, we deliver tailored digital solutions that help your business stand out and grow. From high-performing websites and e-commerce platforms to lead generation, mobile, and SEO, our expert team combines technical and creative strength to align every solution with your business goals. Client-focused and results-driven, we support your success in a competitive digital landscape
             </p>
           </div>
         </motion.div>

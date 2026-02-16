@@ -8,31 +8,31 @@ const services = [
   {
     id: "01",
     title: "Marketing",
-    text: "Digital marketing services to grow your online presence and reach your audience.",
+    text: "Digital marketing services designed to grow your online presence and connect you with the  right audience.",
     icon: "📢",
   },
   {
     id: "02",
     title: "SEO",
-    text: "Optimize your website to rank higher and attract organic traffic.",
+    text: "Optimize your website to rank higher on search engines and attract organic traffic.",
     icon: "📈",
   },
   {
     id: "03",
     title: "UI/UX Design",
-    text: "Design intuitive, user-friendly interfaces that enhance experience.",
+    text: "Design intuitive, user-friendly interfaces that enhance user experience and engagement.",
     icon: "🎨",
   },
   {
     id: "04",
     title: "Creative",
-    text: "Branding solutions and ideas to make your business stand out.",
+    text: "Branding solutions and creative ideas to help your business stand out.",
     icon: "💡",
   },
   {
     id: "05",
     title: "Optimization",
-    text: "Analyze and optimize performance for faster load times and conversions.",
+    text: "Analyze and optimize performance to improve  load speed and increase conversions.",
     icon: "⚙️",
   },
 ];

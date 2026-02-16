@@ -32,9 +32,8 @@ export default function FeaturesCard() {
           <div className={styles.cardContent}>
             <p className={styles.cardTitle}>Why Work With Us?</p>
             <p className={styles.smallDesc}>
-              Growth Opportunities: We invest in the professional development of
-              our team members, providing ongoing learning and career
-              advancement opportunities.
+             Growth Opportunities : We invest in your professional development through continuous learning, skill-building, and clear career advancement paths.
+             
             </p>
            
             <a className={styles.stara} href="/career"><button className={styles.starButton}>
@@ -70,8 +69,7 @@ export default function FeaturesCard() {
           <div className={styles.cardContent}>
             <p className={styles.cardTitle}>How to Get Started</p>
             <p className={styles.smallDesc}>
-              Send your updated resume along with a cover letter to the
-              specified application link or email address.
+              How to Get Started : Submit your updated resume along with a cover letter through the provided application link or email address
             </p>
            <a className={styles.stara} href="/career"> <button className={styles.starButton}>
               Read More

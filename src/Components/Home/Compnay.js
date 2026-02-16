@@ -8,7 +8,7 @@ import {
   FaJsSquare,
   FaHtml5,
 } from "react-icons/fa";
-import aboutimg from "../../images/aboutimg.png";
+import aboutimg from "../../images/aboutimg.webp";
 const CompanySection = () => {
 
   const StarSvg = () => (
@@ -27,15 +27,7 @@ const CompanySection = () => {
       <div className={styles.about}>
         <h2>About Our Company</h2>
         <p className={styles.para}>
-          At SoftNova, we deliver tailored digital solutions designed to help
-          businesses stand out. We specialize in custom website development,
-          e-commerce platforms, and mobile applications. Our team combines
-          technical expertise with creative strategies to drive measurable
-          results. We focus on seamless integration and enhanced user
-          experiences across all digital channels. With a client-centric
-          approach, every solution is aligned with your business goals. At
-          SoftNova, we’re not just service providers—we’re your partners in
-          growth.
+          At Softnova, we create tailored digital solutions that help businesses stand out. From custom websites and e-commerce platforms to mobile applications, we combine technical expertise with creative strategy to deliver measurable results. With a client-centric approach, we align every solution with your goals—because we’re not just service providers, we’re your partners in growth
         </p>
         <a href="/about"> <button className={styles.starButton}>
           Show More
@@ -55,7 +47,6 @@ const CompanySection = () => {
             alt="Company"
             className={styles.companyImage}
           />
-
 
           <FaReact className={`${styles.icon} ${styles.i1}`} />
           <FaNodeJs className={`${styles.icon} ${styles.i2}`} />

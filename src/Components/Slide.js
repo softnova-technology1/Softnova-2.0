@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "../Styles/Slide.module.css";
-import pro1 from '../images/pro3.png';
-import pro2 from '../images/pro2.png';
-import pro3 from '../images/pro1.png';
-import pro4 from '../images/pro5.png';
-import pro5 from '../images/pro6.png';
-import pro6 from '../images/pro3.png';
+import pro1 from '../images/pro3.webp';
+import pro2 from '../images/pro2.webp';
+import pro3 from '../images/pro1.webp';
+import pro4 from '../images/pro5.webp';
+import pro5 from '../images/pro6.webp';
+import pro6 from '../images/pro3.webp';
 
 const StarSvg = () => (
   <svg

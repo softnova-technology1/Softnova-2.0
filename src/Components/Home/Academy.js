@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Academy.module.css";
-import academy from "../../images/academygirl.jpg";
+import academy from "../../images/academygirl.webp";
 
 export default function AcademyHero() {
   const containerVariants = {
@@ -51,19 +51,7 @@ export default function AcademyHero() {
           </motion.h1>
 
           <motion.p className={styles.subtitle} variants={itemVariants}>
-            SoftNova understands that every business is unique, which is why we
-            provide tailored digital solutions that help brands stand out in a
-            competitive market. We develop personalized strategies that include
-            custom website design, effective lead generation, and comprehensive
-            digital marketing services. Our team blends technical expertise with
-            creative insight to build high-performing websites, e-commerce
-            platforms, and mobile applications that align with your business
-            goals. With experience across diverse industries, we focus on
-            seamless integration, enhanced user experience, and measurable
-            results. From web development and SEO to end-to-end digital
-            solutions, we act not just as service providers but as dedicated
-            growth partners, delivering innovative and scalable solutions that
-            drive long-term success.
+            SoftNova Academy delivers industry-focused digital learning through practical, goal-driven training. We combine technical expertise and creative insight to offer hands-on programs in web development, digital marketing, UI/UX, and emerging technologies. With real-world projects, expert mentorship, and career-oriented guidance, we empower learners with the skills needed to succeed and grow in today’s competitive digital landscape.
           </motion.p>
 
           <motion.div className={styles.iconRow} variants={itemVariants}>

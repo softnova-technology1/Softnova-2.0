@@ -77,14 +77,14 @@ const Hero = () => {
         >
           <motion.h1 className={styles.title} variants={itemVariants} style={{ display: "flex" }}>
 
-            STERLING IT  SERVICE
+            Sterling IT Solutions
           </motion.h1>
           <motion.h6 className={styles.subtitle} variants={itemVariants}>
             To drive your success
           </motion.h6>
           <motion.p className={styles.description} variants={itemVariants}>
             We build dynamic websites, powerful e-commerce platforms, and lead
-            generation systems tailored to drive your business success.
+            generation systems tailored to drive your business.
           </motion.p>
         </motion.div>
       </section>

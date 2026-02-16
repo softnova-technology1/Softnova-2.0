@@ -24,6 +24,9 @@ import About from "./Components/About/About";
 import ECommerce from "./Components/OurServices/E-Commerce";
 import CloudandIT from "./Components/OurServices/Cloud";
 import SoftwareDevelopment from "./Components/OurServices/Software";
+import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+import Preloader from "./Components/Preloader/Preloader";
 
 
 function AppContent() {
@@ -36,8 +39,8 @@ function AppContent() {
 
       {!isHeroPage && <Navbar />}
       {isHeroPage && <RocketMenu />}
-        
-       
+
+
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Hero />} />
@@ -61,12 +64,12 @@ function AppContent() {
         <Route path="/services/CloudandIT" element={<CloudandIT />} />
         <Route path="/career" element={<CareerForm />} />
         <Route path="/gallery" element={<Achievements />} />
-        <Route path="/contact" element={<Contact />} />     
         <Route path="/contact" element={<Contact />} />
+        {/* <Route path="/contact" element={<Contact />} /> */}
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/GetStarted" element={<GetStarted />}/>
-       
+        <Route path="/GetStarted" element={<GetStarted />} />
+
       </Routes>
 
       <Footer />
@@ -74,9 +77,28 @@ function AppContent() {
   );
 }
 
+
 function App() {
+  // Initialize loading state based on session storage
+  const [loading, setLoading] = useState(() => {
+    // Check if the user has visited in this session
+    const hasVisited = sessionStorage.getItem("softnova_visited");
+    return !hasVisited;
+  });
+
+  const handleFinishLoading = () => {
+    setLoading(false);
+    // Mark session as visited so it doesn't show again on refresh
+    sessionStorage.setItem("softnova_visited", "true");
+  };
+
   return (
     <BrowserRouter>
+      <AnimatePresence>
+        {loading && (
+          <Preloader key="preloader" finishLoading={handleFinishLoading} />
+        )}
+      </AnimatePresence>
       <AppContent />
     </BrowserRouter>
   );

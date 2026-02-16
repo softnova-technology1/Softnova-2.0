@@ -1,16 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Web.module.css";
-import img1 from "../../images/Ourservices-images/WebDevelopment1.jpg";
-import img2 from "../../images/Ourservices-images/WebDevelopment2.jpg";
-import img3 from "../../images/Ourservices-images/WebDevelopment3.jpg";
-import img4 from "../../images/Ourservices-images/WebDevelopment4.jpg";
-import img5 from "../../images/Ourservices-images/WebDevelopment5.jpg";
-import img6 from "../../images/Ourservices-images/WebDevelopment6.jpg";
-import img7 from "../../images/Ourservices-images/WebDevelopment7.jpg";
-import img8 from "../../images/Ourservices-images/WebDevelopment8.jpg";
-import img9 from "../../images/Ourservices-images/WebDevelopment9.jpg";
-import high from "../../images/Ourservices-images/WebDevelopment.jpg";
+import img1 from "../../images/Ourservices-images/WebDevelopment1.webp";
+import img2 from "../../images/Ourservices-images/WebDevelopment2.webp";
+import img3 from "../../images/Ourservices-images/WebDevelopment3.webp";
+import img4 from "../../images/Ourservices-images/WebDevelopment4.webp";
+import img5 from "../../images/Ourservices-images/WebDevelopment5.webp";
+import img6 from "../../images/Ourservices-images/WebDevelopment6.webp";
+import img7 from "../../images/Ourservices-images/WebDevelopment7.webp";
+import img8 from "../../images/Ourservices-images/WebDevelopment8.webp";
+import img9 from "../../images/Ourservices-images/WebDevelopment9.webp";
+import high from "../../images/Ourservices-images/WebDevelopment.webp";
 import Breadcrumb from "../BreadCrumb";
 
 import { Link } from "react-router-dom";

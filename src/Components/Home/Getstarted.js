@@ -33,9 +33,7 @@ export default function GetStarted() {
           Get started & tell us about your requirements
         </h1>
         <p>
-          We seek connections. We understand the value of listening. There is
-          always something new to learn, think of and discover in communication.
-          We would love to hear from you.
+          We believe in meaningful connections and the power of listening. Every conversation brings new ideas, insights, and possibilities. Share your requirements with us—we’d love to hear from you and explore how we can work together. Where innovation and excellence come together to deliver customized web design, development, mobile apps, digital marketing, and SEO solutions that elevate your online presence and drive success.
         </p>
       </div>
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../Styles/Galaxy.module.css";
-import logo from ".././images/sn.png";
+import logo from ".././images/sn.webp";
 
 const orbits = [
   {

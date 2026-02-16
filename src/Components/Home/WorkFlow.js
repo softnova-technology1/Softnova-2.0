@@ -3,18 +3,18 @@ import { ClipboardList, Layout, Code2, Monitor, CheckCircle2 } from 'lucide-reac
 import { motion } from 'framer-motion';
 import styles from '../../Styles/WorkFlow.module.css';
 import { Container } from 'react-bootstrap';
-import phase1 from '../../images/phase01.png';
-import phase2 from '../../images/phase2.png';
-import phase3 from '../../images/phase3.png';
-import phase5 from '../../images/phase4.png';
-import phase4 from '../../images/phase5.png';
+import phase1 from '../../images/phase01.webp';
+import phase2 from '../../images/phase2.webp';
+import phase3 from '../../images/phase3.webp';
+import phase5 from '../../images/phase4.webp';
+import phase4 from '../../images/phase5.webp';
 
 const phases = [
-  { id: '01', title: 'PLANNING', desc: 'We have extensive experience in transforming innovative ideas into', icon: <ClipboardList size={20} />, progress: 20, img: phase1 },
-  { id: '02', title: 'DESIGN', desc: 'We specialize in creative design solutions that give your brand a polished', icon: <Layout size={20} />, progress: 40, img: phase2 },
-  { id: '03', title: 'DEVELOPMENT', desc: 'Our team of developers excels in delivering robust enterprise portal development solutions.', icon: <Code2 size={20} />, progress: 60, img: phase3 },
-  { id: '04', title: 'TESTING', desc: "We're always ready to test, consult, and resolve any challenges related to", icon: <Monitor size={20} />, progress: 80, img: phase4 },
-  { id: '05', title: 'COMPLETION', desc: 'We deliver our projects on time with excellent results that make an impact.', icon: <CheckCircle2 size={20} />, progress: 100, img: phase5 },
+  { id: '01', title: 'PLANNING', desc: ' We have extensive experience in transforming innovative ideas into actionable digital strategies', icon: <ClipboardList size={20} />, progress: 20, img: phase1 },
+  { id: '02', title: 'DESIGN', desc: 'We specialize in creative design solutions that give your brand a polished and professional identity', icon: <Layout size={20} />, progress: 40, img: phase2 },
+  { id: '03', title: 'DEVELOPMENT', desc: 'Our team of developers excels in delivering robust and scalable enterprise portal solutions.', icon: <Code2 size={20} />, progress: 60, img: phase3 },
+  { id: '04', title: 'TESTING', desc: "We’re always ready to test, consult, and resolve any challenges related to performance, security, and functionality", icon: <Monitor size={20} />, progress: 80, img: phase4 },
+  { id: '05', title: 'COMPLETION', desc: 'We deliver projects on time with high-quality results that create real impact', icon: <CheckCircle2 size={20} />, progress: 100, img: phase5 },
 ];
 
 const Workflow = () => {
