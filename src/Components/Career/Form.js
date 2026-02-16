@@ -57,7 +57,6 @@ const CareerForm = () => {
           <input placeholder="Career Gap (Reason)" />
           <input placeholder="Notice Period (LWD)" />
           <input placeholder="Current Location" />
-          <input placeholder="Preferred Location" />
           <input placeholder="Reason for Job Change" />
           <input type="text" name="job" placeholder="Job / Intern" required/>
           <input type="text" name="role" placeholder="Role" required/>
