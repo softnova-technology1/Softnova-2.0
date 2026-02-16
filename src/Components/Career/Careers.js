@@ -26,8 +26,6 @@ import { RiDatabase2Fill } from "react-icons/ri";
 import CareerForm from "./Form";
 import CareerHero from "./Careerpart";
 import Breadcrumb from "../BreadCrumb";
-
-/* ⭐ STAR SVG — UNCHANGED */
 const StarSvg = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -43,8 +41,6 @@ const StarSvg = () => (
     />
   </svg>
 );
-
-/* 🔹 ROLE DATA — UNCHANGED */
 const roleData = {
   Internship: [
     { title: "UI/UX Intern", icon: <MdDesignServices /> },
@@ -76,8 +72,6 @@ const roleData = {
     { title: "Graphic Designer", icon: <FaPenNib /> },
   ],
 };
-
-/* 🔹 FRAMER ANIMATIONS — UNCHANGED */
 const container = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.15 } },
@@ -90,8 +84,6 @@ const item = {
 
 const Careers = () => {
   const [activeTab, setActiveTab] = useState("Internship");
-
-  /* ✅ ONLY NEW ADDITION */
   const scrollToForm = () => {
     const el = document.getElementById("careerForm");
     if (el) {
@@ -171,8 +163,6 @@ const Careers = () => {
                   <div className={styles.icon}>{role.icon}</div>
                   <h3>{role.title}</h3>
                 </div>
-
-                {/* ✅ ONLY CHANGE HERE */}
                 <button
                   className={styles.starButton}
                   onClick={scrollToForm}
@@ -190,8 +180,6 @@ const Careers = () => {
           </motion.div>
         </AnimatePresence>
       </section>
-
-      {/* ✅ ONLY ID WRAPPER */}
       <div id="careerForm">
         <CareerForm />
       </div>

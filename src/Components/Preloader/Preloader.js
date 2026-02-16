@@ -31,12 +31,10 @@ const GalaxyScene = () => {
     );
 };
 
-
-// --- HELPERS FOR TEXT EXPLOSION ---
 const generateRandomState = () => ({
-    x: (Math.random() - 0.5) * 800, // Explodes horizontally
-    y: (Math.random() - 0.5) * 800, // Explodes vertically
-    z: (Math.random() - 0.5) * 500, // Explodes in depth
+    x: (Math.random() - 0.5) * 800, 
+    y: (Math.random() - 0.5) * 800, 
+    z: (Math.random() - 0.5) * 500,
     rotateX: Math.random() * 360,
     rotateY: Math.random() * 360,
     rotateZ: Math.random() * 360,
@@ -48,8 +46,6 @@ const Preloader = ({ finishLoading }) => {
     const [percent, setPercent] = useState(0);
     const titleText = "SOFTNOVA";
     const subtitleText = "STERLING IT SERVICE";
-
-    // Memoize the random starting positions so they don't change on re-renders
     const randomPositions = useMemo(() => {
         return titleText.split("").map(() => generateRandomState());
     }, []);

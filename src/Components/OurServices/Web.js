@@ -95,7 +95,7 @@ const WebDevelopment = () => {
               viewport={{ once: false }}
               transition={{ duration: 0.8 }}
             >
-              <img src={high} alt="Web Development" />
+              <img loading="lazy" src={high} alt="Web Development" />
             </motion.div>
           </div>
         </div>
@@ -129,7 +129,7 @@ const WebDevelopment = () => {
               variants={index % 2 === 0 ? slideInLeft : slideInRight}
             >
               <div className={styles.imgWrapper}>
-                <img src={project.img} alt={project.title} />
+                <img loading="lazy" src={project.img} alt={project.title} />
               </div>
               <h3>{project.title}</h3>
             </motion.div>

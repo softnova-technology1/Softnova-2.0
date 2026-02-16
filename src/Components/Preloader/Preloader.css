@@ -1,4 +1,4 @@
-/* src/Components/Preloader/Preloader.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo:wght@300;600&display=swap');
 
 .preloader-container {
@@ -15,8 +15,6 @@
     justify-content: center;
     will-change: opacity;
 }
-
-/* Galaxy Canvas */
 .canvas-wrapper {
     position: absolute;
     top: 0;
@@ -26,7 +24,6 @@
     z-index: 1;
 }
 
-/* Main Content Overlay */
 .content-wrapper {
     position: relative;
     z-index: 10;
@@ -35,11 +32,9 @@
     align-items: center;
     justify-content: center;
     perspective: 1000px;
-    /* Essential for 3D text assembly */
     will-change: transform, opacity;
 }
 
-/* --- LOGO --- */
 .logo-img {
     width: 100px;
     height: auto;
@@ -47,8 +42,6 @@
     filter: drop-shadow(0 0 20px rgba(254, 133, 30, 0.8));
     z-index: 20;
 }
-
-/* --- EXPLODING TEXT --- */
 .title-container {
     display: flex;
     gap: 0.5rem;
@@ -67,8 +60,6 @@
     backface-visibility: hidden;
     will-change: transform, opacity;
 }
-
-/* --- SUBTITLE --- */
 .subtitle-container {
     font-family: 'Exo', sans-serif;
     font-size: 1.2rem;
@@ -79,8 +70,6 @@
     display: flex;
     gap: 3px;
 }
-
-/* --- PROGRESS LOADER --- */
 .loader-track {
     width: 300px;
     height: 2px;

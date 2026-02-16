@@ -94,7 +94,7 @@ export default function WhyChooseSoftNova() {
           </motion.div>
 
           <motion.div className={styles.imageBox} variants={imageSlide}>
-            <img src={office} alt="Why Choose SoftNova" />
+            <img loading="lazy" src={office} alt="Why Choose SoftNova" />
           </motion.div>
         </div>
       </motion.div>

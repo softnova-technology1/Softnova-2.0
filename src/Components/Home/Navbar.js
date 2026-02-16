@@ -50,7 +50,7 @@ const Navbar = () => {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.logo}>
         <NavLink to="/">
-          <img src={logo} alt="Softnova Logo" />
+          <img loading="lazy" src={logo} alt="Softnova Logo" />
         </NavLink>
       </div>
 

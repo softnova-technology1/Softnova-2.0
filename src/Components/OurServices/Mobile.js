@@ -1,5 +1,5 @@
-import React, { useState } from "react"; // Added useState
-import { motion, AnimatePresence } from "framer-motion"; // Added AnimatePresence
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion"; 
 import styles from "../../Styles/Mobile.module.css";
 import Mobileapps1 from "../../images/Ourservices-images/Mobileapps1.webp";
 import Mobileapps2 from "../../images/Ourservices-images/Mobileapps2.webp";
@@ -122,7 +122,7 @@ const MobileAppSection = () => {
               viewport={{ once: false }}
               transition={{ duration: 1 }}
             >
-              <img src={mobile} alt="Mobile App" className={styles.floatingImage} />
+              <img loading="lazy" src={mobile} alt="Mobile App" className={styles.floatingImage} />
               <div className={styles.orangeGlow}></div>
             </motion.div>
           </motion.div>
@@ -143,7 +143,7 @@ const MobileAppSection = () => {
                   whileHover={{ y: -15 }}
                 >
                   <div className={styles.cardImageContainer}>
-                    <img src={project.img} alt={project.title} />
+                    <img loading="lazy" src={project.img} alt={project.title} />
                   </div>
                   <div className={styles.cardContent}>
                     <h4>{project.title}</h4>
@@ -190,7 +190,7 @@ const MobileAppSection = () => {
               <div className={styles.canvasBody}>
                 {selectedProject && (
                   <>
-                    <img src={selectedProject.img} alt={selectedProject.title} className={styles.canvasImg} />
+                    <img loading="lazy" src={selectedProject.img} alt={selectedProject.title} className={styles.canvasImg} />
                     <h2>{selectedProject.title}</h2>
                     <p>{selectedProject.desc}</p>
                     <div className={styles.canvasDetails}>

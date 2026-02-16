@@ -29,6 +29,8 @@ import { AnimatePresence } from "framer-motion";
 import Preloader from "./Components/Preloader/Preloader";
 
 
+
+
 function AppContent() {
   const location = useLocation();
   const isHeroPage = location.pathname === "/";
@@ -65,7 +67,6 @@ function AppContent() {
         <Route path="/career" element={<CareerForm />} />
         <Route path="/gallery" element={<Achievements />} />
         <Route path="/contact" element={<Contact />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/GetStarted" element={<GetStarted />} />
@@ -79,16 +80,13 @@ function AppContent() {
 
 
 function App() {
-  // Initialize loading state based on session storage
   const [loading, setLoading] = useState(() => {
-    // Check if the user has visited in this session
     const hasVisited = sessionStorage.getItem("softnova_visited");
     return !hasVisited;
   });
 
   const handleFinishLoading = () => {
     setLoading(false);
-    // Mark session as visited so it doesn't show again on refresh
     sessionStorage.setItem("softnova_visited", "true");
   };
 

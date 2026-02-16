@@ -132,7 +132,7 @@ export default function ImageCardSection() {
         <div className={styles.grid}>
           {items.map((item, i) => (
             <div key={i} className={styles.card}>
-              <img src={item.img} alt={item.title} />
+              <img loading="lazy" src={item.img} alt={item.title} />
               <div className={styles.overlay}>
                 <h2>{item.title}</h2>
                 <p>{item.desc}</p>
@@ -156,7 +156,7 @@ export default function ImageCardSection() {
                 className={`${styles.cardd} ${item.align === "left" ? styles.left : styles.right
                   }`}
               >
-                <img src={item.img} alt={item.title} />
+                <img loading="lazy" src={item.img} alt={item.title} />
 
                 <div className={styles.cardTitle}>{item.title}</div>
 

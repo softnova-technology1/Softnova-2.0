@@ -168,7 +168,7 @@ export default function Achievements() {
           {current.images.map((img, index) => (
             <div key={index} className={styles.card}>
               <span className={styles.cardBadge}>Gallery</span>
-              <img src={img} alt="Gallery" />
+              <img loading="lazy" src={img} alt="Gallery" />
             </div>
           ))}
         </div>

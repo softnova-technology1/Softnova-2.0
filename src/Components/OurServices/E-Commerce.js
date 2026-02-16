@@ -48,7 +48,6 @@ const ECommerce = () => {
     <>
       <Breadcrumb />
       <div className={styles.mainPage}>
-        {/* --- Hero Section --- */}
         <section className={styles.hero}>
           <div className={styles.container}>
             <motion.div
@@ -88,7 +87,7 @@ const ECommerce = () => {
               transition={{ duration: 1 }}
             >
               <div className={styles.imageWrapper}>
-                <img src={shan} alt="Ecommerce" className={styles.heroImage} />
+                <img loading="lazy" src={shan} alt="Ecommerce" className={styles.heroImage} />
                 <div className={styles.glowEffect}></div>
               </div>
             </motion.div>
@@ -118,7 +117,7 @@ const ECommerce = () => {
                 viewport={{ once: false, amount: 0.2 }}
               >
                 <div className={styles.imageBox}>
-                  <img src={item.image} alt={item.title} />
+                  <img loading="lazy" src={item.image} alt={item.title} />
 
                   <motion.div
                     className={styles.projectOverlay}
@@ -177,7 +176,7 @@ const ECommerce = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                   >
-                    <img src={selectedProject.image} alt={selectedProject.title} className={styles.canvasImg} />
+                    <img loading="lazy" src={selectedProject.image} alt={selectedProject.title} className={styles.canvasImg} />
                     <span className={styles.canvasTag}>{selectedProject.category}</span>
                     <h2 className={styles.canvasTitle}>{selectedProject.title}</h2>
                     <p className={styles.canvasDesc}>{selectedProject.desc}</p>

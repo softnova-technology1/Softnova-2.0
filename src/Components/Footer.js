@@ -14,7 +14,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.top}>
         <div className={styles.about}>
-          <img src={logo} alt="Softnova Logo" className={styles.logoImg} />
+          <img loading="lazy" src={logo} alt="Softnova Logo" className={styles.logoImg} />
           <p>
             Where innovation and excellence converge in web design, development,
             mobile app creation, digital marketing, and SEO solutions customized

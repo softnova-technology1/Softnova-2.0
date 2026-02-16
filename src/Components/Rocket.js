@@ -125,7 +125,7 @@ const RocketMenu = () => {
     <>
       <button id="menu-btn" className={styles.openBtn} onClick={launchAndOpen}>
         <div className={styles.btnContent}>
-          <span><img src={navgif} alt="SoftNova Logo" style={{ height: '50px' }} /></span>
+          <span><img loading="lazy" src={navgif} alt="SoftNova Logo" style={{ height: '50px' }} /></span>
           <span className={styles.hamburger}></span>
           <span className={styles.btnText}>EXPLORE</span>
         </div>
@@ -134,7 +134,7 @@ const RocketMenu = () => {
       <div id="rocket-container" className={styles.rocketContainer}>
         <div className={styles.rocket}>
           <div className={styles.glowRing}></div>
-          <img src={rocketImg} alt="🚀" />
+          <img loading="lazy" src={rocketImg} alt="🚀" />
         </div>
       </div>
 

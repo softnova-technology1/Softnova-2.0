@@ -93,7 +93,7 @@ const GraphicDesign = () => {
               viewport={{ once: false }}
               transition={{ duration: 1, type: "spring" }}
             >
-              <img src={desktop} alt="Desktop" className={styles.desktop} />
+              <img loading="lazy" src={desktop} alt="Desktop" className={styles.desktop} />
             </motion.div>
           </div>
         </section>
@@ -114,7 +114,7 @@ const GraphicDesign = () => {
                 whileHover={{ y: -15, transition: { duration: 0.3 } }}
               >
                 <div className={styles.serviceImage}>
-                  <img src={item.img} alt={item.title} />
+                  <img loading="lazy" src={item.img} alt={item.title} />
                   <div className={styles.cardOverlay} />
                 </div>
                 <h3 className={styles.serviceTitle}>{item.title}</h3>

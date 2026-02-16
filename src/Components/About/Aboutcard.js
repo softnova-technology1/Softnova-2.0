@@ -222,7 +222,7 @@ const AboutPage = () => {
             >
               <article className={styles.card}>
                 <header className={styles.cardThumb}>
-                  <img src={item.img} alt={item.title} />
+                  <img loading="lazy" src={item.img} alt={item.title} />
                 </header>
                 <div className={styles.overlay}>
                   <h3 className={styles.titleWithTooltip}>

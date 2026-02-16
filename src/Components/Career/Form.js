@@ -10,13 +10,12 @@ const CareerForm = () => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      // Validate file type and size
       if (!file.type.match('application/pdf|application/msword|application/vnd.openxmlformats-officedocument.wordprocessingml.document')) {
         alert("Please select PDF, DOC, or DOCX file only");
         e.target.value = "";
         return;
       }
-      if (file.size > 5 * 1024 * 1024) { // 5MB limit
+      if (file.size > 5 * 1024 * 1024) { 
         alert("File size must be less than 5MB");
         e.target.value = "";
         return;
@@ -48,15 +47,13 @@ const CareerForm = () => {
       return;
     }
 
-    // Collect form data properly
     const formData = new FormData(form.current);
     const emailParams = {
       user_name: formData.get("user_name") || "",
       user_email: formData.get("user_email") || "",
       user_number: formData.get("user_number") || "",
-      user_resume: base64Resume, // Base64 content
+      user_resume: base64Resume, 
       job_profile: formData.get("job_profile") || "",
-      // Add other fields as needed
     };
 
     emailjs
@@ -143,14 +140,11 @@ const CareerForm = () => {
 
         <button type="submit" className={styles.starButton} disabled={!base64Resume}>
           Submit
-          {/* Your star SVG components */}
         </button>
       </form>
     </div>
   );
 };
-
-// StarSvg component remains the same
 const StarSvg = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

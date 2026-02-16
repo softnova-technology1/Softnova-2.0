@@ -76,7 +76,7 @@ const CloudandIT = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1 }}
               >
-                <img src={shieldImg} alt="Cloud & IT Security" className={styles.heroImg} />
+                <img loading="lazy" src={shieldImg} alt="Cloud & IT Security" className={styles.heroImg} />
                 <div className={styles.glowEffect}></div>
               </motion.div>
             </div>
@@ -89,7 +89,7 @@ const CloudandIT = () => {
 
           <div className={styles.serviceRow} ref={el => (revealRefs.current[2] = el)}>
             <div className={styles.mediaArea}>
-              <img src={img1} alt="Cloud Hosting" />
+              <img loading="lazy" src={img1} alt="Cloud Hosting" />
             </div>
             <div className={styles.contentArea}>
               <span className={styles.accentBar}></span>
@@ -100,7 +100,7 @@ const CloudandIT = () => {
 
           <div className={`${styles.serviceRow} ${styles.rowReverse}`} ref={el => (revealRefs.current[3] = el)}>
             <div className={styles.mediaArea}>
-              <img src={img2} alt="IT Consulting" />
+              <img loading="lazy" src={img2} alt="IT Consulting" />
             </div>
             <div className={styles.contentArea}>
               <span className={styles.accentBar}></span>
@@ -111,7 +111,7 @@ const CloudandIT = () => {
 
           <div className={styles.serviceRow} ref={el => (revealRefs.current[4] = el)}>
             <div className={styles.mediaArea}>
-              <img src={img4} alt="Cloud Security" />
+              <img loading="lazy" src={img4} alt="Cloud Security" />
             </div>
             <div className={styles.contentArea}>
               <span className={styles.accentBar}></span>

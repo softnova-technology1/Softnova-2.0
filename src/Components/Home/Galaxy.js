@@ -89,7 +89,7 @@ const Galaxy = () => {
         />
       ))}
 
-      <img src={logo} alt="logo" className={styles.galaxyLogo} />
+      <img loading="lazy" src={logo} alt="logo" className={styles.galaxyLogo} />
 
       {orbits.map((orbit, i) => (
         <React.Fragment key={i}>

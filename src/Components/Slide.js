@@ -83,7 +83,7 @@ export default function Slide() {
 
           return (
             <div key={index} className={`${styles.slideCard} ${position}`}>
-              <img src={item.img} alt={item.title} />
+              <img loading="lazy" src={item.img} alt={item.title} />
 
               <div className={styles.content}>
                 <h3>{item.title}</h3>
