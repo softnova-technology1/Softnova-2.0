@@ -1,32 +1,30 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "../../Styles/Aboutcard.module.css";
-import img1 from '../../images/About-Images/card1.webp';
-import img2 from '../../images/About-Images/card2.webp';
-import img3 from '../../images/About-Images/card3.webp';
-import img4 from '../../images/About-Images/card4.webp';
-import img5 from '../../images/About-Images/card5.webp';
-import img6 from '../../images/About-Images/card6.webp';
-import img7 from '../../images/About-Images/card7.webp';
-import img8 from '../../images/About-Images/card8.webp';
-import img9 from '../../images/About-Images/card9.webp';
-import img10 from '../../images/About-Images/card10.webp';
-import img11 from '../../images/About-Images/card11.webp';
-import img12 from '../../images/About-Images/card12.webp';
-import img13 from '../../images/About-Images/card13.webp';
-import img14 from '../../images/About-Images/card14.webp';
-import img15 from '../../images/About-Images/card15.webp';
-import img16 from '../../images/About-Images/card16.webp';
-import img17 from '../../images/About-Images/card17.webp';
-import img18 from '../../images/About-Images/card18.webp';
-import img19 from '../../images/About-Images/card19.webp';
-import img20 from '../../images/About-Images/card20.webp';
-import img21 from '../../images/About-Images/card21.webp';
-import img22 from '../../images/About-Images/card22.webp';
-import img23 from '../../images/About-Images/card23.webp';
-import img24 from '../../images/About-Images/card24.webp';
-
-
+import img1 from "../../images/About-Images/card1.webp";
+import img2 from "../../images/About-Images/card2.webp";
+import img3 from "../../images/About-Images/card3.webp";
+import img4 from "../../images/About-Images/card4.webp";
+import img5 from "../../images/About-Images/card5.webp";
+import img6 from "../../images/About-Images/card6.webp";
+import img7 from "../../images/About-Images/card7.webp";
+import img8 from "../../images/About-Images/card8.webp";
+import img9 from "../../images/About-Images/card9.webp";
+import img10 from "../../images/About-Images/card10.webp";
+import img11 from "../../images/About-Images/card11.webp";
+import img12 from "../../images/About-Images/card12.webp";
+import img13 from "../../images/About-Images/card13.webp";
+import img14 from "../../images/About-Images/card14.webp";
+import img15 from "../../images/About-Images/card15.webp";
+import img16 from "../../images/About-Images/card16.webp";
+import img17 from "../../images/About-Images/card17.webp";
+import img18 from "../../images/About-Images/card18.webp";
+import img19 from "../../images/About-Images/card19.webp";
+import img20 from "../../images/About-Images/card20.webp";
+import img21 from "../../images/About-Images/card21.webp";
+import img22 from "../../images/About-Images/card22.webp";
+import img23 from "../../images/About-Images/card23.webp";
+import img24 from "../../images/About-Images/card24.webp";
 
 const tabs = ["Who we are", "Why choose", "What we do", "Who we work with"];
 
@@ -77,7 +75,7 @@ const data = {
     },
     {
       title: "Agile Team",
-      img: img9   ,
+      img: img9,
       desc: "Fast, flexible, and future-ready.",
     },
     {
@@ -115,12 +113,12 @@ const data = {
     },
     {
       title: "Cloud Services",
-      img:img16,
+      img: img16,
       desc: "Secure & scalable cloud systems.",
     },
     {
       title: "Digital Strategy",
-      img:img17,
+      img: img17,
       desc: "Growth-oriented strategies.",
     },
     {
@@ -138,7 +136,7 @@ const data = {
     },
     {
       title: "Enterprises",
-      img:img20,
+      img: img20,
       desc: "Enterprise-grade solutions.",
     },
     {
@@ -148,7 +146,7 @@ const data = {
     },
     {
       title: "Product Teams",
-      img:img22,
+      img: img22,
       desc: "Building scalable products.",
     },
     {
@@ -167,7 +165,6 @@ const data = {
 const AboutPage = () => {
   const [activeTab, setActiveTab] = useState("Who we are");
 
-  
   const cardVariants = {
     hidden: { opacity: 0, y: 50, scale: 0.95 },
     visible: {
@@ -197,14 +194,12 @@ const AboutPage = () => {
 
       <div className={styles.tabContent}>
         <p>
-          At Softnova, we collaborate with leading brands and companies to design
-          and develop websites that are not only visually stunning but also highly
-          functional and user-friendly. Our team combines creative design with
-          advanced technology to build responsive websites that provide an
-          exceptional experience across all devices. Whether it’s enhancing user
-          engagement, improving performance, or ensuring seamless functionality,
-          we work closely with our partners to bring their vision to life and help
-          them stand out in a digital-first world.
+          At Softnova, we partner with leading brands to create visually
+          compelling, high-performance websites that are both functional and
+          user-focused. By blending creative design with advanced technology, we
+          deliver responsive digital experiences across all devices—enhancing
+          engagement, optimizing performance, and bringing our clients’ vision
+          to life in a digital-first world.
         </p>
       </div>
 
@@ -212,7 +207,7 @@ const AboutPage = () => {
         <AnimatePresence mode="wait">
           {data[activeTab].map((item, i) => (
             <motion.div
-              key={item.title} 
+              key={item.title}
               className={styles.wrapper}
               variants={cardVariants}
               initial="hidden"

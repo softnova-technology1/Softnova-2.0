@@ -93,9 +93,9 @@ const Careers = () => {
 
   return (
     <>
-    <Breadcrumb/>
+      <Breadcrumb />
       <section className={styles.careerSection}>
-        <CareerHero/>
+        <CareerHero />
       </section>
 
       <section className={styles.introSection}>
@@ -106,7 +106,7 @@ const Careers = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          To infinite opportunities.
+          Where Possibilities Have No Limits.
         </motion.h2>
 
         <motion.p
@@ -116,9 +116,9 @@ const Careers = () => {
           transition={{ duration: 0.9, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          “Softnova provides a compelling and distinctive opportunity to join a
-          remarkable team, while also prioritizing the creation of an outstanding
-          work environment for our employees.”
+          “At Softnova, we don’t just offer jobs — we create pathways to
+          extraordinary careers. Join a dynamic team in a workplace designed to
+          inspire innovation, nurture talent, and unlock your true potential.”
         </motion.p>
       </section>
 
@@ -163,17 +163,26 @@ const Careers = () => {
                   <div className={styles.icon}>{role.icon}</div>
                   <h3>{role.title}</h3>
                 </div>
-                <button
-                  className={styles.starButton}
-                  onClick={scrollToForm}
-                >
+                <button className={styles.starButton} onClick={scrollToForm}>
                   APPLY NOW
-                  <span className={styles.star1}><StarSvg /></span>
-                  <span className={styles.star2}><StarSvg /></span>
-                  <span className={styles.star3}><StarSvg /></span>
-                  <span className={styles.star4}><StarSvg /></span>
-                  <span className={styles.star5}><StarSvg /></span>
-                  <span className={styles.star6}><StarSvg /></span>
+                  <span className={styles.star1}>
+                    <StarSvg />
+                  </span>
+                  <span className={styles.star2}>
+                    <StarSvg />
+                  </span>
+                  <span className={styles.star3}>
+                    <StarSvg />
+                  </span>
+                  <span className={styles.star4}>
+                    <StarSvg />
+                  </span>
+                  <span className={styles.star5}>
+                    <StarSvg />
+                  </span>
+                  <span className={styles.star6}>
+                    <StarSvg />
+                  </span>
                 </button>
               </motion.div>
             ))}

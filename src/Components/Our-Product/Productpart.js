@@ -16,65 +16,62 @@ const ProductHero = () => {
     });
   }, []);
 
-  const particlesOptions = useMemo(() => ({
-    fullScreen: { enable: false },
-    background: { color: "transparent" },
-    fpsLimit: 120,
-    particles: {
-      number: { value: 120, density: { enable: true, area: 800 } },
+  const particlesOptions = useMemo(
+    () => ({
+      fullScreen: { enable: false },
+      background: { color: "transparent" },
+      fpsLimit: 120,
+      particles: {
+        number: { value: 120, density: { enable: true, area: 800 } },
 
-      color: { value: ["#f89e38", "#818cf8", "#fb7185", "#f472b6"] },
-      shape: { type: ["circle", "triangle", "polygon"] },
-      opacity: {
-        value: { min: 0.1, max: 0.8 },
-        animation: { enable: true, speed: 1 }
+        color: { value: ["#f89e38", "#818cf8", "#fb7185", "#f472b6"] },
+        shape: { type: ["circle", "triangle", "polygon"] },
+        opacity: {
+          value: { min: 0.1, max: 0.8 },
+          animation: { enable: true, speed: 1 },
+        },
+        size: { value: { min: 1, max: 4 } },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          outModes: { default: "out" },
+          attract: { enable: true, rotate: { x: 600, y: 1200 } },
+        },
+        links: {
+          enable: true,
+          distance: 120,
+          color: "#ffffff",
+          opacity: 0.1,
+          width: 1,
+        },
       },
-      size: { value: { min: 1, max: 4 } },
-      move: {
-        enable: true,
-        speed: 2,
-        direction: "none",
-        outModes: { default: "out" },
-        attract: { enable: true, rotate: { x: 600, y: 1200 } }
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "grab" },
+        },
+        modes: {
+          grab: { distance: 150, links: { opacity: 0.5 } },
+        },
       },
-      links: {
-        enable: true,
-        distance: 120,
-        color: "#ffffff",
-        opacity: 0.1,
-        width: 1,
-      }
-    },
-    interactivity: {
-      events: {
-        onHover: { enable: true, mode: "grab" },
-      },
-      modes: {
-        grab: { distance: 150, links: { opacity: 0.5 } },
-      }
-    },
-    detectRetina: true,
-  }), []);
+      detectRetina: true,
+    }),
+    [],
+  );
 
   return (
     <div className={styles.container}>
-
-
       {init && (
         <div className={styles.particlesWrapper}>
-          <Particles
-            id="tsparticles"
-            options={particlesOptions}
-          />
+          <Particles id="tsparticles" options={particlesOptions} />
         </div>
       )}
 
-
       <div className={styles.contentLayer}>
-        <h1 className={styles.title}>PREMIUM SOFTWARE SOLUTIONS</h1>
+        <h1 className={styles.title}>Next-Generation Software Solutions</h1>
         <p className={styles.description}>
-          Empowering businesses with cutting-edge technology and seamless digital transformation.
-          We build scalable, secure, and intuitive products that drive real business growth.
+          Driving digital excellence with secure, scalable, and intelligent
+          systems built to power sustainable business growth.
         </p>
         <button
           className={styles.ctaButton}

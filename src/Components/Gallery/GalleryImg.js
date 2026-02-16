@@ -40,17 +40,44 @@ import re2 from "../../images/re2.webp";
 import SphereBackground from "./Sphere";
 import Breadcrumb from "../BreadCrumb";
 
-
 const tabsData = {
   all: {
     title: "All Gallery",
     desc: "A complete glimpse into our achievements, celebrations, skills and journey",
     images: [
-      award, award2,
-      pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11, pic12, pic13, pic16, pic18,
-      skill1, skill2, skill3, skill4, skill5,
-      re1, re2,
-      intern1, intern2, intern3, intern4, intern5, intern6, intern7, intern8, intern9,
+      award,
+      award2,
+      pic1,
+      pic2,
+      pic3,
+      pic4,
+      pic5,
+      pic6,
+      pic7,
+      pic8,
+      pic9,
+      pic10,
+      pic11,
+      pic12,
+      pic13,
+      pic16,
+      pic18,
+      skill1,
+      skill2,
+      skill3,
+      skill4,
+      skill5,
+      re1,
+      re2,
+      intern1,
+      intern2,
+      intern3,
+      intern4,
+      intern5,
+      intern6,
+      intern7,
+      intern8,
+      intern9,
     ],
   },
 
@@ -63,8 +90,21 @@ const tabsData = {
     title: "Our Celebrations",
     desc: "Moments of joy, success, and togetherness",
     images: [
-      pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9,
-      pic10, pic11, pic12, pic13, pic16, pic18,
+      pic1,
+      pic2,
+      pic3,
+      pic4,
+      pic5,
+      pic6,
+      pic7,
+      pic8,
+      pic9,
+      pic10,
+      pic11,
+      pic12,
+      pic13,
+      pic16,
+      pic18,
     ],
   },
   skills: {
@@ -81,38 +121,43 @@ const tabsData = {
     title: "Internship",
     desc: "Nurturing young talents through learning",
     images: [
-      intern1, intern2, intern3, intern4, intern5,
-      intern6, intern7, intern8, intern9,
+      intern1,
+      intern2,
+      intern3,
+      intern4,
+      intern5,
+      intern6,
+      intern7,
+      intern8,
+      intern9,
     ],
   },
 };
 
 export default function Achievements() {
-  
   const [activeTab, setActiveTab] = useState("all");
 
   const current = tabsData[activeTab];
 
   return (
     <>
-    <Breadcrumb/>
+      <Breadcrumb />
       <section className={styles.hero}>
         <div className={styles.sphereBg}>
           <SphereBackground />
         </div>
         <div className={styles.overlay}>
           <span className={styles.heroBadge}>• Gallery</span>
-          <h1>Our Gallery</h1>
+          <h1>Our Journey in Moments</h1>
           <p>
-            A glimpse into our achievements, celebrations and growth journey
+            A visual celebration of our milestones, teamwork, culture, and
+            achievements that shape Softnova’s growth story.
           </p>
         </div>
       </section>
 
       <section className={styles.wrapper}>
-        
         <div className={styles.tabs}>
-         
           <button
             className={activeTab === "all" ? styles.active : ""}
             onClick={() => setActiveTab("all")}
@@ -156,14 +201,12 @@ export default function Achievements() {
           </button>
         </div>
 
-        
         <div className={styles.header}>
           <span className={styles.badge}>• Gallery</span>
           <h2>{current.title}</h2>
           <p>{current.desc}</p>
         </div>
 
-      
         <div className={styles.grid}>
           {current.images.map((img, index) => (
             <div key={index} className={styles.card}>

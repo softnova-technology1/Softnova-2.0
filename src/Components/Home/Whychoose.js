@@ -26,7 +26,6 @@ export default function WhyChooseSoftNova() {
     },
   ];
 
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -58,7 +57,6 @@ export default function WhyChooseSoftNova() {
 
   return (
     <section className={styles.wrapper}>
-
       <motion.div
         className={styles.container}
         initial="hidden"
@@ -69,7 +67,11 @@ export default function WhyChooseSoftNova() {
           <h2 className={styles.heading}>Why Choose SoftNova?</h2>
           <div className={styles.description}>
             <p>
-             At SoftNova, we deliver tailored digital solutions that help your business stand out and grow. From high-performing websites and e-commerce platforms to lead generation, mobile, and SEO, our expert team combines technical and creative strength to align every solution with your business goals. Client-focused and results-driven, we support your success in a competitive digital landscape
+              At SoftNova, we deliver tailored digital solutions that help your
+              brand stand out. From custom websites and e-commerce platforms to
+              lead generation and digital marketing, our client-centric,
+              end-to-end services—web, mobile, and SEO—are designed to drive
+              growth and success in a competitive digital landscape.{" "}
             </p>
           </div>
         </motion.div>
