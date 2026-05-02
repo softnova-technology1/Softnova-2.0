@@ -3,21 +3,26 @@ import styles from "../../Styles/GalleryImg.module.css";
 import award from "../../images/award.webp";
 import award2 from "../../images/award2.webp";
 
-import pic1 from "../../images/pic1.webp";
-import pic2 from "../../images/pic2.webp";
-import pic3 from "../../images/pic3.webp";
-import pic4 from "../../images/pic4.webp";
-import pic5 from "../../images/pic5.webp";
-import pic6 from "../../images/pic6.webp";
-import pic7 from "../../images/pic7.webp";
-import pic8 from "../../images/pic8.webp";
-import pic9 from "../../images/pic9.webp";
-import pic10 from "../../images/pic10.webp";
-import pic11 from "../../images/pic11.webp";
-import pic12 from "../../images/pic12.webp";
-import pic13 from "../../images/pic13.webp";
-import pic16 from "../../images/pic16.webp";
-import pic18 from "../../images/pic18.webp";
+import pic1 from "../../images/cel-1.webp";
+import pic2 from "../../images/cel-2.webp";
+import pic3 from "../../images/cel-3.webp";
+import pic4 from "../../images/cel-4.webp";
+import pic5 from "../../images/cel-5.webp";
+import pic6 from "../../images/cel-6.webp";
+import pic7 from "../../images/cel-7.webp";
+import pic8 from "../../images/cel-8.webp";
+import pic9 from "../../images/cel-9.webp";
+import pic11 from "../../images/cel-11.jpg";
+import pic12 from "../../images/cel-12.webp";
+import pic13 from "../../images/cel-13.webp";
+import pic14 from "../../images/cel-14.webp";
+import pic15 from "../../images/cel-15.webp";
+import pic16 from "../../images/cel-16.webp";
+import pic17 from "../../images/cel-17.webp";
+import pic18 from "../../images/cel-18.webp";
+import pic19 from "../../images/cel-19.webp";
+import pic20 from "../../images/cel-20.webp";
+
 
 import skill1 from "../../images/skill1.webp";
 import skill2 from "../../images/skill2.webp";
@@ -25,18 +30,17 @@ import skill3 from "../../images/skill3.webp";
 import skill4 from "../../images/skill4.webp";
 import skill5 from "../../images/skill5.webp";
 
-import intern1 from "../../images/intern1.webp";
-import intern2 from "../../images/intern2.webp";
-import intern3 from "../../images/intern3.webp";
+import intern1 from "../../images/intern2.webp";
+import intern2 from "../../images/intern3.webp";
+import intern3 from "../../images/intern1.webp";
 import intern4 from "../../images/intern4.webp";
 import intern5 from "../../images/intern5.webp";
-import intern6 from "../../images/intern6.webp";
-import intern7 from "../../images/intern7.webp";
-import intern8 from "../../images/intern8.webp";
-import intern9 from "../../images/intern9.webp";
 
-import re1 from "../../images/re1.webp";
-import re2 from "../../images/re2.webp";
+
+import re1 from "../../images/rec-1.webp";
+import re2 from "../../images/rec-2.webp";
+import re3 from "../../images/rec-3.webp";
+
 import SphereBackground from "./Sphere";
 import Breadcrumb from "../BreadCrumb";
 
@@ -47,21 +51,6 @@ const tabsData = {
     images: [
       award,
       award2,
-      pic1,
-      pic2,
-      pic3,
-      pic4,
-      pic5,
-      pic6,
-      pic7,
-      pic8,
-      pic9,
-      pic10,
-      pic11,
-      pic12,
-      pic13,
-      pic16,
-      pic18,
       skill1,
       skill2,
       skill3,
@@ -69,16 +58,34 @@ const tabsData = {
       skill5,
       re1,
       re2,
+      re3,
       intern1,
       intern2,
       intern3,
       intern4,
       intern5,
-      intern6,
-      intern7,
-      intern8,
-      intern9,
+      pic1,
+      pic18,
+      pic19,
+      pic20,
+      pic14,
+      pic9,
+      pic6,
+      pic2,
+      pic7,
+      pic8,
+      pic3,
+      pic4,
+      pic5,
+      pic13,
+      pic11,
+      pic12,
+      pic15,
+      pic16,
+      pic17,
+
     ],
+
   },
 
   achievements: {
@@ -91,20 +98,24 @@ const tabsData = {
     desc: "Moments of joy, success, and togetherness",
     images: [
       pic1,
+      pic18,
+      pic19,
+      pic20,
+      pic14,
+      pic9,
+      pic6,
       pic2,
+      pic7,
+      pic8,
       pic3,
       pic4,
       pic5,
-      pic6,
-      pic7,
-      pic8,
-      pic9,
-      pic10,
+      pic13,
       pic11,
       pic12,
-      pic13,
+      pic15,
       pic16,
-      pic18,
+      pic17,
     ],
   },
   skills: {
@@ -115,7 +126,7 @@ const tabsData = {
   recruitment: {
     title: "Recruitment",
     desc: "Welcoming talented minds into our journey",
-    images: [re1, re2],
+    images: [re1, re2, re3],
   },
   internship: {
     title: "Internship",
@@ -125,12 +136,7 @@ const tabsData = {
       intern2,
       intern3,
       intern4,
-      intern5,
-      intern6,
-      intern7,
-      intern8,
-      intern9,
-    ],
+      intern5],
   },
 };
 
@@ -210,7 +216,6 @@ export default function Achievements() {
         <div className={styles.grid}>
           {current.images.map((img, index) => (
             <div key={index} className={styles.card}>
-              <span className={styles.cardBadge}>Gallery</span>
               <img loading="lazy" src={img} alt="Gallery" />
             </div>
           ))}
