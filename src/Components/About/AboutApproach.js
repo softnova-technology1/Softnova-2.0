@@ -7,21 +7,16 @@ import {
   FaSmile,
   FaBriefcase,
 } from "react-icons/fa";
-import img1 from "../../images/About-Images/pro1.webp";
-import img2 from "../../images/About-Images/pro2.webp";
-import img3 from "../../images/About-Images/pro3.webp";
-import img4 from "../../images/About-Images/pro4.webp";
+import img1 from "../../images/About-Images/about1.jpg";
+import img2 from "../../images/About-Images/about4.jpg";
+import img3 from "../../images/About-Images/about3.jpg";
+import img4 from "../../images/About-Images/about2.jpg";
 
 const statsData = [
-  {
-    icon: <FaProjectDiagram />,
-    value: 50,
-    suffix: "+",
-    label: "Successful Projects",
-  },
+  {icon: <FaProjectDiagram />, value: 70, suffix: "+", label: "Successful Projects"},
   { icon: <FaUsers />, value: 20, suffix: "+", label: "Experts" },
   { icon: <FaSmile />, value: 97, suffix: "%", label: "Happy Clients" },
-  { icon: <FaBriefcase />, value: 1, suffix: "+", label: "Year Of Experience" },
+  { icon: <FaBriefcase />, value: 2, suffix: "+", label: "Year Of Experience" },
 ];
 
 const steps = [

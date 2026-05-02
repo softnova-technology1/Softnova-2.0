@@ -31,6 +31,8 @@ import Preloader from "./Components/Preloader/Preloader";
 
 
 
+import ChatSupport from "./Components/ChatSupport";
+
 function AppContent() {
   const location = useLocation();
   const isHeroPage = location.pathname === "/";
@@ -38,6 +40,7 @@ function AppContent() {
   return (
     <>
       <Cursor />
+      <ChatSupport />
 
       {!isHeroPage && <Navbar />}
       {isHeroPage && <RocketMenu />}

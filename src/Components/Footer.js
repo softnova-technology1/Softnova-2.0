@@ -45,6 +45,29 @@ const Footer = () => {
             <span>+91 6385118083</span>
           </div>
         </div>
+
+        <div className={styles.verticalDivider}></div>
+
+        <div className={styles.contact}>
+          <h3> Softnova(HUB)</h3>
+
+          <div className={styles.contactItem}>
+            <MdLocationOn />
+            <span>
+            Singapore 01-019, Jalan Besar Singapore - 208786
+            </span>
+          </div>
+
+          <div className={styles.contactItem}>
+            <MdEmail />
+            <span>info@softnovatech.com</span>
+          </div>
+
+          <div className={styles.contactItem}>
+            <MdPhone />
+            <span>+91 6385118083</span>
+          </div>
+        </div>
       </div>
 
       <div className={styles.horizontalDivider}></div>
@@ -128,12 +151,24 @@ const Footer = () => {
               <FaWhatsapp />
             </a>
           </div>
+
+          <h4 style={{ marginTop: '30px', marginBottom: '16px', color: '#f8fafc' }}>Newsletter</h4>
+          <div className={styles.newsletterForm}>
+            <input 
+              type="email" 
+              placeholder="Email address" 
+              className={styles.newsletterInput}
+            />
+            <button className={styles.newsletterButton}>
+              Subscribe
+            </button>
+          </div>
         </div>
       </div>
 
       <div className={styles.horizontalDivider}></div>
 
-      <div className={styles.bottom}>© 2025 SOFTNOVA. All Rights Reserved.</div>
+      <div className={styles.bottom}>© 2026 SOFTNOVA. All Rights Reserved.</div>
     </footer>
   );
 };
