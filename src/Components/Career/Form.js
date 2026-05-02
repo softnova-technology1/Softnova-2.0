@@ -3,80 +3,26 @@ import styles from "../../Styles/Form.module.css";
 import emailjs from "@emailjs/browser";
 
 const CareerForm = () => {
-  const form = useRef();
-  const [base64Resume, setBase64Resume] = useState("");
-  const [fileName, setFileName] = useState("No file chosen");
+  const formRef = useRef(null);
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      if (!file.type.match('application/pdf|application/msword|application/vnd.openxmlformats-officedocument.wordprocessingml.document')) {
-        alert("Please select PDF, DOC, or DOCX file only");
-        e.target.value = "";
-        return;
-      }
-      if (file.size > 5 * 1024 * 1024) { 
-        alert("File size must be less than 5MB");
-        e.target.value = "";
-        return;
-      }
-
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        setBase64Resume(reader.result.split(",")[1]);
-        setFileName(file.name);
-      };
-      reader.onerror = (error) => {
-        console.error("File reading error:", error);
-        alert("Error reading file");
-      };
-    }
-  };
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    if (!form.current) {
-      alert("Form reference is null");
-      return;
-    }
-
-    if (!base64Resume) {
-      alert("Please select a resume file");
-      return;
-    }
-
-    const formData = new FormData(form.current);
-    const emailParams = {
-      user_name: formData.get("user_name") || "",
-      user_email: formData.get("user_email") || "",
-      user_number: formData.get("user_number") || "",
-      user_resume: base64Resume, 
-      job_profile: formData.get("job_profile") || "",
-    };
-
     emailjs
-      .send(
+      .sendForm(
         "service_4lkn34d",
         "template_8ukl9bo",
-        emailParams,
-        "YLR_KloHoA2ojMGC2"
+        formRef.current,
+        "YLR_KloHoA2ojMGC2",
       )
       .then(
-        () => {
-          alert("Application sent successfully! 🎉");
-          form.current.reset();
-          setBase64Resume("");
-          setFileName("No file chosen");
-        },
-        (error) => {
-          console.error("FAILED...", error);
-          alert(`Failed to send: ${error.text}`);
-        }
+        () => alert("Email sent successfully!"),
+        () => alert("Something went wrong."),
       );
-  };
 
+    e.target.reset();
+  };
   return (
     <div className={styles.page}>
       <div className={styles.galaxy}></div>
@@ -87,58 +33,45 @@ const CareerForm = () => {
           back to you as soon as possible.
         </p>
       </div>
-      <form ref={form} onSubmit={sendEmail} className={styles.form}>
+      <form ref={formRef} onSubmit={sendEmail} className={styles.form}>
         <h2 className={styles.title}>Career Application</h2>
         <div className={styles.grid}>
           <input placeholder="Name *" name="user_name" required type="text" />
-          <input placeholder="Email *" name="user_email" required type="email" />
-          <input placeholder="Phone No *" name="user_number" required type="tel" />
-          
-          <input  placeholder="Total Experience" />
-          <input  placeholder="Relevant Experience" />
-          <input  placeholder="Current CTC" />
-          <input  placeholder="Expected CTC" />
-          <input  placeholder="Career Gap (Reason)" />
-          <input  placeholder="Notice Period (LWD)" />
-          <input  placeholder="Current Location" />
-          <input  placeholder="Preferred Location" />
-          <input  placeholder="Reason for Job Change" />
+          <input
+            placeholder="Email *"
+            name="user_email"
+            required
+            type="email"
+          />
+          <input
+            placeholder="Phone No *"
+            name="user_number"
+            required
+            type="tel"
+          />
 
-          <select required>
-            <option value="">Select Job Profile *</option>
-            <option value="Frontend Developer">Frontend Developer</option>
-            <option value="Backend Developer">Backend Developer</option>
-            <option value="Full Stack Developer">Full Stack Developer</option>
-            <option value="UI/UX Designer">UI/UX Designer</option>
-            <option value="Intern">Intern</option>
-          </select>
-
-          <div className={styles.fileInputWrapper}>
-            <label className={styles.fileLabel}>
-              Choose Resume (PDF, DOC, DOCX - Max 5MB)
-              <input
-                type="file"
-                name="user_resume"
-                accept=".pdf,.doc,.docx"
-                onChange={handleFileChange}
-                required
-              />
-            </label>
-            <span className={styles.fileName}>
-              {fileName === "No file chosen" ? "No file selected" : fileName}
-            </span>
-          </div>
+          <input placeholder="Total Experience" />
+          <input placeholder="Relevant Experience" />
+          <input placeholder="Current CTC" />
+          <input placeholder="Expected CTC" />
+          <input placeholder="Career Gap (Reason)" />
+          <input placeholder="Notice Period (LWD)" />
+          <input placeholder="Current Location" />
+          <input placeholder="Reason for Job Change" />
+          <input type="text" name="job" placeholder="Job / Intern" required/>
+          <input type="text" name="role" placeholder="Role" required/>
+      
+          <input type="text" name="portfolio" placeholder="Portfolio Link" />
+   
         </div>
 
         <textarea
-           
           placeholder="Why should we hire you?"
           rows="4"
           className={styles.textarea}
-          required
         ></textarea>
 
-        <button type="submit" className={styles.starButton} disabled={!base64Resume}>
+        <button type="submit" className={styles.starButton}>
           Submit
         </button>
       </form>
