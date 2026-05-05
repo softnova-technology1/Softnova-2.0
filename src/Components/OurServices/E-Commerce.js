@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "../../Styles/E-Commerce.module.css";
-import ecommerce2 from "../../images/Ourservices-images/e-commerce2.webp";
-import ecommerce3 from "../../images/Ourservices-images/e-commerce3.webp";
-import ecommerce4 from "../../images/Ourservices-images/e-commerce4.webp";
-import ecommerce5 from "../../images/Ourservices-images/e-commerce5.webp";
+import ecommerce2 from "../../images/Ourservices-images/Ecommerce.webp";
+import ecommerce3 from "../../images/Ourservices-images/eMobile.webp";
+import ecommerce4 from "../../images/Ourservices-images/eB2B.webp";
+import ecommerce5 from "../../images/Ourservices-images/eCustom Dashboard.webp";
 import { ArrowUpRight, X } from "lucide-react";
-import shan from "../../images/Ourservices-images/e-commerce1.webp";
+import shan from "../../images/Ourservices-images/ee.jpg";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 

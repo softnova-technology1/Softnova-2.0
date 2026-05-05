@@ -12,6 +12,11 @@ import chart4 from "../../images/OurProduct/ourproduct(EducationLMS).webp";
 import chart5 from "../../images/OurProduct/ourproduct(crmManagement).webp";
 import chart6 from "../../images/OurProduct/ourproduct(SalaryManagement).webp";
 import chart7 from "../../images/OurProduct/AttendanceSystem.webp";
+import chart8 from "../../images/OurProduct/car.webp";
+import chart9 from "../../images/OurProduct/booking.webp";
+import chart10 from "../../images/OurProduct/school.webp";
+import chart11 from "../../images/OurProduct/ad.webp";
+
 
 import ProductHero from "./Productpart";
 import Breadcrumb from "../BreadCrumb";
@@ -97,6 +102,35 @@ const data = [
     title: "Biometric Attendance Tracker",
     desc: "Precision tracking for workplace attendance with biometric synchronization and automated reporting to optimize workforce management.",
     img: chart7,
+    align: "left",
+    link: "https://attendancesystem-more.netlify.app/",
+  },
+    {
+    title: "Car Care & Vehicle Management System",
+    // desc: "Comprehensive solution for managing car care services and vehicle maintenance, streamlining operations and enhancing customer satisfaction.",
+      desc:"A modern car management platform designed to handle vehicle maintenance, detailing services, and customer bookings efficiently.It helps users track car care activities, manage services, and ensure better vehicle performance and maintenance.",
+    img: chart8,
+    align: "right",
+    link: "https://nk-car-care-demo.netlify.app/",
+  },
+    {
+    title: "Ticket Booking Optimization System",
+    desc: "An intelligent ticket booking system designed to optimize seat allocation, pricing, and availability in real-time.It improves user experience by reducing booking time, minimizing conflicts, and maximizing overall efficiency of the reservation process.",
+    img: chart9,
+    align: "left",
+    link: "https://attendancesystem-more.netlify.app/",
+  },
+    {
+    title: "School and College Management System",
+    desc: "A centralized management system designed to handle student records, staff details, attendance, and academic activities efficiently.It streamlines administrative tasks and improves communication between students, teachers, and management.",
+    img: chart10,
+    align: "right",
+    link: "https://attendancesystem-more.netlify.app/",
+  },
+   {
+    title: "Advertisement Shoot Management System",
+    desc: "A smart platform to plan, organize, and manage advertisement shoots, including scheduling, crew coordination, and resource tracking.It streamlines production workflows, reduces delays, and ensures smooth execution of ad campaigns.",
+    img: chart11,
     align: "left",
     link: "https://attendancesystem-more.netlify.app/",
   },

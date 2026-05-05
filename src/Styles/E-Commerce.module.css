@@ -97,9 +97,9 @@
 
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 40px;
-  padding: 60px 0;
+  padding: 60px 160px;
   perspective: 1200px;
 }
 
@@ -140,15 +140,19 @@
 }
 
 .catName {
-  color: #fe851e;
-  font-size: 12px;
-  font-weight: 700;
+  color: #ff7700;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .topInfo h3 {
+  color: #ffffff;
   font-size: 24px;
-  margin-top: 10px;
+  margin-top: 320px;
   transition: color 0.3s ease;
+  font-weight: 700;
 }
 
 
@@ -163,7 +167,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000;
+  color: #000000;
   transform: scale(0) rotate(-45deg);
   transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
