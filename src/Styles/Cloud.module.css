@@ -186,11 +186,15 @@
 }
 
 .servicesSection {
-  padding: 80px 0;
+  padding: 120px 0; /* Increased padding */
   background-color: #000;
+}
+
+.servicesSection .container {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 160px; /* Added significant gap between rows */
+  max-width: 1400px; /* Increased width to match other services */
 }
 
 .serviceRow {

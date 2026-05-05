@@ -1,9 +1,6 @@
 import React from "react";
 import styles from "../../Styles/Ourservice.module.css";
 import butterfly from "../../images/butterfly.gif";
-import Slide from "../Slide";
-
-
 const services = [
   {
     id: "01",
@@ -68,7 +65,7 @@ const Ourservice = () => {
           </div>
         </div>
       </section>
-      <Slide />
+     
     </>
   );
 };

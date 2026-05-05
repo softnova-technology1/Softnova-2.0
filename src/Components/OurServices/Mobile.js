@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion"; 
 import styles from "../../Styles/Mobile.module.css";
-import Mobileapps1 from "../../images/Ourservices-images/Mobileapps1.webp";
-import Mobileapps2 from "../../images/Ourservices-images/Mobileapps2.webp";
-import Mobileapps3 from "../../images/Ourservices-images/Mobileapps3.webp";
-import Mobileapps4 from "../../images/Ourservices-images/Mobileapps4.webp";
-import Mobileapps5 from "../../images/Ourservices-images/Mobileapps5.webp";
+import Mobileapps1 from "../../images/Ourservices-images/booking.webp";
+import Mobileapps2 from "../../images/Ourservices-images/delivery.webp";
+import Mobileapps3 from "../../images/Ourservices-images/management.jpg";
+import Mobileapps4 from "../../images/Ourservices-images/ticket.webp";
+import Mobileapps5 from "../../images/Ourservices-images/ecommercee.webp";
 import mobile from "../../images/Ourservices-images/mobile.webp";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";

@@ -46,13 +46,6 @@ const ChatSupport = () => {
                   <Phone size={18} />
                   <span>WhatsApp Chat</span>
                 </a>
-                <a 
-                  href="mailto:support@softnovatech.com" 
-                  className="support-option email"
-                >
-                  <Mail size={18} />
-                  <span>Email Support</span>
-                </a>
               </div>
             </div>
 

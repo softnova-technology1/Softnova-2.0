@@ -11,7 +11,7 @@ import img7 from "../../images/Ourservices-images/banking.jpg";
 import img8 from "../../images/Ourservices-images/education.avif";
 import img9 from "../../images/Ourservices-images/event.jpg";
 import high from "../../images/Ourservices-images/startup.png";
-import front from "../../images/Ourservices-images/software.webp";
+import front from "../../images/Ourservices-images/web1.jpg";
 import Breadcrumb from "../BreadCrumb";
 
 import { Link } from "react-router-dom";
