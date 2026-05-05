@@ -1,16 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Web.module.css";
-import img1 from "../../images/Ourservices-images/WebDevelopment1.webp";
-import img2 from "../../images/Ourservices-images/WebDevelopment2.webp";
-import img3 from "../../images/Ourservices-images/WebDevelopment3.webp";
-import img4 from "../../images/Ourservices-images/WebDevelopment4.webp";
-import img5 from "../../images/Ourservices-images/WebDevelopment5.webp";
-import img6 from "../../images/Ourservices-images/WebDevelopment6.webp";
-import img7 from "../../images/Ourservices-images/WebDevelopment7.webp";
-import img8 from "../../images/Ourservices-images/WebDevelopment8.webp";
-import img9 from "../../images/Ourservices-images/WebDevelopment9.webp";
-import high from "../../images/Ourservices-images/WebDevelopment.webp";
+import img1 from "../../images/Ourservices-images/agency.png";
+import img2 from "../../images/Ourservices-images/brand.avif";
+import img3 from "../../images/Ourservices-images/bussines.webp";
+import img4 from "../../images/Ourservices-images/landing.jpg";
+import img5 from "../../images/Ourservices-images/consult.png";
+import img6 from "../../images/Ourservices-images/corparate.avif";
+import img7 from "../../images/Ourservices-images/banking.jpg";
+import img8 from "../../images/Ourservices-images/education.avif";
+import img9 from "../../images/Ourservices-images/event.jpg";
+import high from "../../images/Ourservices-images/startup.png";
+import front from "../../images/Ourservices-images/software.webp";
 import Breadcrumb from "../BreadCrumb";
 
 import { Link } from "react-router-dom";
@@ -48,7 +49,7 @@ const projects = [
   { title: "Banking Website", img: img7 },
   { title: "Educational Website", img: img8 },
   { title: "Event Website", img: img9 },
-  { title: "StartUp Website", img: img1 }
+  { title: "StartUp Website", img: high }
 ];
 
 const WebDevelopment = () => {
@@ -95,7 +96,7 @@ const WebDevelopment = () => {
               viewport={{ once: false }}
               transition={{ duration: 0.8 }}
             >
-              <img loading="lazy" src={high} alt="Web Development" />
+              <img loading="lazy" src={front} alt="Web Development" />
             </motion.div>
           </div>
         </div>
