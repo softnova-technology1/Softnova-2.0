@@ -12,6 +12,7 @@ import {
   FaMobileAlt,
   FaProjectDiagram,
   FaCloud,
+  FaPhotoVideo,
 } from "react-icons/fa";
 
 import {
@@ -71,6 +72,11 @@ const roleData = {
     { title: "Motion Designer", icon: <MdOutlineMotionPhotosAuto /> },
     { title: "Graphic Designer", icon: <FaPenNib /> },
   ],
+  Editing: [
+    { title: "Video Editing", icon: <FaPhotoVideo /> },
+    { title: "Logo Editing", icon: <FaPhotoVideo /> },
+    { title: "Photo Editing", icon: <FaPhotoVideo /> },
+  ]
 };
 const container = {
   hidden: { opacity: 0 },
@@ -127,9 +133,8 @@ const Careers = () => {
           {Object.keys(roleData).map((tab) => (
             <button
               key={tab}
-              className={`${styles.tabBtn} ${
-                activeTab === tab ? styles.active : ""
-              }`}
+              className={`${styles.tabBtn} ${activeTab === tab ? styles.active : ""
+                }`}
               onClick={() => setActiveTab(tab)}
             >
               {tab}
