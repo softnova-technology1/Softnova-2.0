@@ -13,12 +13,47 @@ import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 
 const projects = [
-  { title: "ERP System", image: software1, category: "Enterprise", desc: "Complete resource planning solution." },
-  { title: "Custom CRM", image: software2, category: "Business", desc: "Customer relationship management." },
-  { title: "Inventory Manager", image: software3, category: "Logistics", desc: "Real-time stock tracking." },
-  { title: "School Management", image: software4, category: "Education", desc: "Digital campus administration." },
-  { title: "Hospital Portal", image: software5, category: "Healthcare", desc: "Patient and staff management." },
-  { title: "Fintech App", image: software6, category: "Finance", desc: "Secure banking and payments." },
+  {
+    title: "ERP System",
+    image: software1,
+    category: "Enterprise",
+    desc: "A next-generation Enterprise Resource Planning system built to unify and automate every critical business operation within a single intelligent platform. From finance and procurement to human resources, inventory, and project management, the solution delivers complete operational visibility and process optimization. The platform features real-time reporting dashboards, workflow automation, centralized data management, and role-based access controls to improve productivity and decision-making. Designed with scalable cloud architecture and seamless third-party integrations, the ERP system helps enterprises reduce operational complexity, improve collaboration across departments, and accelerate business growth with data-driven insights."
+  },
+
+  {
+    title: "Custom CRM",
+    image: software2,
+    category: "Business",
+    desc: "A fully customized Customer Relationship Management platform engineered to strengthen customer engagement, improve sales efficiency, and streamline communication workflows. The system enables businesses to manage leads, automate follow-ups, track customer interactions, monitor sales pipelines, and generate advanced performance reports from a unified dashboard. Intelligent automation tools reduce manual tasks while improving response times and customer satisfaction. Built with a modern and intuitive interface, the CRM empowers teams to build long-term customer relationships, increase conversion rates, and drive sustainable business growth through personalized engagement strategies."
+  },
+
+  {
+    title: "Inventory Manager",
+    image: software3,
+    category: "Logistics",
+    desc: "A smart inventory and warehouse management solution designed to provide accurate real-time stock monitoring and seamless supply chain coordination. The platform supports barcode scanning, inventory forecasting, supplier management, automated stock alerts, purchase order tracking, and multi-location warehouse management. Advanced analytics and reporting tools help businesses optimize stock levels, minimize losses, and improve operational efficiency. Built with a responsive and scalable architecture, the system simplifies inventory control processes while ensuring faster order fulfillment and improved logistics performance across complex business environments."
+  },
+
+  {
+    title: "School Management",
+    image: software4,
+    category: "Education",
+    desc: "A comprehensive digital school management ecosystem developed to modernize academic administration and enhance communication between students, teachers, parents, and administrators. The platform includes modules for attendance tracking, student records management, online examinations, fee collection, timetable scheduling, assignment sharing, and performance analytics. Integrated communication tools enable real-time notifications and seamless collaboration within the institution. Designed with a secure and user-friendly interface, the system simplifies daily operations, improves academic transparency, and creates a more connected and efficient educational environment."
+  },
+
+  {
+    title: "Hospital Portal",
+    image: software5,
+    category: "Healthcare",
+    desc: "A secure and intelligent healthcare management portal developed to streamline hospital operations and improve patient care experiences. The platform enables efficient appointment scheduling, electronic medical record management, doctor-patient communication, staff coordination, billing automation, and pharmacy integration within a centralized system. Advanced security protocols ensure sensitive medical data remains protected while real-time monitoring tools help healthcare providers deliver faster and more accurate services. Designed to enhance operational efficiency and healthcare accessibility, the portal creates a seamless digital ecosystem for hospitals, clinics, and medical institutions."
+  },
+
+  {
+    title: "Fintech App",
+    image: software6,
+    category: "Finance",
+    desc: "A modern fintech application built to deliver secure, scalable, and user-centric digital financial services across mobile and web platforms. The application supports digital banking, instant fund transfers, smart expense tracking, payment gateway integration, e-wallet functionality, investment monitoring, and real-time transaction analytics. Advanced encryption technologies, fraud detection systems, and multi-layer authentication ensure maximum security for every transaction. Designed with high-performance architecture and intuitive user experiences, the fintech platform empowers users and businesses to manage finances efficiently while enabling fast, reliable, and secure digital payment ecosystems."
+  },
 ];
 
 const fadeInUp = {
@@ -155,10 +190,7 @@ const SoftwareDevelopment = () => {
                   <span className={styles.tag}>{selectedProject.category}</span>
                   <h2>{selectedProject.title}</h2>
                   <p>{selectedProject.desc}</p>
-                  <p className={styles.detailedInfo}>
-                    This project focuses on delivering high-performance results using
-                    modern technology stacks and scalable architecture.
-                  </p>
+                
                 </div>
               </div>
             </motion.div>

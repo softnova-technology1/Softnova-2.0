@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion"; 
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "../../Styles/Mobile.module.css";
 import Mobileapps1 from "../../images/Ourservices-images/booking.webp";
 import Mobileapps2 from "../../images/Ourservices-images/delivery.webp";
@@ -15,31 +15,36 @@ const projects = [
     id: 1,
     img: Mobileapps1,
     title: "Booking App",
-    desc: "A seamless shopping experience with intuitive UI and secure payment integration for effortless online retail."
+    desc: "A seamless booking experience with intuitive design, secure payment integration, and real-time availability tracking for hassle-free reservations.",
+    details: "A complete booking platform designed to provide users with a smooth and hassle-free reservation experience. Our solutions include real-time availability tracking, secure payment gateway integration, and user-friendly navigation. Customers can easily book services, manage schedules, and receive instant confirmations. The platform is optimized for both mobile and web applications to ensure accessibility across devices. Advanced analytics and management tools help businesses monitor bookings efficiently. Built with modern UI/UX principles to deliver speed, convenience, and reliability."
   },
   {
     id: 2,
     img: Mobileapps2,
     title: "Delivery App",
-    desc: "Real-time order tracking and optimized routing to ensure lightning-fast deliveries and customer satisfaction."
+    desc: "Fast and reliable delivery solutions with live order tracking, smart route optimization, and smooth customer experience management.",
+    details: "A smart delivery management solution built to simplify and speed up the entire delivery process. The application supports live order tracking, instant notifications, and route optimization for efficient operations. Customers can place orders seamlessly while businesses can manage deliveries in real time. Integrated payment systems and automated updates improve customer satisfaction and engagement. The platform is scalable for food delivery, courier services, and e-commerce logistics. Designed with performance-focused architecture and an intuitive user experience."
   },
   {
     id: 3,
     img: Mobileapps3,
     title: "Management App",
-    desc: "Streamline your workflow with powerful task organization, team collaboration tools, and insightful analytics."
+    desc: "Efficient management systems designed to streamline workflows, organize tasks, improve collaboration, and deliver insightful analytics.",
+    details: "An all-in-one management platform created to streamline business workflows and team operations. The system includes task management, project tracking, employee coordination, and reporting tools. Businesses can monitor progress, manage resources, and improve productivity from a centralized dashboard. Real-time analytics and smart insights help organizations make informed decisions quickly. The application supports secure access control and smooth collaboration between departments. Built with scalable technology and modern interfaces for efficient day-to-day management."
   },
   {
     id: 4,
     img: Mobileapps4,
     title: "Ticket Booking App",
-    desc: "Hassle-free reservation system for movies, events, and travel with instant confirmation and digital passes."
+    desc: "Smart ticket booking platforms for travel, events, and entertainment with instant confirmation, digital passes, and secure transactions.",
+    details: "A modern ticket booking application developed for travel, entertainment, and event reservations. Users can search, compare, and book tickets instantly with secure payment integration. The platform offers digital ticket generation, booking history, and real-time seat availability updates. Advanced filtering and quick checkout features ensure a seamless booking experience. Businesses can manage schedules, pricing, and customer data efficiently through admin tools. Designed to deliver convenience, speed, and reliability across mobile and web platforms."
   },
   {
     id: 5,
     img: Mobileapps5,
     title: "E-Commerce",
-    desc: "A comprehensive digital storefront featuring smart product filtering, personalized wishlists, and robust checkout."
+    desc: "Modern e-commerce solutions with responsive design, advanced product management, personalized shopping experiences, and secure checkout systems.",
+    details: "A scalable e-commerce platform crafted to deliver powerful online shopping experiences. The system supports advanced product management, secure checkout, and personalized customer journeys. Features include smart search, wishlist functionality, order tracking, and multiple payment integrations. Businesses can manage inventory, promotions, and customer engagement through an intuitive dashboard. The platform is optimized for performance, responsiveness, and seamless multi-device accessibility. Built with modern technologies to support business growth and high-volume online sales."
   },
 ];
 
@@ -194,8 +199,7 @@ const MobileAppSection = () => {
                     <h2>{selectedProject.title}</h2>
                     <p>{selectedProject.desc}</p>
                     <div className={styles.canvasDetails}>
-                      <p><strong>Project ID:</strong> {selectedProject.id}</p>
-                      <p>Custom details for the mobile application can be added here.</p>
+                      <p><strong>Project Overview:</strong> {selectedProject.details}</p>
                     </div>
                   </>
                 )}

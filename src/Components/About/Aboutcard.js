@@ -31,139 +31,145 @@ const tabs = ["Who we are", "Why choose", "What we do", "Who we work with"];
 const data = {
   "Who we are": [
     {
-      title: "Innovative Thinkers",
+      title: "Visionary Innovators",
       img: img1,
-      desc: "We push boundaries to build smart, scalable solutions.",
+      desc: "We challenge limits and craft intelligent, scalable digital solutions that shape the future.",
     },
     {
-      title: "Problem Solvers",
+      title: "Solution Architects",
       img: img2,
-      desc: "We convert complex challenges into simple answers.",
+      desc: "We transform complex business problems into simple, efficient, and effective digital answers.",
     },
     {
-      title: "Collaborative Spirit",
+      title: "Team Collaboration",
       img: img3,
-      desc: "Teamwork is our strongest weapon.",
+      desc: "We believe strong teamwork drives stronger innovation and successful outcomes.",
     },
     {
-      title: "Driven by Excellence",
+      title: "Excellence Driven",
       img: img4,
-      desc: "Quality and perfection guide our work.",
+      desc: "We maintain high standards in every project with a commitment to quality and precision.",
     },
     {
-      title: "Passionate Learners",
+      title: "Continuous Learners",
       img: img5,
-      desc: "We evolve with continuous learning.",
+      desc: "We constantly evolve by learning new technologies and adapting to industry trends.",
     },
     {
-      title: "Empowered Innovators",
+      title: "Creative Innovators",
       img: img6,
-      desc: "Ideas are empowered to make impact.",
+      desc: "We turn ideas into impactful digital experiences that create real value.",
     },
   ],
 
   "Why choose": [
     {
-      title: "Trusted Partner",
+      title: "Reliable Technology Partner",
       img: img7,
-      desc: "We build long-term trusted relationships.",
+      desc: "We build long-term partnerships based on trust, transparency, and consistent performance.",
     },
     {
-      title: "Client First",
+      title: "Client-Centric Approach",
       img: img8,
-      desc: "Client success is our priority.",
+      desc: "Every solution is designed with a strong focus on client goals and business success.",
     },
     {
-      title: "Agile Team",
+      title: "Agile Development Team",
       img: img9,
-      desc: "Fast, flexible, and future-ready.",
+      desc: "We deliver fast, flexible, and adaptive solutions to meet evolving business needs.",
     },
     {
-      title: "Quality Focus",
+      title: "Uncompromised Quality",
       img: img10,
-      desc: "Quality without compromise.",
+      desc: "We ensure every deliverable meets the highest standards of performance and reliability.",
     },
     {
-      title: "Innovation Driven",
+      title: "Innovation First Mindset",
       img: img11,
-      desc: "Innovation powers every solution.",
+      desc: "We embrace innovation to build modern, future-ready digital solutions.",
     },
     {
-      title: "Proven Results",
+      title: "Proven Performance",
       img: img12,
-      desc: "Results that speak for themselves.",
+      desc: "Our track record demonstrates consistent success and measurable business impact.",
     },
   ],
 
   "What we do": [
     {
-      title: "Web Development",
+      title: "Web Application Development",
       img: img13,
-      desc: "Modern & scalable web apps.",
+      desc: "We build responsive, scalable, and high-performance web applications tailored to business needs.",
     },
     {
-      title: "UI / UX Design",
+      title: "UI/UX Experience Design",
       img: img14,
-      desc: "User-focused digital experiences.",
+      desc: "We design intuitive and engaging user experiences that enhance customer satisfaction.",
     },
     {
-      title: "Mobile Apps",
+      title: "Mobile App Development",
       img: img15,
-      desc: "High-performance mobile solutions.",
+      desc: "We create fast, secure, and feature-rich mobile applications for all platforms.",
     },
     {
-      title: "Cloud Services",
+      title: "Cloud Solutions",
       img: img16,
-      desc: "Secure & scalable cloud systems.",
+      desc: "We deliver secure, scalable, and efficient cloud infrastructure for modern businesses.",
     },
     {
-      title: "Digital Strategy",
+      title: "Digital Strategy Consulting",
       img: img17,
-      desc: "Growth-oriented strategies.",
+      desc: "We help businesses grow with data-driven digital transformation strategies.",
     },
     {
-      title: "Maintenance",
+      title: "Maintenance & Support",
       img: img18,
-      desc: "Reliable long-term support.",
+      desc: "We provide reliable ongoing support to ensure smooth system performance and uptime.",
     },
   ],
 
   "Who we work with": [
     {
-      title: "Startups",
+      title: "Emerging Startups",
       img: img19,
-      desc: "Helping startups scale faster.",
+      desc: "We help startups scale quickly with innovative and cost-effective digital solutions.",
     },
     {
-      title: "Enterprises",
+      title: "Enterprise Businesses",
       img: img20,
-      desc: "Enterprise-grade solutions.",
+      desc: "We deliver robust enterprise-grade systems built for scale and security.",
     },
     {
-      title: "Agencies",
+      title: "Creative Agencies",
       img: img21,
-      desc: "Strong agency partnerships.",
+      desc: "We collaborate with agencies to deliver impactful digital experiences.",
     },
     {
-      title: "Product Teams",
+      title: "Product Development Teams",
       img: img22,
-      desc: "Building scalable products.",
+      desc: "We support teams in building scalable, user-focused digital products.",
     },
     {
-      title: "Innovators",
+      title: "Innovation Leaders",
       img: img23,
-      desc: "Supporting innovation worldwide.",
+      desc: "We work with innovators who are shaping the future of technology.",
     },
     {
-      title: "Global Clients",
+      title: "Global Enterprises",
       img: img24,
-      desc: "Working across industries.",
+      desc: "We serve clients worldwide across diverse industries and markets.",
     },
   ],
 };
 
 const AboutPage = () => {
   const [activeTab, setActiveTab] = useState("Who we are");
+  const [clickedCard, setClickedCard] = useState(null);
+
+  const handleCardClick = (e, title) => {
+    e.stopPropagation();
+    setClickedCard((prev) => (prev === title ? null : title));
+  };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50, scale: 0.95 },
@@ -215,7 +221,17 @@ const AboutPage = () => {
               exit="exit"
               transition={{ delay: i * 0.1 }}
             >
-              <article className={styles.card}>
+              <article
+                className={`${styles.card} ${clickedCard === item.title ? styles.clicked : ""}`}
+                onClick={() => handleCardClick(item.title)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    handleCardClick(item.title);
+                  }
+                }}
+              >
                 <header className={styles.cardThumb}>
                   <img loading="lazy" src={item.img} alt={item.title} />
                 </header>

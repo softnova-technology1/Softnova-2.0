@@ -296,7 +296,11 @@
   margin: 10px 0;
   color: #1a1a1a;
 }
-
+.modalText p {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #1a1a1a;
+}
 .detailedInfo {
   margin-top: 15px;
   color: #666;

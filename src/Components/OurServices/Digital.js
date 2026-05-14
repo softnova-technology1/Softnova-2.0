@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const services = [
   { img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f", title: "SEO Optimization" },
   { img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7", title: "Social Media Marketing" },
-  { img: "https://images.unsplash.com/photo-1556155092-8707de31f9c4", title: "Pay Per Click" },
+  { img: "https://images.unsplash.com/photo-1556155092-8707de31f9c4", title: "what's App Marketing" },
   { img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d", title: "Content Marketing" },
   { img: "https://images.unsplash.com/photo-1521791136064-7986c2920216", title: "Email Marketing" },
 ];

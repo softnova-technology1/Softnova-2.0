@@ -11,10 +11,37 @@ import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 
 const projects = [
-  { id: 1, title: "E-Commerce Website", image: ecommerce2, category: "Web Solution", desc: "A robust online store with advanced filtering and seamless checkout." },
-  { id: 2, title: "Mobile Shopping App", image: ecommerce3, category: "Mobile App", desc: "Fast and responsive mobile application for on-the-go shopping." },
-  { id: 3, title: "B2B Marketplace", image: ecommerce4, category: "Enterprise", desc: "Scalable platform for business-to-business transactions and bulk orders." },
-  { id: 4, title: "Custom Dashboard", image: ecommerce5, category: "Analytics", desc: "Insightful data visualization tools for managing e-commerce performance." },
+  {
+    id: 1,
+    title: "E-Commerce Website",
+    image: ecommerce2,
+    category: "Web Solution",
+    desc: "A scalable and feature-rich e-commerce platform designed to deliver seamless online shopping experiences. The website includes advanced product filtering, secure payment gateway integration, responsive UI design, and smooth checkout functionality. Built to support high performance and user engagement, it enables businesses to manage products, orders, inventory, and customer interactions efficiently across all devices."
+  },
+
+  {
+    id: 2,
+    title: "Mobile Shopping App",
+    image: ecommerce3,
+    category: "Mobile App",
+    desc: "A fast, modern, and user-friendly mobile shopping application built for seamless purchasing on the go. The app features real-time product browsing, personalized recommendations, secure mobile payments, push notifications, and order tracking capabilities. Optimized for both Android and iOS platforms, it delivers a smooth shopping experience with intuitive navigation and high-speed performance."
+  },
+
+  {
+    id: 3,
+    title: "B2B Marketplace",
+    image: ecommerce4,
+    category: "Enterprise",
+    desc: "A powerful B2B marketplace platform developed to simplify large-scale business transactions and supplier management. The system supports bulk ordering, quotation management, secure vendor communication, inventory handling, and enterprise-level scalability. Designed for manufacturers, wholesalers, and distributors, the platform enhances operational efficiency while streamlining procurement workflows."
+  },
+
+  {
+    id: 4,
+    title: "Custom Dashboard",
+    image: ecommerce5,
+    category: "Analytics",
+    desc: "An advanced analytics dashboard created to help businesses monitor and optimize e-commerce performance through real-time insights. The dashboard includes sales tracking, customer behavior analysis, inventory reports, revenue visualization, and KPI monitoring tools. Built with interactive charts and intuitive UI components, it enables data-driven decision-making and efficient business management."
+  },
 ];
 
 const cardVariants = {
@@ -189,10 +216,6 @@ const ECommerce = () => {
                         <strong>Service:</strong> <span>Enterprise Solution</span>
                       </div>
                     </div>
-
-                    <button className={styles.canvasCta}>
-                      View Live Project
-                    </button>
                   </motion.div>
                 )}
               </div>
