@@ -4,24 +4,19 @@ import award from "../../images/award.webp";
 import award2 from "../../images/award2.webp";
 
 import pic1 from "../../images/cel-1.webp";
-import pic2 from "../../images/cel-2.webp";
 import pic3 from "../../images/cel-3.webp";
 import pic4 from "../../images/cel-4.webp";
-import pic5 from "../../images/cel-5.webp";
 import pic6 from "../../images/cel-6.webp";
-import pic7 from "../../images/cel-7.webp";
 import pic8 from "../../images/cel-8.webp";
-import pic9 from "../../images/cel-9.webp";
 import pic11 from "../../images/cel-11.jpg";
-import pic12 from "../../images/cel-12.webp";
-import pic13 from "../../images/cel-13.webp";
-import pic14 from "../../images/cel-14.webp";
-import pic15 from "../../images/cel-15.webp";
-import pic16 from "../../images/cel-16.webp";
 import pic17 from "../../images/cel-17.webp";
-import pic18 from "../../images/cel-18.webp";
 import pic19 from "../../images/cel-19.webp";
 import pic20 from "../../images/cel-20.webp";
+import g4 from "../../images/g4.jpeg";
+import g3 from "../../images/g3.jpeg";
+import g1 from "../../images/g1.jpeg";
+import g6 from "../../images/g6.jpeg";
+
 
 
 import skill1 from "../../images/skill1.webp";
@@ -65,25 +60,18 @@ const tabsData = {
       intern4,
       intern5,
       pic1,
-      pic18,
       pic19,
       pic20,
-      pic14,
-      pic9,
       pic6,
-      pic2,
-      pic7,
       pic8,
       pic3,
       pic4,
-      pic5,
-      pic13,
       pic11,
-      pic12,
-      pic15,
-      pic16,
       pic17,
-
+      g4,
+      g3,
+      // g1,
+      g6,
     ],
 
   },
@@ -98,24 +86,18 @@ const tabsData = {
     desc: "Moments of joy, success, and togetherness",
     images: [
       pic1,
-      pic18,
       pic19,
       pic20,
-      pic14,
-      pic9,
       pic6,
-      pic2,
-      pic7,
       pic8,
       pic3,
       pic4,
-      pic5,
-      pic13,
       pic11,
-      pic12,
-      pic15,
-      pic16,
       pic17,
+      // g1,
+      g4,
+      g3,
+      g6,
     ],
   },
   skills: {
