@@ -12,7 +12,6 @@ import {
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 import CareerHero from "./Otherpart";
-
 const services = [
   {
     id: "01",

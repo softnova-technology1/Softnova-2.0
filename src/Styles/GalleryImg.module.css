@@ -85,6 +85,7 @@
 
   background: linear-gradient(90deg, #ffffff, #fe851e);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 
   text-shadow:
@@ -189,6 +190,7 @@
 
   background: linear-gradient(90deg, #ffffff, #fe851e);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 
   text-shadow:

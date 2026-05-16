@@ -19,105 +19,169 @@ export default function FeaturesCard() {
   );
   return (
     <section className={styles.wrapper}>
-      <h1>Ready for a challenge?</h1>
+      <h1>Build Your Future With Softnova Tech</h1>
+
       <p>
-        If you're passionate about tackling complex problems like we are at
-        Softnova Tech, and you're eager to make a real impact, visit our careers
-        page. We can't promise it’ll be a smooth ride, but it’ll certainly be an
-        exciting adventure!
+        Join a passionate team that thrives on innovation, creativity, and solving
+        real-world challenges. At Softnova Tech, we provide an environment where
+        talented individuals can grow, collaborate, and make a meaningful impact in
+        the tech industry.
       </p>
+
       <div className={styles.cardWrapper}>
-        
+
+        {/* Card 1 */}
         <div className={styles.card}>
           <div className={styles.cardContent}>
-            <p className={styles.cardTitle}>Why Work With Us?</p>
+
+            <p className={styles.cardTitle}>Career Growth</p>
+
             <p className={styles.smallDesc}>
-             Growth Opportunities : We invest in your professional development through continuous learning, skill-building, and clear career advancement paths.
-             
+              We support your professional journey through continuous learning,
+              mentorship programs, skill enhancement, and opportunities for career
+              advancement in a fast-growing tech environment.
             </p>
-           
-            <a className={styles.stara} href="/career"><button className={styles.starButton}>
-              Read More
-              <span className={styles.star1}>
-                <StarSvg />
-              </span>
-              <span className={styles.star2}>
-                <StarSvg />
-              </span>
-              <span className={styles.star3}>
-                <StarSvg />
-              </span>
-              <span className={styles.star4}>
-                <StarSvg />
-              </span>
-              <span className={styles.star5}>
-                <StarSvg />
-              </span>
-              <span className={styles.star6}>
-                <StarSvg />
-              </span>
-            </button></a>
-           
+
+            <a className={styles.stara} href="/career">
+              <button className={styles.starButton}>
+                Read More
+
+                <span className={styles.star1}>
+                  <StarSvg />
+                </span>
+
+                <span className={styles.star2}>
+                  <StarSvg />
+                </span>
+
+                <span className={styles.star3}>
+                  <StarSvg />
+                </span>
+
+                <span className={styles.star4}>
+                  <StarSvg />
+                </span>
+
+                <span className={styles.star5}>
+                  <StarSvg />
+                </span>
+
+                <span className={styles.star6}>
+                  <StarSvg />
+                </span>
+
+              </button>
+            </a>
+
           </div>
+
           <div className={styles.goCorner}>
             <div className={styles.goArrow}>→</div>
           </div>
         </div>
 
-        
+
+        {/* Card 2 */}
         <div className={styles.card}>
           <div className={styles.cardContent}>
-            <p className={styles.cardTitle}>How to Get Started</p>
+
+            <p className={styles.cardTitle}>Collaborative Environment</p>
+
             <p className={styles.smallDesc}>
-              How to Get Started : Submit your updated resume along with a cover letter through the provided application link or email address
+              Work alongside creative thinkers and talented professionals in a
+              supportive workplace that values teamwork, innovation, and fresh ideas
+              to build exceptional digital solutions.
             </p>
-           <a className={styles.stara} href="/career"> <button className={styles.starButton}>
-              Read More
-              <span className={styles.star1}>
-                <StarSvg />
-              </span>
-              <span className={styles.star2}>
-                <StarSvg />
-              </span>
-              <span className={styles.star3}>
-                <StarSvg />
-              </span>
-              <span className={styles.star4}>
-                <StarSvg />
-              </span>
-              <span className={styles.star5}>
-                <StarSvg />
-              </span>
-              <span className={styles.star6}>
-                <StarSvg />
-              </span>
-            </button></a>
+
+            <a className={styles.stara} href="/career">
+              <button className={styles.starButton}>
+                Read More
+
+                <span className={styles.star1}>
+                  <StarSvg />
+                </span>
+
+                <span className={styles.star2}>
+                  <StarSvg />
+                </span>
+
+                <span className={styles.star3}>
+                  <StarSvg />
+                </span>
+
+                <span className={styles.star4}>
+                  <StarSvg />
+                </span>
+
+                <span className={styles.star5}>
+                  <StarSvg />
+                </span>
+
+                <span className={styles.star6}>
+                  <StarSvg />
+                </span>
+
+              </button>
+            </a>
+
           </div>
+
           <div className={styles.goCorner}>
             <div className={styles.goArrow}>→</div>
           </div>
         </div>
-         <div className={styles.card}>
+
+
+        {/* Card 3 */}
+        <div className={styles.card}>
           <div className={styles.cardContent}>
-            <p className={styles.cardTitle}>How to Get Started</p>
+
+            <p className={styles.cardTitle}>Join Our Team</p>
+
             <p className={styles.smallDesc}>
-              Send your updated resume along with a cover letter to the
-              specified application link or email address.
+              Ready to start your journey with us? Submit your updated resume and
+              portfolio through our careers page and explore exciting opportunities
+              to shape the future with Softnova Tech.
             </p>
-            <a className={styles.stara} href="/career"><button className={styles.starButton}>
-             Read More
-              <span className={styles.star1}><StarSvg /></span>
-              <span className={styles.star2}><StarSvg /></span>
-              <span className={styles.star3}><StarSvg /></span>
-              <span className={styles.star4}><StarSvg /></span>
-              <span className={styles.star5}><StarSvg /></span>
-              <span className={styles.star6}><StarSvg /></span>
-            </button></a>
+
+            <a className={styles.stara} href="/career">
+              <button className={styles.starButton}>
+                Read More
+
+                <span className={styles.star1}>
+                  <StarSvg />
+                </span>
+
+                <span className={styles.star2}>
+                  <StarSvg />
+                </span>
+
+                <span className={styles.star3}>
+                  <StarSvg />
+                </span>
+
+                <span className={styles.star4}>
+                  <StarSvg />
+                </span>
+
+                <span className={styles.star5}>
+                  <StarSvg />
+                </span>
+
+                <span className={styles.star6}>
+                  <StarSvg />
+                </span>
+
+              </button>
+            </a>
+
           </div>
+
           <div className={styles.goCorner}>
             <div className={styles.goArrow}>→</div>
           </div>
         </div>
+
       </div>
     </section>
   );

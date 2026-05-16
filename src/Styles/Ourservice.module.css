@@ -12,6 +12,7 @@
   margin-bottom: 80px;
   background: linear-gradient(120deg, #ffffff, #fe851e);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Playfair Display", serif;
 
@@ -74,6 +75,7 @@
 .box h4 {
   background: linear-gradient(90deg, #868686, #f5a55f);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 
   text-shadow:

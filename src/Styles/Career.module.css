@@ -32,6 +32,7 @@
   letter-spacing: 6px;
   background: linear-gradient(90deg, #fe851e, #fff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Playfair Display", serif;
 }

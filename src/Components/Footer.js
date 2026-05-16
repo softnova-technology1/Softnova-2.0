@@ -137,7 +137,7 @@ const Footer = () => {
               <FaFacebookF />
             </a>
             <a
-              href="https://www.linkedin.com/company/softnovatechnology/"
+              href="https://www.linkedin.com/company/softnovatech/"
               target="_blank"
               rel="noreferrer"
             >

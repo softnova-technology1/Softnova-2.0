@@ -118,21 +118,21 @@ const data = [
     desc: "An intelligent ticket booking system designed to optimize seat allocation, pricing, and availability in real-time.It improves user experience by reducing booking time, minimizing conflicts, and maximizing overall efficiency of the reservation process.",
     img: chart9,
     align: "left",
-    link: "https://attendancesystem-more.netlify.app/",
+    link: "https://ticket-flow-app.netlify.app/",
   },
     {
     title: "School and College Management System",
     desc: "A centralized management system designed to handle student records, staff details, attendance, and academic activities efficiently.It streamlines administrative tasks and improves communication between students, teachers, and management.",
     img: chart10,
     align: "right",
-    link: "https://attendancesystem-more.netlify.app/",
+    link: "https://zingy-smakager-2aaeee.netlify.app/",
   },
    {
     title: "Advertisement Shoot Management System",
     desc: "A smart platform to plan, organize, and manage advertisement shoots, including scheduling, crew coordination, and resource tracking.It streamlines production workflows, reduces delays, and ensures smooth execution of ad campaigns.",
     img: chart11,
     align: "left",
-    link: "https://attendancesystem-more.netlify.app/",
+    link: "https://advertisment-1707.netlify.app/",
   },
 ];
 
