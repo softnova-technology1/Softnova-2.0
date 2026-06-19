@@ -92,7 +92,7 @@ const Stats = () => {
         className={styles.wrapper}
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8 }}
       >
         <h1 className={styles.mainTitle}>
@@ -121,7 +121,7 @@ const Stats = () => {
               className={`${styles.node} ${styles[step.pos]}`}
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: i * 0.1 }}
             >
               <div className={styles.nodeCard}>
@@ -137,7 +137,7 @@ const Stats = () => {
         className={styles.statsSection}
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8 }}
       >
         <h2 className={styles.heading}>
@@ -151,7 +151,7 @@ const Stats = () => {
               className={styles.statItem}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ delay: i * 0.2 }}
             >
               <div className={styles.icon}>{item.icon}</div>
@@ -171,7 +171,7 @@ const Stats = () => {
           className={styles.productSection}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
           <div className={styles.content}>
@@ -189,7 +189,7 @@ const Stats = () => {
               className={styles.starButton}
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
               Connect With Us
@@ -199,7 +199,7 @@ const Stats = () => {
                   className={styles[`star${i + 1}`]}
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.15 }}
                 >
                   <StarSvg />
@@ -215,7 +215,7 @@ const Stats = () => {
                 className={styles.frameCard}
                 initial={{ opacity: 0, y: 50, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{ delay: i * 0.2 }}
               >
                 <img loading="lazy" src={img} alt={`service ${i + 1}`} />

@@ -81,7 +81,7 @@ const ECommerce = () => {
               className={styles.content}
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
               <span className={styles.tag}>E-Commerce Solutions</span>
@@ -110,7 +110,7 @@ const ECommerce = () => {
               className={styles.cardContainer}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 1 }}
             >
               <div className={styles.imageWrapper}>
@@ -126,7 +126,7 @@ const ECommerce = () => {
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               className={styles.heading}
             >
               Case Studies
@@ -141,7 +141,7 @@ const ECommerce = () => {
                 variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.2 }}
               >
                 <div className={styles.imageBox}>
                   <img loading="lazy" src={item.image} alt={item.title} />

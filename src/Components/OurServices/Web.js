@@ -64,7 +64,7 @@ const WebDevelopment = () => {
               className={styles.textSection}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               variants={fadeInUp}
             >
               <div className={styles.headerContainer}>
@@ -93,7 +93,7 @@ const WebDevelopment = () => {
               className={styles.visualSection}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
               <img loading="lazy" src={front} alt="Web Development" />
@@ -108,7 +108,7 @@ const WebDevelopment = () => {
               className={styles.step}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               variants={fadeInUp}
               transition={{ delay: i * 0.1 }}
             >
@@ -126,7 +126,7 @@ const WebDevelopment = () => {
               className={styles.projectItem}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
               variants={index % 2 === 0 ? slideInLeft : slideInRight}
             >
               <div className={styles.imgWrapper}>

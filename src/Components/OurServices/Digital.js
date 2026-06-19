@@ -25,7 +25,7 @@ const DigitalMarketing = () => {
                 className={styles.textBox}
                 initial={{ opacity: 0, x: -60 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <span className={styles.tag}>
@@ -56,7 +56,7 @@ const DigitalMarketing = () => {
                 className={styles.imageWrapper}
                 initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
                 whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1, type: "spring", bounce: 0.4 }}
               >
                 <img loading="lazy" src={img1} alt="Digital" className={styles.rotateImg} />
@@ -71,7 +71,7 @@ const DigitalMarketing = () => {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className={styles.marqueeHeading}
           >

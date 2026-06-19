@@ -59,7 +59,7 @@ const Workflow = () => {
             className={styles.header}
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
             <h1 className={styles.heroTitle}>Workflow <span>Evolved</span></h1>
@@ -71,7 +71,7 @@ const Workflow = () => {
                   className={styles.fill}
                   initial={{ width: "0%" }}
                   whileInView={{ width: `${activeProgress}%` }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   transition={{ duration: 1, ease: "easeInOut" }}
                 ></motion.div>
               </div>
@@ -88,7 +88,7 @@ const Workflow = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             {phases.map((p) => (
               <motion.div

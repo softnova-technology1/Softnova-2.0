@@ -57,7 +57,7 @@ const GraphicDesign = () => {
               className={styles.textBox}
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
               <span className={styles.tag}>
@@ -90,7 +90,7 @@ const GraphicDesign = () => {
               className={styles.visualBox}
               initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
               whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 1, type: "spring" }}
             >
               <img loading="lazy" src={desktop} alt="Desktop" className={styles.desktop} />
@@ -104,7 +104,7 @@ const GraphicDesign = () => {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             {services.map((item, index) => (
               <motion.div
