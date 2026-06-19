@@ -7,6 +7,11 @@ import {
   FiZap,
   FiTrendingUp,
   FiShield,
+  FiSearch,
+  FiCompass,
+  FiCpu,
+  FiSettings,
+  FiArrowUpRight,
 } from "react-icons/fi";
 import { motion } from "framer-motion";
 import Worldgalaxy from "./Animee";
@@ -30,16 +35,18 @@ const fadeUp = {
 const ServiceCard = memo(({ icon, title }) => (
   <motion.div className={styles.card} variants={fadeUp} {...scrollConfig}>
     <div className={styles.icon}>{icon}</div>
-    <h3>{title}</h3>
-    <p>Scalable, secure and future-ready solutions tailored for your business.</p>
+    <div className={styles.cardContent}>
+      <h3>{title}</h3>
+      <p>Scalable, secure and future-ready solutions tailored for your business.</p>
+    </div>
   </motion.div>
 ));
 
 const steps = [
-  { step: "01", emoji: "🔍", title: "Discovery", desc: "Understanding goals, users and challenges." },
-  { step: "02", emoji: "💡", title: "Strategy", desc: "Planning the right approach with clarity." },
-  { step: "03", emoji: "🚀", title: "Execution", desc: "Designing, developing and launching." },
-  { step: "04", emoji: "⚙️", title: "Optimization", desc: "Improving performance and scaling." },
+  { step: "01", icon: <FiSearch />, title: "Discovery", desc: "Understanding goals, users and challenges." },
+  { step: "02", icon: <FiCompass />, title: "Strategy", desc: "Planning the right approach with clarity." },
+  { step: "03", icon: <FiCpu />, title: "Execution", desc: "Designing, developing and launching." },
+  { step: "04", icon: <FiSettings />, title: "Optimization", desc: "Improving performance and scaling." },
 ];
 
 const servicesData = [
@@ -55,22 +62,26 @@ export default function Services() {
   return (
     <div className={styles.wrapper}>
       <Breadcrumb />
-      <div className={styles.galaxyLayer}>
-        <Worldgalaxy />
-      </div>
-      <section className={styles.hero}>
-        <motion.h1 variants={fadeUp} {...scrollConfig}>
-          Empowering Your <span>Digital Future</span>
-        </motion.h1>
+      <section className={styles.heroSection}>
+        <div className={styles.heroContainer}>
+          <div className={styles.heroText}>
+            <motion.h1 variants={fadeUp} {...scrollConfig}>
+              Empowering Your <br /><span>Digital Future</span>
+            </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          Softnova builds powerful digital products that help businesses scale.
-        </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              Softnova builds powerful digital products that help businesses scale.
+            </motion.p>
+          </div>
+          <div className={styles.galaxyLayer}>
+            <Worldgalaxy />
+          </div>
+        </div>
       </section>
       <section className={styles.services}>
         <motion.span className={styles.subtitle} variants={fadeUp} {...scrollConfig}>
@@ -106,23 +117,18 @@ export default function Services() {
           Our Strategic <span>Workflow</span>
         </motion.h2>
 
-        <div className={styles.timeline}>
-          <div className={styles.centerLine} />
-
+        <div className={styles.workflowGrid}>
           {steps.map((item, i) => (
             <motion.div
               key={i}
-              className={`${styles.timelineItem} ${i % 2 === 0 ? styles.left : styles.right}`}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              className={styles.workflowCard}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
               viewport={{ once: true, amount: 0.4 }}
             >
-              <div className={styles.marker}>
-                <span className={styles.emoji}>{item.emoji}</span>
-              </div>
-              <div className={styles.content}>
-                <span className={styles.step}>{item.step}</span>
+              <div className={styles.workflowContent}>
+                <span className={styles.workflowIcon}>{item.icon}</span>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
@@ -131,11 +137,14 @@ export default function Services() {
         </div>
       </section>
       <section className={styles.software}>
-        <motion.h2 className={styles.a1} variants={fadeUp} {...scrollConfig}>
-          End-to-End IT Solutions
+        <motion.span className={styles.eyebrow} variants={fadeUp} {...scrollConfig}>
+          WHAT WE DO
+        </motion.span>
+        <motion.h2 variants={fadeUp} {...scrollConfig}>
+          End-to-End <span>IT Solutions</span>
         </motion.h2>
 
-        <div className={styles.softwareList}>
+        <div className={styles.solutionGrid}>
           {servicesData.map((item, i) => (
             <Link
               key={i}
@@ -143,15 +152,20 @@ export default function Services() {
               style={{ textDecoration: "none", color: "inherit" }}
             >
               <motion.div
-                className={styles.softwareRow}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                whileHover={{ x: 8 }}
-                transition={{ duration: 0.4 }}
-                viewport={{ once: true }}
+                className={styles.solutionCard}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true, amount: 0.2 }}
               >
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
+                <div className={styles.solTop}>
+                  <span className={styles.solNumber}>{(i + 1).toString().padStart(2, "0")}</span>
+                  <FiArrowUpRight className={styles.solIcon} />
+                </div>
+                <div className={styles.solBottom}>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
               </motion.div>
             </Link>
           ))}

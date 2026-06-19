@@ -73,6 +73,12 @@ const CareerForm = () => {
 
         <button type="submit" className={styles.starButton}>
           Submit
+          <div className={styles.star1}><StarSvg /></div>
+          <div className={styles.star2}><StarSvg /></div>
+          <div className={styles.star3}><StarSvg /></div>
+          <div className={styles.star4}><StarSvg /></div>
+          <div className={styles.star5}><StarSvg /></div>
+          <div className={styles.star6}><StarSvg /></div>
         </button>
       </form>
     </div>

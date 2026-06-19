@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import styles from "../../Styles/Cloud.module.css";
-import shieldImg from "../../images/Ourservices-images/cloudfront.webp";
+import shieldImg from "../../images/Ourservices-images/cloudit.png";
 import img1 from "../../images/Ourservices-images/cloudd.png";
-import img2 from "../../images/Ourservices-images/it_Consulting.webp";
+import img2 from "../../images/Ourservices-images/It_Consulting.webp";
 import img4 from "../../images/Ourservices-images/backup.jpeg";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
@@ -87,7 +87,6 @@ const CloudandIT = () => {
                   alt="Cloud & IT Security"
                   className={styles.heroImg}
                 />
-                <div className={styles.glowEffect}></div>
               </motion.div>
             </div>
           </div>
@@ -97,6 +96,16 @@ const CloudandIT = () => {
       {/* SERVICES SECTION */}
       <section className={styles.servicesSection}>
         <div className={styles.container}>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6 }}
+            className={styles.projectsHeader}
+          >
+            <div className={styles.orangeLine}></div>
+            <h2>OUR SERVICES</h2>
+          </motion.div>
 
           {/* Service 1 */}
           <div

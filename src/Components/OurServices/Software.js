@@ -8,7 +8,7 @@ import software4 from "../../images/Ourservices-images/Education.jpg";
 import software5 from "../../images/Ourservices-images/Healthcare.jpg";
 import software6 from "../../images/Ourservices-images/Finance.jpg";
 import { ArrowRight, X } from "lucide-react";
-import shan from "../../images/Ourservices-images/mobilefront.jpg";
+import shan from "../../images/Ourservices-images/mobilefront1.png";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 
@@ -128,7 +128,7 @@ const SoftwareDevelopment = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: false }}
           >
-            <h2 className={styles.heading}>Our Software Portfolio</h2>
+            <h2 className={styles.heading}>OUR PROJECTS</h2>
             <div className={styles.line}></div>
           </motion.div>
 
@@ -145,17 +145,14 @@ const SoftwareDevelopment = () => {
                 className={styles.projectBox}
                 variants={fadeInUp}
                 whileHover={{ y: -10 }}
+                onClick={() => setSelectedProject(item)}
               >
-                <img loading="lazy" src={item.image} alt={item.title} />
-                <div className={styles.overlay}>
+                <div className={styles.imageBox}>
+                  <img loading="lazy" src={item.image} alt={item.title} />
+                </div>
+                <div className={styles.cardContent}>
                   <span className={styles.category}>{item.category}</span>
                   <h3>{item.title}</h3>
-                  <button
-                    className={styles.viewBtn}
-                    onClick={() => setSelectedProject(item)}
-                  >
-                    View Case Study
-                  </button>
                 </div>
               </motion.div>
             ))}

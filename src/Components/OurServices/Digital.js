@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Digital.module.css";
-import img1 from "../../images/Ourservices-images/soft22.webp";
+import img1 from "../../images/Ourservices-images/digital.png";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 
@@ -29,7 +29,7 @@ const DigitalMarketing = () => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <span className={styles.tag}>
-                  Digital <span>Marketing</span>
+                  Digital Marketing
                 </span>
                 <h1 className={styles.title}>
                   Driving growth through smart <span>digital strategies.</span>
@@ -60,7 +60,6 @@ const DigitalMarketing = () => {
                 transition={{ duration: 1, type: "spring", bounce: 0.4 }}
               >
                 <img loading="lazy" src={img1} alt="Digital" className={styles.rotateImg} />
-                <div className={styles.glow}></div>
               </motion.div>
 
             </div>
@@ -73,9 +72,10 @@ const DigitalMarketing = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.6 }}
-            className={styles.marqueeHeading}
+            className={styles.projectsHeader}
           >
-            <h2>Our Core Services</h2>
+            <div className={styles.orangeLine}></div>
+            <h2>OUR PROJECTS</h2>
           </motion.div>
 
           <div className={styles.marquee}>
