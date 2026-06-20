@@ -13,7 +13,7 @@ import darkDimTechBg from "../../images/it_slide_1.webp";
 import techControlCenter from "../../images/it_slide_2.webp";
 import whyChooseBg from "../../images/it_slide_3.webp";
 import { useLocation, useNavigate } from "react-router-dom";
-import softLogo from "../../images/soft-logo.webp";
+import softLogo from "../../images/f-logo.webp";
 import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Premium floating background shape assets

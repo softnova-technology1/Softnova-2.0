@@ -109,7 +109,7 @@
 }
 
 .logo {
-  height: clamp(50px, 8vw, 80px);
+  height: clamp(80px, 10vw, 100px);
   width: auto;
   filter: drop-shadow(0 0 15px rgba(255, 196, 69, 0.788));
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);

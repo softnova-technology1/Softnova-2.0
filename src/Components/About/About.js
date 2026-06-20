@@ -64,7 +64,7 @@ const About = () => {
   }, []);
 
   return (
-    <Container fluid>
+    <Container fluid className={styles.aboutPageContainer}>
       <AboutHero />
       <div className={styles.bg} />
       <div className={styles.pageWrapper}>
