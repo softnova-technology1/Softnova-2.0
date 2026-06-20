@@ -6,6 +6,12 @@ import {
   FaUsers,
   FaSmile,
   FaBriefcase,
+  FaShareAlt,
+  FaGlobe,
+  FaCode,
+  FaChartLine,
+  FaChevronLeft,
+  FaChevronRight,
 } from "react-icons/fa";
 import img1 from "../../images/About-Images/about1.jpg";
 import img2 from "../../images/About-Images/about4.jpg";
@@ -28,7 +34,36 @@ const steps = [
   { id: 6, title: "Optimize Performance", pos: "left" },
 ];
 
-const images = [img1, img2, img3, img4];
+const serviceCards = [
+  {
+    title: "Social Media",
+    subtitle: "Marketing & Growth",
+    badge: "Top Rated",
+    icon: <FaShareAlt />,
+    img: img1
+  },
+  {
+    title: "Global Network",
+    subtitle: "Secure Cloud",
+    badge: "Enterprise",
+    icon: <FaGlobe />,
+    img: img2
+  },
+  {
+    title: "Web Development",
+    subtitle: "Web Application",
+    badge: "Scalable",
+    icon: <FaCode />,
+    img: img3
+  },
+  {
+    title: "Digital Marketing",
+    subtitle: "Brand Visibility",
+    badge: "Strategic",
+    icon: <FaChartLine />,
+    img: img4
+  }
+];
 const Counter = ({ value, suffix, start }) => {
   const [count, setCount] = useState(0);
 
@@ -77,6 +112,80 @@ const StarSvg = ({ className }) => (
 const Stats = () => {
   const sectionRef = useRef(null);
   const [startCount, setStartCount] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(2);
+  const [transitionEnabled, setTransitionEnabled] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Responsive mobile width listener
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Release locks if tab visibility changes
+  useEffect(() => {
+    const handleVisibility = () => {
+      if (!document.hidden) {
+        setIsTransitioning(false);
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
+    return () => document.removeEventListener("visibilitychange", handleVisibility);
+  }, []);
+
+  // Re-enable transition and release click lock after an invisible jump resets it (guaranteeing jump repaint completes first)
+  useEffect(() => {
+    if (!transitionEnabled) {
+      let frameId1, frameId2;
+      frameId1 = requestAnimationFrame(() => {
+        frameId2 = requestAnimationFrame(() => {
+          setTransitionEnabled(true);
+          setIsTransitioning(false);
+        });
+      });
+      return () => {
+        cancelAnimationFrame(frameId1);
+        cancelAnimationFrame(frameId2);
+      };
+    }
+  }, [transitionEnabled]);
+
+  // Auto cycle cards every 5 seconds, resetting interval when currentIndex changes
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  const handlePrev = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev - 1);
+  };
+
+  const handleNext = () => {
+    if (document.hidden) return;
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev + 1);
+  };
+
+  const handleAnimationComplete = () => {
+    if (currentIndex >= serviceCards.length + 2) {
+      setTransitionEnabled(false);
+      setCurrentIndex(2);
+    } else if (currentIndex <= 1) {
+      setTransitionEnabled(false);
+      setCurrentIndex(serviceCards.length + 1);
+    } else {
+      setIsTransitioning(false);
+    }
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setStartCount(entry.isIntersecting),
@@ -101,15 +210,26 @@ const Stats = () => {
         </h1>
 
         <div className={styles.networkContainer}>
-          <svg className={styles.svgLines}>
-            <line x1="50%" y1="50%" x2="20%" y2="20%" className={styles.line} />
-            <line x1="50%" y1="50%" x2="80%" y2="20%" className={styles.line} />
-            <line x1="50%" y1="50%" x2="85%" y2="50%" className={styles.line} />
-            <line x1="50%" y1="50%" x2="80%" y2="80%" className={styles.line} />
-            <line x1="50%" y1="50%" x2="20%" y2="80%" className={styles.line} />
-            <line x1="50%" y1="50%" x2="15%" y2="50%" className={styles.line} />
+          <svg className={styles.svgLines} viewBox="0 0 100 100" preserveAspectRatio="none">
+            {/* Trace Paths (static backgrounds) */}
+            <path d="M 50 50 Q 32.5 40, 20 20" className={styles.traceLine} />
+            <path d="M 50 50 Q 67.5 40, 80 20" className={styles.traceLine} />
+            <path d="M 50 50 Q 67.5 40, 85 50" className={styles.traceLine} />
+            <path d="M 50 50 Q 67.5 60, 80 80" className={styles.traceLine} />
+            <path d="M 50 50 Q 32.5 60, 20 80" className={styles.traceLine} />
+            <path d="M 50 50 Q 32.5 60, 15 50" className={styles.traceLine} />
+
+            {/* Glowing Pulse Paths (animated overlays) */}
+            <path d="M 50 50 Q 32.5 40, 20 20" className={styles.pulseLine} />
+            <path d="M 50 50 Q 67.5 40, 80 20" className={styles.pulseLine} />
+            <path d="M 50 50 Q 67.5 40, 85 50" className={styles.pulseLine} />
+            <path d="M 50 50 Q 67.5 60, 80 80" className={styles.pulseLine} />
+            <path d="M 50 50 Q 32.5 60, 20 80" className={styles.pulseLine} />
+            <path d="M 50 50 Q 32.5 60, 15 50" className={styles.pulseLine} />
           </svg>
           <div className={styles.coreNode}>
+            <div className={styles.coreOuterRing1}></div>
+            <div className={styles.coreOuterRing2}></div>
             <div className={styles.coreInner}>
               <span className={styles.brand}>SOFTNOVA</span>
               <div className={styles.pulse}></div>
@@ -125,8 +245,11 @@ const Stats = () => {
               transition={{ delay: i * 0.1 }}
             >
               <div className={styles.nodeCard}>
-                <div className={styles.nodeDot}></div>
-                <p>{step.title}</p>
+                <span className={styles.stepNumber}>0{step.id}</span>
+                <div className={styles.nodeContent}>
+                  <p className={styles.stepTitle}>{step.title}</p>
+                  <span className={styles.stepLabel}>Step 0{step.id}</span>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -178,11 +301,8 @@ const Stats = () => {
             <h2>OUR PRODUCT & SERVICE</h2>
             <p>
               We provide both premium products and exceptional
-              <br />
               services, ensuring that our customers not only receive
-              high-quality
-              <br />
-              items but also ongoing support and expertise.
+              high-quality items but also ongoing support and expertise.
             </p>
 
             <motion.button
@@ -192,35 +312,67 @@ const Stats = () => {
               viewport={{ once: false }}
               transition={{ duration: 0.6 }}
             >
-              Connect With Us
+              <span className={styles.btnText}>Connect With Us</span>
               {[...Array(6)].map((_, i) => (
-                <motion.div
+                <div
                   key={i}
-                  className={styles[`star${i + 1}`]}
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: false }}
-                  transition={{ delay: 0.2 + i * 0.15 }}
+                  className={`${styles.star} ${styles[`star${i + 1}`]}`}
                 >
                   <StarSvg />
-                </motion.div>
+                </div>
               ))}
             </motion.button>
           </div>
 
-          <div className={styles.frameGrid}>
-            {images.map((img, i) => (
+          <div className={styles.sliderWrapper}>
+            <div className={styles.sliderWindow}>
               <motion.div
-                key={i}
-                className={styles.frameCard}
-                initial={{ opacity: 0, y: 50, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{ delay: i * 0.2 }}
+                className={styles.sliderTrack}
+                animate={{ x: -currentIndex * (isMobile ? 280 + 16 : 210 + 20) }}
+                transition={transitionEnabled ? { ease: [0.25, 1, 0.5, 1], duration: 0.6 } : { ease: "linear", duration: 0 }}
+                onAnimationComplete={handleAnimationComplete}
               >
-                <img loading="lazy" src={img} alt={`service ${i + 1}`} />
+                {[serviceCards[2], serviceCards[3], ...serviceCards, serviceCards[0], serviceCards[1], serviceCards[2]].map((card, index) => {
+                  const activeIdx = (currentIndex - 2 + serviceCards.length) % serviceCards.length;
+                  const isCardActive = activeIdx === (index - 2 + serviceCards.length) % serviceCards.length;
+                  return (
+                    <div
+                      key={index}
+                      className={`${styles.sliderCard} ${isCardActive ? styles.activeCard : ""}`}
+                    >
+                      <img loading="lazy" className={styles.sliderCardImg} src={card.img} alt={card.title} />
+                      <div className={styles.sliderCardOverlay}></div>
+                      <div className={styles.sliderCardContent}>
+                        <h3 className={styles.sliderCardTitle}>{card.title}</h3>
+                        <span className={styles.sliderCardCategory}>{card.subtitle}</span>
+                      </div>
+                    </div>
+                  );
+                })}
               </motion.div>
-            ))}
+            </div>
+            
+            <div className={styles.sliderControls}>
+              <span className={styles.sliderCounter}>
+                0{((currentIndex - 2 + serviceCards.length) % serviceCards.length) + 1} &nbsp;/&nbsp; 0{serviceCards.length}
+              </span>
+              <div className={styles.sliderArrows}>
+                <button
+                  className={styles.sliderArrowBtn}
+                  onClick={handlePrev}
+                  aria-label="Previous service"
+                >
+                  <FaChevronLeft />
+                </button>
+                <button
+                  className={styles.sliderArrowBtn}
+                  onClick={handleNext}
+                  aria-label="Next service"
+                >
+                  <FaChevronRight />
+                </button>
+              </div>
+            </div>
           </div>
         </motion.section>
       

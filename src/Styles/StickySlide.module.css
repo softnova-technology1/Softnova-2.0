@@ -1,3 +1,10 @@
+.aboutPageContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 !important;
+}
+
 .pageWrapper {
     margin-top: 5rem;
 }
@@ -118,6 +125,55 @@
     }
 }
 
+/* Unique color themes for each stacked card outer wrapper */
+
+/* Card 1: Warm Orange (Our Mission) */
+.cardItem:nth-child(1) {
+    background: radial-gradient(120% 120% at 10% 0%, rgba(254, 133, 30, 0.22), transparent 50%), linear-gradient(rgba(12, 15, 21, 0.85), rgba(10, 13, 18, 0.85)), url("../images/About-Images/about1.jpg");
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(254, 133, 30, 0.22);
+    border-radius: 80px 20px 80px 20px;
+}
+.cardItem:nth-child(1) .cardSubtitle {
+    color: #fe851e;
+}
+
+/* Card 2: Royal Indigo (Our Vision) */
+.cardItem:nth-child(2) {
+    background: radial-gradient(120% 120% at 10% 0%, rgba(129, 140, 248, 0.22), transparent 50%), linear-gradient(rgba(9, 11, 21, 0.85), rgba(7, 9, 17, 0.85)), url("../images/About-Images/about4.jpg");
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(129, 140, 248, 0.22);
+    border-radius: 20px 80px 20px 80px;
+}
+.cardItem:nth-child(2) .cardSubtitle {
+    color: #818cf8;
+}
+
+/* Card 3: Rose Pink (Our Execution Strategy) */
+.cardItem:nth-child(3) {
+    background: radial-gradient(120% 120% at 10% 0%, rgba(251, 113, 133, 0.22), transparent 50%), linear-gradient(rgba(14, 10, 19, 0.85), rgba(11, 8, 15, 0.85)), url("../images/About-Images/about3.jpg");
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(251, 113, 133, 0.22);
+    border-radius: 80px 20px 80px 20px;
+}
+.cardItem:nth-child(3) .cardSubtitle {
+    color: #fb7185;
+}
+
+/* Card 4: Teal Cyan (Our Goals) */
+.cardItem:nth-child(4) {
+    background: radial-gradient(120% 120% at 10% 0%, rgba(45, 212, 191, 0.22), transparent 50%), linear-gradient(rgba(8, 15, 20, 0.85), rgba(6, 12, 16, 0.85)), url("../images/About-Images/about2.jpg");
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(45, 212, 191, 0.22);
+    border-radius: 20px 80px 20px 80px;
+}
+.cardItem:nth-child(4) .cardSubtitle {
+    color: #2dd4bf;
+}
 
 @media (max-width: 900px) {
     .ring {

@@ -185,17 +185,25 @@ const AboutPage = () => {
   return (
     <section className={styles.section}>
       <div className={styles.tabs}>
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`${styles.tab} ${
-              activeTab === tab ? styles.active : ""
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
+        {tabs.map((tab) => {
+          const isActive = activeTab === tab;
+          return (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`${styles.tab} ${isActive ? styles.active : ""}`}
+            >
+              {isActive && (
+                <motion.div
+                  layoutId="activeTabBubble"
+                  className={styles.activeBubble}
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                />
+              )}
+              <span className={styles.tabText}>{tab}</span>
+            </button>
+          );
+        })}
       </div>
 
       <div className={styles.tabContent}>

@@ -1,5 +1,16 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { FaStar, FaTrophy, FaGlassCheers, FaLaptopCode, FaUsers, FaGraduationCap } from "react-icons/fa";
 import styles from "../../Styles/GalleryImg.module.css";
+
+const filterTabs = [
+  { id: "all", label: "All", icon: FaStar },
+  { id: "achievements", label: "Our Achievements", icon: FaTrophy },
+  { id: "celebrations", label: "Our Celebrations", icon: FaGlassCheers },
+  { id: "skills", label: "Skill Development", icon: FaLaptopCode },
+  { id: "recruitment", label: "Recruitment", icon: FaUsers },
+  { id: "internship", label: "Internship", icon: FaGraduationCap },
+];
 import award from "../../images/award.webp";
 import award2 from "../../images/award2.webp";
 
@@ -146,47 +157,29 @@ export default function Achievements() {
 
       <section className={styles.wrapper}>
         <div className={styles.tabs}>
-          <button
-            className={activeTab === "all" ? styles.active : ""}
-            onClick={() => setActiveTab("all")}
-          >
-            🌟 All
-          </button>
-
-          <button
-            className={activeTab === "achievements" ? styles.active : ""}
-            onClick={() => setActiveTab("achievements")}
-          >
-            🏆 Our Achievements
-          </button>
-
-          <button
-            className={activeTab === "celebrations" ? styles.active : ""}
-            onClick={() => setActiveTab("celebrations")}
-          >
-            🎉 Our Celebrations
-          </button>
-
-          <button
-            className={activeTab === "skills" ? styles.active : ""}
-            onClick={() => setActiveTab("skills")}
-          >
-            📚 Skill Development
-          </button>
-
-          <button
-            className={activeTab === "recruitment" ? styles.active : ""}
-            onClick={() => setActiveTab("recruitment")}
-          >
-            👥 Recruitment
-          </button>
-
-          <button
-            className={activeTab === "internship" ? styles.active : ""}
-            onClick={() => setActiveTab("internship")}
-          >
-            🎓 Internship
-          </button>
+          {filterTabs.map((tab) => {
+            const isActive = activeTab === tab.id;
+            const IconComponent = tab.icon;
+            return (
+              <button
+                key={tab.id}
+                className={`${styles.tab} ${isActive ? styles.active : ""}`}
+                onClick={() => setActiveTab(tab.id)}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="activeGalleryTabBubble"
+                    className={styles.activeBubble}
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className={styles.tabContent}>
+                  <IconComponent className={styles.tabIcon} />
+                  <span>{tab.label}</span>
+                </span>
+              </button>
+            );
+          })}
         </div>
 
         <div className={styles.header}>
