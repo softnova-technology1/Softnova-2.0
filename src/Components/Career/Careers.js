@@ -162,10 +162,13 @@ const Careers = () => {
                 key={index}
                 className={styles.card}
                 variants={item}
-                whileHover={{ y: -12 }}
+                whileHover={{ y: -15, scale: 1.02 }}
               >
+                <div className={styles.cardWatermark}>{role.icon}</div>
                 <div className={styles.cardContent}>
-                  <div className={styles.icon}>{role.icon}</div>
+                  <div className={styles.iconContainer}>
+                    <div className={styles.icon}>{role.icon}</div>
+                  </div>
                   <h3>{role.title}</h3>
                 </div>
                 <button className={styles.starButton} onClick={scrollToForm}>

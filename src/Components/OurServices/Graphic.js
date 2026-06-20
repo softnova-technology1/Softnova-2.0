@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Graphic.module.css";
-import desktop from "../../images/Ourservices-images/Graphic1.webp";
+import desktop from "../../images/Ourservices-images/grapic.png";
 import img1 from "../../images/Ourservices-images/Graphic2.webp";
 import img2 from "../../images/Ourservices-images/Graphic3.webp";
 import img3 from "../../images/Ourservices-images/Graphic4.webp";
@@ -14,12 +14,12 @@ import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 const services = [
   { title: "Creative Branding & Logo", img: img1 },
-  { title: "UI / UX Design", img: img2},
-  { title: "Social Media & Digital Marketing Graphics", img:img3 },
-  { title: "Business & Corporate Design", img: img4},
-  { title: "E-commerce & Product Design", img:img5 },
-  { title: "Video Editing & Motion Graphics", img:img6 },
-  { title: "Print & UI-Based Graphics", img:img7 }
+  { title: "UI / UX Design", img: img2 },
+  { title: "Social Media & Digital Marketing Graphics", img: img3 },
+  { title: "Business & Corporate Design", img: img4 },
+  { title: "E-commerce & Product Design", img: img5 },
+  { title: "Video Editing & Motion Graphics", img: img6 },
+  { title: "Print & UI-Based Graphics", img: img7 }
 
 ];
 
@@ -50,7 +50,6 @@ const GraphicDesign = () => {
       <Breadcrumb />
       <div className={styles.pageWrapper}>
         <section className={styles.hero}>
-          <div className={styles.overlay} />
 
           <div className={styles.content}>
             <motion.div
@@ -99,8 +98,12 @@ const GraphicDesign = () => {
         </section>
 
         <section className={styles.servicesSection}>
+          <div className={styles.projectsHeader}>
+            <div className={styles.orangeLine}></div>
+            <h2>OUR PROJECTS</h2>
+          </div>
           <motion.div
-            className={styles.servicesGrid}
+            className={styles.projectsGrid}
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -108,16 +111,17 @@ const GraphicDesign = () => {
           >
             {services.map((item, index) => (
               <motion.div
-                className={styles.serviceCard}
+                className={styles.projectBox}
                 key={index}
                 variants={fadeInUp}
-                whileHover={{ y: -15, transition: { duration: 0.3 } }}
+                whileHover={{ y: -10 }}
               >
-                <div className={styles.serviceImage}>
+                <div className={styles.imageBox}>
                   <img loading="lazy" src={item.img} alt={item.title} />
-                  <div className={styles.cardOverlay} />
                 </div>
-                <h3 className={styles.serviceTitle}>{item.title}</h3>
+                <div className={styles.cardContent}>
+                  <h3>{item.title}</h3>
+                </div>
               </motion.div>
             ))}
           </motion.div>
