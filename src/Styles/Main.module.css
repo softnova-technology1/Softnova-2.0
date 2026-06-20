@@ -7,27 +7,40 @@
   position: relative;
 }
 
-.hero {
+.heroSection {
   position: relative;
   z-index: 1;
-  text-align: center;
-  background: radial-gradient(circle at top,
-      rgba(254, 133, 30, 0.15),
-      transparent 70%);
+  background: radial-gradient(circle at top left, rgba(254, 133, 30, 0.15), transparent 50%);
   min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 20%;
+  padding-top: 100px;
+  overflow: hidden;
 }
 
-.hero h1 {
+.heroContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.heroText {
+  flex: 1;
+  text-align: left;
+  max-width: 55%;
+  padding-right: 20px;
+  z-index: 2;
+}
+
+.heroText h1 {
   font-family: "Playfair Display", serif;
-  font-size: 40px;
+  font-size: 48px;
   font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: 0.1em;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 20px;
 
@@ -41,31 +54,32 @@
     0 0 25px rgba(254, 133, 30, 0.15);
 }
 
-.hero span {
+.heroText span {
   color: #fe851e;
 }
 
-.hero p {
-  max-width: 700px;
-  margin: 1rem auto 0;
+.heroText p {
+  max-width: 600px;
+  margin: 1rem 0 0 0;
   color: #bfbfbf;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .galaxyLayer {
-  position: absolute;
-  inset: 0;
-  height: 100vh;
+  flex: 1;
+  position: relative;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-  margin-top: 5%;
 }
 
 
 .services {
   padding: 80px 100px;
   text-align: center;
-  margin-top: 10%;
 }
 
 .subtitle {
@@ -84,62 +98,155 @@
 
 .serviceGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 20px;
-  padding: 2.2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  padding: 35px;
   text-align: left;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 20px rgba(254, 133, 30, 0.02);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
   height: 100%;
 }
 
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle at top right, rgba(254, 133, 30, 0.1), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
 .card:hover {
-  transform: translateY(-10px);
-  border-color: #fe851e;
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(254, 133, 30, 0.5);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(254, 133, 30, 0.1);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .icon {
-  width: 52px;
-  height: 52px;
-  background: rgba(254, 133, 30, 0.2);
+  position: relative;
+  z-index: 1;
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, rgba(254, 133, 30, 0.2), rgba(254, 133, 30, 0.05));
   color: #fe851e;
-  border-radius: 14px;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  margin-bottom: 1.2rem;
+  font-size: 28px;
+  flex-shrink: 0;
+  border: 1px solid rgba(254, 133, 30, 0.2);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
-.serviceCard h3 {
-  cursor: pointer;
+.cardContent {
+  position: relative;
+  z-index: 1;
+}
+
+.cardContent h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #fff;
   transition: color 0.3s ease;
 }
 
-.serviceCard h3:hover {
-  color: #ff6600;
-  text-decoration: underline;
+.card:hover .cardContent h3 {
+  color: #fe851e;
 }
 
+.cardContent p {
+  color: #a0a0a0;
+  font-size: 15px;
+  line-height: 1.6;
+}
 
 .cta {
-  grid-column: 1 / -1;
-  background: linear-gradient(135deg, #fa9b48, #fe851e);
-  border-radius: 26px;
-  padding: 3.5rem;
-  color: #000;
+  background: linear-gradient(135deg, rgba(254, 133, 30, 0.2), rgba(254, 133, 30, 0.05));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(254, 133, 30, 0.3);
+  border-radius: 24px;
+  padding: 35px;
+  color: #fff;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.cta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(254, 133, 30, 0.2), inset 0 0 20px rgba(254, 133, 30, 0.1);
+  border-color: rgba(254, 133, 30, 0.5);
+}
+
+.cta h3 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: #d1d1d1;
+}
+
+.cta a {
+  background: #fe851e;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.cta a:hover {
+  background: #e05a00;
+  box-shadow: 0 4px 15px rgba(254, 133, 30, 0.3);
 }
 
 
 .workflow {
   padding: 80px;
-  background: #000;
+  background: url("../images/Approachbg.webp") center/cover no-repeat fixed;
+  position: relative;
+}
+
+.workflow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 0;
+}
+
+.workflow > * {
+  position: relative;
+  z-index: 1;
 }
 
 .eyebrow {
@@ -161,78 +268,85 @@
   color: #fe851e;
 }
 
-.timeline {
+.workflowGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.workflowCard {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 40px 30px;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
-  max-width: 1000px;
-  margin: 60px auto;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: inset 0 0 20px rgba(254, 133, 30, 0.02);
 }
 
-.centerLine {
+.workflowCard:hover {
+  transform: translateY(-10px);
+  border-color: rgba(254, 133, 30, 0.4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(254, 133, 30, 0.1);
+}
+
+.stepBg {
   position: absolute;
-  left: 50%;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(to bottom, transparent, #fe851e, transparent);
-  transform: translateX(-50%);
+  top: -20px;
+  right: -10px;
+  font-size: 140px;
+  font-weight: 900;
+  color: rgba(254, 133, 30, 0.15);
+  z-index: 0;
+  transition: color 0.4s ease;
+  pointer-events: none;
 }
 
-.timelineItem {
+.workflowCard:hover .stepBg {
+  color: rgba(254, 133, 30, 0.4);
+}
+
+.workflowContent {
   position: relative;
-  width: 50%;
-  padding: 40px 50px;
+  z-index: 1;
 }
 
-.left {
-  text-align: right;
-  padding-right: 80px;
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
-.right {
-  margin-left: 50%;
-  padding-left: 80px;
-}
-
-.marker {
-  position: absolute;
-  top: 40px;
-  right: -23px;
-  z-index: 2;
-}
-
-.right .marker {
-  left: -23px;
-  right: auto;
-}
-
-.emoji {
-  width: 46px;
-  height: 46px;
-  background: #000;
-  border: 2px solid #fe851e;
-  border-radius: 50%;
-  display: flex;
+.workflowIcon {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
-}
-
-.content {
-  max-width: 360px;
-}
-
-.step {
+  width: 50px;
+  height: 50px;
+  background: rgba(254, 133, 30, 0.1);
+  border: 1px solid rgba(254, 133, 30, 0.2);
+  border-radius: 14px;
+  font-size: 24px;
   color: #fe851e;
-  font-size: 12px;
-  letter-spacing: 3px;
+  margin-bottom: 20px;
+  animation: floatIcon 3s ease-in-out infinite;
 }
 
-.timelineItem h3 {
-  font-size: 26px;
+.workflowCard h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
 }
 
-.timelineItem p {
-  color: #bbb;
+.workflowCard p {
+  color: #a0a0a0;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 
@@ -242,7 +356,12 @@
 
 .software h2 {
   text-align: center;
-  font-size: 46px;
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.software h2 span {
+  color: #fe851e;
 }
 
 .softwareIntro {
@@ -252,21 +371,117 @@
   color: #bbb;
 }
 
-.softwareList {
-  max-width: 900px;
-  margin: auto;
-}
-
-.softwareRow {
+.solutionGrid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
-  padding: 36px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 60px auto 0;
 }
 
-.softwareRow:hover h3 {
+.solutionCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(254, 133, 30, 0.25);
+  border-radius: 20px;
+  padding: 40px 30px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px;
+  overflow: hidden;
+}
+
+.solutionCard::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #fa9b48, #fe851e);
+  transition: width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 2;
+}
+
+.solutionCard:hover::before {
+  width: 100%;
+}
+
+.solutionCard::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at bottom right, rgba(254, 133, 30, 0.15), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.solutionCard:hover {
+  transform: translateY(-10px);
+  border-color: rgba(254, 133, 30, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.solutionCard:hover::after {
+  opacity: 1;
+}
+
+.solTop, .solBottom {
+  position: relative;
+  z-index: 1;
+}
+
+.solTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.solNumber {
+  font-size: 64px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  line-height: 1;
+  transition: all 0.4s ease;
+}
+
+.solutionCard:hover .solNumber {
+  -webkit-text-stroke: 1px rgba(254, 133, 30, 0.5);
+  color: rgba(254, 133, 30, 0.1);
+}
+
+.solIcon {
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.solutionCard:hover .solIcon {
   color: #fe851e;
+  transform: translate(6px, -6px);
+}
+
+.solBottom h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+  transition: color 0.4s ease;
+}
+
+.solutionCard:hover .solBottom h3 {
+  color: #fe851e;
+}
+
+.solBottom p {
+  font-size: 15px;
+  color: #a0a0a0;
+  line-height: 1.6;
 }
 
 .connectBtn {
@@ -287,17 +502,23 @@
 
 @media (max-width: 428px) {
 
-  .hero {
+  .heroSection {
     position: relative;
     width: 100%;
     height: 350px;
-    padding-left: 16px;
-    padding-right: 16px;
     background: url("../images/soft10.webp") center/cover no-repeat;
     overflow: hidden;
+    padding-top: 0;
   }
 
-  .hero::before {
+  .heroContainer {
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0 16px;
+  }
+
+  .heroSection::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -306,20 +527,24 @@
     z-index: 0;
   }
 
-  .hero>* {
+  .heroText {
     position: relative;
     z-index: 1;
+    max-width: 100%;
+    padding-right: 0;
+    text-align: center;
   }
 
-  .hero h1 {
-    font-size: 15px;
+  .heroText h1 {
+    font-size: 24px;
     letter-spacing: 0.08em;
     margin-bottom: 12px;
   }
 
-  .hero p {
-    font-size: 12px;
+  .heroText p {
+    font-size: 14px;
     line-height: 1.5;
+    margin: 10px auto 0;
   }
 
   .services {
@@ -342,11 +567,18 @@
   }
 
   .card {
-    padding: 1.6rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
   }
 
-  .serviceCard h3 {
-    font-size: 15px;
+  .cardContent h3 {
+    font-size: 20px;
+  }
+
+  .cardContent p {
+    font-size: 14px;
   }
 
   .card p {
@@ -366,64 +598,37 @@
     margin-bottom: 60px;
   }
 
-  .timeline {
-    margin: 40px auto;
-    padding-left: 0;
+  .workflowGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 30px;
   }
 
-  .centerLine {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .timelineItem {
-    width: 100%;
-    padding: 30px 16px;
+  .workflowCard {
+    padding: 30px 24px;
     text-align: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
-  .left,
-  .right {
-    margin-left: 0;
-    padding: 0;
+  .stepBg {
+    font-size: 100px;
+    top: -10px;
+    right: 50%;
+    transform: translateX(50%);
   }
 
-  .marker {
-    position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
-    margin-bottom: 10px;
+  .workflowIcon {
+    margin: 0 auto 15px;
   }
 
-  .emoji {
-    width: 38px;
-    height: 38px;
+  .workflowCard h3 {
     font-size: 18px;
   }
 
-  .content {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .step {
-    font-size: 12px;
-    margin-bottom: 4px;
-    display: block;
-  }
-
-  .timelineItem h3 {
-    font-size: 15px;
-    margin-bottom: 4px;
-  }
-
-  .timelineItem p {
-    font-size: 12px;
-    line-height: 1.4;
+  .workflowCard p {
+    font-size: 14px;
   }
 
   .software {
@@ -439,18 +644,23 @@
     margin-bottom: 40px;
   }
 
-  .softwareRow {
+  .solutionGrid {
     grid-template-columns: 1fr;
-    gap: 14px;
-    padding: 24px 0;
+    gap: 20px;
+    margin-top: 40px;
   }
 
-  .softwareRow h3 {
-    font-size: 15px;
+  .solutionCard {
+    padding: 30px 20px;
+    min-height: auto;
   }
 
-  .softwareRow p {
-    font-size: 12px;
+  .solNumber {
+    font-size: 36px;
+  }
+
+  .solBottom h3 {
+    font-size: 20px;
   }
 
   .connectBtn {
@@ -460,28 +670,50 @@
 }
 
 @media (max-width: 992px) and (min-width: 429px) {
-  .hero {
-    min-height: 100px;
-    margin-top: 20%;
+  .heroSection {
+    padding: 120px 0 40px;
+    min-height: auto;
+    text-align: center;
   }
 
-  .hero h1 {
-    font-size: 32px;
+  .heroContainer {
+    flex-direction: column;
+    padding: 0 40px;
+  }
+
+  .heroText {
+    max-width: 100%;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .heroText h1 {
+    font-size: 38px;
     line-height: 1.2;
   }
 
-  .hero p {
+  .heroText p {
     font-size: 16px;
     max-width: 80%;
+    margin: 15px auto 0;
+  }
+
+  .galaxyLayer {
+    height: 400px;
+    margin-top: 40px;
   }
 
   .services {
-    margin-top: 20%;
+    margin-top: 0;
   }
 
   .serviceGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 30px;
   }
 
   .workflow {
@@ -493,29 +725,9 @@
     margin-bottom: 60px;
   }
 
-  .timeline {
-    margin-left: 30px;
-  }
-
-  .centerLine {
-    left: 0;
-    transform: none;
-  }
-
-  .timelineItem {
-    width: 100%;
-    text-align: left;
-    padding: 20px 0 20px 40px;
-    display: block;
-    margin-left: 0;
-  }
-
-  .left,
-  .right {
-    padding-left: 40px;
-    padding-right: 0;
-    text-align: left;
-    margin-left: 0;
+  .workflowGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 
   .marker {
@@ -537,12 +749,16 @@
     font-size: 32px;
   }
 
-  .softwareRow {
-    grid-template-columns: 1fr 1.5fr;
+  .solutionGrid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 
-  .softwareRow h3 {
-    font-size: 18px;
+  .solutionCard {
+    padding: 30px 20px;
+  }
+
+  .solBottom h3 {
+    font-size: 22px;
   }
 }

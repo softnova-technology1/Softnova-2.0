@@ -6,7 +6,7 @@ import ecommerce3 from "../../images/Ourservices-images/eMobile.webp";
 import ecommerce4 from "../../images/Ourservices-images/eB2B.webp";
 import ecommerce5 from "../../images/Ourservices-images/eCustom Dashboard.webp";
 import { ArrowUpRight, X } from "lucide-react";
-import shan from "../../images/Ourservices-images/ee.jpg";
+import shan from "../../images/Ourservices-images/e-com.png";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 
@@ -122,15 +122,9 @@ const ECommerce = () => {
         </section>
 
         <section className={styles.wrapper}>
-          <div className={styles.sectionHeader}>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className={styles.heading}
-            >
-              Case Studies
-            </motion.h2>
+          <div className={styles.projectsHeader}>
+            <div className={styles.orangeLine}></div>
+            <h2>OUR PROJECTS</h2>
           </div>
 
           <div className={styles.projectsGrid}>
@@ -141,32 +135,17 @@ const ECommerce = () => {
                 variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: false, amount: 0.2 }}
+                onClick={() => openCanvas(item)}
+                style={{ cursor: 'pointer' }}
+                whileHover={{ y: -10 }}
               >
                 <div className={styles.imageBox}>
                   <img loading="lazy" src={item.image} alt={item.title} />
-
-                  <motion.div
-                    className={styles.projectOverlay}
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                  >
-                    <div className={styles.topInfo}>
-                      <span className={styles.catName}>{item.category}</span>
-                      <h3>{item.title}</h3>
-                    </div>
-
-                    <motion.div
-                      className={styles.roundBtn}
-                      whileHover={{ scale: 1.2, rotate: 45 }}
-                      onClick={() => openCanvas(item)}
-                      style={{ cursor: 'pointer' }}
-                    >
-                      <ArrowUpRight size={24} className={styles.arrowIcon} />
-                    </motion.div>
-
-                    <div className={styles.accentLine}></div>
-                  </motion.div>
+                </div>
+                <div className={styles.cardContent}>
+                  <span className={styles.catName}>{item.category}</span>
+                  <h3>{item.title}</h3>
                 </div>
               </motion.div>
             ))}

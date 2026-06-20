@@ -11,10 +11,14 @@ import img7 from "../../images/Ourservices-images/banking.jpg";
 import img8 from "../../images/Ourservices-images/education.avif";
 import img9 from "../../images/Ourservices-images/event.jpg";
 import high from "../../images/Ourservices-images/startup.png";
-import front from "../../images/Ourservices-images/web1.jpg";
+import front from "../../images/Ourservices-images/webdev1.png";
+import blackCircleImg from "../../images/Ourservices-images/black-circle.png";
+import bgWeb from "../../images/Ourservices-images/bg-web.avif";
 import Breadcrumb from "../BreadCrumb";
 
 import { Link } from "react-router-dom";
+import { FiMessageSquare, FiMap, FiPenTool, FiCode } from "react-icons/fi";
+import { FaRocket } from "react-icons/fa";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -32,11 +36,11 @@ const slideInRight = {
 };
 
 const steps = [
-  { id: 1, title: "Consultation", desc: "Understanding your needs and goals." },
-  { id: 2, title: "Planning", desc: "Strategizing the best approach." },
-  { id: 3, title: "Design", desc: "Creating intuitive UI/UX designs." },
-  { id: 4, title: "Development", desc: "Building scalable websites." },
-  { id: 5, title: "Launch & Support", desc: "Deployment & maintenance." }
+  { id: 1, title: "Consultation", desc: "Understanding your needs and goals.", icon: <FiMessageSquare /> },
+  { id: 2, title: "Planning", desc: "Strategizing the best approach.", icon: <FiMap /> },
+  { id: 3, title: "Design", desc: "Creating intuitive UI/UX designs.", icon: <FiPenTool /> },
+  { id: 4, title: "Development", desc: "Building scalable websites.", icon: <FiCode /> },
+  { id: 5, title: "Launch & Support", desc: "Deployment & maintenance.", icon: <FaRocket /> }
 ];
 
 const projects = [
@@ -101,24 +105,49 @@ const WebDevelopment = () => {
           </div>
         </div>
 
-        <div className={styles.timeline}>
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.id}
-              className={styles.step}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              variants={fadeInUp}
-              transition={{ delay: i * 0.1 }}
+        <section className={styles.timelineSectionWrapper} style={{ backgroundImage: `url(${bgWeb})` }}>
+          <div className={styles.timelineSectionContainer}>
+          <div className={styles.timelineTop}>
+            <div className={styles.timelineHeader}>
+              <div className={styles.orangeLine}></div>
+              <h2>OUR PROCESS</h2>
+            </div>
+            <motion.div 
+              className={styles.timelineImage}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
             >
-              <div className={styles.stepNumber}>{i + 1}</div>
-              <h5>{step.title}</h5>
-              <p>{step.desc}</p>
+              <img loading="lazy" src={blackCircleImg} alt="Process Illustration" />
             </motion.div>
-          ))}
+          </div>
+          
+          <div className={styles.timeline}>
+            {steps.map((step, i) => (
+              <motion.div
+                key={step.id}
+                className={styles.step}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.5 }}
+                variants={fadeInUp}
+                transition={{ delay: i * 0.1 }}
+              >
+                <div className={styles.stepIcon}>{step.icon}</div>
+                <div className={styles.stepDivider}></div>
+                <h5>{step.title}</h5>
+                <p>{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
+      </section>
 
+      <section className={styles.projectsSection}>
+        <div className={styles.projectsHeader}>
+          <div className={styles.orangeLine}></div>
+          <h2>OUR PROJECTS</h2>
+        </div>
         <div className={styles.gridContainer}>
           {projects.map((project, index) => (
             <motion.div
@@ -126,8 +155,9 @@ const WebDevelopment = () => {
               className={styles.projectItem}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={index % 2 === 0 ? slideInLeft : slideInRight}
+              viewport={{ once: false, amount: 0.2 }}
+              variants={fadeInUp}
+              transition={{ duration: 0.5, delay: (index % 3) * 0.15 }}
             >
               <div className={styles.imgWrapper}>
                 <img loading="lazy" src={project.img} alt={project.title} />
@@ -136,6 +166,7 @@ const WebDevelopment = () => {
             </motion.div>
           ))}
         </div>
+      </section>
       </section>
     </>
   );

@@ -615,8 +615,8 @@
 }
 
 .ornament1 {
-  top: 10%;
-  left: 3%;
+  top: 1%;
+  right: 3%;
   width: 140px;
   animation: float 10s infinite alternate ease-in-out;
 }
@@ -647,6 +647,27 @@
   left: 3%;
   width: 160px;
   animation: floatSlow 18s infinite alternate ease-in-out;
+}
+
+.ornament6 {
+  top: 15%;
+  left: 2%;
+  width: 150px;
+  animation: floatMedium 12s infinite alternate ease-in-out;
+}
+
+.ornament7 {
+  top: 55%;
+  left: 4%;
+  width: 140px;
+  animation: float 11s infinite alternate ease-in-out;
+}
+
+.ornament8 {
+  top: 75%;
+  right: 2%;
+  width: 160px;
+  animation: floatSlow 14s infinite alternate ease-in-out;
 }
 
 /* Floating Animations */
@@ -702,6 +723,18 @@
 
   .ornament5 {
     top: 86%;
+  }
+
+  .ornament6 {
+    top: 18%;
+  }
+
+  .ornament7 {
+    top: 58%;
+  }
+
+  .ornament8 {
+    top: 78%;
   }
 }
 

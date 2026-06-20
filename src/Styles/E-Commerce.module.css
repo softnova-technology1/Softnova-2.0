@@ -5,26 +5,58 @@
 }
 
 .hero {
-  min-height: 85vh;
+  position: relative;
+  min-height: 70vh;
   display: flex;
   align-items: center;
-  padding: 0 5%;
+  padding: 0;
+  margin: 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(254, 133, 30, 0.15), transparent 70%);
+  top: -300px;
+  left: -200px;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(254, 133, 30, 0.1), transparent 70%);
+  bottom: -200px;
+  right: -100px;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .container {
   max-width: 1200px;
-  margin: auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 20px;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 60px;
-  margin-top: 10%;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .title {
-  font-size: 30px;
+  font-size: 52px;
   font-weight: 800;
-  line-height: 1.1;
-  font-family: "Playfair Display", serif;
+  line-height: 1.15;
+  margin-bottom: 24px;
 }
 
 .title span {
@@ -40,13 +72,18 @@
 
 .tag {
   display: inline-block;
-  background: rgba(255, 123, 0, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(254, 133, 30, 0.3);
+  box-shadow: 0 0 15px rgba(254, 133, 30, 0.15);
   color: #fe851e;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-  margin-top: 80px;
-  margin-bottom: 20px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .description {
@@ -90,115 +127,93 @@
   padding: 40px 5%;
 }
 
-.heading {
+.projectsHeader {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  font-size: 32px;
-  letter-spacing: 2px;
+}
+
+.projectsHeader h2 {
+  font-size: 46px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+  font-family: 'Oswald', 'Bebas Neue', 'Segoe UI', sans-serif;
+  text-transform: uppercase;
+}
+
+.orangeLine {
+  width: 70px;
+  height: 4px;
+  background: #fe851e;
+  margin-bottom: 24px;
 }
 
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 40px;
-  padding: 60px 160px;
-  perspective: 1200px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 60px 0;
 }
 
 .projectMinimal {
   position: relative;
-  border-radius: 20px;
   overflow: hidden;
-  background: #111;
+  border-radius: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.projectMinimal:hover {
+  border-color: rgba(254, 133, 30, 0.4);
+  box-shadow: 0 15px 30px rgba(254, 133, 30, 0.1);
 }
 
 .imageBox {
-  height: 450px;
+  height: 220px;
+  overflow: hidden;
 }
 
 .imageBox img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.projectOverlay {
-  position: absolute;
-  inset: 0;
-  padding: 40px;
-  background: linear-gradient(to top,
-      rgba(0, 0, 0, 0.9) 0%,
-      transparent 60%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.projectMinimal:hover img {
+  transform: scale(1.08);
 }
 
-.topInfo {
-  opacity: 1;
-  transform: translateY(0);
+.cardContent {
+  padding: 24px 16px;
 }
 
 .catName {
-  color: #ff7700;
-  font-size: 15px;
-  font-weight: 800;
+  display: block;
+  color: #fe851e;
+  font-size: 13px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-bottom: 8px;
 }
 
-.topInfo h3 {
-  color: #ffffff;
-  font-size: 24px;
-  margin-top: 320px;
+.cardContent h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
   transition: color 0.3s ease;
-  font-weight: 700;
 }
 
-
-.roundBtn {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  width: 60px;
-  height: 60px;
-  background: #fe851e;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #000000;
-  transform: scale(0) rotate(-45deg);
-  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.projectMinimal:hover .cardContent h3 {
+  color: #fe851e;
 }
-
-.accentLine {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 4px;
-  background: #fe851e;
-  transition: 0.6s ease;
-}
-
-
-.projectMinimal:hover img {
-  transform: scale(1.1) rotate(1deg);
-  filter: grayscale(0.5);
-}
-
-.projectMinimal:hover .roundBtn {
-  transform: scale(1) rotate(0);
-  box-shadow: 0 0 30px rgba(255, 140, 0, 0.4);
-}
-
-.projectMinimal:hover .accentLine {
-  width: 100%;
-}
-
-
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -305,38 +320,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    position: relative;
-    width: 100%;
-    height: 350px;
-    background: none;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: -20px;
-    background-image: url("../images/e-commerce1.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    transform: scale(1.1);
-    z-index: 0;
-  }
-
-  .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(rgba(0, 20, 60, 0.75),
-        rgba(0, 0, 0, 0.85));
-    z-index: 1;
-  }
-
-  .hero>* {
-    position: relative;
-    z-index: 2;
-    color: #fff;
+    min-height: 60vh;
   }
 
   .container {
@@ -352,11 +336,9 @@
     display: none;
   }
 
-  .roundBtn {
-    width: 50px;
-    height: 50px;
-    bottom: 20px;
-    right: 20px;
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 40px 0;
   }
 }
 
@@ -372,61 +354,22 @@
   }
 
   .imageBox {
-    height: 280px;
-  }
-
-  .projectOverlay {
-    padding: 25px;
-  }
-
-  .roundBtn {
-    width: 45px;
-    height: 45px;
+    height: 250px;
   }
 }
 
 @media (max-width:480px) {
+  .hero {
+    min-height: 50vh;
+    padding: 40px 0;
+  }
+
   .title {
-    font-size: 20px;
+    font-size: 36px;
   }
 
   .description {
-    font-size: 12px;
+    font-size: 14px;
+    margin-bottom: 24px;
   }
-
-  .hero {
-    position: relative;
-    width: 100%;
-    height: 350px;
-    background: none;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: -20px;
-    background-image: url("../images/e-commerce1.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    transform: scale(1.1);
-    z-index: 0;
-  }
-
-  .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(rgba(0, 20, 60, 0.75),
-        rgba(0, 0, 0, 0.85));
-    z-index: 1;
-  }
-
-  .hero>* {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-  }
-
 }

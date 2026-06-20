@@ -6,7 +6,7 @@ import Mobileapps2 from "../../images/Ourservices-images/delivery.webp";
 import Mobileapps3 from "../../images/Ourservices-images/management.jpg";
 import Mobileapps4 from "../../images/Ourservices-images/ticket.webp";
 import Mobileapps5 from "../../images/Ourservices-images/ecommercee.webp";
-import mobile from "../../images/Ourservices-images/mobile.webp";
+import mobile from "../../images/Ourservices-images/mobilefront1.png";
 import Breadcrumb from "../BreadCrumb";
 import { Link } from "react-router-dom";
 
@@ -131,8 +131,16 @@ const MobileAppSection = () => {
               <div className={styles.orangeGlow}></div>
             </motion.div>
           </motion.div>
+        </div>
+      </section>
 
+      <section className={styles.projectsWrapper}>
+        <div className={styles.container}>
           <div className={styles.projectsSection}>
+            <div className={styles.projectsHeader}>
+              <div className={styles.orangeLine}></div>
+              <h2>OUR PROJECTS</h2>
+            </div>
             <motion.div
               className={styles.projectsGrid}
               variants={containerVariants}

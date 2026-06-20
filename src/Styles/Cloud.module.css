@@ -1,19 +1,46 @@
 .section {
-  min-height: 100vh;
-  background: black;
+  position: relative;
+  min-height: 70vh;
   display: flex;
   align-items: center;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
   overflow: hidden;
-  position: relative;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(254, 133, 30, 0.15), transparent 70%);
+  top: -300px;
+  left: -200px;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(254, 133, 30, 0.1), transparent 70%);
+  bottom: -200px;
+  right: -100px;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
   width: 100%;
-  padding: 0 20px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .flexWrapper {
@@ -21,8 +48,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  padding: 80px 0;
-  margin-top: 7%;
 }
 
 .content {
@@ -39,20 +64,26 @@
 
 .tag {
   display: inline-block;
-  background: rgba(255, 123, 0, 0.15);
-  color: #ff7b00;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-  margin-bottom: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(254, 133, 30, 0.3);
+  box-shadow: 0 0 15px rgba(254, 133, 30, 0.15);
+  color: #fe851e;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .title {
-  font-size: 40px;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  font-weight: 700;
-  font-family: "Playfair Display", serif;
+  font-size: 52px;
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 24px;
+  font-weight: 800;
 }
 
 .title span {
@@ -61,6 +92,9 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 10px rgba(254, 133, 30, 0.35),
+    0 0 25px rgba(254, 133, 30, 0.15);
 }
 
 .desc {
@@ -161,47 +195,61 @@
 }
 
 .heroImg {
-  width: 80%;
-  border-radius: 50px;
-  animation: float 4s ease-in-out infinite;
+  width: 90%;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(254, 133, 30, 0.2);
+  display: block;
+  margin: 15% auto 0;
+  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
   50% {
     transform: translateY(-15px);
   }
 }
 
-.glowEffect {
-  position: absolute;
-  inset: -20px;
-  background: radial-gradient(circle, rgba(254, 133, 30, 0.2), transparent 70%);
-  filter: blur(20px);
-  z-index: -1;
+.projectsHeader {
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.projectsHeader h2 {
+  font-size: 46px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+  font-family: 'Oswald', 'Bebas Neue', 'Segoe UI', sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.orangeLine {
+  width: 70px;
+  height: 4px;
+  background: #fe851e;
+  margin-bottom: 24px;
 }
 
 .servicesSection {
-  padding: 120px 0; /* Increased padding */
-  background-color: #000;
+  padding: 40px 5%;
 }
 
 .servicesSection .container {
   display: flex;
   flex-direction: column;
-  gap: 160px; /* Added significant gap between rows */
-  max-width: 1400px; /* Increased width to match other services */
+  gap: 120px;
+  max-width: 1200px;
 }
 
 .serviceRow {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 80px;
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.7s ease;
@@ -218,7 +266,15 @@
 .mediaArea img {
   width: 100%;
   border-radius: 20px;
-  transition: 0.5s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mediaArea img:hover {
+  transform: scale(1.05);
+  border-color: rgba(254, 133, 30, 0.4);
+  box-shadow: 0 15px 30px rgba(254, 133, 30, 0.1);
 }
 
 .contentArea {
@@ -264,9 +320,7 @@
 
 @media (max-width: 768px) {
   .section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/soft35.webp");
-    background-size: cover;
-    background-position: center;
+    min-height: 60vh;
   }
 
   .flexWrapper {

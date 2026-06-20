@@ -36,7 +36,7 @@ const ParticleSystem = ({
   speed = 1,
   size = 0.05,
 }) => {
-  const count = 18000;
+  const count = 8000;
   const meshRef = useRef();
   const mouseRef = useRef(new THREE.Vector3());
 

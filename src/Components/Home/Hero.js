@@ -1,8 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Canvas } from "@react-three/fiber";
-import { PerspectiveCamera } from "@react-three/drei";
+import React, { useState, useEffect, useRef, Suspense } from "react";
 import { motion } from "framer-motion";
-import ParticleSystem from "../Home/particalSystem";
 import styles from "../../Styles/Hero.module.css";
 import OurBestServices from "./Ourservices";
 import CompanySection from "./Compnay";
@@ -12,19 +9,25 @@ import Features from "./Features";
 import FeaturesCard from "./Card";
 import Workflow from "./WorkFlow";
 import GetStarted from "./Getstarted";
-import darkDimTechBg from "../../images/it_slide_1.png";
-import techControlCenter from "../../images/it_slide_2.png";
-import whyChooseBg from "../../images/it_slide_3.png";
+import darkDimTechBg from "../../images/it_slide_1.webp";
+import techControlCenter from "../../images/it_slide_2.webp";
+import whyChooseBg from "../../images/it_slide_3.webp";
 import { useLocation, useNavigate } from "react-router-dom";
-import softLogo from "../../images/soft-logo.png";
+import softLogo from "../../images/soft-logo.webp";
 import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Premium floating background shape assets
-import floatingSphere from "../../images/floating_gold_sphere.png";
-import floatingTorus from "../../images/floating_glass_torus.png";
-import floatingNode from "../../images/floating_tech_node.png";
-import float5 from "../../images/float5.png"
-import float4 from "../../images/float4.png"
+import floatingSphere from "../../images/floating_gold_sphere.webp";
+import floatingTorus from "../../images/floating_glass_torus.webp";
+import floatingNode from "../../images/floating_tech_node.webp";
+import float5 from "../../images/float5.webp"
+import float4 from "../../images/float4.webp"
+import float6 from "../../images/float6.webp"
+import float7 from "../../images/float7.webp"
+import floatingAmberCrescent from "../../images/float1.webp"
+
+const ThreeCanvas = React.lazy(() => import("./ThreeCanvas"));
+
 const Hero = () => {
   const [shape] = useState("wave");
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -79,6 +82,9 @@ const Hero = () => {
       <img src={floatingNode} className={`${styles.ornament} ${styles.ornament3}`} alt="" />
       <img src={float4} className={`${styles.ornament} ${styles.ornament4}`} alt="" />
       <img src={float5} className={`${styles.ornament} ${styles.ornament5}`} alt="" />
+      <img src={float6} className={`${styles.ornament} ${styles.ornament6}`} alt="" />
+      <img src={float7} className={`${styles.ornament} ${styles.ornament7}`} alt="" />
+      <img src={floatingAmberCrescent} className={`${styles.ornament} ${styles.ornament8}`} alt="" />
 
       <section className={styles.container}>
         <div className={styles.slideshow}>
@@ -94,16 +100,9 @@ const Hero = () => {
         <div className={styles.darkLayer}></div>
 
         <div className={styles.canvas}>
-          <Canvas>
-            <PerspectiveCamera makeDefault position={[0, 0, 10]} />
-            <ambientLight intensity={0.5} />
-            <ParticleSystem
-              currentShape={shape}
-              color="#fe851e"
-              speed={1.2}
-              size={0.02}
-            />
-          </Canvas>
+          <Suspense fallback={null}>
+            <ThreeCanvas shape={shape} />
+          </Suspense>
         </div>
 
         <motion.div

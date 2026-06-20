@@ -3,22 +3,27 @@
   min-height: 100vh;
   overflow: hidden;
   font-family: "Poppins", sans-serif;
-  background: #000;
+  background-image: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.85)), url("../images/career_bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .form {
   max-width: 900px;
   margin: 80px auto;
-  padding: 30px;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
+  padding: 40px;
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(254, 133, 30, 0.2);
+  border-radius: 20px;
   color: #fff;
-  transition: all 0.2s ease;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .form:hover {
-  box-shadow: 0 0 10px 5px #ad713c;
+  box-shadow: 0 10px 40px rgba(254, 133, 30, 0.2);
+  border-color: rgba(254, 133, 30, 0.4);
 }
 
 .title {
@@ -46,12 +51,28 @@ input,
 select,
 textarea {
   width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(254, 133, 30, 0.2);
   outline: none;
-  background: #fff;
-  font-size: 14px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #fe851e;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(254, 133, 30, 0.2);
 }
 
 textarea {
@@ -170,22 +191,20 @@ textarea {
 
 .starButton {
   position: relative;
-  padding: 12px 35px;
-  font-weight: 500;
-  color: #181818;
-  border-radius: 8px;
-  box-shadow: 0 0 0 #fec1958c;
-  transition: all 0.3s ease-in-out;
-  margin-top: 25px;
-  width: 50%;
-  padding: 14px;
-  background: #fe851e;
-  border: none;
-  border-radius: 10px;
+  padding: 14px 45px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fe851e, #e05a00);
+  box-shadow: 0 4px 15px rgba(254, 133, 30, 0.4);
+  transition: all 0.3s ease;
+  margin: 35px auto 0;
+  display: block;
+  width: max-content;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s ease;
-  left: 200px;
+  border: 1px solid transparent;
+  letter-spacing: 1px;
 }
 
 .star1,
@@ -240,8 +259,8 @@ textarea {
 
 .starButton:hover {
   background: transparent;
-  color: #fec195;
-  box-shadow: 0 0 25px #fec1958c;
+  color: #fe851e;
+  box-shadow: 0 0 25px rgba(254, 133, 30, 0.6);
   border: 1px solid #fe851e;
 }
 
@@ -360,9 +379,7 @@ textarea {
 
 @media(max-width:380px) {
   .starButton {
-    font-size: 12px;
-    padding: 6px 22px;
-    position: relative;
-    left: 70px !important;
+    font-size: 14px;
+    padding: 12px 0;
   }
 }

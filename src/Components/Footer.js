@@ -7,9 +7,9 @@ import {
 } from "react-icons/fa";
 import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
 import { Link } from "react-router-dom";
-import logo from "../images/soft-logo.png";
-import floatingCrescent from "../images/floating_amber_crescent.png";
-import floatingTorus from "../images/floating_glass_torus.png";
+import logo from "../images/soft-logo.webp";
+import floatingCrescent from "../images/float1.webp";
+import floatingTorus from "../images/floating_glass_torus.webp";
 
 const Footer = () => {
   return (

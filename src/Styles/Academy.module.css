@@ -1,5 +1,5 @@
 .wrapper {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.555)), url("../images/dark_dim_tech_bg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.555)), url("../images/dark_dim_tech_bg.webp");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;

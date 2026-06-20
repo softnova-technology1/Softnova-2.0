@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "../../Styles/Navbar.module.css";
-import logo from "../../images/softnovaLogo.webp";
+import logo from "../../images/soft-logo.webp";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -28,6 +28,12 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      setServiceOpen(false);
+    }
+  }, [isMobileMenuOpen]);
 
 
   const handleMouseEnter = () => {
@@ -143,8 +149,9 @@ const Navbar = () => {
           <NavLink
             to="/services"
             className={getLinkClass}
-            onClick={() => {
-              if (window.innerWidth <= 768) {
+            onClick={(e) => {
+              if (window.innerWidth <= DESKTOP_BREAKPOINT) {
+                e.preventDefault();
                 setServiceOpen(!serviceOpen);
               } else {
                 setIsMobileMenuOpen(false);
@@ -169,7 +176,10 @@ const Navbar = () => {
                     key={i}
                     to={s.path}
                     className={styles.dropdownItem}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      setServiceOpen(false);
+                    }}
                   >
                     {s.name}
                   </NavLink>

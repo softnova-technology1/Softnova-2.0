@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../Styles/Company.module.css";
 import { ArrowRight } from "lucide-react";
-import techControlCenter from "../../images/tech_control_center.png";
+import techControlCenter from "../../images/tech_control_center.webp";
 
 const CompanySection = () => {
   return (

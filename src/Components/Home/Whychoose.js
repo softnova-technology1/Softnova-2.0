@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import styles from "../../Styles/Whychoose.module.css";
 import { Brain, Rocket, Handshake, Sparkles } from "lucide-react";
-import office from "../../images/elegance_exec.png";
+import office from "../../images/elegance_exec.webp";
 
 export default function WhyChooseSoftNova() {
   const features = [
