@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 import { motion } from "framer-motion";
 import { FaStar, FaTrophy, FaGlassCheers, FaLaptopCode, FaUsers, FaGraduationCap } from "react-icons/fa";
 import styles from "../../Styles/GalleryImg.module.css";
@@ -47,7 +49,6 @@ import re1 from "../../images/rec-1.webp";
 import re2 from "../../images/rec-2.webp";
 import re3 from "../../images/rec-3.webp";
 
-import SphereBackground from "./Sphere";
 import Breadcrumb from "../BreadCrumb";
 
 const tabsData = {
@@ -135,6 +136,57 @@ const tabsData = {
 
 export default function Achievements() {
   const [activeTab, setActiveTab] = useState("all");
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  const particlesOptions = useMemo(
+    () => ({
+      fullScreen: { enable: false },
+      background: { color: "transparent" },
+      fpsLimit: 120,
+      particles: {
+        number: { value: 120, density: { enable: true, area: 800 } },
+        color: { value: ["#f89e38", "#818cf8", "#fb7185", "#f472b6"] },
+        shape: { type: ["circle", "triangle", "polygon"] },
+        opacity: {
+          value: { min: 0.1, max: 0.8 },
+          animation: { enable: true, speed: 1 },
+        },
+        size: { value: { min: 1, max: 4 } },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          outModes: { default: "out" },
+          attract: { enable: true, rotate: { x: 600, y: 1200 } },
+        },
+        links: {
+          enable: true,
+          distance: 120,
+          color: "#ffffff",
+          opacity: 0.1,
+          width: 1,
+        },
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "grab" },
+        },
+        modes: {
+          grab: { distance: 150, links: { opacity: 0.5 } },
+        },
+      },
+      detectRetina: true,
+    }),
+    [],
+  );
 
   const current = tabsData[activeTab];
 
@@ -143,7 +195,7 @@ export default function Achievements() {
       <Breadcrumb />
       <section className={styles.hero}>
         <div className={styles.sphereBg}>
-          <SphereBackground />
+          {init && <Particles id="tsparticles" options={particlesOptions} />}
         </div>
         <div className={styles.overlay}>
           <span className={styles.heroBadge}>• Gallery</span>

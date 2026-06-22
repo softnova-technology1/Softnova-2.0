@@ -98,33 +98,35 @@ const GraphicDesign = () => {
         </section>
 
         <section className={styles.servicesSection}>
-          <div className={styles.projectsHeader}>
-            <div className={styles.orangeLine}></div>
-            <h2>OUR PROJECTS</h2>
+          <div className={styles.projectsContainer}>
+            <div className={styles.projectsHeader}>
+              <div className={styles.orangeLine}></div>
+              <h2>OUR PROJECTS</h2>
+            </div>
+            <motion.div
+              className={styles.projectsGrid}
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              {services.map((item, index) => (
+                <motion.div
+                  className={styles.projectBox}
+                  key={index}
+                  variants={fadeInUp}
+                  whileHover={{ y: -10 }}
+                >
+                  <div className={styles.imageBox}>
+                    <img loading="lazy" src={item.img} alt={item.title} />
+                  </div>
+                  <div className={styles.cardContent}>
+                    <h3>{item.title}</h3>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
-          <motion.div
-            className={styles.projectsGrid}
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            {services.map((item, index) => (
-              <motion.div
-                className={styles.projectBox}
-                key={index}
-                variants={fadeInUp}
-                whileHover={{ y: -10 }}
-              >
-                <div className={styles.imageBox}>
-                  <img loading="lazy" src={item.img} alt={item.title} />
-                </div>
-                <div className={styles.cardContent}>
-                  <h3>{item.title}</h3>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
         </section>
       </div>
     </>

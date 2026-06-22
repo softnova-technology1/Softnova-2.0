@@ -243,6 +243,12 @@
   padding: 40px 5%;
 }
 
+.projectsContainer {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .projectsHeader {
   margin-bottom: 40px;
   display: flex;

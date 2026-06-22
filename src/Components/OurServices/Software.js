@@ -122,41 +122,43 @@ const SoftwareDevelopment = () => {
         </section>
 
         <section className={styles.wrapper}>
-          <motion.div
-            className={styles.sectionHeader}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <h2 className={styles.heading}>OUR PROJECTS</h2>
-            <div className={styles.line}></div>
-          </motion.div>
+          <div className={styles.projectsContainer}>
+            <motion.div
+              className={styles.sectionHeader}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <h2 className={styles.heading}>OUR PROJECTS</h2>
+              <div className={styles.line}></div>
+            </motion.div>
 
-          <motion.div
-            className={styles.projectsGrid}
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-          >
-            {projects.map((item, index) => (
-              <motion.div
-                key={index}
-                className={styles.projectBox}
-                variants={fadeInUp}
-                whileHover={{ y: -10 }}
-                onClick={() => setSelectedProject(item)}
-              >
-                <div className={styles.imageBox}>
-                  <img loading="lazy" src={item.image} alt={item.title} />
-                </div>
-                <div className={styles.cardContent}>
-                  <span className={styles.category}>{item.category}</span>
-                  <h3>{item.title}</h3>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+            <motion.div
+              className={styles.projectsGrid}
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {projects.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className={styles.projectBox}
+                  variants={fadeInUp}
+                  whileHover={{ y: -10 }}
+                  onClick={() => setSelectedProject(item)}
+                >
+                  <div className={styles.imageBox}>
+                    <img loading="lazy" src={item.image} alt={item.title} />
+                  </div>
+                  <div className={styles.cardContent}>
+                    <span className={styles.category}>{item.category}</span>
+                    <h3>{item.title}</h3>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </section>
       </div>
 
