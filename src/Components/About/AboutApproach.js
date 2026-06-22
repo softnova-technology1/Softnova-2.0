@@ -17,6 +17,7 @@ import img1 from "../../images/About-Images/about1.jpg";
 import img2 from "../../images/About-Images/about4.jpg";
 import img3 from "../../images/About-Images/about3.jpg";
 import img4 from "../../images/About-Images/about2.jpg";
+import OurTeam from "./OurTeam";
 
 const statsData = [
   {icon: <FaProjectDiagram />, value: 70, suffix: "+", label: "Successful Projects"},
@@ -255,6 +256,7 @@ const Stats = () => {
           ))}
         </div>
       </motion.div>
+      <OurTeam />
       <motion.section
         ref={sectionRef}
         className={styles.statsSection}
