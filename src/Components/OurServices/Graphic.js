@@ -56,7 +56,7 @@ const GraphicDesign = () => {
               className={styles.textBox}
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
               <span className={styles.tag}>
@@ -89,7 +89,7 @@ const GraphicDesign = () => {
               className={styles.visualBox}
               initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
               whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 1, type: "spring" }}
             >
               <img loading="lazy" src={desktop} alt="Desktop" className={styles.desktop} />
@@ -98,33 +98,35 @@ const GraphicDesign = () => {
         </section>
 
         <section className={styles.servicesSection}>
-          <div className={styles.projectsHeader}>
-            <div className={styles.orangeLine}></div>
-            <h2>OUR PROJECTS</h2>
+          <div className={styles.projectsContainer}>
+            <div className={styles.projectsHeader}>
+              <div className={styles.orangeLine}></div>
+              <h2>OUR PROJECTS</h2>
+            </div>
+            <motion.div
+              className={styles.projectsGrid}
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              {services.map((item, index) => (
+                <motion.div
+                  className={styles.projectBox}
+                  key={index}
+                  variants={fadeInUp}
+                  whileHover={{ y: -10 }}
+                >
+                  <div className={styles.imageBox}>
+                    <img loading="lazy" src={item.img} alt={item.title} />
+                  </div>
+                  <div className={styles.cardContent}>
+                    <h3>{item.title}</h3>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
-          <motion.div
-            className={styles.projectsGrid}
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
-          >
-            {services.map((item, index) => (
-              <motion.div
-                className={styles.projectBox}
-                key={index}
-                variants={fadeInUp}
-                whileHover={{ y: -10 }}
-              >
-                <div className={styles.imageBox}>
-                  <img loading="lazy" src={item.img} alt={item.title} />
-                </div>
-                <div className={styles.cardContent}>
-                  <h3>{item.title}</h3>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
         </section>
       </div>
     </>

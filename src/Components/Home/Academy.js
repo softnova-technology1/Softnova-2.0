@@ -1,7 +1,16 @@
-import { Container } from "react-bootstrap";
+import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../Styles/Academy.module.css";
-import academy from "../../images/academygirl.webp";
+import studentImg from "../../images/futuristic_student.png";
+import { 
+  ArrowRight, 
+  GraduationCap, 
+  Award, 
+  Sparkles, 
+  Code, 
+  Compass, 
+  Briefcase 
+} from "lucide-react";
 
 export default function AcademyHero() {
   const containerVariants = {
@@ -9,110 +18,191 @@ export default function AcademyHero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
       },
     },
   };
 
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
       transition: { duration: 0.8, ease: "easeOut" },
     },
   };
 
+  const roadmaps = [
+    { name: "HTML", color: "#e44d26" },
+    { name: "CSS", color: "#1572b6" },
+    { name: "JAVA", color: "#5382a1" },
+    { name: "REACT", color: "#03a5b7" },
+    { name: "MONGO", color: "#4caf50" },
+  ];
 
-  const imageVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.9, ease: "easeOut" },
+  const stats = [
+    {
+      title: "Project Based Learning",
+      desc: "Apply your knowledge directly by building real-world software and applications.",
+      icon: Code,
     },
-  };
+    {
+      title: "Industry Mentorship",
+      desc: "Learn from top developers and tech leads working in the industry.",
+      icon: Compass,
+    },
+    {
+      title: "Career Guidance",
+      desc: "Receive career-oriented counseling, resume building, and interview training.",
+      icon: Briefcase,
+    },
+  ];
 
   return (
-    <Container>
-      <motion.section
-        className={styles.hero}
+    <section className={styles.wrapper}>
+      <div className={styles.backgroundEffects}>
+        <div className={styles.orb1}></div>
+        <div className={styles.orb2}></div>
+        <div className={styles.gridPattern}></div>
+      </div>
+
+      <motion.div
+        className={styles.container}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
+        variants={containerVariants}
       >
-        <motion.div className={styles.imageWrap} variants={imageVariants}>
-          <img loading="lazy" src={academy} alt="Academy" className={styles.image} />
+        {/* SECTION HEADER */}
+        <motion.div className={styles.header} variants={fadeInUp}>
+          <span className={styles.preTitle}>
+            <Sparkles size={14} className={styles.sparkleIcon} />
+            FUTURE-PROOF YOUR SKILLS
+          </span>
+          <h2 className={styles.heading}>ACADEMY</h2>
+          <div className={styles.divider}></div>
         </motion.div>
-        <motion.div className={styles.content} variants={containerVariants}>
-          <motion.h1 className={styles.title} variants={itemVariants}>
-            Academy
-          </motion.h1>
 
-          <motion.p className={styles.subtitle} variants={itemVariants}>
-            SoftNova Academy delivers industry-focused digital learning through practical, goal-driven training. We combine technical expertise and creative insight to offer hands-on programs in web development, digital marketing, UI/UX, and emerging technologies. With real-world projects, expert mentorship, and career-oriented guidance, we empower learners with the skills needed to succeed and grow in today’s competitive digital landscape.
-          </motion.p>
+        {/* MAIN LAYOUT */}
+        <div className={styles.mainLayout}>
+          {/* Left Side: Visual Frame with Floating Badges */}
+          <motion.div className={styles.imageWrap} variants={imageVariants}>
+            <div className={styles.imageFrame}>
+              <img
+                loading="lazy"
+                src={studentImg}
+                alt="Softnova Academy Student"
+                className={styles.studentImage}
+              />
+              <div className={styles.imageGlowOverlay}></div>
 
-          <motion.div className={styles.iconRow} variants={itemVariants}>
-            {["html", "css", "java", "react", "mongo"].map((tech, index) => (
-              <motion.div
-                key={index}
-                className={`${styles.icon} ${styles[tech]}`}
-                whileHover={{ scale: 1.2 }}
-              >
-                {tech.toUpperCase()}
-              </motion.div>
-            ))}
+              {/* Floating Badges */}
+              <div className={`${styles.badge} ${styles.badge1}`}>
+                <GraduationCap size={18} className={styles.badgeIcon} />
+                <div className={styles.badgeContent}>
+                  <span className={styles.badgeNum}>98%</span>
+                  <span className={styles.badgeLabel}>Completion Rate</span>
+                </div>
+              </div>
+
+              <div className={`${styles.badge} ${styles.badge2}`}>
+                <Award size={18} className={styles.badgeIcon} />
+                <div className={styles.badgeContent}>
+                  <span className={styles.badgeLabel}>Certified Program</span>
+                </div>
+              </div>
+
+              <div className={`${styles.badge} ${styles.badge3}`}>
+                <span className={styles.ratingStars}>★★★★★</span>
+                <span className={styles.badgeLabel}>Rating Course</span>
+              </div>
+            </div>
           </motion.div>
 
-          <motion.div className={styles.buttonRow} variants={itemVariants}>
-            <a
-              href="https://softnovatechnology.com/"
-              target="_blank"
-              rel="noreferrer"
+          {/* Right Side: Description Content & Roadmap */}
+          <motion.div className={styles.contentWrap} variants={containerVariants}>
+            <motion.div className={styles.descriptionBlock} variants={fadeInUp}>
+              <p className={styles.para}>
+                SoftNova Academy delivers industry-focused digital learning
+                through practical, goal-driven training. We combine technical
+                expertise and creative insight to offer hands-on programs in web
+                development, digital marketing, UI/UX, and emerging technologies.
+                With real-world projects, expert mentorship, and career-oriented
+                guidance, we empower learners with the skills needed to succeed
+                and grow in today’s competitive digital landscape.
+              </p>
+            </motion.div>
+
+            {/* LEARNING ROADMAP */}
+            <motion.div className={styles.roadmapBlock} variants={fadeInUp}>
+              <h4 className={styles.roadmapTitle}>LEARNING ROADMAP PATH</h4>
+              <div className={styles.roadmapPath}>
+                {roadmaps.map((node, index) => (
+                  <React.Fragment key={index}>
+                    <motion.div
+                      className={styles.roadmapNode}
+                      whileHover={{ scale: 1.1, translateY: -2 }}
+                      transition={{ duration: 0.2 }}
+                      style={{ "--node-color": node.color }}
+                    >
+                      <span className={styles.nodeText}>{node.name}</span>
+                    </motion.div>
+                    {index < roadmaps.length - 1 && (
+                      <div className={styles.roadmapLine}>
+                        <div className={styles.roadmapLineActive}></div>
+                      </div>
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* COURSE STATS */}
+        <motion.div className={styles.statsGrid} variants={containerVariants}>
+          {stats.map((stat, idx) => (
+            <motion.div
+              key={idx}
+              className={styles.statCard}
+              variants={fadeInUp}
+              whileHover={{ y: -6, scale: 1.02 }}
+              transition={{ duration: 0.3 }}
             >
-              <button className={styles.starButton}>
-                Show More
-                <div className={styles.star1}>
-                  <StarSvg />
-                </div>
-                <div className={styles.star2}>
-                  <StarSvg />
-                </div>
-                <div className={styles.star3}>
-                  <StarSvg />
-                </div>
-                <div className={styles.star4}>
-                  <StarSvg />
-                </div>
-                <div className={styles.star5}>
-                  <StarSvg />
-                </div>
-                <div className={styles.star6}>
-                  <StarSvg />
-                </div>
-              </button>
-            </a>
-          </motion.div>
+              <div className={styles.statIconWrapper}>
+                <stat.icon size={22} className={styles.statIcon} />
+              </div>
+              <h4 className={styles.statTitle}>{stat.title}</h4>
+              <p className={styles.statDesc}>{stat.desc}</p>
+            </motion.div>
+          ))}
         </motion.div>
-      </motion.section>
-    </Container>
+
+        {/* CALL TO ACTION */}
+        <motion.div className={styles.ctaBlock} variants={fadeInUp}>
+          <a
+            href="https://softnovatechnology.com/"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.ctaLink}
+          >
+            <button className={styles.ctaBtn}>
+              <span>Show More</span>
+              <ArrowRight size={18} className={styles.ctaArrow} />
+            </button>
+          </a>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 }
-
-const StarSvg = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 784.11 815.53"
-    className={styles.svg}
-  >
-    <path
-      className={styles.fil0}
-      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78
-         207.96,29.37 371.12,197.68 392.05,407.74
-         20.93,-210.06 184.09,-378.37 392.05,-407.74
-         -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-    />
-  </svg>
-);

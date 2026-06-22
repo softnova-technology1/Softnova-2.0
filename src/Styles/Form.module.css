@@ -3,7 +3,7 @@
   min-height: 100vh;
   overflow: hidden;
   font-family: "Poppins", sans-serif;
-  background-image: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.85)), url("../images/career_bg.png");
+  background-image: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.85)), url("../images/career_bg.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

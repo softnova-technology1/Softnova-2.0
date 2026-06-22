@@ -87,7 +87,7 @@ const SoftwareDevelopment = () => {
               className={styles.content}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               variants={fadeInUp}
             >
               <span className={styles.tag}>Software Development</span>
@@ -113,7 +113,7 @@ const SoftwareDevelopment = () => {
               className={styles.card}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 1 }}
             >
               <img loading="lazy" src={shan} alt="Software Development" />
@@ -122,41 +122,43 @@ const SoftwareDevelopment = () => {
         </section>
 
         <section className={styles.wrapper}>
-          <motion.div
-            className={styles.sectionHeader}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: false }}
-          >
-            <h2 className={styles.heading}>OUR PROJECTS</h2>
-            <div className={styles.line}></div>
-          </motion.div>
+          <div className={styles.projectsContainer}>
+            <motion.div
+              className={styles.sectionHeader}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <h2 className={styles.heading}>OUR PROJECTS</h2>
+              <div className={styles.line}></div>
+            </motion.div>
 
-          <motion.div
-            className={styles.projectsGrid}
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.1 }}
-          >
-            {projects.map((item, index) => (
-              <motion.div
-                key={index}
-                className={styles.projectBox}
-                variants={fadeInUp}
-                whileHover={{ y: -10 }}
-                onClick={() => setSelectedProject(item)}
-              >
-                <div className={styles.imageBox}>
-                  <img loading="lazy" src={item.image} alt={item.title} />
-                </div>
-                <div className={styles.cardContent}>
-                  <span className={styles.category}>{item.category}</span>
-                  <h3>{item.title}</h3>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+            <motion.div
+              className={styles.projectsGrid}
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {projects.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className={styles.projectBox}
+                  variants={fadeInUp}
+                  whileHover={{ y: -10 }}
+                  onClick={() => setSelectedProject(item)}
+                >
+                  <div className={styles.imageBox}>
+                    <img loading="lazy" src={item.image} alt={item.title} />
+                  </div>
+                  <div className={styles.cardContent}>
+                    <span className={styles.category}>{item.category}</span>
+                    <h3>{item.title}</h3>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </section>
       </div>
 

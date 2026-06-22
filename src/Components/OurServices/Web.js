@@ -68,7 +68,7 @@ const WebDevelopment = () => {
               className={styles.textSection}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               variants={fadeInUp}
             >
               <div className={styles.headerContainer}>
@@ -97,7 +97,7 @@ const WebDevelopment = () => {
               className={styles.visualSection}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
               <img loading="lazy" src={front} alt="Web Development" />
