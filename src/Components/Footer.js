@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
 import { Link } from "react-router-dom";
-import logo from "../images/f-logo.webp";
+import logo from "../images/logs.png";
 import floatingCrescent from "../images/float1.webp";
 import floatingTorus from "../images/floating_glass_torus.webp";
 

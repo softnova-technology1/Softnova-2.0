@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "../../Styles/Navbar.module.css";
-import logo from "../../images/f-logo.webp";
+import logo from "../../images/logs.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {

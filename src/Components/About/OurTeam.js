@@ -22,7 +22,7 @@ const teamData = [
     socials: {
       linkedin: "https://www.linkedin.com/in/narenbalraj/",
       // github: "https://github.com",
-      email: "Softnovatech24@gmail.com"
+      mailto: "info@softnovatech.com"
     }
   },
   {
@@ -33,7 +33,7 @@ const teamData = [
     socials: {
       // linkedin: "https://linkedin.com",
       // github: "https://github.com",
-      email: "Softnovatech24@gmail.com"
+      mailto: "info@softnovatech.com"
     }
   },
   {
@@ -44,7 +44,7 @@ const teamData = [
     socials: {
       linkedin: "https://www.linkedin.com/in/dharshika-s-aa615028a/",
       github: "https://github.com/dharshika29",
-      email: "sdharshika00@gmail.com"
+      mailto: "sdharshika00@gmail.com"
     }
   },
   {
@@ -53,10 +53,9 @@ const teamData = [
     role: "Full Stack Developer & Video Editor",
     img: team4,
     socials: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-      github: "https://github.com",
-      email: "mailto:emily@softnova.com"
+      linkedin: "https://www.linkedin.com/in/adhithyan-p-781b2138b/",
+      github: "https://github.com/Athithyan61",
+      mailto: "athithyanathithyan06@gmail.com"
     }
   },
   {
@@ -65,10 +64,9 @@ const teamData = [
     role: "Digital Marketing & Business Development Executive",
     img: team5,
     socials: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-      github: "https://github.com",
-      email: "mailto:michael@softnova.com"
+      linkedin: "https://www.linkedin.com/in/santhiya-c-671962251/",
+      // github: "https://github.co",
+      mailto: "sya258027@gmail.com"
     }
   },
   {
@@ -77,10 +75,9 @@ const teamData = [
     role: "Full Stack Developer",
     img: team6,
     socials: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-      github: "https://github.com",
-      email: "mailto:sophia@softnova.com"
+      linkedin: "https://www.linkedin.com/in/shanmathi2001/",
+      github: "https://github.com/Shanmathi0605 ",
+      mailto: "smily.shanvi6597@gmail.com"
     }
   },
   {
@@ -90,9 +87,8 @@ const teamData = [
     img: team7,
     socials: {
       linkedin: "https://www.linkedin.com/in/ega-ajith-g2004/",
-      twitter: "https://twitter.com",
       github: "https://github.com/EGAAJITH-G",
-      email: "egaajith4343@gmail.com"
+      mailto: "egaajith4343@gmail.com"
     }
   },
   {
@@ -102,9 +98,8 @@ const teamData = [
     img: team8,
     socials: {
       linkedin: "https://www.linkedin.com/in/akileswaran-dev/",
-      twitter: "https://twitter.com",
       github: "https://github.com/Akileswaran-Dev",
-      email: "akileswaran.dev@gmail.com"
+      mailto: "akileswaran.dev@gmail.com"
     }
   },
   {
@@ -113,9 +108,9 @@ const teamData = [
     role: "MERN Stack Developer",
     img: team9,
     socials: {
-      linkedin: "https://linkedin.com",
-      github: "https://github.com",
-      email: ""
+      linkedin: "https://www.linkedin.com/in/thangadeepak-developer/",
+      github: "https://github.com/thangadeepak",
+      mailto: "thangadeepakdeepak05@gmail.com"
     }
   }
 ];
@@ -186,17 +181,15 @@ const OurTeam = () => {
                 <FaGithub />
               </a>
             </li>
-            {member.socials.email && (
-              <li>
-                <a
-                  href={member.socials.email.startsWith("mailto:") ? member.socials.email : `mailto:${member.socials.email}`}
-                  className={styles.socialLink}
-                  aria-label={`${member.name} Email`}
-                >
-                  <FaEnvelope />
-                </a>
-              </li>
-            )}
+            <li>
+              <a
+                href={member.socials.mailto}
+                className={styles.socialLink}
+                aria-label={`${member.name} Mailto`}
+              >
+                <FaEnvelope />
+              </a>
+            </li>
           </ul>
         </div>
       </article>
@@ -285,17 +278,15 @@ const OurTeam = () => {
                     <FaGithub />
                   </a>
                 </li>
-                {ceoData.socials.email && (
-                  <li>
-                    <a
-                      href={ceoData.socials.email.startsWith("mailto:") ? ceoData.socials.email : `mailto:${ceoData.socials.email}`}
-                      className={styles.ceoSocialLink}
-                      aria-label={`${ceoData.name} Email`}
-                    >
-                      <FaEnvelope />
-                    </a>
-                  </li>
-                )}
+                <li>
+                  <a
+                    href={ceoData.socials.email}
+                    className={styles.ceoSocialLink}
+                    aria-label={`${ceoData.name} Email`}
+                  >
+                    <FaEnvelope />
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -316,3 +307,4 @@ const OurTeam = () => {
 };
 
 export default OurTeam;
+
