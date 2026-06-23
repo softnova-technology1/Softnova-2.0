@@ -1,0 +1,723 @@
+@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&display=swap');
+
+.teamSection {
+    position: relative;
+    padding: 8rem 0 6rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Background blurred glow shapes */
+.bgCircle1 {
+    position: absolute;
+    top: 5%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(254, 133, 30, 0.08), transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bgCircle2 {
+    position: absolute;
+    bottom: 5%;
+    right: -10%;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(238, 9, 121, 0.06), transparent 70%);
+    filter: blur(70px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Headings Area */
+.headingWrapper {
+    text-align: left;
+    padding: 0 4rem;
+    margin-bottom: 5rem;
+    z-index: 2;
+}
+
+.subtitle {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.title {
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    position: relative;
+}
+
+.highlight {
+    color: #fe851e;
+    font-style: italic;
+}
+
+/* Orange underline effect matching the mockup */
+.title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: #fe851e;
+    margin-top: 12px;
+}
+
+/* Centered Wrap Grid Container for 7 members (4-3 pattern) */
+.gridContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 2;
+    padding: 0 2rem;
+}
+
+.row1,
+.row2 {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 100%;
+}
+
+/* Team Card */
+.teamCard {
+    flex: 0 0 290px;
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Image Container */
+.imageContainer {
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+    position: relative;
+    border: 1.5px solid rgba(255, 255, 255, 0.08);
+    background-color: #fb7414;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1;
+}
+
+.cardType1 .imageContainer {
+    border-radius: 50px 12px 50px 12px;
+}
+
+.cardType2 .imageContainer {
+    border-radius: 12px 50px 12px 50px;
+}
+
+/* Glow Backdrop behind the portrait */
+.glowBackdrop {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(254, 133, 30, 0.4) 0%, rgba(254, 133, 30, 0) 70%);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
+}
+
+/* Watermark text behind portrait */
+.watermark {
+    position: absolute;
+    bottom: 12%;
+    left: 5%;
+    font-size: 5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.03);
+    letter-spacing: 0.05em;
+    pointer-events: none;
+    z-index: 1;
+    line-height: 1;
+    user-select: none;
+    transform: translateY(0) rotate(-6deg);
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), -webkit-text-stroke 0.5s ease;
+}
+
+.memberImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    filter: grayscale(85%) contrast(1.05) brightness(0.95);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
+    pointer-events: none;
+}
+
+/* Orange Gradient Overlay */
+.imageOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(12, 15, 22, 0.3) 75%, rgba(12, 15, 22, 0.9) 100%);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 3;
+}
+
+/* Name Overlay bottom-left inside image */
+.nameOverlay {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    color: #ffffff;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    z-index: 4;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+}
+
+/* Hover States */
+.teamCard:hover .imageContainer {
+    border-color: rgba(254, 133, 30, 0.45);
+    box-shadow: 0 15px 35px rgba(254, 133, 30, 0.25), 0 0 20px rgba(254, 133, 30, 0.1);
+    transform: translateY(-6px);
+}
+
+.teamCard:hover .glowBackdrop {
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 0.9;
+}
+
+.teamCard:hover .watermark {
+    transform: translateY(-8px) rotate(-3deg);
+    -webkit-text-stroke: 1.5px rgba(254, 133, 30, 0.12);
+}
+
+.teamCard:hover .memberImg {
+    transform: scale(1.06) translateY(-4px);
+    filter: grayscale(0%) contrast(1.1) brightness(1.05);
+}
+
+.teamCard:hover .imageOverlay {
+    background: linear-gradient(180deg, transparent 40%, rgba(254, 133, 30, 0.1) 70%, rgba(254, 133, 30, 0.8) 100%);
+}
+
+.teamCard:hover .nameOverlay {
+    opacity: 0.2;
+    transform: translateY(-8px) scale(0.95);
+}
+
+/* Info Panel below image */
+.infoContainer {
+    padding: 1.2rem 0.5rem 0;
+    text-align: left;
+    z-index: 2;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.teamCard:hover .infoContainer {
+    transform: translateY(-4px);
+}
+
+.memberRole {
+    font-size: 0.8rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #fe851e;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    transition: color 0.3s ease;
+}
+
+.teamCard:hover .memberRole {
+    color: #ff6a00;
+}
+
+.memberNameSub {
+    font-size: 1.05rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+/* Divider Line */
+.dividerLine {
+    width: 0%;
+    height: 1.5px;
+    background: linear-gradient(90deg, #fe851e, #ff6a00);
+    margin: 0.6rem 0;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.teamCard:hover .dividerLine {
+    width: 60%;
+}
+
+/* Social icons list */
+.socialsList {
+    display: flex;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(12px) rotate(-15deg);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, background 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+}
+
+.teamCard:hover .socialLink {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+}
+
+.teamCard:hover .socialsList li:nth-child(1) .socialLink {
+    transition-delay: 0.05s;
+}
+
+.teamCard:hover .socialsList li:nth-child(2) .socialLink {
+    transition-delay: 0.1s;
+}
+
+.teamCard:hover .socialsList li:nth-child(3) .socialLink {
+    transition-delay: 0.15s;
+}
+
+.teamCard:hover .socialsList li:nth-child(4) .socialLink {
+    transition-delay: 0.2s;
+}
+
+.socialLink:hover {
+    background: linear-gradient(135deg, #fe851e, #ff6a00) !important;
+    color: #ffffff !important;
+    border-radius: 35% !important;
+    box-shadow: 0 4px 12px rgba(254, 133, 30, 0.3) !important;
+    transform: translateY(-3px) scale(1.1) rotate(5deg) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .headingWrapper {
+        padding: 0 2rem;
+    }
+    
+    .gridContainer {
+        gap: 2.5rem 2rem;
+    }
+
+    .row1,
+    .row2 {
+        flex-wrap: wrap;
+        gap: 2.5rem 2rem;
+    }
+    
+    .ceoSpotlight {
+        margin-bottom: 4.5rem;
+    }
+    
+    .ceoCard {
+        flex-direction: column;
+        padding: 2.5rem;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .ceoImageCol {
+        width: 100%;
+        max-width: 310px;
+        margin: 0 auto;
+    }
+    
+    .ceoImageContainer {
+        height: 390px;
+    }
+    
+    .ceoHeaderLine {
+        margin: 0 auto 1.25rem;
+    }
+    
+    .ceoSignature {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .ceoSocials {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .teamSection {
+        padding: 5rem 0 4rem;
+    }
+    
+    .headingWrapper {
+        margin-bottom: 3.5rem;
+    }
+
+    .gridContainer {
+        gap: 2rem;
+    }
+
+    .row1,
+    .row2 {
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .teamCard {
+        flex: 0 0 270px;
+        width: 270px;
+    }
+
+    .imageContainer {
+        height: 330px;
+    }
+}
+
+/* CEO Spotlight Section (SpaceX Elon Musk Style) */
+.ceoSpotlight {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 6rem;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Dotted grid design in background of CEO card */
+.ceoGridPattern {
+    position: absolute;
+    inset: -12px;
+    background-image: radial-gradient(rgba(254, 133, 30, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+    border-radius: 32px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.5s ease;
+}
+
+.ceoCard {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(135deg, rgba(14, 17, 24, 0.75) 0%, rgba(8, 10, 15, 0.65) 100%);
+    border: 1.5px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 3.5rem;
+    gap: 4.5rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    align-items: center;
+    backdrop-filter: blur(16px);
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.ceoCard:hover {
+    border-color: rgba(254, 133, 30, 0.25);
+    box-shadow: 0 25px 60px rgba(254, 133, 30, 0.15), 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.ceoCard:hover .ceoGridPattern {
+    opacity: 0.85;
+}
+
+/* Executive badge top-right of CEO card */
+.ceoBadge {
+    position: absolute;
+    top: 1.75rem;
+    right: 2rem;
+    background: rgba(254, 133, 30, 0.08);
+    border: 1px solid rgba(254, 133, 30, 0.25);
+    color: #fe851e;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    pointer-events: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: all 0.4s ease;
+}
+
+.ceoCard:hover .ceoBadge {
+    background: rgba(254, 133, 30, 0.15);
+    box-shadow: 0 0 15px rgba(254, 133, 30, 0.15);
+    transform: translateY(-2px);
+}
+
+.ceoImageCol {
+    flex: 0 0 340px;
+    width: 340px;
+    position: relative;
+    overflow: visible;
+    z-index: 2;
+}
+
+/* Double border floating wireframe behind photo container */
+.ceoImageWireframe {
+    position: absolute;
+    inset: -12px 12px 12px -12px;
+    border: 1.5px solid rgba(254, 133, 30, 0.2);
+    border-radius: 18px;
+    pointer-events: none;
+    z-index: 0;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease;
+}
+
+.ceoCard:hover .ceoImageWireframe {
+    transform: translate(-6px, 6px) scale(1.01);
+    border-color: rgba(254, 133, 30, 0.5);
+}
+
+.ceoImageContainer {
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1.5px solid rgba(255, 255, 255, 0.08);
+    background: #0c0f16;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1;
+}
+
+.ceoCard:hover .ceoImageContainer {
+    border-color: rgba(254, 133, 30, 0.45);
+    box-shadow: 0 20px 40px rgba(254, 133, 30, 0.25), 0 0 20px rgba(254, 133, 30, 0.1);
+    transform: translateY(-8px);
+}
+
+.ceoGlowBackdrop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(254, 133, 30, 0.45) 0%, rgba(254, 133, 30, 0) 70%);
+    border-radius: 50%;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
+}
+
+.ceoCard:hover .ceoGlowBackdrop {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0.85;
+}
+
+.ceoWatermark {
+    position: absolute;
+    bottom: 12%;
+    left: 5%;
+    font-size: 6rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.02);
+    letter-spacing: 0.05em;
+    pointer-events: none;
+    z-index: 1;
+    line-height: 1;
+    user-select: none;
+    transform: translateY(0) rotate(-6deg);
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), -webkit-text-stroke 0.5s ease;
+}
+
+.ceoCard:hover .ceoWatermark {
+    transform: translateY(-8px) rotate(-3deg);
+    -webkit-text-stroke: 1.5px rgba(254, 133, 30, 0.12);
+}
+
+.ceoImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    filter: grayscale(85%) contrast(1.05) brightness(0.95);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
+    pointer-events: none;
+}
+
+.ceoCard:hover .ceoImg {
+    transform: scale(1.06);
+    filter: grayscale(0%) contrast(1.1) brightness(1.05);
+}
+
+.ceoInfoCol {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Giant quotation watermark in card text block */
+.ceoQuoteMark {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 14rem;
+    color: rgba(254, 133, 30, 0.04);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 900;
+    pointer-events: none;
+    z-index: 0;
+    line-height: 1;
+    user-select: none;
+    transition: color 0.4s ease, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ceoCard:hover .ceoQuoteMark {
+    color: rgba(254, 133, 30, 0.08);
+    transform: translateY(-5px) scale(1.05);
+}
+
+.ceoHeaderLine {
+    width: 40px;
+    height: 3px;
+    background: #fe851e;
+    margin-bottom: 1.25rem;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ceoCard:hover .ceoHeaderLine {
+    width: 80px;
+}
+
+.ceoRole {
+    font-size: 0.85rem;
+    color: #fe851e;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    position: relative;
+    z-index: 1;
+}
+
+.ceoName {
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    color: #ffffff;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    line-height: 1.1;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    position: relative;
+    z-index: 1;
+}
+
+.ceoBio {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+}
+
+.ceoSignature {
+    font-family: 'Herr Von Muellerhoff', cursive;
+    font-size: 4.8rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin-bottom: 1.75rem;
+    line-height: 1;
+    user-select: none;
+    transform: rotate(-3deg);
+    transform-origin: left;
+    position: relative;
+    z-index: 1;
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.ceoCard:hover .ceoSignature {
+    color: rgba(254, 133, 30, 0.6);
+    transform: rotate(-1deg) scale(1.05);
+}
+
+.ceoSocials {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.ceoSocialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ceoSocialLink:hover {
+    background: linear-gradient(135deg, #fe851e, #ff6a00);
+    color: #ffffff;
+    border-radius: 35%;
+    box-shadow: 0 4px 12px rgba(254, 133, 30, 0.3);
+    transform: translateY(-3px) scale(1.1) rotate(5deg);
+}

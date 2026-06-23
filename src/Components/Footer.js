@@ -32,13 +32,13 @@ const Footer = () => {
           <div className={styles.verticalDivider}></div>
 
           <div className={styles.contact}>
-            <h3>Please write to us</h3>
+            <h3>SOFTNOVA(HEAD OFFICE)</h3>
 
             <div className={styles.contactItem}>
               <MdLocationOn />
               <span>
-                1st Floor, Softnova Apartment, SNV Mahal back side, near SBI bank,
-                Peravurani.
+               Near SBI bank, Softnova Apartment, 1st Floor, 
+                Peravurani, Thanjavur, India.
               </span>
             </div>
 
@@ -56,12 +56,12 @@ const Footer = () => {
           <div className={styles.verticalDivider}></div>
 
           <div className={styles.contact}>
-            <h3> Softnova(HUB)</h3>
+            <h3> SINGAPORE(HUB)</h3>
 
             <div className={styles.contactItem}>
               <MdLocationOn />
               <span>
-              Singapore 01-019, Jalan Besar Singapore - 208786
+              #01-019, Jalan Besar <br/>Singapore - 208786
               </span>
             </div>
 
