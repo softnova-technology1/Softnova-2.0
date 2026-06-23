@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../../Styles/Ourservice.module.css";
-import butterfly from "../../images/butterfly.gif";
 import { Megaphone, TrendingUp, Palette, Lightbulb, Settings } from "lucide-react";
 
 const services = [
@@ -74,12 +73,17 @@ const Ourservice = () => {
     <>
       <section className={styles.wrapper}>
         <div className={styles.container}>
-          <h2 className={styles.heading}>
-            <span>
-              <img loading="lazy" src={butterfly} alt="" width={'100px'} />
-            </span>
-            OUR BEST SERVICES
-          </h2>
+          <div className={styles.headingContainer}>
+            <h2 className={styles.heading}>
+              OUR BEST SERVICES
+              <div className={styles.headingGlow}></div>
+            </h2>
+            <div className={styles.headingDivider}>
+              <span className={styles.dividerLine}></span>
+              <span className={styles.dividerDot}></span>
+              <span className={styles.dividerLineRight}></span>
+            </div>
+          </div>
 
           <div className={styles.timeline}>
             {services.map((item) => (

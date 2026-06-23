@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import styles from "../../Styles/Getstarted.module.css";
 import emailjs from "@emailjs/browser";
-import contactImg from "../../images/contact_luxury.webp";
+import contactImg from "../../images/cont.png";
 import { User, Mail, Phone, MessageSquare, Send, Sparkles } from "lucide-react";
 
 export default function GetStarted() {
