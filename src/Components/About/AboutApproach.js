@@ -29,10 +29,10 @@ const statsData = [
 const steps = [
   { id: 1, title: "Assess Infrastructure", pos: "top-left" },
   { id: 2, title: "Define Strategic Goals", pos: "top-right" },
-  { id: 3, title: "Modern Technologies", pos: "right" },
-  { id: 4, title: "Scalable IT Strategy", pos: "bottom-right" },
+  { id: 3, title: "Modern Technologies", pos: "left" },
+  { id: 4, title: "Scalable IT Strategy", pos: "right" },
   { id: 5, title: "Change Management", pos: "bottom-left" },
-  { id: 6, title: "Optimize Performance", pos: "left" },
+  { id: 6, title: "Optimize Performance", pos: "bottom-right" },
 ];
 
 const serviceCards = [

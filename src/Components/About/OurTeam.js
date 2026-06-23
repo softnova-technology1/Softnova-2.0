@@ -16,14 +16,13 @@ import team9 from "../../images/About-Images/t8.png";
 const teamData = [
   {
     id: 1,
-    name: "Sarah Connor",
+    name: "Narendhiran Balraj",
     role: "CEO & Founder",
     img: team2,
     socials: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-      github: "https://github.com",
-      email: "mailto:sarah@softnova.com"
+      linkedin: "https://www.linkedin.com/in/narenbalraj/",
+      // github: "https://github.com",
+      email: "Softnovatech24@gmail.com"
     }
   },
   {
@@ -32,10 +31,9 @@ const teamData = [
     role: "HR Manager",
     img: team1,
     socials: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-      github: "https://github.com",
-      email: "mailto:john@softnova.com"
+      // linkedin: "https://linkedin.com",
+      // github: "https://github.com",
+      email: "Softnovatech24@gmail.com"
     }
   },
   {
@@ -44,16 +42,15 @@ const teamData = [
     role: "Senior Full Stack Developer & Technical Trainer",
     img: team3,
     socials: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-      github: "https://github.com",
-      email: "mailto:david@softnova.com"
+      linkedin: "https://www.linkedin.com/in/dharshika-s-aa615028a/",
+      github: "https://github.com/dharshika29",
+      email: "sdharshika00@gmail.com"
     }
   },
   {
     id: 4,
     name: "Adhithyan",
-    role: "Full Stack Developer & Video Editor" ,
+    role: "Full Stack Developer & Video Editor",
     img: team4,
     socials: {
       linkedin: "https://linkedin.com",
@@ -104,10 +101,10 @@ const teamData = [
     role: " AI Full Stack Developer & Technical Trainer",
     img: team8,
     socials: {
-      linkedin: "https://linkedin.com",
+      linkedin: "https://www.linkedin.com/in/akileswaran-dev/",
       twitter: "https://twitter.com",
-      github: "https://github.com",
-      email: "mailto:olivia@softnova.com"
+      github: "https://github.com/Akileswaran-Dev",
+      email: "akileswaran.dev@gmail.com"
     }
   },
   {
@@ -117,9 +114,8 @@ const teamData = [
     img: team9,
     socials: {
       linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
       github: "https://github.com",
-      email: "mailto:liam@softnova.com"
+      email: ""
     }
   }
 ];
@@ -190,15 +186,17 @@ const OurTeam = () => {
                 <FaGithub />
               </a>
             </li>
-            <li>
-              <a
-                href={member.socials.email}
-                className={styles.socialLink}
-                aria-label={`${member.name} Email`}
-              >
-                <FaEnvelope />
-              </a>
-            </li>
+            {member.socials.email && (
+              <li>
+                <a
+                  href={member.socials.email.startsWith("mailto:") ? member.socials.email : `mailto:${member.socials.email}`}
+                  className={styles.socialLink}
+                  aria-label={`${member.name} Email`}
+                >
+                  <FaEnvelope />
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       </article>
@@ -261,7 +259,7 @@ const OurTeam = () => {
                 Under his leadership, Softnova has expanded into software development, SaaS solutions, digital services, and professional training programs, delivering quality-driven and future-focused solutions to clients across various industries. His commitment to creativity, excellence, and continuous improvement continues to shape the company's culture, inspire the team, and drive Softnova toward a stronger and more innovative future.
               </p>
 
-              <div className={styles.ceoSignature}>Sarah Connor</div>
+              <div className={styles.ceoSignature}>Narendhiran Balraj</div>
 
               <ul className={styles.ceoSocials}>
                 <li>
@@ -287,15 +285,17 @@ const OurTeam = () => {
                     <FaGithub />
                   </a>
                 </li>
-                <li>
-                  <a
-                    href={ceoData.socials.email}
-                    className={styles.ceoSocialLink}
-                    aria-label={`${ceoData.name} Email`}
-                  >
-                    <FaEnvelope />
-                  </a>
-                </li>
+                {ceoData.socials.email && (
+                  <li>
+                    <a
+                      href={ceoData.socials.email.startsWith("mailto:") ? ceoData.socials.email : `mailto:${ceoData.socials.email}`}
+                      className={styles.ceoSocialLink}
+                      aria-label={`${ceoData.name} Email`}
+                    >
+                      <FaEnvelope />
+                    </a>
+                  </li>
+                )}
               </ul>
             </div>
           </div>
