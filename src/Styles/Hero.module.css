@@ -219,11 +219,9 @@
   position: relative;
   padding: 14px 22px 14px 18px;
   border-left: 3px solid rgba(254, 135, 30, 0.973);
-  background: linear-gradient(
-    120deg,
-    rgba(254, 135, 30, 0.158) 0%,
-    rgba(189, 187, 187, 0.25) 100%
-  );
+  background: linear-gradient(120deg,
+      rgba(254, 135, 30, 0.158) 0%,
+      rgba(189, 187, 187, 0.25) 100%);
   backdrop-filter: blur(6px);
   border-radius: 6px;
   box-shadow:
@@ -283,7 +281,7 @@
   background: rgba(167, 163, 163, 0.45);
   border: 2px solid rgba(254, 133, 30, 0.3);
   padding: 6px 12px;
-  border-radius: 30px;
+  border-radius: 30px 3px 30px 30px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow:
@@ -325,6 +323,7 @@
   position: relative;
   background: #fe851e;
   border: none;
+  border-radius: 50px 0px 50px 50px;
   color: #000000;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -394,7 +393,10 @@
 
 @media (max-width: 768px) {
   .container {
-    height: 85vh;
+    height: auto;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
   }
 
   .video {
@@ -403,7 +405,9 @@
   }
 
   .overlay {
-    padding: 0 6%;
+    position: relative;
+    height: auto;
+    padding: 80px 6%;
     align-items: center;
     text-align: center;
   }
@@ -546,11 +550,12 @@
 
 @media (max-width: 428px) {
   .container {
-    height: 80vh;
+    height: auto;
+    min-height: 80vh;
   }
 
   .overlay {
-    padding: 0 16px;
+    padding: 60px 16px;
   }
 
   .title {
@@ -629,7 +634,7 @@
 }
 
 .ornament3 {
-  top: 45%;
+  top: 34%;
   left: 2%;
   width: 150px;
   animation: floatSlow 12s infinite alternate ease-in-out;
@@ -680,6 +685,7 @@
     transform: translateY(-120px) rotate(20deg);
   }
 }
+
 @keyframes float {
   0% {
     transform: translateY(0) rotate(0deg) translateX(100px);

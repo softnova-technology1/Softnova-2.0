@@ -1,10 +1,21 @@
+.wrapper {
+  width: 100%;
+  max-width: 100%;
+  background-color: #000;
+  background-image: linear-gradient(rgba(24, 16, 10, 0.747), rgba(10, 7, 4, 0.94)), url("../images/soft27.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 100px 6%;
   gap: 100px;
-  background-color: #000;
   color: #fff;
   max-width: 1500px;
   margin: 0 auto;
@@ -18,76 +29,192 @@
   align-items: center;
 }
 
-.imageWrapper {
+.imageCardContainer {
   position: relative;
   width: 100%;
-  max-width: 560px;
-}
-
-.companyImage {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1.05 / 1;
-  object-fit: cover;
-  border-radius: 28px;
+  max-width: 540px;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, #ff7519 0%, #ffd61e8e 100%);
+  border: 1.5px solid rgba(254, 133, 30, 0.35);
+  border-radius: 40px;
+  overflow: hidden;
   box-shadow: 
-    0 25px 50px rgba(0, 0, 0, 0.8),
-    0 0 35px rgba(254, 133, 30, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  display: block;
-  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    0 30px 60px -10px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(254, 133, 30, 0.1);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.imageWrapper:hover .companyImage {
+.imageCardContainer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 40px;
+  padding: 1px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Background Curve Shape */
+.darkBackgroundShape {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48%;
+  height: 82%;
+  background-color: #0c0a09;
+  border-bottom-left-radius: 100%;
+  border-left: 1.5px solid rgba(254, 133, 30, 0.25);
+  z-index: 1;
+}
+
+/* Decorative SVG Dot Grid */
+.dotGrid {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 115px;
+  height: 90px;
+  z-index: 2;
+  opacity: 0.8;
+}
+
+.dotGrid circle {
+  fill: #fe851e;
+  opacity: 0.45;
+}
+
+/* Floating White Circle */
+.floatingDot {
+  position: absolute;
+  left: 35px;
+  top: 55%;
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle, #ffffff 10%, #fe851e 90%);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 
+    0 0 15px rgba(254, 133, 30, 0.8),
+    0 0 30px rgba(254, 133, 30, 0.4);
+}
+
+/* Contour Lines SVG */
+.contourLines {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 160px;
+  height: 160px;
+  z-index: 2;
+}
+
+/* Main Image Wrapper */
+.mainImageWrapper {
+  position: absolute;
+  top: 9%;
+  left: 12%;
+  right: 5%;
+  bottom: 7%;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 160px;
+  border-bottom-right-radius: 90px;
+  border-bottom-left-radius: 20px;
+  overflow: hidden;
+  z-index: 3;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.imageCardContainer:hover .mainImageWrapper {
   transform: scale(1.02);
 }
 
-/* Glassmorphism Badge Overlay */
-.badge {
+/* Inset Overlapping Circle Image */
+.insetCircleWrapper {
   position: absolute;
-  bottom: -25px;
-  right: -15px;
-  background: rgba(18, 18, 22, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1.5px solid rgba(254, 133, 30, 0.35);
-  border-radius: 20px;
-  padding: 24px 28px;
+  bottom: 5%;
+  left: 3%;
+  width: 35%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.95);
+  overflow: hidden;
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.8),
-    0 0 25px rgba(254, 133, 30, 0.15);
-  z-index: 10;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(254, 133, 30, 0.25);
+  z-index: 5;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.imageWrapper:hover .badge {
-  transform: translateY(-5px);
-  border-color: rgba(254, 133, 30, 0.65);
+.insetCircleImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.imageCardContainer:hover .insetCircleWrapper {
+  transform: translateY(-5px) scale(1.03);
+}
+
+/* Custom Experience Badge */
+.circleBadge {
+  position: absolute;
+  top: 7%;
+  right: 4%;
+  width: 27%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, #271a10 0%, #0c0a09 100%);
+  border: 2px solid #fe851e;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
   box-shadow: 
-    0 25px 45px rgba(0, 0, 0, 0.9),
-    0 0 30px rgba(254, 133, 30, 0.3);
+    0 12px 30px rgba(0, 0, 0, 0.6),
+    0 0 15px rgba(254, 133, 30, 0.35);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  text-align: center;
+  padding: 5px;
+}
+
+.imageCardContainer:hover .circleBadge {
+  transform: translateY(-5px) scale(1.05);
 }
 
 .badgeNumber {
-  font-family: "Playfair Display", serif;
-  font-size: 42px;
-  font-weight: 700;
-  color: #fdbb84;
-  line-height: 1;
-  margin-bottom: 6px;
-  display: block;
-  letter-spacing: 0.5px;
-  text-shadow: 0 0 10px rgba(253, 187, 132, 0.3);
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(20px, 3.2vw, 36px);
+  font-weight: 800;
+  background: linear-gradient(to bottom, #ffffff 40%, #fcae6c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
 }
 
 .badgeText {
-  font-family: "Poppins", sans-serif;
-  font-size: 11.5px;
-  font-weight: 500;
+  font-family: "Syncopate", sans-serif;
+  font-size: clamp(6.5px, 0.9vw, 9px);
+  font-weight: 700;
   color: #c5c9d6;
-  letter-spacing: 0.8px;
   text-transform: uppercase;
-  white-space: nowrap;
+  letter-spacing: 1.2px;
+  line-height: 1.4;
 }
 
 /* Right Side Content Section */
@@ -167,7 +294,7 @@
 
 .showMoreBtn:hover {
   background: #ffffff;
-  box-shadow: 
+  box-shadow:
     0 8px 25px rgba(253, 187, 132, 0.45),
     0 0 15px rgba(254, 133, 30, 0.2);
   transform: translateY(-3px);
@@ -192,7 +319,7 @@
   background: rgba(254, 133, 30, 0.1);
   color: #ffffff;
   transform: translateY(-3px);
-  box-shadow: 
+  box-shadow:
     0 8px 20px rgba(254, 133, 30, 0.25),
     0 0 12px rgba(254, 133, 30, 0.15);
 }
@@ -211,11 +338,18 @@
 }
 
 @media (max-width: 768px) {
+  .wrapper {
+    background-attachment: scroll;
+  }
   .container {
     flex-direction: column;
     gap: 60px;
     padding: 70px 24px;
     text-align: center;
+  }
+
+  .floatingDot {
+    display: none;
   }
 
   .about {
@@ -230,20 +364,6 @@
   .para {
     text-align: center;
   }
-
-  .badge {
-    bottom: -20px;
-    right: -10px;
-    padding: 18px 22px;
-  }
-
-  .badgeNumber {
-    font-size: 34px;
-  }
-
-  .badgeText {
-    font-size: 10.5px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -257,23 +377,8 @@
     line-height: 1.25;
   }
 
-  .imageWrapper {
-    max-width: 340px;
-  }
-
-  .badge {
-    bottom: -15px;
-    right: -5px;
-    padding: 14px 18px;
-  }
-
-  .badgeNumber {
-    font-size: 28px;
-    margin-bottom: 2px;
-  }
-
-  .badgeText {
-    font-size: 9.5px;
+  .imageCardContainer {
+    max-width: 100%;
   }
 
   .showMoreBtn {

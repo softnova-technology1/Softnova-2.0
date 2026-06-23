@@ -27,6 +27,7 @@ import SoftwareDevelopment from "./Components/OurServices/Software";
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "./Components/Preloader/Preloader";
+import Lenis from "lenis";
 
 
 
@@ -87,6 +88,27 @@ function App() {
     const hasVisited = sessionStorage.getItem("softnova_visited");
     return !hasVisited;
   });
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    });
+
+    let rafId;
+    function raf(time) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
+
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
+  }, []);
 
   const handleFinishLoading = () => {
     setLoading(false);

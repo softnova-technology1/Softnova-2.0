@@ -12,24 +12,28 @@ const cardData = [
     title: "Our Mission",
     subtitle: "What Drives Us",
     desc: "Our mission is to empower businesses with innovative, tailored solutions that fuel growth and long-term success. We are committed to excellence, delivering high-quality services with integrity and a client-first mindset to build lasting relationships and create meaningful impact.",
+    tags: ["INNOVATE", "INTEGRATE", "EMPOWER"],
   },
   {
     id: 2,
     title: "Our Vision",
     subtitle: "The Force Behind Our Work",
     desc: "Our mission is to become a global leader in innovative digital solutions that drive sustainable business growth. We strive to set industry standards through cutting-edge technology, forward-thinking strategies, and trusted partnerships—empowering businesses to thrive and create lasting, positive impact for clients, employees, and communities.",
+    tags: ["LEAD", "GROW", "SUSTAIN"],
   },
   {
     id: 3,
     title: "Our Execution Strategy",
     subtitle: "How We Execute",
     desc: "Our mission is to become a global leader in innovative digital solutions that drive sustainable business growth. We strive to set industry standards through cutting-edge technology, forward-thinking strategies, and trusted partnerships—empowering businesses to thrive and create lasting, positive impact for clients, employees, and communities.",
+    tags: ["STRATEGIZE", "COLLABORATE", "EXECUTE"],
   },
   {
     id: 4,
     title: "Our Goals",
     subtitle: "What We Aim For",
     desc: "Our goal is to deliver exceptional service through our website, building a strong reputation as a trusted digital partner. By consistently delivering high-quality solutions and continuously evolving to meet industry standards and customer expectations, we aim to drive sustainable, long-term growth.",
+    tags: ["EXCELLENCE", "QUALITY", "TRUST"],
   },
 ];
 
@@ -78,13 +82,29 @@ const About = () => {
                 zIndex: index,
               }}
             >
+              <div className={styles.glowOrb} />
+              <div className={styles.ring} />
+              <span className={styles.cardNumber}>0{card.id}</span>
               <div
                 ref={(el) => (revealRefs.current[index] = el)}
                 className={styles.cardInner}
               >
-                <h1 className={styles.cardTitle}>{card.title}</h1>
-                <h3 className={styles.cardSubtitle}>{card.subtitle}</h3>
-                <p className={styles.cardDesc}>{card.desc}</p>
+                <div className={styles.cardLeft}>
+                  <h3 className={styles.cardSubtitle}>{card.subtitle}</h3>
+                  <h1 className={styles.cardTitle}>{card.title}</h1>
+                  <div className={styles.titleLine}></div>
+                </div>
+                <div className={styles.cardRight}>
+                  <p className={styles.cardDesc}>{card.desc}</p>
+                  <div className={styles.techDetails}>
+                    {card.tags.map((tag, idx) => (
+                      <div key={idx} className={styles.techItem}>
+                        <span className={styles.techDot}></span>
+                        <span className={styles.techLabel}>{tag}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           ))}

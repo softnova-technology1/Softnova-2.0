@@ -22,8 +22,7 @@ import floatingTorus from "../../images/floating_glass_torus.webp";
 import floatingNode from "../../images/floating_tech_node.webp";
 import float5 from "../../images/float5.webp"
 import float4 from "../../images/float4.webp"
-import float6 from "../../images/float6.webp"
-import float7 from "../../images/float7.webp"
+import float6 from "../../images/float6.png"
 import floatingAmberCrescent from "../../images/float1.webp"
 
 const ThreeCanvas = React.lazy(() => import("./ThreeCanvas"));
@@ -83,9 +82,8 @@ const Hero = () => {
       <img src={float4} className={`${styles.ornament} ${styles.ornament4}`} alt="" />
       <img src={float5} className={`${styles.ornament} ${styles.ornament5}`} alt="" />
       <img src={float6} className={`${styles.ornament} ${styles.ornament6}`} alt="" />
-      <img src={float7} className={`${styles.ornament} ${styles.ornament7}`} alt="" />
+      <img src={floatingSphere} className={`${styles.ornament} ${styles.ornament7}`} alt="" />
       <img src={floatingAmberCrescent} className={`${styles.ornament} ${styles.ornament8}`} alt="" />
-
       <section className={styles.container}>
         <div className={styles.slideshow}>
           {slides.map((slideImg, index) => (
@@ -96,9 +94,7 @@ const Hero = () => {
             />
           ))}
         </div>
-
         <div className={styles.darkLayer}></div>
-
         <div className={styles.canvas}>
           <Suspense fallback={null}>
             <ThreeCanvas shape={shape} />
@@ -140,10 +136,10 @@ const Hero = () => {
               We build dynamic websites, powerful e-commerce platforms, and lead
               generation systems tailored to drive your business.
             </motion.p>
-            <motion.div className={styles.largeStat} variants={itemVariants}>
+            {/* <motion.div className={styles.largeStat} variants={itemVariants}>
               <span className={styles.statNumber}>2+</span>
               <span className={styles.cursiveText}>Years Exp</span>
-            </motion.div>
+            </motion.div> */}
           </div>
 
           <motion.div className={styles.bottomBar} variants={itemVariants}>

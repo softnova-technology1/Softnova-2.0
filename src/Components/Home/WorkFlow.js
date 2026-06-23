@@ -13,7 +13,7 @@ const phases = [
   { id: '01', title: 'PLANNING', desc: ' We have extensive experience in transforming innovative ideas into actionable digital strategies', icon: <ClipboardList size={20} />, progress: 20, img: phase1 },
   { id: '02', title: 'DESIGN', desc: 'We specialize in creative design solutions that give your brand a polished and professional identity', icon: <Layout size={20} />, progress: 40, img: phase2 },
   { id: '03', title: 'DEVELOPMENT', desc: 'Our team of developers excels in delivering robust and scalable enterprise portal solutions.', icon: <Code2 size={20} />, progress: 60, img: phase3 },
-  { id: '04', title: 'TESTING', desc: "We’re always ready to test, consult, and resolve any challenges related to performance, security, and functionality", icon: <Monitor size={20} />, progress: 80, img: phase4 },
+  { id: '04', title: 'TESTING', desc: "Empowering businesses with accurate testing to deliver bug-free digital solutions.", icon: <Monitor size={20} />, progress: 80, img: phase4 },
   { id: '05', title: 'COMPLETION', desc: 'We deliver projects on time with high-quality results that create real impact', icon: <CheckCircle2 size={20} />, progress: 100, img: phase5 },
 ];
 
