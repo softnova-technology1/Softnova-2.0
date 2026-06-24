@@ -5,15 +5,15 @@ import imgp1 from "../../images/soft8.webp";
 import imgp2 from "../../images/soft1.webp";
 import imgp3 from "../../images/soft23.webp";
 
-import chart1 from "../../images/OurProduct/ourproduct(hospital management).webp";
-import chart2 from "../../images/OurProduct/ourproduct(hotels management).webp";
-import chart3 from "../../images/OurProduct/ourproduct(e-commerce).webp";
-import chart4 from "../../images/OurProduct/ourproduct(EducationLMS).webp";
-import chart5 from "../../images/OurProduct/ourproduct(crmManagement).webp";
-import chart6 from "../../images/OurProduct/ourproduct(SalaryManagement).webp";
-import chart7 from "../../images/OurProduct/AttendanceSystem.webp";
+import chart1 from "../../images/OurProduct/health.webp";
+import chart2 from "../../images/OurProduct/luxury.webp";
+import chart3 from "../../images/OurProduct/retail.webp";
+import chart4 from "../../images/OurProduct/learning.webp";
+import chart5 from "../../images/OurProduct/omnichannel.webp";
+import chart6 from "../../images/OurProduct/payroll.webp";
+import chart7 from "../../images/OurProduct/biometric.webp";
 import chart8 from "../../images/OurProduct/car.webp";
-import chart9 from "../../images/OurProduct/booking.webp";
+import chart9 from "../../images/OurProduct/ticket.webp";
 import chart10 from "../../images/OurProduct/school.webp";
 import chart11 from "../../images/OurProduct/ad.webp";
 
