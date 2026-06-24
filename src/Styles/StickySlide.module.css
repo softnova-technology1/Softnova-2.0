@@ -41,8 +41,8 @@
     border-radius: inherit;
     background-image: url("../images/stickybg.webp");
     background-size: cover;
-    opacity: 0.35;
-    filter: blur(14px);
+    opacity: 0.5;
+    filter: blur(8px);
     animation: edgeFlow 15s linear infinite;
     z-index: 1;
 }
@@ -51,17 +51,17 @@
     content: "";
     position: absolute;
     top: 0;
-    right: 0;
-    width: 45%;
+    left: 0;
+    width: 55%;
     height: 100%;
     background-image: var(--card-bg-image);
     background-size: cover;
     background-position: center;
-    opacity: 0.12;
+    opacity: 0.25;
     mix-blend-mode: luminosity;
     pointer-events: none;
-    mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 30%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 30%, transparent 100%);
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 40%, transparent 100%);
     z-index: 1;
 }
 
@@ -246,7 +246,7 @@
 .cardItem:nth-child(1) {
     --theme-color: #fe851e;
     --theme-rgb: 254, 133, 30;
-    --card-bg-image: url("../images/About-Images/about1.jpg");
+    --card-bg-image: url("../images/About-Images/Our-mission.webp");
     background: radial-gradient(circle at 10% 50%, rgba(254, 133, 30, 0.08), transparent 50%), linear-gradient(150deg, #090b10 0%, #06070a 100%);
     border-radius: 36px;
 }
@@ -255,7 +255,7 @@
 .cardItem:nth-child(2) {
     --theme-color: #818cf8;
     --theme-rgb: 129, 140, 248;
-    --card-bg-image: url("../images/About-Images/about4.jpg");
+    --card-bg-image: url("../images/About-Images/Our-vision.webp");
     background: radial-gradient(circle at 10% 50%, rgba(129, 140, 248, 0.08), transparent 50%), linear-gradient(150deg, #090b10 0%, #06070a 100%);
     border-radius: 36px;
 }
@@ -264,7 +264,7 @@
 .cardItem:nth-child(3) {
     --theme-color: #fb7185;
     --theme-rgb: 251, 113, 133;
-    --card-bg-image: url("../images/About-Images/about3.jpg");
+    --card-bg-image: url("../images/About-Images/Execute-1.webp");
     background: radial-gradient(circle at 10% 50%, rgba(251, 113, 133, 0.08), transparent 50%), linear-gradient(150deg, #090b10 0%, #06070a 100%);
     border-radius: 36px;
 }
@@ -273,8 +273,8 @@
 .cardItem:nth-child(4) {
     --theme-color: #2dd4bf;
     --theme-rgb: 45, 212, 191;
-    --card-bg-image: url("../images/About-Images/about2.jpg");
-    background: radial-gradient(circle at 10% 50%, rgba(45, 212, 191, 0.08), transparent 50%), linear-gradient(150deg, #090b10 0%, #06070a 100%);
+    --card-bg-image: url("../images/About-Images/Our-goals.webp");
+    background: radial-gradient(circle at 10% 50%, rgba(45, 212, 191, 0.08), transparent 50%), linear-gradient(150deg, #090b10 0%, #130f0b 100%);
     border-radius: 36px;
 }
 
@@ -344,11 +344,11 @@
 
     .cardItem::before {
         opacity: 0.35;
-        filter: blur(14px);
+        filter: blur(6px);
     }
 
     .cardItem::after {
-        opacity: 0.08;
+        opacity: 0.15;
         width: 60%;
     }
 

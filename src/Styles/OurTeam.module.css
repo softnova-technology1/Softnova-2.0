@@ -222,7 +222,7 @@
 
 .teamCard:hover .memberImg {
     transform: scale(1.06) translateY(-4px);
-    filter: grayscale(0%) contrast(1.1) brightness(1.05);
+    filter: grayscale(0%) contrast(1) brightness(1.05);
 }
 
 .teamCard:hover .imageOverlay {
